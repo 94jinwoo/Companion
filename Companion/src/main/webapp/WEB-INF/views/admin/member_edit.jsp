@@ -67,7 +67,7 @@
 			<div class="main--title">
 				<h1>[Admin] 회원 정보 수정</h1>
 			</div>
-			<form role="form" method="post" autocomplete="off" action="${root}admin/member_edit">
+			<form role="form" method="post" autocomplete="off" action="${root}admin/member_edit" onsubmit="return validation_submit();">
 			<table class="reserv_d">
 				<thead></thead>
 				<tbody>
@@ -87,7 +87,7 @@
 									<input type="radio" name="member_grade" value="2">
 								</c:if>
 								<c:if test="${adminMemberOne.member_grade == 2}">
-									<label>관리자</label>
+									<label>운영자</label>
 									<input type="radio" name="member_grade" value="1" >
 									<label>회원</label>
 									<input type="radio" name="member_grade" value="2" checked="checked">
@@ -188,7 +188,71 @@
 	$("#back_Btn").click(function(){
 		history.back();
 	});
-
+ 	
+ 	
+	function validation_submit() {
+		 console.log("1");
+		if($("#member_name").val() == ""){
+			alert('이름을 입력해주세요.');
+			$('#member_name').focus();
+			return false;
+		}
+		if($("#member_phone").val() == ""){
+			alert('휴대전화를 입력해주세요.');
+			$('#member_phone').focus();
+			return false;
+		}
+		if($("#member_email").val() == ""){
+			alert('이메일을 입력해주세요.');
+			$('#member_email').focus();
+			return false;
+		}
+		if($("#member_addr1").val() == ""){
+			alert('우편번호를 입력해주세요.');
+			$('#member_addr1').focus();
+			return false;
+		}
+		if($("#member_addr2").val() == ""){
+			alert('기본주소를 입력해주세요.');
+			$('#member_addr2').focus();
+			return false;
+		}
+		if($("#member_addr3").val() == ""){
+			alert('상세주소를 입력해주세요.');
+			$('#member_addr3').focus();
+			return false;
+		}
+	};
+	function validation() {
+		$("#member_phone").on("change", function() {
+			var regExp = /^[0-9]*$/
+			var	chk = $(this).val();
+			if( !regExp.test(chk) ) {
+				alert("숫자만 입력해주세요.");
+				$(this).val("");
+				$(this).focus();
+			}
+		});
+		$("#member_tel").on("change", function() {
+			var regExp = /^[0-9]*$/
+			var	chk = $(this).val();
+			if( !regExp.test(chk) ) {
+				alert("숫자만 입력해주세요.");
+				$(this).val("");
+				$(this).focus();
+			}
+		});
+		$("#member_email").on("change", function() {
+			var regExp=/^[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{1,5}$/;
+			var	chk = $(this).val();
+			if( !regExp.test(chk) ) {
+				alert("이메일주소 형식이 올바르지 않습니다.");
+				$(this).val("");
+				$(this).focus();
+			}
+		});
+	};
+	validation();
 </script>
 </body>
 </html>

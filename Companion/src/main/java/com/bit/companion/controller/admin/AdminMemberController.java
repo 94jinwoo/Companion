@@ -54,6 +54,7 @@ public class AdminMemberController {
 	public String memberEdit(@ModelAttribute AdminMemberViewVo bean) {
 		log.info("post member edit");
 		adminMemberService.update(bean);
+		
 		return "redirect:/admin/member_detail?member_id="+bean.getMember_id();
 	}
 	

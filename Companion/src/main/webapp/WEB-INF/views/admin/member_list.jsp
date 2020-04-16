@@ -142,7 +142,11 @@
 			"lengthMenu" : [
 				10,20,30,40,50
 			],
-			"pageLength" : 20
+			"pageLength" : 20,
+			"columnDefs" : [
+				{ "orderable" : false, "targets" : 3},
+				{ "orderable" : false, "targets" : 4}
+			]
 		});
 	});
 </script>

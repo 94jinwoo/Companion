@@ -63,7 +63,7 @@
 			<div class="main--title">
 				<h1>[Admin] Q&A 답변</h1>
 			</div>
-			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data" onsubmit="return validation_submit();">
 				<!-- table에 잡아넣기시작 -->
 				<table>
 				<thead>
@@ -206,16 +206,7 @@
 					</th>
 				    <td>
 				    	<div>
-				    	<textarea name="question_answer" id="question_answer" rows="10" cols="80">${adminQuestionOne.question_answer }</textarea>
-						<script>
-			 				var ckeditor_config = {
-									resize_enable : false,
-									enterMode : CKEDITOR.ENTER_BR,
-									shiftEnterMode : CKEDITOR.ENTER_P,
-									filebrowserUploadUrl : "${pageContext.request.contextPath}/admin/ckUpload"
-							};
-							CKEDITOR.replace('question_answer', ckeditor_config);
-						</script>
+				    	<textarea class="ckeditor" name="question_answer" id="question_answer" rows="10" cols="80">${adminQuestionOne.question_answer }</textarea>
 				    	</div>
 				    </td>
 				  </tr>
@@ -239,8 +230,8 @@
 				</table>
 				<!-- table에 잡아넣기끝 -->
 				<div class="btn__group">
-					<button type="submit"class="btn">수정</button>
-					<button type="button" id="back_Btn"class="btn">취소</button>
+					<button type="submit" class="btn">수정</button>
+					<button type="button" id="back_Btn" class="btn">취소</button>
 				</div>
 			</form>
 			
@@ -288,10 +279,8 @@ var typeObj = new Object();
 //1차 분류 셀렉트 박스에 삽입할 데이터 준비
 for(var i = 0; i < jsonData.length; i++) {
 	typeObj = new Object();  //초기화
-	console.log(1);
 	typeObj.question_type_id = jsonData[i].question_type_id;
 	typeObj.question_type_name = jsonData[i].question_type_name;
-	console.log(2);
 	typeArr.push(typeObj);
 }
 
@@ -306,6 +295,16 @@ for(var i = 0; i < typeArr.length; i++) {
 var select_type_id = '${adminQuestionOne.question_type_id}';
 var select_type_name = '${adminQuestionOne.question_type_name}';
 $(".type").val(select_type_id);
+
+
+//validation
+function validation_submit() {
+	if(CKEDITOR.instances.question_answer.getData() == ""){
+		alert('답변을 입력해주세요.');
+		$('#question_answer').focus();
+		return false;
+	}
+};
 </script>
 
 </body>

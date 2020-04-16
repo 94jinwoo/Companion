@@ -193,7 +193,12 @@ $(document).ready(function() {
 			10,20,30,40,50
 		],
 		"pageLength" : 20,
-		"columnDefs" : { "orderable" : false, "targets" : 1}
+		"columnDefs" : [
+			{ "orderable" : false, "targets" : 1},
+			{ "orderable" : false, "targets" : 6},
+			{ "orderable" : false, "targets" : 7},
+			{ "orderable" : false, "targets" : 8}
+		]
 	});
 });
 
