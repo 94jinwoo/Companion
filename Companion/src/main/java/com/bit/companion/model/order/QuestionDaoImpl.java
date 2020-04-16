@@ -29,9 +29,9 @@ public class QuestionDaoImpl implements QuestionDao {
 		System.out.println("replyList DAO 실행.");
 		//question table 셀렉트. 문의글 목록 전부 불러오기 실행.
 		HashMap data = new HashMap();
+		data.put("product_id",product_id);
 		data.put("displayPost",displayPost);
 		data.put("postNum", postNum);
-		data.put("product_id",product_id);
 		return sqlSession.selectList("orderQuestion.OrderQuestionList",data);
 	}
 

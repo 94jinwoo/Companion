@@ -95,6 +95,8 @@ public class MypageController {
 	public int myAskProductInsert(HttpSession session,String question_type_id,String order_id,String product_id,String question_title,String question_content) {
 		MypageQuestionVo bean=new MypageQuestionVo();
 		
+		System.out.println("question_type_id : "+question_type_id);
+		
 		MemberVo member=(MemberVo)session.getAttribute("memberVo");
 		String member_id=member.getMember_id();
 		
@@ -326,9 +328,11 @@ public class MypageController {
 			bean.setPayment_date(payment_date);
 			bean.setDelivery_number(delivery_number);
 			bean.setOrder_id(order_id);
+			/* order_detail에 insert,cart에서 delete */
 			mypageService.insertOrders(bean);
 			System.out.println(i+"번쨰order_id : "+bean.getOrder_id());
 		}
+		mypageService.insertPayment(bean);
 		session.removeAttribute("cartList");
 		session.removeAttribute("cartOrderList");
 		session.removeAttribute("cartOrderPrice");

@@ -55,5 +55,7 @@ public interface MypageDao {
 	int myAskProductInsert(MypageQuestionVo bean);
 
 	int myReviewInsert(MyReviewVo bean);
+
+	void insertPayment(MyCartOrderVo bean);
 	
 }
