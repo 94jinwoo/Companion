@@ -117,7 +117,7 @@
 								<a class="page-link bg-info text-white" href="#" >${num }</a>	
 							</li>	
 					 	</c:if>		
-					</span>
+					</span><%-- ${productDetailOne.product_id } --%>
 				</c:forEach>
 			<c:if test="${next }">
 				<li class="page-item">
