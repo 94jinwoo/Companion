@@ -68,7 +68,7 @@ public class OrderQuestionController {
 		
 		 
 		
-		List<OrderQuestionVo> reply = orderQuestionService.replyList(model, product_id,page.getDisplayPost(),page.getPostNum());
+		List<OrderQuestionVo> reply = orderQuestionService.replyList(model,product_id,page.getDisplayPost(),page.getPostNum());
 		
 		return "order/question";
 	}
