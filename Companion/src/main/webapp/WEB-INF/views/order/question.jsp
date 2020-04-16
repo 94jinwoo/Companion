@@ -73,8 +73,10 @@
 			</tr>
 		</thead>
 		<tbody>
+					
 			<c:forEach items="${ReplyList}" var="bean">
 				<tr>
+				<c:set var="product_id" value="${bean.product_id }"></c:set>
 					<td>${bean.member_id }</td>
 					<td>${bean.question_title }</td>
 					<td>${bean.question_content }</td>
@@ -86,10 +88,18 @@
 	</table>
 <!-- pagination [start] -->
 	    <nav aria-label="Page navigation example">
+				<%
+					String str = request.getQueryString();
+					String result = str.substring(0,5);
+					String REALURL = (String)request.getAttribute("trueUrl");
+					if(REALURL==null){
+						REALURL="";
+					}
+				%>
 	 	   <ul class="pagination">
 			<c:if test="${prev }">
 		  	     <li class="page-item">
-		    	   	<a class="page-link" href="${root }order/productDetail/ReplyList?idx="+${ReplyList.product_id }+"&num=${startPageNum - 1 }" aria-label="Previous">
+		    	   	<a class="page-link" href="${root }order/productDetail/ReplyList?idx=${product_id}&num=${startPageNum - 1 }" aria-label="Previous">
 				        <span aria-hidden="true">&laquo;</span>
 				    </a>
 		   		</li>
@@ -98,7 +108,8 @@
 					<span>
 						<c:if test="${select != num}">
 							<li class="page-item">
-								<a class="page-link" href="${root }order/productDetail/ReplyList?idx="+${ReplyList.product_id }+"&num=${num }">${num }</a>
+							
+								<a class="page-link" href="${root }order/productDetail/ReplyList?idx=${product_id}&num=${num }">${num }</a>
 							</li>	
 					  	</c:if>  
 					 	<c:if test="${select == num}">
@@ -110,7 +121,7 @@
 				</c:forEach>
 			<c:if test="${next }">
 				<li class="page-item">
-					<a class="page-link" href="${root }order/productDetail/ReplyList?idx="+${ReplyList.product_id }+"&num=${endPageNum + 1 }" aria-label="Next">
+					<a class="page-link" href="${root }order/productDetail/ReplyList?idx=${product_id}&num=${endPageNum + 1 }" aria-label="Next">
 		     		   <span aria-hidden="true">&raquo;</span>
 		   			</a>	      
 		      </li>

@@ -94,7 +94,7 @@
 			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
 				<input type="hidden" name="product_id" id="product_id" value="${product_id }">
 				<input type="hidden" name="order_id" id="order_id" value="${order_id }">
-				<input type="hidden" name="question_type_id" id="question_type_id" value="100">
+				<input type="hidden" name="question_type_id" id="question_type_id" value="">
 				<table>
 				<tbody>
 				  <tr>
@@ -109,6 +109,23 @@
 				    	</div>
 				    </td>	
 				  </tr>
+				  <!-- 문의 유형 select -->
+					<div class="opBox">
+	                    	<select style="width:100px; height:34px;" name="selectOption" id="selectOption" class="form-control" onchange="changeOption()">
+	                    		<option value="" selected disabled>문의 유형 선택</option>
+	                    		<option value="0">교환</option>
+	                    		<option value="1">환불</option>
+	                    		<option value="2">출하 전 취소</option>
+	                    		<option value="3">배송</option>
+	                    		<option value="4">불량 A/S</option>
+	                    		<option value="5">주문/결제</option>
+	                    		<option value="6">상품/재입고</option>
+	                    		<option value="7">쿠폰/적립금</option>
+	                    		<option value="8">회원 관련</option>
+	                    		<option value="9">기타 문의</option>
+	                    	</select>				  
+				  	</div>
+				  <!-- 문의 유형 select -->
 				  <tr>
 				    <th>
 				    	<div>
@@ -211,6 +228,15 @@ $("#ask_btn").click(function(){
 		}
 	});
 });
+
+/* 문의 유형 선택 */
+function changeOption(){
+	var changeOptionValue=document.getElementById("selectOption");
+	
+	var selectValue=changeOptionValue.options[changeOptionValue.selectedIndex].value;
+	document.getElementById("question_type_id").value=selectValue;
+}
+				  
 </script>
 
 </body>
