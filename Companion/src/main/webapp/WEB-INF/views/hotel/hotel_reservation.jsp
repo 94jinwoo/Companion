@@ -149,14 +149,14 @@
 							<div class="form-group">
 								<label for="reserve_checkin" class="h4 col-sm-5 control-label">체크인</label>
 								<div class="col-sm-11">
-								<input type="text" class="form-control" name="reserve_checkin" id="reserve_checkin" placeholder="체크인 날짜를 선택하세요.">
+								<input type="text" class="form-control" name="reserve_checkin" id="from" placeholder="체크인 날짜를 선택하세요.">
 								<p class="msg err"></p>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="reserve_checkout" class="h4 col-sm-5 control-label">체크아웃</label>
 								<div class="col-sm-11">
-								<input type="text" class="form-control" name="reserve_checkout" id="reserve_checkout" placeholder="체크아웃 날짜를 선택하세요.">
+								<input type="text" class="form-control" name="reserve_checkout" id="to" placeholder="체크아웃 날짜를 선택하세요.">
 								<p class="msg err"></p>
 								</div>
 							</div>
@@ -164,7 +164,7 @@
 							<div class="form-group">
 								<label for="reserve_dogtype" class="h4 col-sm-5 control-label">반려동물 품종</label>
 								<div class="col-sm-11">
-								<input type="text" class="form-control" name="reserve_dogtype" id="reserve_dogtype" placeholder="반려동물 품종을 입력하세요.">
+								<input type="text" class="form-control" name="reserve_dogtype" id="animalBreed" placeholder="반려동물 품종을 입력하세요.">
 								<p class="msg err"></p>
 								</div>
 							</div>
@@ -172,7 +172,7 @@
 							<div class="form-group">
 								<label for="reserve_dogage" class="h4 col-sm-5 control-label">반려동물 나이</label>
 								<div class="col-sm-11">
-								<input type="number" class="form-control" name="reserve_dogage" id="reserve_dogage" placeholder="반려동물 나이를 입력하세요.">
+								<input type="number" class="form-control" name="reserve_dogage" id="animalAge" placeholder="반려동물 나이를 입력하세요.">
 								<p class="msg err"></p>
 								</div>
 							</div>
@@ -181,7 +181,6 @@
 								<label for="reserve_msg" class="h4 col-sm-5 control-label">기타</label>
 								<div class="col-sm-11">
 									<textarea name="reserve_msg" id="reserve_msg" cols="56" rows="10" placeholder="효과적인 서비스 추천을 위해 반려견 이름, 중성화 여부, 문제행동 등의 자세한 사항을 작성해주세요."></textarea><br/>
-									<span id="counter">(0 / 200)</span>
 								</div>
 							</div>
 							

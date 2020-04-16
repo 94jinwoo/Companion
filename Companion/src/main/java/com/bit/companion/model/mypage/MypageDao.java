@@ -1,10 +1,13 @@
 package com.bit.companion.model.mypage;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import com.bit.companion.model.entity.mypage.MyCartOrderVo;
+import com.bit.companion.model.entity.mypage.MyPurchaseListVo;
+import com.bit.companion.model.entity.mypage.MyReviewVo;
 import com.bit.companion.model.entity.mypage.MypageCartVo;
 import com.bit.companion.model.entity.mypage.MypageQuestionVo;
 import com.bit.companion.model.entity.mypage.MypageReserveVo;
@@ -42,5 +45,15 @@ public interface MypageDao {
 	void insertOrders(MyCartOrderVo bean);
 
 	int deleteOneQuestion(String member_id, String question_id);
+
+	List purchaseList(String member_id);
+
+	List purchaseDetailList(String order_id,Date order_date,String order_state_member);
+
+	MyPurchaseListVo myPurchaseDetail(String order_id, String member_id);
+
+	int myAskProductInsert(MypageQuestionVo bean);
+
+	int myReviewInsert(MyReviewVo bean);
 	
 }

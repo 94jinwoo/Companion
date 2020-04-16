@@ -336,6 +336,8 @@
 				var member_pw_chk=$("#member_pw_chk").val();
 				var member_name=$("#member_name").val();
 				var member_phone=$("#member_phone").val();
+				var regPhone = /(01[0|1|6|9|7])(\d{3}|\d{4})(\d{4}$)/g; 
+		   		 
 				var member_email=$("#member_email").val();
 				var member_addr1=$("#sample2_postcode").val();
 				var member_addr2=$("#sample2_address").val();
@@ -368,6 +370,10 @@
 					alert("비밀번호 양식이 올바르지 않습니다.\n8자이상 / 영문.숫자.특수문자 조합");
 					return;
 				}
+				if(!regPhone.test(order_phone)){
+			   		  alert('잘못된 휴대폰 번호입니다.\n-를 뺴고 입력해 주세요.');
+			   		  return;    
+			   	}
 				document.memberadd.submit();
 			});
 			

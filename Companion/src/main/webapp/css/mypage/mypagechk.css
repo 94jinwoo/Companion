@@ -13,6 +13,7 @@
 #icon{
 	display:flex;
 	margin: auto;
+	margin-left:20px;
 	border: 10px solid #0F4C81;
 	border-radius:30px;
 	background: white;
@@ -25,10 +26,11 @@
 .info{
 	display:flex;
 	margin: auto;
+	margin-left:10px;
 	border: 10px solid white;
-	border-radius:5px;
+	border-radius:10px;
 	background: white;
-	width:550px;
+	width:680px;
 	height:180px;
 	color: #0F4C81;
 	padding:10px;
@@ -51,13 +53,18 @@
 .info-box{
 	margin: auto;
 	background:#0F4C81;
-	width:200px;
+	width:220px;
 	height:180px;
 	color: #fff;
 	padding-top:60px;
 	padding-right:10px;
 	padding-left:10px;
 	text-align:center;
+}
+.editbox{
+	margin-left:100px;
+	float:right;
+	padding-left:35px;
 }
 .empty{
 	margin-top:20px;

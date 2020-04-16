@@ -87,7 +87,7 @@
 	            <div class="categories">
                 <a href="#homeSubmenu">
                 	<i class="fas fa-shopping-cart"></i>
-                    장바구니
+              		      장바구니
                 </a>
                 <hr class="mb-4">
             	</div>
@@ -118,11 +118,9 @@
         		<col class="col4">
         		<col class="col5">
         		<col class="col6">
-        		<col class="col7">
     			</colgroup>
                     <tr>
                         <th scope="row"><input type="checkbox" name="allCheck" id="allCheck"/></th>
-                        <th scope="row">이미지</th>
                         <th scope="row">상품 이름</th>
                         <th scope="row">옵션</th>
                         <th scope="row">수량</th>
@@ -137,10 +135,12 @@
 						<input type="hidden" id="price ${bean.cart_id }" value="${bean.product_price }" >
 						<input type="hidden" id="quantity ${bean.cart_id }" value="${bean.cart_quantity }" >
                        	<% i+=1; %>
-                        <td>
-                        <img src="<spring:url value='${bean.product_thumb }'/>" alt="Img"/>
+                        <td class="imgTbox">
+	                        <div class="imgBox">
+	                        	<img id="proImg" src="${bean.product_thumb }" alt="Img"/>
+	                        </div>
+	                        ${bean.product_name }
                         </td>
-                        <td>${bean.product_name }</td>
 	                    <td>${bean.cart_option }<br/>
 	                    	<div class="opBox">
 	                    	<select style="width:100px; height:34px;" name="selectOption" id="selectOption${bean.cart_id }" class="form-control" onchange="changeOption(${bean.cart_id })">

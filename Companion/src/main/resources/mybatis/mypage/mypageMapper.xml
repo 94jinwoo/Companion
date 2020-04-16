@@ -91,4 +91,22 @@
   	<delete id="deleteOneQuestion" parameterType="hashmap">
   		delete from question where member_id=#{member_id} and question_id=#{question_id}
   	</delete>
+  	<select id="purchaseList" parameterType="String" resultType="myPurchaseListBean">
+  		select * from `order` where member_id=#{member_id} order by order_date desc
+  	</select>
+  	<select id="orderStateName" parameterType="String" resultType="String">
+  		select order_state_member from order_state where order_state_id=#{order_state_id}
+  	</select>
+  	<select id="purchaseDetailList" parameterType="String" resultType="myPurchaseDetailBean">
+  		select * from order_detail where order_id=#{order_id}
+  	</select>
+  	<select id="myPurchaseDetail" parameterType="hashmap" resultType="myPurchaseListBean">
+  		select * from `order` where order_id=#{order_id} and member_id=#{member_id}
+  	</select>
+  	<insert id="askProuctInsert" parameterType="mypageQuestionBean">
+  		insert into question values (default,#{question_type_id},#{order_id},#{product_id},#{member_id},now(),null,#{question_title},#{question_content},null,null,default,default)
+  	</insert>
+  	<insert id="reviewProductInsert" parameterType="myReviewProduct">
+  		insert into article values ('3',default,#{member_id},#{article_title},#{article_content},now(),'0',null,null,#{product_id})
+  	</insert>
   </mapper>
