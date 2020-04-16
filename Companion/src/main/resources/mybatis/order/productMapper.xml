@@ -80,16 +80,15 @@
 	</select>
 <!-- 페이징 END -->
 	
-	<!--  이용후기 -->
+<!-- 	이용후기 
 	<select id="ProductReview" resultType="productBean" parameterType="int">
 		select * from `article` where board_id=3 and product_id=#{value};	
-	</select>
+	</select> -->
 	
 	<!-- 선택 상품의 추천수가 0일 경우 랜덤 상품이 추천 됨.  -->
-	<!-- Product_name이 동일함 ㅠ -->
 	<!-- 추천상품목록 구현  -->
 	<select id="ProductRecommendList" resultType="productBean" parameterType="int">
-		(select distinct order_detail.product_id,product.product_name from `order_detail`,product
+		(select distinct order_detail.product_id,product.product_name,product.product_image from `order_detail`,product
  			where product.product_id = order_detail.product_id
  			and
 			order_id=(select order_id from `order`

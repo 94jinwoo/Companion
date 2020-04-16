@@ -272,6 +272,8 @@ $("#product_image").change(function(){
 		reader.readAsDataURL(this.files[0]);
 	}
 });
+
+
 </script>
 
 </body>

@@ -59,6 +59,17 @@ public class AdminReservationServiceImpl implements AdminReservationService {
 		}
 		
 	}
+	
+	// reservation edit
+	@Override
+	public void update(AdminReservationVo bean) {
+		try {
+			adminReservationDao.updateOne(bean);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
 
 
 

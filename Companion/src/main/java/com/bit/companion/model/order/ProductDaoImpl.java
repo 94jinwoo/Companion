@@ -34,11 +34,11 @@ public class ProductDaoImpl implements ProductDao{
 	}
 	
 	//이용후기 목록 출력
-	@Override
-	public List<ProductVo> productReview(int product_id) throws SQLException {
-		System.out.println("product_Dao 실행 중...");
-		return sqlSession.selectList("product.ProductReview",product_id);
-	}
+//	@Override
+//	public List<ProductVo> productReview(int product_id) throws SQLException {
+//		System.out.println("product_Dao 실행 중...");
+//		return sqlSession.selectList("product.ProductReview",product_id);
+//	}
 
 	//상품 카테고리 목록별 출력.
 	@Override
@@ -96,8 +96,8 @@ public class ProductDaoImpl implements ProductDao{
 		return sqlSession.selectList("productOrderByDate",data);
 	}
 
-
-	//상품 추천
+	
+	//상품 추천 목록 출력.
 	@Override
 	public List<ProductVo> productRecommendList(int product_id) throws SQLException {
 		return sqlSession.selectList("ProductRecommendList",product_id);

@@ -1,0 +1,84 @@
+
+/* BTN */
+.Cbtn{
+    height: 34px;
+    background: #eee linear-gradient(to botton, #fcfcfc, #eee );
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+}
+.Cbtn:hover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.07);
+}
+/* INPUT TEXT */
+.input--text{
+    height: 34px;
+    padding: 0 10px;
+    border: 1px solid#ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    /* box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075); */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    font-size: 16px;
+}
+.input--text:focus{
+    border-color: #51a7e8;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075),
+                0 0 5px rgba(81,127,232,0.5);
+}
+/* Vendeor Prefix(브라우저 업체별 접두사) */
+.input--text::-webkit-input-placeholder{color: #cacaca;}
+.input--text::-ms-input-placeholder{color: #cacaca;}
+.input--text::-moz-input-placeholder{color: #cacaca;}
+
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  min-height:450px;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 15px;
+  color: rgb(11, 61, 105);
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.box{
+	width:100%;
+	align-items:center;
+}
+.box h4{
+	margin:50px auto;
+	text-align:center;
+}
+.box .btnbox{
+	width:180px;
+	height:40px;
+	margin: 0 auto;
+}

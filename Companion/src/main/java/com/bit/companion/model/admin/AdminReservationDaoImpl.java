@@ -37,6 +37,12 @@ public class AdminReservationDaoImpl implements AdminReservationDao {
 		System.out.println(reserve_id);
 		return sqlsession.selectOne("adminReservation.selectOne", reserve_id);
 	}
+	// reservation - edit
+	@Override
+	public int updateOne(AdminReservationVo bean) throws SQLException {
+		return sqlsession.update("adminReservation.updateOne", bean);
+		
+	}
 
 	
 }

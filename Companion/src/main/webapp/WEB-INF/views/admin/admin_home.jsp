@@ -80,7 +80,7 @@
                         <canvas id="myAreaChart" width="601" height="240" style="display: block; width: 601px; height: 240px;" class="chartjs-render-monitor"></canvas>
                     </div>
                 </div>
-            <div class="card col-xl-5.5">
+            	<div class="card col-xl-5.5">
 					<div class="card-header">
 						<svg class="svg-inline--fa fa-chart-bar fa-w-16 mr-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chart-bar" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M332.8 320h38.4c6.4 0 12.8-6.4 12.8-12.8V172.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v134.4c0 6.4 6.4 12.8 12.8 12.8zm96 0h38.4c6.4 0 12.8-6.4 12.8-12.8V76.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v230.4c0 6.4 6.4 12.8 12.8 12.8zm-288 0h38.4c6.4 0 12.8-6.4 12.8-12.8v-70.4c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v70.4c0 6.4 6.4 12.8 12.8 12.8zm96 0h38.4c6.4 0 12.8-6.4 12.8-12.8V108.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v198.4c0 6.4 6.4 12.8 12.8 12.8zM496 384H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"></path></svg>
 						<!-- <i class="fas fa-chart-bar mr-1"></i> -->
@@ -90,64 +90,64 @@
 						<canvas id="myBarChart" width="601" height="240" style="display: block; width: 601px; height: 240px;" class="chartjs-render-monitor"></canvas>
 					</div>
 				</div>
-				<div class="card col-xl-12">
-                            <div class="card-header"><svg class="svg-inline--fa fa-table fa-w-16 mr-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M464 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM224 416H64v-96h160v96zm0-160H64v-96h160v96zm224 160H288v-96h160v96zm0-160H288v-96h160v96z"></path></svg><!-- <i class="fas fa-table mr-1"></i> -->상품 목록</div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <table class="table table-bordered dataTable" id="dataTable"
-                                                   	role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                                                    <thead>
-                                                        <tr role="row">
-                                                            <th class="sorting_asc" tabindex="0"
-                                                                aria-controls="dataTable" rowspan="1" colspan="1"
-                                                                aria-sort="ascending"
-                                                                aria-label="상품이름">상품 이름</th>
-                                                            <th class="sorting" tabindex="0"
-                                                            	aria-controls="dataTable" rowspan="1" colspan="1"
-                                                                aria-label="상품가격">가격</th>
-                                                            <th class="sorting" tabindex="0"
-                                                            	aria-controls="dataTable" rowspan="1" colspan="1"
-                                                                aria-label="상품재고">재고</th>
-                                                            <th class="sorting" tabindex="0"
-                                                            	aria-controls="dataTable" rowspan="1" colspan="1"
-                                                                aria-label="이번 달 판매량">이번 달 판매량</th>
-                                                            <th class="sorting" tabindex="0"
-                                                            	aria-controls="dataTable" rowspan="1" colspan="1"
-                                                                aria-label="총 누적 판매량">총 누적 판매량</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tfoot>
-                                                        <tr>
-                                                            <th rowspan="1" colspan="1">상품 이름</th>
-                                                            <th rowspan="1" colspan="1">가격</th>
-                                                            <th rowspan="1" colspan="1">재고</th>
-                                                            <th rowspan="1" colspan="1">이번 달 판매량</th>
-                                                            <th rowspan="1" colspan="1">총 누적 판매량</th>
-                                                        </tr>
-                                                    </tfoot>
-                                                    <tbody>
-                                                    	<c:forEach items="${list }" var="bean">
-	                                                        <tr role="row" class="odd">
-	                                                            <td class="sorting_1">${bean.product_name }</td>
-	                                                            <td><fmt:formatNumber value="${bean.product_price }" pattern="###,###,###"/></td>
-	                                                            <td><fmt:formatNumber value="${bean.product_stock }" pattern="###,###,###"/></td>
-	                                                            <td><fmt:formatNumber value="${bean.month_cumulative_sales }" pattern="###,###,###"/></td>
-	                                                            <td><fmt:formatNumber value="${bean.total_cumulative_sales }" pattern="###,###,###"/></td>
-	                                                        </tr>
-                                                    	</c:forEach>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 			</div>
 		</div>
+		<div class="card">
+            <div class="card-header"><svg class="svg-inline--fa fa-table fa-w-16 mr-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M464 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM224 416H64v-96h160v96zm0-160H64v-96h160v96zm224 160H288v-96h160v96zm0-160H288v-96h160v96z"></path></svg><!-- <i class="fas fa-table mr-1"></i> -->상품 목록</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                        <div class="row">
+                            <div style="margin: 0 auto; width: 97%;">
+                                <table class="table table-bordered dataTable" id="dataTable"
+                                   	role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting_asc" tabindex="0"
+                                                aria-controls="dataTable" rowspan="1" colspan="1"
+                                                aria-sort="ascending"
+                                                aria-label="상품이름">상품 이름</th>
+                                            <th class="sorting" tabindex="0"
+                                            	aria-controls="dataTable" rowspan="1" colspan="1"
+                                                aria-label="상품가격">가격</th>
+                                            <th class="sorting" tabindex="0"
+                                            	aria-controls="dataTable" rowspan="1" colspan="1"
+                                                aria-label="상품재고">재고</th>
+                                            <th class="sorting" tabindex="0"
+                                            	aria-controls="dataTable" rowspan="1" colspan="1"
+                                                aria-label="이번 달 판매량">이번 달 판매량</th>
+                                            <th class="sorting" tabindex="0"
+                                            	aria-controls="dataTable" rowspan="1" colspan="1"
+                                                aria-label="총 누적 판매량">총 누적 판매량</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th rowspan="1" colspan="1">상품 이름</th>
+                                            <th rowspan="1" colspan="1">가격</th>
+                                            <th rowspan="1" colspan="1">재고</th>
+                                            <th rowspan="1" colspan="1">이번 달 판매량</th>
+                                            <th rowspan="1" colspan="1">총 누적 판매량</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    	<c:forEach items="${list }" var="bean">
+                                         <tr role="row" class="odd">
+                                             <td class="sorting_1">${bean.product_name }</td>
+                                             <td><fmt:formatNumber value="${bean.product_price }" pattern="###,###,###"/></td>
+                                             <td><fmt:formatNumber value="${bean.product_stock }" pattern="###,###,###"/></td>
+                                             <td><fmt:formatNumber value="${bean.month_cumulative_sales }" pattern="###,###,###"/></td>
+                                             <td><fmt:formatNumber value="${bean.total_cumulative_sales }" pattern="###,###,###"/></td>
+                                         </tr>
+                                    	</c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 		<!-- .container-fluid [end] -->
 		<!-- Footer  -->
 		<jsp:include page="../common/footer.jsp"/>
@@ -157,7 +157,7 @@
 <!-- .wrapper [end] -->
 
    	<!-- jQuery -->
-    <script src="${root }js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="${root }DataTables/jQuery-3.3.1/jquery-3.3.1.js"></script>
     <!-- Popper.JS -->
     <script src="${root }js/bootstrap/popper.js"></script>
     <!-- Bootstrap JS -->
@@ -312,7 +312,23 @@
  	};
  	
  	$(document).ready(function() {
- 		  $('#dataTable').DataTable();
+ 		  $('#dataTable').DataTable({
+ 			 "language": {
+ 				"emptyTable": "데이터가 없습니다.",
+ 				"lengthMenu": "페이지당 _MENU_ 개씩 보기",
+ 				"info": "현재 _START_ - _END_ / _TOTAL_건",
+ 				"infoEmpty": "데이터 없음",
+ 				"infoFiltered": "( _MAX_건의 데이터에서 필터링됨 )",
+ 				"search": "검색: ",
+ 				"zeroRecords": "일치하는 데이터가 없습니다.",
+ 				"loadingRecords": "로딩중...",
+ 				"processing":     "잠시만 기다려 주세요...",
+ 				"paginate": {
+ 					"next": "다음",
+ 					"previous": "이전"
+ 				}
+ 			}
+		});
 	});
     
     areaChart();

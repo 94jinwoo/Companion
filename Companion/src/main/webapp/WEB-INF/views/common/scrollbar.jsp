@@ -15,7 +15,7 @@
 			<a href="#"><img src="${root }imgs/infochk.png" alt="70x70"></a>
 		</div>
 		<div class="scroll-up" id="topBtn">
-			<a href="#" role="button"><h4>↑</h4></a>
+			<a href="#" role="button"><h3 class="up">↑</h3></a>
 		</div>
 	</div>
 </nav>

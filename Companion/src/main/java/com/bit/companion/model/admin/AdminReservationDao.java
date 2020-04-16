@@ -17,5 +17,8 @@ public interface AdminReservationDao {
 
 	// reservation detail
 	AdminReservationVo selectOne(int reserve_id) throws SQLException;
+
+	// reservation state update
+	int updateOne(AdminReservationVo bean) throws SQLException;
 	
 }

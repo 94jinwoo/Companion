@@ -70,7 +70,7 @@
 			    <input type="hidden" name="searchType" value="${search.searchType }"/>
 			    <input type="hidden" name="keyword" value="${search.keyword }"/>
 				<div class="btn__group">
-				 	<button type="submit" id="delete_Btn" class="btn btn-danger">삭제</button>
+				 	<button type="submit" id="delete_Btn" class="mainBtn">삭제</button>
 				</div>
 				<input type="hidden" name="article_id" id="article_id" value="${adminReviewOne.article_id }">
 				<table class="table">
@@ -91,36 +91,38 @@
 					<tr>
 						<td class="clearfix">
 							<div class="float--left">
-								<label for="date">[작성일]&nbsp;</label>
+								<label for="date">&nbsp;[작성일]&nbsp;</label>
 								<span>${adminReviewOne.article_date }</span>
 							</div>
 							<div class="rightt float--right">
 								<label for="member_id">[작성자]&nbsp;</label>
-								<span>${adminReviewOne.member_id }</span>
+								<span>${adminReviewOne.member_id }&nbsp;</span>
 							</div>
 						</td>
 					</tr>
-					<tr>
+					<tr class="clearfix">
 						<td>
-								<label>[상품명]&nbsp;</label>
+							<div class="float--left">
+								<label>&nbsp;[상품명]&nbsp;</label>
 								<span>${adminReviewOne.product_name }</span>
+							</div>	
 						</td>
 					</tr>
 					<tr>
 						<td>
-						<div>
-						<label for="content">content</label>
-						<span>${adminReviewOne.article_content }</span>
-						</div>
-						<div>
-						<label for="img">원본이미지</label>
-						<img alt="원본이미지" src="<spring:url value='${adminReviewOne.article_image }'/>"/>
-						</div>
+							<div class="contentB">
+								<label for="content" class="sr-only">content</label>
+								<span>${adminReviewOne.article_content }</span>
+							</div>
+							<div class="imgB">
+								<label for="img" class="sr-only">원본이미지</label>
+								<img alt="원본이미지" src="<spring:url value='${adminReviewOne.article_image }'/>"/>
+							</div>
 						</td>
 					</tr>
 				</tbody>
 				</table>
-				    <button type="button" id="list_Btn" class="btn btn-back">목록</button>
+				    <button type="button" id="list_Btn" class="mainBtn btn-back">목록으로</button>
 			</form>
 	
 		</section>

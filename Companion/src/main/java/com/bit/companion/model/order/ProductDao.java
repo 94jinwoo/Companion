@@ -12,7 +12,7 @@ public interface ProductDao {
 	/*
 	 * List<ProductVo> ProductCategorySelect(int category_id) throws SQLException;
 	 */ 
-	List<ProductVo> productReview(int product_id) throws SQLException;
+//	List<ProductVo> productReview(int product_id) throws SQLException;
 	List<ProductVo> productAlignmentByLike(int category_id,int displayPost,int postNum) throws SQLException;
 	List<ProductVo> productAlignmentBySellingOrder(int category_id,int displayPost,int postNum) throws SQLException;
 	List<ProductVo> productAlignmentByLowPrice(int category_id,int displayPost,int postNum) throws SQLException;

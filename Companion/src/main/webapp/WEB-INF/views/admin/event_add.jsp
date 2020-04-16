@@ -66,7 +66,7 @@
 				<h1>[Admin] 이벤트 등록</h1>
 			</div>
 			
-			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data" onsubmit="return validation_submit();">
 			<!-- table start-->
 			<table>
 				<thead>
@@ -80,7 +80,7 @@
 				    </th>
 				    <td>
 				    	<div>
-				    	<input class="input--text" type="text" name="article_title" id="article_title" placeholder="제목을 입력하세요" required="required"/>
+				    	<input class="input--text" type="text" name="article_title" id="article_title" placeholder="제목을 입력하세요"/>
 				    	</div>
 				    </td>	
 				  </tr>
@@ -92,7 +92,7 @@
 					</th>
 				    <td>
 				    	<div>
-				    	<textarea class="ckeditor" name="article_content" id="article_content" placeholder="내용을 입력하세요" required="required" rows="50" cols="80"></textarea>
+				    	<textarea class="ckeditor" name="article_content" id="article_content" placeholder="내용을 입력하세요" rows="50" cols="80"></textarea>
 				    	</div>
 				    </td>
 				  </tr>
@@ -157,6 +157,20 @@ $('#article_image').change(function(){
 $("#back_Btn").click(function(){
 	history.back();
 });
+
+//validation
+function validation_submit() {
+	if($("#article_title").val() == ""){
+		alert('제목을 입력해주세요.');
+		$('#article_title').focus();
+		return false;
+	}
+	if(CKEDITOR.instances.article_content.getData() == ""){
+		alert('내용을 입력해주세요.');
+		$('#article_content').focus();
+		return false;
+	}
+};
 </script>
  	
 </body>

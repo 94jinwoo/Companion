@@ -67,7 +67,7 @@
 	<insert id="OrderProductPurchase" parameterType="orderBean">
 	 	insert into 
 		`order` values
-		 (null,#{member_id},now(),${order_amount},#{order_name},#{order_tel},#{order_phone},
+		 (null,#{member_id},now(),#{order_amount},#{order_name},#{order_phone},#{order_phone},
 			 #{order_addr1},#{order_addr2},#{order_addr3},#{order_msg},1);
 	</insert> 
 <!-- order_quantity 어떡할래 개 -->
@@ -85,11 +85,11 @@
 	</insert> 
 	 
 	<!-- delivery_number 랜덤 처리함. (select truncate(rand()*100000000000000,0))  -->
- 	<insert id="OrderDeliveryInsert" parameterType="orderBean">
+<!--  	<insert id="OrderDeliveryInsert" parameterType="orderBean">
  	insert into delivery 
  	values 
  	(default,(select order_id from `order` where order_date = (select max(order_date) from `order` where member_id=#{member_id})),#{member_id},'비트택배',(select truncate(rand()*100000000000000,0)),0);
-	</insert>
+	</insert> -->
 	<!-- 재고 수량 UPDATE  -->
 	<update id="OrderUpdateProductStock">
 		update product set product_stock=(product_stock-#{order_detail_quantity}) where product_id=#{product_id};

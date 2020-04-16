@@ -2,12 +2,6 @@
 	float:right;
 	margin:5px;
 }
-.btn-back{
-	border:1px solid gray;
-	margin:5px;
-	float:right;
-}
-
 .table{
 	width: 100%;
 	margin: 0 auto;
@@ -52,7 +46,24 @@
 table tbody tr:first-child{
 	height:40px;
 	float:left;
-	line-height: 1;
+	line-height: 1.5;
 	margin:0;
 	padding:0;
+}
+.contentB{
+	width:90%;
+	margin:0 auto;
+	min-height:200px;
+}
+.contentB span{
+	letter-spacing:1px;
+}
+.imgB{
+	width:90%;
+	margin:0 auto;
+	max-height:150px;
+}
+.imgB img{
+	padding:5px;
+	max-height:150px;
 }

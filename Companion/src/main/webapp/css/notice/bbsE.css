@@ -12,11 +12,15 @@
 }
 .total-count{
     display: flex;
-	width:90px;
+	width:120px;
 	border-bottom:2px solid gray;
-    align-items: center;
-    text-align:center;
 }
+.total-count h4{
+	margin-top:10px;
+	width:120px;
+    text-align:center;
+	
+} 
 .search-group{
     display: flex;
     align-items: center;

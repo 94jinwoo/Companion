@@ -42,4 +42,11 @@
     	FROM `RESERVE` r, `SERVICE` s, `member` m WHERE r.service_id=s.service_id AND r.member_id=m.member_id AND r.reserve_id=#{value};
 	</select>
 	
+	
+	<!--  reservation state edit -->
+	<update id="updateOne" parameterType="adminReservationBean">
+		UPDATE `RESERVE` SET 
+			reserve_state_id = #{reserve_state_id} 
+    			WHERE reserve_id = #{reserve_id}
+	</update>
 </mapper> 

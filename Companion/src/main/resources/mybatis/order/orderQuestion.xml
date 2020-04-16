@@ -4,10 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="orderQuestion">
-	<select id="OrderQuestionList" resultType="orderQuestionBean" parameterType="int">
-	select * from `question` where product_id=#{value}
-	</select>
 	<insert id="registReply">
 		insert into `question` values (default,100,null,#{product_id},#{member_id},now(),null,#{question_title},#{question_content},null,null,default,default);
 	</insert>
+	<select id="OrderQuestionList" resultType="orderQuestionBean" parameterType="int">
+	select * from `question` where product_id=#{value}
+	</select> 
   </mapper>

@@ -41,7 +41,7 @@ public class ProductServiceImpl implements ProductService {
 		}
 	}
 	
-	//상품 추천 목록
+	//상품 추천 목록 출력.
 	@Override
 	public void productRecommend(Model model, int product_id) {
 		List<ProductVo> list;
@@ -139,18 +139,18 @@ public class ProductServiceImpl implements ProductService {
 
 	
 	//이용후기 목록 출력.
-	@Override
-	public void productReview(Model model,int product_id) {
-		List<ProductVo> ReviewList;
-		System.out.println("productReview service 작동 확인");		
-		System.out.println(product_id);
-		try {
-				ReviewList = productDao.productReview(product_id);
-				model.addAttribute("productReviewList",ReviewList);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-	}
+//	@Override
+//	public void productReview(Model model,int product_id) {
+//		List<ProductVo> ReviewList;
+//		System.out.println("productReview service 작동 확인");		
+//		System.out.println(product_id);
+//		try {
+//				ReviewList = productDao.productReview(product_id);
+//				model.addAttribute("productReviewList",ReviewList);
+//			} catch (SQLException e) {
+//				e.printStackTrace();
+//			}
+//	}
 
 	//4.10
 	//상품 총 개수

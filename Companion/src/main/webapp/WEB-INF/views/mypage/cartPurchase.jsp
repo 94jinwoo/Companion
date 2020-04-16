@@ -140,7 +140,7 @@ int i=0;
                        <tr>
                            <td>
                            		<!-- 썸네일 -->
-                           		${bean.product_thumb }
+                           		<img src="<spring:url value='${bean.product_thumb }'/>" alt="Img"/>
                            </td>
                            <td>
                            		<!-- 상품이름 --> 

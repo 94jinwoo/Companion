@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="orderReview">
+	
+	<!-- 이용후기 & 이용후기 개수(review_count) 파악  -->
+	<select id="OrderReviewList" resultType="orderReviewBean" parameterType="int">
+		select article.*,(select count(*) from article where product_id=#{product_id}) as review_count from article where board_id=3 and product_id=#{product_id};
+	</select>
+  </mapper>

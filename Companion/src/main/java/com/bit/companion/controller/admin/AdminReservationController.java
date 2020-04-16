@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bit.companion.common.Search;
+import com.bit.companion.model.entity.admin.AdminProductVo;
+import com.bit.companion.model.entity.admin.AdminReservationVo;
 import com.bit.companion.service.admin.AdminReservationService;
 
 @Controller
@@ -31,7 +33,7 @@ public class AdminReservationController {
 		return "admin/reservation_list";
 	}
 	
-	// reservation detail
+	// reservation detail - get
 	@RequestMapping(value="reservation_detail", method = RequestMethod.GET)
 	public String reservationDetail(Model model, @RequestParam int reserve_id) {
 		log.info("get reservation detail");
@@ -40,5 +42,24 @@ public class AdminReservationController {
 		return "admin/reservation_detail";
 	}
 	
+	// reservation edit - get
+	@RequestMapping(value="reservation_edit", method = RequestMethod.GET)
+	public String reservationEdit(Model model, @RequestParam int reserve_id) {
+		log.info("get reservation edit");
+		
+		adminReservationService.detail(model, reserve_id);
+		return "admin/reservation_edit";
+	}
+	
+	// reservation edit - post
+		@RequestMapping(value="reservation_edit", method = RequestMethod.POST)
+		public String reservationDetail(@ModelAttribute AdminReservationVo bean) {
+			log.info("post reservation state edit");
+			System.out.println(bean.getReserve_id());
+			adminReservationService.update(bean);
+			System.out.println(bean.getReserve_id());
+			return "redirect:/admin/reservation_detail?reserve_id="+bean.getReserve_id();
+		}
+
 	
 }

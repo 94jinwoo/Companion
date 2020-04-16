@@ -56,7 +56,7 @@
 table{
 	width:800px;
 	margin: 0 auto;
-	margin-bottom:100px;
+	margin-bottom:20px;
 }
 table tr{
 	height:45px;
@@ -84,4 +84,12 @@ table tr td input{
 #addr3_change{
 	margin-left:0;
 	width:250px;
+}
+.btnbox{
+	width:80%;
+	margin:0 auto;
+	height:80px;
+}
+.backBtn{
+	margin-left:720px;
 }

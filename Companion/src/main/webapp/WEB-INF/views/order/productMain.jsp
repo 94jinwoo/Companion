@@ -117,7 +117,6 @@
                 </nav>
 			   <div class="row">
 			        <%--    <% for(int i=0;i<20;i++){ %>  --%>
-<!-- ${listPage}에서 받아와야 함 .기존에 받던거 다  다시 받아야함...?! 으아아아아ㅏ아!!!!!! -->
 			<c:forEach items="${listPage }" var="bean"> 
 			        <div class="col-md-3 col-sm-6"> 
 			            <div class="product-grid productbox">

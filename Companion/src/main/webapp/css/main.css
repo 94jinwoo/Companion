@@ -6,7 +6,7 @@
 @import "https://fonts.googleapis.com/css?family=Do+Hyeon|Gaegu:300,400,700|Gamja+Flower|Jua|Nanum+Myeongjo:400,700,800|Nanum+Pen+Script&display=swap&subset=korean";
 
 /* FLOAT CLEARFIX*/
-.claerfix::after{
+.clearfix::after{
   content: "";
   display: block;
   clear: both;
@@ -25,16 +25,16 @@ body {
     /* font-family: 'Poppins', sans-serif; */
     /* font-family: 'Nanum Myeongjo', serif; */
     /* font-family: 'Nanum Pen Script', cursive; */
-    /* font-family: 'Do Hyeon', sans-serif; */
+    font-family: 'Do Hyeon', sans-serif;
     /* font-family: 'Jua', sans-serif; */
     /* font-family: 'Gaegu', cursive; */
-    font-family: 'Gamja Flower', cursive;
+    /* font-family: 'Gamja Flower', cursive; */
     color: #333;
     font-weight: 500;
 
 }
 p {
-	font-family: 'Gaegu', cursive;
+	font-family: 'Do Hyeon', sans-serif;
     font-size: 1.1em;
     font-weight: 500;
     line-height: 1.7em;
@@ -148,6 +148,13 @@ span {
     text-align: center;
     border: 2px solid white;
     background: #0F4C81;
+ 
+}
+
+.scroll-up .up{
+	margin:0;
+	font-size:30px;
+	font-weight:800;
 }
 .scroll-up:hover{
     color: #0F4C81;
@@ -219,7 +226,7 @@ span {
 #sidebar .sidebar-header {
     padding: 20px;
     background:#0F4C81;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: 'Do Hyeon', sans-serif;
 }
 
 #sidebar .sidebar-header strong {

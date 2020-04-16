@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/main.css">
-    <link rel="stylesheet" href="${root }css/login/login.css">
+    <link rel="stylesheet" href="${root }css/login/find.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -74,14 +74,14 @@
 	            	
 	            	<form class="form-signin" name="idCheck" method="post" autocomplete="off">
 		                <h1 class="h3 mb-3 font-weight-normal">아이디 찾기</h1>
-		                <label for="name_check" class="sr-only">이름</label>
-		                <input type="text" id="name_check" name="name_check" class="form-control" placeholder="이름를 입력해주세요." required autofocus>
-		                <label for="phone_check" class="sr-only">핸드폰 번호</label>
-		                <input type="text" name="phone_check"  id="phone_check" class="form-control" placeholder="-없이 숫자만 입력해 주세요." required>
+		                <label for="name_check">이름</label>
+		                <input type="text" id="name_check" name="name_check" class="form-control" placeholder="이름를 입력해주세요." required autofocus/><br/>
+		                <label for="phone_check">핸드폰 번호</label>
+		                <input type="text" name="phone_check"  id="phone_check" class="form-control" placeholder="-없이 숫자만 입력해 주세요." required/>
 		                </br>
 		                <div class="float-right">
-			                <button class="btn btn-primary btn-lg" type="submit" id="check_btn">확인</button>
-			                <button class="btn btn-light btn-lg" onclick="history.back();">뒤로</button>
+			                <button class="Cbtn" onclick="history.back();">뒤로</button>
+			                <button class="Cbtn btn-primary" type="submit" id="check_btn">찾기</button>
 		                </div>
 		            </form>
 		

@@ -73,8 +73,8 @@
 			    <input type="hidden" name="searchType" value="${search.searchType }"/>
 			    <input type="hidden" name="keyword" value="${search.keyword }"/>
 				<div class="btn__group">
-					<button type="button" id="modify_Btn" class="btn btn-warning">수정</button>
-				 	<button type="submit" id="delete_Btn" class="btn btn-danger">삭제</button>
+					<button type="button" id="modify_Btn" class="mainBtn">수정</button>
+				 	<button type="submit" id="delete_Btn" class="mainBtn">삭제</button>
 				</div>
 				<input type="hidden" name="article_id" id="article_id" value="${adminArticleOne.article_id }">
 				<table class="table">
@@ -91,30 +91,29 @@
 					<tr class="clearfix">
 						<td class="clearfix">
 						<div class="float--left">
-							<label for="date">[작성일]&nbsp;</label>
+							<label for="date">&nbsp;[작성일]&nbsp;</label>
 							<span>${adminArticleOne.article_date }</span>
 						</div>
 						<div class="rightt float--right">
 							<label for="member_id">[작성자]&nbsp;</label>
-							<span>${adminArticleOne.member_id }</span>
+							<span>${adminArticleOne.member_id }&nbsp;</span>
 						</div>
 						</td>
 					</tr>
 					<tr>
 						<td>
-						<div>
-						<label for="content">content</label>
+						<div class="contentB">
+						<label for="content" class="sr-only">content</label>
 						<span>${adminArticleOne.article_content }</span>
 						</div>
-						<div>
-						<label for="img">원본이미지</label>
+						<div class="imgB">
 						<img alt="원본이미지" src="<spring:url value='${adminArticleOne.article_image }'/>"/>
 						</div>
 						</td>
 					</tr>
 				</tbody>
 				</table>
-				    <button type="button" id="list_Btn" class="btn btn-back">목록</button>
+				    <button type="button" id="list_Btn" class="mainBtn btn-back">목록으로</button>
 			</form>
 		</section>
 		<!-- section [end] -->

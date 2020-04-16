@@ -26,7 +26,6 @@ public class OrderDaoImpl implements OrderDao {
 	@Override
 	public List<OrderVo> OrderSelectAll() throws SQLException{
 		return sqlSession.selectList("order.OrderSelectAll");
-		/* return sqlSession.selectList("order.selectAll"); */
 		
 	}
 
@@ -45,14 +44,18 @@ public class OrderDaoImpl implements OrderDao {
 		System.out.println(orderVo.getCart_option());
 		System.out.println("카트 갯수");
 		System.out.println(orderVo.getCart_quantity());
+		
 		if((orderVo.getProduct_stock())-(orderVo.getOrder_detail_quantity())<0) {
 			System.out.println("상품 재고가 구입하려는 상품 수량보다 부족합니다.");
 		}else {
 			try {
+//  관리자 페이지에서 실행.
+//				sqlSession.insert("order.OrderDeliveryInsert",orderVo);
 				sqlSession.insert("order.OrderProductPurchase",orderVo);
+				
 				sqlSession.insert("order.OrderDetailInsert",orderVo);
+				
 				sqlSession.insert("order.OrderPaymentInsert",orderVo);
-				sqlSession.insert("order.OrderDeliveryInsert",orderVo);
 				sqlSession.update("order.OrderUpdateProductStock",orderVo);
 			System.out.println("정상 출고 처리.");
 			}catch (Exception e) {

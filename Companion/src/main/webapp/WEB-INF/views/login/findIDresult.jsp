@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/main.css">
-    <link rel="stylesheet" href="${root }css/login/login.css">
+    <link rel="stylesheet" href="${root }css/login/find.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -70,29 +70,43 @@
 	                    </div>
 	                </div>
 	            </nav>
-	            <div class="maincontent">
+	            <section class="section">
 	            	
 	            	<c:choose>
 	            		<c:when test="${sessionScope.findIDResult==null }">
-	            			입력하신 정보와 일치하는 정보가 없습니다.</br>
-	            			확인 후 다시 시도해 주시기 바랍니다.
+	            		<div class="box">
+	            			<h4>
+	            				입력하신 정보와 일치하는 정보가 없습니다.</br>
+	            				확인 후 다시 시도해 주시기 바랍니다.
+	            			</h4>
+	            			<div class="btnbox">
 	            			<a href="${root }login/findID">
-	            				<button class="btn btn-primary btn-lg">아이디 찾기</button>
+	            				<button class="Cbtn btn-primary">아이디찾기</button>
 	            			</a>
-	            			<button class="btn btn-light btn-lg" onclick="history.back();">뒤로</button>
+	            			<a href="${root }login">
+	            				<button class="Cbtn">로그인</button>
+	            			</a>
+	            			</div>
+	            			</div>
 	            		</c:when>
 	            		<c:when test="${sessionScope.findIDResult!=null }">
-	            			회원님의 아이디는 <strong>${sessionScope.findIDResult }</strong> 입니다.
-	            			<a class="nav-link active" href="${root }login">
-	            				<button class="btn btn-primary btn-lg">로그인</button>
+	            			<div class="box">
+	            			<h4>
+	            				회원님의 아이디는 <strong>${sessionScope.findIDResult }</strong> 입니다.
+	            			</h4>
+	            			<div class="btnbox">
+	            			<a href="${root }login">
+	            				<button class="Cbtn btn-primary">로그인</button>
 	            			</a>
 	            			<a href="${root }login/findPW">
-	            				<button class="btn btn-light btn-lg">비밀번호찾기</button>
+	            				<button class="Cbtn">비밀번호찾기</button>
 	            			</a>
+	            			</div>
+	            			</div>
 	            		</c:when>
 	            	</c:choose>
 		
-	            </div>
+	            </section>
 			</div>
 			
 		<!-- Footer  -->

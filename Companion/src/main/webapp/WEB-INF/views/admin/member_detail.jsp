@@ -74,7 +74,9 @@
 						<th><label for="member_grade">회원구분</label></th>
 						<td colspan="3">
 							<div class="inputArea">
-								<span>${adminMemberOne.member_grade }</span>
+								<c:if test="${adminMemberOne.member_grade == 0}">관리자</c:if>
+								<c:if test="${adminMemberOne.member_grade == 1}">운영자</c:if>
+								<c:if test="${adminMemberOne.member_grade == 2}">회원</c:if>
 							</div>
 						</td>
 					</tr>
@@ -141,8 +143,10 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type="button" id="modify_Btn" class="btn btn-primary">수정</button>
-			<button type="button" id="list_Btn" class="btn btn-back">목록</button>
+			<div class="btn-groupR">
+				<button type="button" id="modify_Btn" class="mainBtn">수정</button>
+				<button type="button" id="list_Btn" class="mainBtn">목록으로</button>
+			</div>
 		</section>
 		<!-- section [end] -->
 		

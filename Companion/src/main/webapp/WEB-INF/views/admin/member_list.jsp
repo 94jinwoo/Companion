@@ -50,7 +50,7 @@
 				<!-- top menu bar [start] -->
 			    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			        <ul class="nav navbar-nav ml-auto">
-			            <li class="nav-item">
+			            <li class="nav-item active">
 			                <a class="nav-link" href="${root }admin/member_list">회원목록</a>
 			            </li>
 			        </ul>
@@ -83,8 +83,8 @@
 						<tr>
 							<td>
 								<c:set var="grade" value="${bean.member_grade }" />
-								<c:if test="${grade == 0}">최고관리자</c:if>
-								<c:if test="${grade == 1}">관리자</c:if>
+								<c:if test="${grade == 0}">관리자</c:if>
+								<c:if test="${grade == 1}">운영자</c:if>
 								<c:if test="${grade == 2}">회원</c:if>
 							</td>
 							<td><a href="${root }admin/member_detail?member_id=${bean.member_id}">${bean.member_name }</a></td>
@@ -142,7 +142,11 @@
 			"lengthMenu" : [
 				10,20,30,40,50
 			],
-			"pageLength" : 20
+			"pageLength" : 20,
+			"columnDefs" : [
+				{ "orderable" : false, "targets" : 3},
+				{ "orderable" : false, "targets" : 4}
+			]
 		});
 	});
 </script>

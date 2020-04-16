@@ -52,8 +52,8 @@
 	
 	<!-- https://antananarivo.tistory.com/63 -->
 	<resources location="file:///C:/Companion" mapping="imgUpload/**"></resources>
-	
 	<!-- admin interceptor -->
+	<!-- 
 	<beans:bean id="AdminInterceptor" class="com.bit.companion.interceptor.AdminInterceptor" />
 	<interceptors>
 		<interceptor>
@@ -61,5 +61,5 @@
 			<beans:ref bean="AdminInterceptor" />
 		</interceptor>
 	</interceptors>
-	
+	 -->
 </beans:beans>

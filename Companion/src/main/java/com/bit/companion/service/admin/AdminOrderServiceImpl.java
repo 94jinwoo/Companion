@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.bit.companion.model.admin.AdminOrderDao;
+import com.bit.companion.model.entity.admin.AdminOrderDetailVo;
 import com.bit.companion.model.entity.admin.AdminOrderVo;
 
 @Service
@@ -26,17 +27,19 @@ public class AdminOrderServiceImpl implements AdminOrderService {
 		}
 	}
 
-
 	@Override
 	public void detail(Model model, int order_id) {
 		AdminOrderVo bean;
+		List<AdminOrderDetailVo> list;
 		try {
 			bean = adminOrderDao.selectOne(order_id);
+			list = adminOrderDao.selectOneDetail(order_id);
+			
+			model.addAttribute("list",list);
 			model.addAttribute("bean",bean);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 }

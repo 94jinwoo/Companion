@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/main.css">
-    <link rel="stylesheet" href="${root }css/login/login.css">
+    <link rel="stylesheet" href="${root }css/login/find.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -70,28 +70,40 @@
 	                    </div>
 	                </div>
 	            </nav>
-	            <div class="maincontent">
+	            <section class="section">
             		<c:choose>
 	            		<c:when test="${sessionScope.findPWResult==null }">
-	            			입력하신 정보와 일치하는 정보가 없습니다.</br>
-	            			확인 후 다시 시도해 주시기 바랍니다.
+	            			<div class="box">
+	            			<h4>
+	            				입력하신 정보와 일치하는 정보가 없습니다.<br/>
+	            				확인 후 다시 시도해 주시기 바랍니다.
+	            			</h4>
+	            			<div class="btnbox">
 	            			<a href="${root }login/findPW">
-	            				<button class="btn btn-primary btn-lg">비밀번호 찾기</button>
+	            				<button class="Cbtn btn-primary">비밀번호찾기</button>
+	            			<a href="${root }login">
+	            				<button class="Cbtn">로그인</button>
 	            			</a>
-	            			<button class="btn btn-light btn-lg" onclick="history.back();">뒤로</button>
+	            			</div>
 	            		</c:when>
 	            		<c:when test="${sessionScope.findPWResult!=null }">
-							<div>
-								임시 비밀번호를 설정하여</br>
-								회원님의 이메일로 보내드렸습니다.</br>
+							<div class="box">
+							<h4>
+								임시 비밀번호를 설정하여 회원님의 이메일로 보내드렸습니다.</br>
 								해당 비밀번호를 확인 후 다시 로그인 해 주시기 바랍니다.
-							</div>	            	
-	            			<a class="nav-link active" href="${root }login">
-	            				<button class="btn btn-primary btn-lg">로그인</button>
+							</h4>	
+							<div class="btnbox">	
+	            			<a href="${root }login">
+	            				<button class="Cbtn btn-primary">로그인</button>
 	            			</a>
+	            			<a href="${root }">
+							<button class="Cbtn">메인으로</button>
+							</a>
+	            			</div>
+							</div>	            	
 	            		</c:when>
 	            	</c:choose>
-	            </div>
+	            </section>
 			</div>
 			
 		<!-- Footer  -->

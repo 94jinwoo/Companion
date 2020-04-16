@@ -33,12 +33,14 @@
   		<typeAlias alias="adminQuestionBean" type="com.bit.companion.model.entity.admin.AdminQuestionVo"/>
   		<typeAlias alias="adminDataTableBean" type="com.bit.companion.model.entity.admin.AdminDataTableVo"/>
   		<typeAlias alias="adminOrderBean" type="com.bit.companion.model.entity.admin.AdminOrderVo"/>
+  		<typeAlias alias="adminOrderDetailBean" type="com.bit.companion.model.entity.admin.AdminOrderDetailVo"/>
   		
 		<!-- order -->
    		<typeAlias alias="orderBean" type="com.bit.companion.model.entity.order.OrderVo"/>
   		<typeAlias alias="productBean" type="com.bit.companion.model.entity.order.ProductVo"/>
   		<typeAlias alias="likeBean" type="com.bit.companion.model.entity.order.LikeVo"/>
   		<typeAlias alias="orderQuestionBean" type="com.bit.companion.model.entity.order.OrderQuestionVo"/>
+  		<typeAlias alias="orderReviewBean" type="com.bit.companion.model.entity.order.OrderReviewVo"/>
   		
   		<!-- notice -->
   		<typeAlias alias="articleBean" type="com.bit.companion.model.entity.notice.ArticleVo"/>
@@ -70,6 +72,7 @@
   		<mapper resource="mybatis/order/productMapper.xml"/>
   		<mapper resource="mybatis/order/likeMapper.xml"/>
   		<mapper resource="mybatis/order/orderQuestion.xml"/>
+  		<mapper resource="mybatis/order/orderReviewMapper.xml"/>
   		
   		
   		<!-- notice -->

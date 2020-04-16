@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bit.companion.model.entity.admin.AdminOrderDetailVo;
 import com.bit.companion.model.entity.admin.AdminOrderVo;
 
 @Repository
@@ -26,6 +27,11 @@ public class AdminOrderDaoImpl implements AdminOrderDao {
 	@Override
 	public AdminOrderVo selectOne(int order_id) throws SQLException {
 		return sqlSession.selectOne("adminOrder.selectOne",order_id);
+	}
+
+	@Override
+	public List<AdminOrderDetailVo> selectOneDetail(int order_id) throws SQLException {
+		return sqlSession.selectList("adminOrder.selectOneDetail",order_id);
 	}
 
 }

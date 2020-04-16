@@ -152,7 +152,9 @@
 						</tr>
 						</tbody>
 					</table>
-	            	<button type="button" id="pw_change_btn" class="cBtn">뒤로</button>
+					<div class="btnbox">
+	            	<button type="button" id="pw_change_btn" class="cBtn backBtn" onclick="history.back();">이전으로</button>
+	            	</div>
 	            </div>
 			</div>
 			

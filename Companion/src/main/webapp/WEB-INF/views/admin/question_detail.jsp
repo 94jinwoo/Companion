@@ -65,8 +65,8 @@
 			</div>
 			<form role="form" method="post" autocomplete="off" action="${root}admin/question_delete">
 				<div class="btn__group">
-					<button type="button" id="modify_Btn" class="btn btn-warning">답변</button>
-				 	<button type="submit" id="delete_Btn" class="btn btn-danger">삭제</button>
+					<button type="button" id="modify_Btn" class="mainBtn">답변</button>
+				 	<button type="submit" id="delete_Btn" class="mainBtn">삭제</button>
 				</div>
 				<input type="hidden" name="question_id" id="question_id" value="${adminQuestionOne.question_id }">
 				<table class="table">
@@ -91,7 +91,7 @@
 						</div>
 						<div class="float--right">
 							<label>[비밀글여부]&nbsp;</label>
-							<span>${adminQuestionOne.question_secret_name }</span>
+							<span>${adminQuestionOne.question_secret_name }&nbsp;</span>
 						</div>
 						</td>
 					</tr>
@@ -114,7 +114,8 @@
 						</div>
 					</div>
 					<div class="contentB">
-					<label for="content">content</label><span>${adminQuestionOne.question_content }</span>
+					<label for="content" class="sr-only">content</label>
+					<span>${adminQuestionOne.question_content }</span>
 					</div>
 					<table class="table">
 					<tbody>
@@ -135,7 +136,7 @@
 					</tr>
 				</tbody>
 				</table>
-				<button type="button" id="list_Btn" class="btn btn-back">목록</button>
+				<button type="button" id="list_Btn" class="mainBtn btn-back">목록으로</button>
 			</form>
 	
 		</section>

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/main.css">
-    <link rel="stylesheet" href="${root }css/login/login.css">
+    <link rel="stylesheet" href="${root }css/login/find.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -70,26 +70,25 @@
 	                    </div>
 	                </div>
 	            </nav>
-	            <div class="maincontent">
+	            <section class="section">
 	            	
 	            	<form class="form-signin" name="idCheck" method="post" autocomplete="off">
 		                <h1 class="h3 mb-3 font-weight-normal">비밀번호 찾기</h1>
-		                <label for="name_check" class="sr-only">이름</label>
-		                <input type="text" id="name_check" name="name_check" class="form-control" placeholder="이름를 입력해주세요." required autofocus>
-		                <label for="id_check" class="sr-only">아이디</label>
-		                <input type="text" id="id_check" name="id_check" class="form-control" placeholder="아이디를 입력해주세요." required>
-		                <label for="email_check" class="sr-only">이메일</label>
-		                <input type="text" name="email_check"  id="email_check" class="form-control" placeholder="이메일 주소를 입력해 주세요." required>
-		                </br>
+		                <label for="name_check">이름</label>
+		                <input type="text" id="name_check" name="name_check" class="form-control" placeholder="이름를 입력해주세요." required autofocus/><br/>
+		                <label for="id_check">아이디</label>
+		                <input type="text" id="id_check" name="id_check" class="form-control" placeholder="아이디를 입력해주세요." required/><br/>
+		                <label for="email_check">이메일</label>
+		                <input type="text" name="email_check"  id="email_check" class="form-control" placeholder="이메일 주소를 입력해 주세요." required/><br/>
 		                <div class="float-right">
-			                <button class="btn btn-primary btn-lg" type="submit" id="check_btn">확인</button>
-			                <button class="btn btn-light btn-lg" onclick="history.back();">뒤로</button>
+			                <button class="Cbtn" onclick="history.back();">뒤로</button>
+			                <button class="Cbtn btn-primary" type="submit" id="check_btn">확인</button>
 		                </div>
 		            </form>
 		
-	            </div>
+	            </section>
 			</div>
-			
+		<!-- #container end -->
 		<!-- Footer  -->
 			<jsp:include page="../common/footer.jsp"/>
 		<!-- Footer end -->

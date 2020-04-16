@@ -18,7 +18,6 @@
 	<!-- member update -->
 	<update id="updateOne" parameterType="adminMemberViewBean">
 		update `member` set 
-			member_pw = #{member_pw},
 			member_name = #{member_name},
 			member_tel = #{member_tel},
 			member_email = #{member_email},

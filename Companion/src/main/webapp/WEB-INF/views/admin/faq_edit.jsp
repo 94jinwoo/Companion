@@ -66,7 +66,7 @@
 			<div class="main--title">
 				<h1>[Admin] FAQ 수정</h1>
 			</div>
-			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data" onsubmit="return validation_submit();">
 				<!-- 페이지 유지를 위한 정보 -->
 				<input type="hidden" name="page" value="${search.page }"/>
 				<input type="hidden" name="range" value="${search.range }"/>
@@ -98,7 +98,7 @@
 				    </th>
 				    <td>
 				    	<div>
-				    	<input class="input--text" type="text" name="article_date" id="article_date" value="${adminArticleOne.article_date }"/>
+				    	<input class="input--text" type="text" name="article_date" id="article_date" value="${adminArticleOne.article_date }" disabled="disabled"/>
 				    	</div>
 				    </td>	
 				  </tr>
@@ -110,16 +110,7 @@
 					</th>
 				    <td>
 				    	<div>
-				    	<textarea name="article_content" id="article_content" rows="10" cols="80">${adminArticleOne.article_content }</textarea>
-							<script>
-				 				var ckeditor_config = {
-										resize_enable : false,
-										enterMode : CKEDITOR.ENTER_BR,
-										shiftEnterMode : CKEDITOR.ENTER_P,
-										filebrowserUploadUrl : "${pageContext.request.contextPath}/admin/ckUpload"
-								};
-								CKEDITOR.replace('article_content', ckeditor_config);
-							</script>
+				    	<textarea class="ckeditor" name="article_content" id="article_content" rows="10" cols="80">${adminArticleOne.article_content }</textarea>
 				    	</div>
 				    </td>
 				  </tr>
@@ -180,6 +171,20 @@ $("#back_Btn").click(function(){
 		+"&keyword=${search.keyword}"; 
  
 });
+
+//validation
+function validation_submit() {
+	if($("#article_title").val() == ""){
+		alert('제목을 입력해주세요.');
+		$('#article_title').focus();
+		return false;
+	}
+	if(CKEDITOR.instances.article_content.getData() == ""){
+		alert('내용을 입력해주세요.');
+		$('#article_content').focus();
+		return false;
+	}
+};
 </script>
 
 </body>

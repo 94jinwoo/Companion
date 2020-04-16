@@ -93,20 +93,51 @@ SELECT
 							reserve_date LIKE CONCAT('%', '독파크', '%') OR
 							member_id LIKE CONCAT('%', '독파크', '%'));
                             
+		SELECT 
+					o.order_id,
+					o.member_id,
+				    o.order_date,
+				    o.order_phone,
+				    o.order_tel,
+				    o.order_name,
+				    o.order_msg,
+				    o.order_addr1,
+				    o.order_addr2,
+				    o.order_addr3,
+				    o.order_amount,
+				    (SELECT m.member_name from `member` m where o.member_id=m.member_id  and o.order_id=171) as member_name,
+				    (SELECT m.member_phone from `member` m where o.member_id=m.member_id  and o.order_id=171) as member_phone,
+				    (SELECT m.member_email from `member` m where o.member_id=m.member_id and o.order_id=171) as member_email,
+				    (SELECT o_s.order_state_admin from `order_state`o_s, `order` o where o.order_state_id=o_s.order_state_id  and o.order_id=171) as order_state_admin,
+		            (SELECT d.delivery_company from `delivery` d where o.order_id=d.order_id and o.order_id=171) as delivery_company,
+		            (SELECT d.delivery_number from `delivery` d where o.order_id=d.order_id and o.order_id=171) as delivery_number,
+		            (SELECT d_s.delivery_state_name from `delivery_state` d_s, `delivery` d where d_s.delivery_state_id=d.delivery_state_id and o.order_id=d.order_id and o.order_id=171) as delivery_state_name,
+                    (SELECT p.payment_date from `payment` p where p.order_id=o.order_id and o.order_id=171) as payment_date,
+                    (SELECT p.payment_amount from `payment` p where p.order_id=o.order_id and o.order_id=171) as payment_amount,
+                    (SELECT p_s.payment_state_name from `payment_state` p_s, `payment` p where p_s.payment_state_id=p.payment_state_id and p.order_id=171) as payment_state_name
+				    from `order` o where o.order_id=171;
+
+SELECT p.payment_date from `payment` p, `order` o where p.order_id=o.order_id and o.order_id=171;
 select 
-	o.order_id,
-	o.member_id,
-    (select m.member_name from `member` m where o.member_id=m.member_id  and o.order_id=1) as member_name,
-    (select o_s.order_state_admin from `order_state`o_s, `order` o where o.order_state_id=o_s.order_state_id  and o.order_id=1) as order_state_admin,
-    o.order_date,
-    o.order_phone,
-    (select m.member_email from `member` m where o.member_id=m.member_id and o.order_id=1) as member_email
-    from `order` o where o.order_id=1;
+		o_d.order_detail_id,
+        o_d.order_id,
+        o_d.product_id,
+        o_d.order_detail_price,
+        o_d.order_detail_quantity,
+        o_d.order_detail_option,
+        (select p.product_name from `product` p where o_d.product_id=p.product_id and o.order_id=171) as product_name,
+        (select p.product_price from `product` p where o_d.product_id=p.product_id and o.order_id=171) as product_price
+        from `order_detail` o_d, `order` o where o_d.order_id=o.order_id and o.order_id=171;
 
 
-
-select o_s.order_state_admin from `order_state`o_s, `order` o where o.order_state_id=o_s.order_state_id;
-select m.member_email from `member` m, `order` o where o.member_id=m.member_id and o.order_id=1;
 select * from `order_state`;
 select * from `member`;
+select * from `order`;
+select * from `order_detail`;
+select * from `delivery`;
+select * from `delivery_state`;
+select * from `payment`;
+select * from `payment_state`;
+
+delete from `payment` where payment_id=131;
 commit;

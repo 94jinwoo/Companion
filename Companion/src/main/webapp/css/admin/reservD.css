@@ -5,24 +5,12 @@ input{
 	padding-left:10px;
 	width:200px;
 }
+
 .btn__group{
 	width:240px;
 	margin: 0 auto;
 }
-.btn{
-	margin-right:10px;
-	height:40px;
-	width:80px;
-	border: 1px solid #a1a0a0;
-	border-radius:5px;
-	background: #eee linear-gradient(to botton, #fcfcfc, #eee );
-}
-.btn:hover{
-    border: 1px solid gray;
-    background: rgba(0, 0, 0, 0.15);
-} 
-.btn-back{
-	border:1px solid gray;
+.btn-groupR{
 	margin-top:15px;
 	margin-right:150px;
 	float:right;
@@ -55,13 +43,14 @@ table tbody tr td{
 }
 .reserve-box{
 	display:flex;
+	margin-top:5px;
 }
 .reserve-box input{
-	width:50px;
-	margin:auto 0;
+	width:20px;
+	margin-top:6px;
 	
 }
-.reserve-box button{
-	margin:0;
-	float:right;
+.reserve-box label{
+	margin-right:30px;
 }
+

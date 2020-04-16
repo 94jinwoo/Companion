@@ -141,19 +141,24 @@
 					</tr>
 					<tr>
 						<th><label for="reserve_state_id">예약상태</label></th>
-						<td colspan="3">
-							<div class="reserve-box">
-								<input type="hidden" value="${adminReservationOne.reserve_state_id }">
-								<input type="radio" name="reserve_state_id" value="0"/>예약대기
-								<input type="radio" name="reserve_state_id" value="1"/>예약완료
-								<input type="radio" name="reserve_state_id" value="2"/>이용중
-								<input type="radio" name="reserve_state_id" value="3"/>이용완료
+						<td colspan="3" class="clearfix">
+						<form role="form" method="post" autocomplete="off" action="${root}admin/reservation_detail">
+							<div class="reserve-box float--left">
+							
+								<c:if test="${adminReservationOne.reserve_state_id == 0 }"><label>예약대기</label></c:if>
+								<c:if test="${adminReservationOne.reserve_state_id == 1 }"><label>예약완료</label></c:if>
+								<c:if test="${adminReservationOne.reserve_state_id == 2 }"><label>이용중</label></c:if>
+								<c:if test="${adminReservationOne.reserve_state_id == 3 }"><label>이용완료</label></c:if>
 							</div>
+							<div class="float--right">
+								<button type="button" id="modify_Btn" class="Cbtn">상태변경</button>
+							</div>
+						</form>
 						</td>
 					</tr>
 				</tbody>
 			</table>
-			<button type="button" id="list_Btn" class="btn btn-back">목록</button>
+			<button type="button" id="list_Btn" class="mainBtn btn-groupR">목록으로</button>
 		</section>
 		<!-- section [end] -->
 	</div>
@@ -180,11 +185,7 @@ $(document).ready(function(){
 })
 //수정 버튼
 $("#modify_Btn").click(function(){
-	location.href = ${root}+"admin/question_edit?article_id=${adminArticleOne.article_id}"
-		+"&page=${search.page}"
-		+"&range=${search.range}"
-		+"&searchType=${search.searchType}"
-		+"&keyword=${search.keyword}"; 
+	location.href = ${root}+"admin/reservation_edit?reserve_id=${adminReservationOne.reserve_id}";
 });  
 
 // 목록버튼

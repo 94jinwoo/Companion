@@ -110,7 +110,7 @@ update product set category_id=600 where product_id>460;
 update product set category_id=703 where product_id>485;
 select * from product order by product_id desc;
 
-select * from `member` where member_id='1111';
+select * from `member` where member_grade=1;
 
 SELECT * FROM `ARTICLE` WHERE board_id=1 and (article_title LIKE CONCAT('%', 23, '%') OR
 					article_content LIKE CONCAT('%', 23, '%') OR
@@ -150,5 +150,7 @@ UPDATE `PRODUCT` SET
                 
                 
                 
-                
+delete from `product` where product_id>800 and product_id<900
+update product set product_thumb=null where product_id>=1000
 select * from `order`
+select * from `product`
