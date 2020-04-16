@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/main.css">
-    <link rel="stylesheet" href="${root }css/home.css">
+    <link rel="stylesheet" href="${root }css/mypage/mypagequestion.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -91,19 +91,26 @@
                 <hr class="mb-4">
             	</div>
             	<!-- .categories start -->
-	            <div class="maincontent">
-	            	<ul class="list-unstyled components">
+	            <!-- section start -->
+				<section class="section">
+		            <!-- main title -->
+					<div class="main--title">
+							<h1>나의 문의내역</h1>
+	                </div>
+	            	<ul class="list-group list-unstyled components">
 						<c:forEach items="${questionList }" var="bean">
 							<ul>
 								<li class="list-group-item list-group-item-primary">
 									<div class="row">
 										<!-- 나중에 해당 상품페이지로 이동하게 앵커달기 -->
-										<div class="col-2">${bean.product_thumb }</div>
-										<div class="col-7">${bean.product_name }</div>
+										<div class="col-2">
+											<img id="proImg" src="${bean.product_thumb }"alt="Img"/>
+										</div>
+										<div class="col-6">${bean.product_name }</div>
 										<div class="col-2">${bean.question_date }</div>
-										<div class="col-1">
-											<button class="btn btn-primary" onclick="toggleQuestion(${bean.question_id })" id="questionBtn_${bean.question_id }">
-												열기
+										<div class="col-2">
+											<button class="btn btn-primary" style="width:120px;" onclick="toggleQuestion(${bean.question_id })" id="questionBtn_${bean.question_id }">
+												문의내용 보기
 											</button>
 										</div>
 									</div>
@@ -112,9 +119,15 @@
 										<li class="row">
 											<div class="col-1">Q.</div>
 											<div class="col-11">
-												${bean.question_title }</br>
-												${question_content }
+												${bean.question_title }
 											</div>
+											<div class="col-1"></div>
+											<div class="col-10">
+												${bean.question_content }
+											</div>
+				                           	<div class="col-1">
+				                           		<button onclick="deleteQuestion(${bean.question_id})">삭제</button>
+				                           	</div>
 										</li>
 <c:choose>
 <c:when test="${bean.question_answer != null }">
@@ -122,9 +135,6 @@
 			                           	<div class="col-1">A.</div>
 			                           	<div class="col-10">
 			                           		${bean.question_answer }
-			                           	</div>
-			                           	<div class="col-1">
-			                           		<button onclick="deleteQuestion(${bean.question_id})">삭제</button>
 			                           	</div>
 									</li>
 </c:when>
@@ -134,9 +144,6 @@
 			                           	<div class="col-10">
 			                           		답변 대기중입니다. 신속히 답변드릴 수 있도록 하겠습니다.
 			                           	</div>
-			                           	<div class="col-1">
-			                           		<button onclick="deleteQuestion(${bean.question_id})">삭제</button>
-			                           	</div>
 									</li>
 </c:otherwise>
 </c:choose>
@@ -144,7 +151,7 @@
 							</ul>
 						</c:forEach>	            
 	            	</ul>
-	            </div>
+	            </section>
 			</div>
 			
         <div id="footer">
@@ -186,10 +193,10 @@
         function toggleQuestion(question_id){
         	if($('#'+question_id).css("display")=="none"){
         		$('#'+question_id).show();
-        		$('#questionBtn_'+question_id).text("닫기");
+        		$('#questionBtn_'+question_id).text("닫 기");
         	}else{
         		$('#'+question_id).hide();
-        		$('#questionBtn_'+question_id).text("열기");
+        		$('#questionBtn_'+question_id).text("문의내용 보기");
         	}
         }
         
