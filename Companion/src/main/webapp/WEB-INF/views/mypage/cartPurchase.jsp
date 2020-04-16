@@ -204,9 +204,11 @@ i+=1;
                         <tr>
                             <th>주소</th>
                             <td>
-                            	<input type="text" class="input--text" placeholder="${sessionScope.memberVo.member_addr1 }" aria-label="email" aria-describedby="basic-addon1" readonly> </br> 
-                            	<input type="text" class="input--text" placeholder="${sessionScope.memberVo.member_addr2 }" aria-label="email" aria-describedby="basic-addon1" readonly>
-                            	<input type="text" class="input--text" placeholder="${sessionScope.memberVo.member_addr3 }" aria-label="email" aria-describedby="basic-addon1" readonly>
+                            	<input type="text" class="form-control" placeholder="${sessionScope.memberVo.member_addr1 }" aria-label="email" aria-describedby="basic-addon1" readonly>
+                            	<div class="flexG">
+                            	<input type="text" class="form-control" placeholder="${sessionScope.memberVo.member_addr2 }" aria-label="email" aria-describedby="basic-addon1" readonly>
+                            	<input type="text" class="form-control" placeholder="${sessionScope.memberVo.member_addr3 }" aria-label="email" aria-describedby="basic-addon1" readonly>
+                            	</div>
                             </td>
                         </tr>
                     </tbody>
@@ -239,7 +241,7 @@ i+=1;
 						<tr>
 							<th>받으실 곳</th>
 							<td><input type="text" class="input--text" name="order_addr1" id="sample6_postcode" placeholder="우편번호">
-								<button type="button" id="postSearch">우편 검색</button> </br> 
+								<button type="button" id="postSearch" class="cBtn">우편검색</button> </br> 
 								<input type="text" class="input--text" name="order_addr2" id="sample6_address" placeholder="주소"> 
 								<input type="text" class="input--text" name="order_addr3" id="sample6_detailAddress" placeholder="상세주소"></td>
 						</tr>
