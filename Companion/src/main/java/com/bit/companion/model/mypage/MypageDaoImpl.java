@@ -1,5 +1,6 @@
 package com.bit.companion.model.mypage;
 
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -11,6 +12,9 @@ import org.springframework.stereotype.Repository;
 
 import com.bit.companion.model.entity.login.MemberVo;
 import com.bit.companion.model.entity.mypage.MyCartOrderVo;
+import com.bit.companion.model.entity.mypage.MyPurchaseDetailVo;
+import com.bit.companion.model.entity.mypage.MyPurchaseListVo;
+import com.bit.companion.model.entity.mypage.MyReviewVo;
 import com.bit.companion.model.entity.mypage.MypageCartVo;
 import com.bit.companion.model.entity.mypage.MypageQuestionVo;
 import com.bit.companion.model.entity.mypage.MypageReserveVo;
@@ -213,6 +217,54 @@ public class MypageDaoImpl implements MypageDao {
 		questionInfo.put("member_id", member_id);
 		questionInfo.put("question_id", question_id);
 		return sqlSession.delete("mypage.deleteOneQuestion", questionInfo);
+	}
+
+	@Override
+	public List purchaseList(String member_id) {
+		List<MyPurchaseListVo> list=(List) sqlSession.selectList("mypage.purchaseList", member_id);
+		for(int i=0; i<list.size();i++) {
+			MyPurchaseListVo bean=list.get(i);
+			String order_state_id=bean.getOrder_state_id();
+			String order_state_member=sqlSession.selectOne("mypage.orderStateName",order_state_id);
+			bean.setOrder_state_member(order_state_member);
+		}
+		return list;
+	}
+
+	@Override
+	public List purchaseDetailList(String order_id,Date order_date,String order_state_member) {
+		List<MyPurchaseDetailVo> list=(List) sqlSession.selectList("mypage.purchaseDetailList", order_id);
+		for(int i=0; i<list.size();i++) {
+			MyPurchaseDetailVo bean=list.get(i);
+			String product_id=bean.getProduct_id();
+			bean.setProduct_thumb(sqlSession.selectOne("mypage.productThumb",product_id));
+			bean.setOrder_date(order_date);
+			bean.setOrder_state_member(order_state_member);
+			bean.setProduct_name(sqlSession.selectOne("mypage.productName",product_id));
+		}
+		return list;
+	}
+
+	@Override
+	public MyPurchaseListVo myPurchaseDetail(String order_id, String member_id) {
+		HashMap<String,String> myInfo=new HashMap<>();
+		myInfo.put("order_id", order_id);
+		myInfo.put("member_id", member_id);
+		MyPurchaseListVo bean=sqlSession.selectOne("mypage.myPurchaseDetail", myInfo);
+		String order_state_id=bean.getOrder_state_id();
+		String order_state_member=sqlSession.selectOne("mypage.orderStateName",order_state_id);
+		bean.setOrder_state_member(order_state_member);
+		return bean;
+	}
+
+	@Override
+	public int myAskProductInsert(MypageQuestionVo bean) {
+		return sqlSession.insert("mypage.askProuctInsert", bean);
+	}
+
+	@Override
+	public int myReviewInsert(MyReviewVo bean) {
+		return sqlSession.insert("mypage.reviewProductInsert",bean);
 	}
 	
 

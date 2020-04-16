@@ -17,6 +17,9 @@
   		<typeAlias alias="mypageReserveBean" type="com.bit.companion.model.entity.mypage.MypageReserveVo"/>
   		<typeAlias alias="mypageCartBean" type="com.bit.companion.model.entity.mypage.MypageCartVo"/>
   		<typeAlias alias="myCartOrderBean" type="com.bit.companion.model.entity.mypage.MyCartOrderVo"/>
+  		<typeAlias alias="myPurchaseListBean" type="com.bit.companion.model.entity.mypage.MyPurchaseListVo"/>
+  		<typeAlias alias="myPurchaseDetailBean" type="com.bit.companion.model.entity.mypage.MyPurchaseDetailVo"/>
+  		<typeAlias alias="myReviewProduct" type="com.bit.companion.model.entity.mypage.MyReviewVo"/>
   		
   		<!-- admin -->
   		<typeAlias alias="adminArticleBean" type="com.bit.companion.model.entity.admin.AdminArticleVo"/>

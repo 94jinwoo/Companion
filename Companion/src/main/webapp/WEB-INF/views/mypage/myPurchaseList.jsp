@@ -83,32 +83,86 @@
 	                </div>
 	            </nav>
 	            <div class="maincontent">
-	            	<div><!-- 1개 아이템의 구역 나중에 foreach로 감싸기-->
-						<div><!-- 머리부분 -->
-							<div>주문일 2020-04-12</div>
-							<div>주문상세보기</div>
-						</div>						
-						<div><!-- 내용부분 -->
-							<table>
-								<td>
-									썸네일	
-								</td>
-								<td>
-									상품이름 : ㅁㄴㅇㄹㅇㄴㅁㄹㄴㅁㅇㄹㄴㅇㄹ </br>
-									옵션 : ㅁㅇㄹㄴㅁㅇㄻㄴㅇㅁㄴ </br>
-									가격 : ㅁㅁㅁㅁ원 / ㅁ개
-								</td>
-								<td>
-									배달상태</br>
-									배송조회</br>
-									문의하기</br>
-									교환신청</br>
-									반품신청</br>
-									구매후기 쓰기</br>
-								</td>
-							</table>
-						</div>
-	            	</div>
+	            	<c:forEach items="${myPurchaseDetail }" var="bean">
+		            	<div><!-- 1개 아이템의 구역 나중에 foreach로 감싸기-->
+								<table>
+									<thead>
+										<tr>
+											<th colspan="2" style="text-align:left">주문일 ${bean.order_date }</th>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<th>
+												<a href="${root }purchaseDetail?o=${bean.order_id }" style="text-decoration:none">주문상세보기</a>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td rowspan="7"><!-- 내용부분 -->
+												${bean.product_thumb }
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>
+												<!-- 배달상태 -->
+												${bean.order_state_member }
+											</td>
+										</tr>
+										<tr>
+											<td colspan="5">
+												상품이름 : ${bean.product_name } </br>
+											</td>
+											<td>
+												배송조회
+											</td>
+										</tr>
+										<tr>
+											<td colspan="5">
+												옵션 : ${bean.order_detail_option } </br>
+											</td>
+											<td>
+												<a href="${root }askProduct?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none">
+													<button>문의하기</button>
+												</a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="5">
+												가격 : ${bean.order_detail_price }원 / ${bean.order_detail_quantity }개
+											</td>										
+											<td>
+												<a href="${root }askExchange?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none">
+													<button>교환신청</button>
+												</a>
+											</td>										
+										</tr>
+										<tr>
+											<td colspan="5"></td>
+											<td>
+												<a href="${root }askReturn?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none">
+													<button>반품신청</button>
+												</a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="5"></td>
+											<td>
+												<a href="${root }myReview?a=${bean.product_id }" style="text-decoration:none">
+													<button>구매후기 쓰기</button>
+												</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+		            	</div>
+	            	</c:forEach>
 	            </div>
 			</div>
 			

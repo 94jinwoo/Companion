@@ -1,5 +1,6 @@
 package com.bit.companion.service.mypage;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bit.companion.model.entity.mypage.MyCartOrderVo;
+import com.bit.companion.model.entity.mypage.MyPurchaseListVo;
+import com.bit.companion.model.entity.mypage.MyReviewVo;
 import com.bit.companion.model.entity.mypage.MypageCartVo;
 import com.bit.companion.model.entity.mypage.MypageQuestionVo;
 import com.bit.companion.model.entity.mypage.MypageReserveVo;
@@ -101,6 +104,32 @@ public class MypageServiceImpl implements MypageService {
 	public int deleteOneQuestion(String member_id, String question_id) {
 		return mypageDao.deleteOneQuestion(member_id,question_id);
 	}
+
+	@Override
+	public List purchaseList(String member_id) {
+		return mypageDao.purchaseList(member_id);
+	}
+
+	@Override
+	public List purchaseDetailList(String order_id, Date order_date,String order_state_member) {
+		return mypageDao.purchaseDetailList(order_id,order_date,order_state_member);
+	}
+
+	@Override
+	public MyPurchaseListVo myPurchaseDetail(String order_id, String member_id) {
+		return mypageDao.myPurchaseDetail(order_id,member_id);
+	}
+
+	@Override
+	public int myAskProductInsert(MypageQuestionVo bean) {
+		return mypageDao.myAskProductInsert(bean);
+	}
+
+	@Override
+	public int myReviewInsert(MyReviewVo bean) {
+		return mypageDao.myReviewInsert(bean);
+	}
+
 
 
 }
