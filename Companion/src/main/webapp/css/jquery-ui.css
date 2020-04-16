@@ -316,6 +316,7 @@ button.ui-button::-moz-focus-inner {
 	width: 17em;
 	padding: .2em .2em 0;
 	display: none;
+	margin-left:142px;
 }
 .ui-datepicker .ui-datepicker-header {
 	position: relative;
@@ -364,7 +365,8 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-datepicker select.ui-datepicker-month,
 .ui-datepicker select.ui-datepicker-year {
-	width: 45%;
+	width: 30%;
+	height: 25px;
 }
 .ui-datepicker table {
 	width: 100%;

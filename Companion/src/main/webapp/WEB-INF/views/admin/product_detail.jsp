@@ -75,8 +75,9 @@
 			</div>
 			<form role="form" method="post" autocomplete="off" action="${root}admin/product_delete">
 			<div class="btn__group">
-				<button type="button" id="edit_Btn" class="btn btn-primary">수정</button>
-				<button type="submit" id="delete_Btn" class="btn btn-danger">삭제</button>
+				<button type="button" id="edit_Btn" class="mainBtn">수정</button>
+				<button type="submit" id="delete_Btn" class="mainBtn">삭제</button>
+				<button type="button" id="back_Btn" class="mainBtn">목록</button>
 			</div>
 			<div id="detail">
 			<input type="hidden" name="product_id" value="${adminProductOne.product_id }"/>
@@ -159,9 +160,6 @@
 			<div class="inputArea">
 				<label for="product_content">상품소개</label>
 				<div class="inputAreaC">${adminProductOne.product_content }</div>
-			</div>
-					<button type="button" id="back_Btn" class="btn btn-back">목록</button>
-			</div>
 			</form>
 		</section>
 	</div><!-- #content [end] -->

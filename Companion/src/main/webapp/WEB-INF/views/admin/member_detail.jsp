@@ -143,8 +143,10 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type="button" id="modify_Btn" class="btn btn-primary">수정</button>
-			<button type="button" id="list_Btn" class="btn btn-back">목록</button>
+			<div class="btn-groupR">
+				<button type="button" id="modify_Btn" class="mainBtn">수정</button>
+				<button type="button" id="list_Btn" class="mainBtn">목록으로</button>
+			</div>
 		</section>
 		<!-- section [end] -->
 		

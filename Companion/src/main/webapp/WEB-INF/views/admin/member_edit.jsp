@@ -159,8 +159,10 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type="submit" id="update_Btn" class="btn">수정</button>
-			<button type="button" id="back_Btn" class="btn">취소</button>
+			<div class="btn-groupR">
+				<button type="submit" id="update_Btn" class="mainBtn">수정</button>
+				<button type="button" id="back_Btn" class="mainBtn">취소</button>
+			</div>
 			</form>
 		</section>
 		<!-- section [end] -->
