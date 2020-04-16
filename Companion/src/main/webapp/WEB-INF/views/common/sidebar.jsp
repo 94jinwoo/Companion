@@ -89,7 +89,7 @@
                                  <a href="${root }admin/admin_home" class="nav-link">관리자페이지</a>
                              </li>
                              <li>
-                                 <a href="${root }mypagechk" class="nav-link">나의정보</a>
+                                 <a href="${root }mypagechk" class="nav-link">마이페이지</a>
                              </li>
                              <li>
                                  <a href="${root }logout" class="nav-link">로그아웃</a>
@@ -110,7 +110,7 @@
                          <ul class="list-unstyled conn">
                              <p>${sessionScope.memberVo.member_name }님이<br/>로그인 중입니다.</p>
                              <li>
-                                 <a href="${root }mypagechk" class="nav-link">나의정보</a>
+                                 <a href="${root }mypagechk" class="nav-link">마이페이지</a>
                              </li>
                              <li>
                                  <a href="${root }mycart" class="nav-link">장바구니</a>

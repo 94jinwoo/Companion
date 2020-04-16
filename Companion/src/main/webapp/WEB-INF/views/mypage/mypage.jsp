@@ -70,7 +70,7 @@
 	                                        <a class="nav-link" href="${root }mypagequestion">문의조회</a>
 	                                    </li>
 	                                    <li class="nav-item">
-	                                        <a class="nav-link" href="${root }mypagechk">나의정보</a>
+	                                        <a class="nav-link" href="${root }mypagechk">마이페이지</a>
 	                                    </li>
 	                                    <li class="nav-item">
 	                                        <a class="nav-link" href="${root }logout">로그아웃</a>
@@ -136,7 +136,7 @@
 							<td>
 								
 								<input type="text" name="addr1_change" id="addr1_change" placeholder="5글자 숫자" readonly="readonly" class="input--text" value="${sessionScope.memberVo.member_addr1 }"/>
-								<input type="button" onclick="sample2_execDaumPostcode()" class="cBtn" value="우편번호 찾기"></br>
+								<button type="button" onclick="sample2_execDaumPostcode()" class="cBtn" value="우편번호 찾기">우편번호 찾기</button></br>
 								
 								<input type="text" name="addr2_change" id="addr2_change" placeholder="주소" readonly="readonly" class="input--text" value="${sessionScope.memberVo.member_addr2 }"/>
 								
@@ -419,7 +419,7 @@
     // 직접 element_layer의 top,left값을 수정해 주시면 됩니다.
     function initLayerPosition(){
         var width = 400; //우편번호서비스가 들어갈 element의 width
-        var height = 600; //우편번호서비스가 들어갈 element의 height
+        var height = 500; //우편번호서비스가 들어갈 element의 height
         var borderWidth = 3; //샘플에서 사용하는 border의 두께
 
         // 위에서 선언한 값들을 실제 element에 넣는다.
@@ -427,8 +427,8 @@
         element_layer.style.height = height + 'px';
         element_layer.style.border = borderWidth + 'px solid';
         // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
-        element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth + 200) + 'px';
-        element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth - 100) + 'px';
+        element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth + 50) + 'px';
+        element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth - 55) + 'px';
     }
     
 	  //email validation 처리 함수

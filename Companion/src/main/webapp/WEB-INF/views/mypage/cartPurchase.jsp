@@ -122,10 +122,17 @@
                
                 
                       <h4>주문상세내역</h4>
-               <table class="table">
+               <table class="table table_layout">
+               <colgroup>
+               <col class="col1">
+               <col class="col2">
+               <col class="col3">
+               <col class="col4">
+               <col class="col5">
+               </colgroup>
                    <thead>
                        <tr>
-	                       <th colspan='2'>상품 이름</th>
+	                       <th>상품 이름</th>
 	                       <th>옵션</th>
 	                       <th>수량</th>
 	                       <th>상품금액</th>
@@ -138,15 +145,15 @@ int i=0;
 %>
 <c:forEach items="${cartOrderList }" var="bean">
                        <tr>
-                           <td>
+                           <td class="imgTbox">
                            		<!-- 썸네일 -->
-                           		<img src="<spring:url value='${bean.product_thumb }'/>" alt="Img"/>
-                           </td>
-                           <td>
+                           		<div class="imgBox">
+	                           		<img id="proImg" src="${bean.product_thumb }" alt="Img"/>
+                           		</div>
                            		<!-- 상품이름 --> 
                            		${bean.product_name }
                            		<input type="hidden" name="product_name<%=i %>" id="product_name<%=i %>" value="${bean.product_name }">
-                     	   </td>
+                           </td>
                            <td>
                            		<!-- 옵션 -->   
                            		${bean.cart_option }

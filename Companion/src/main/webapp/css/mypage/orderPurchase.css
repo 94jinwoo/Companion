@@ -1,3 +1,12 @@
+/* TABLE_LAYOUT STYLE */
+.table_layout { margin:0px; table-layout:fixed; }
+.table_layout .col1 { width: auto; } /* 상품이름 */
+.table_layout .col2 { width: 200px; } /* 옵션 */
+.table_layout .col3 { width: 150px; } /* 수량 */
+.table_layout .col4 { width: 150px; } /* 상품금액 */
+.table_layout .col5 { width: 150px; } /* 합계금액 */
+
+
 ul{
     list-style: none;
 }
@@ -119,13 +128,11 @@ ul{
     margin: 0;
 }
 .table tbody tr{
-    height: 70px;
 }
 .table tbody td{
-    height: 60px;
-    padding-top: 20px;
-   
     text-align: center;
+    padding:8px;
+    line-height:5;
 }
 
 .table td span{
@@ -142,6 +149,23 @@ ul{
     align-items: center;
     background: tomato;
 }
+.imgTbox{
+	display:flex;
+	margin-left:10px;
+    
+	
+}
+.imgBox{
+	width:80px;
+	height:80px;
+	margin-right:20px;
+}
+
+.imgBox #proImg{
+	width:100%;
+	heigth:100%;
+}
+
 .section .coast{
     border: 1.5px solid rgb(112, 112, 112);
     border-radius: 5px;
