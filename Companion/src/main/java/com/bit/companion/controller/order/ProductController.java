@@ -58,18 +58,12 @@ public class ProductController {
 	}else {
 		memberVo.setMember_id((memberVo.getMember_id()));
 	}
-
-		
-		//		session.setAttribute("ProductMemberVo", memberVo);
-//		productService.productReview(model, product_id);
-	System.out.println("어디가 에러?");
-		//문의글 리스트 조회.
-		/* orderQuestionService.replyList(product_id); */
-		System.out.println("내가볼땐 여기임!?");
 		//이용 후기 리스트 출력
 		orderReviewService.orderReviewList(model, product_id);
+		
 		//상품 상세 페이지 정보 출력.
 		productService.detail(model, product_id);	
+		
 		//상품 추천
 		productService.productRecommend(model, product_id);
 		

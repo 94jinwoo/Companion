@@ -33,7 +33,7 @@
 	<!-- MAIN JS -->
 	<script src="${root }js/main.js"></script>
 <script type="text/javascript">
-function replyList(){
+/* function replyList(){
 	console.log("리플라이리스트 자동실행?");
 	console.log("replyList() function run...");
 				var product_id = ${productDetailOne.product_id};
@@ -43,9 +43,6 @@ function replyList(){
 				}else if(member_id!=null) {
 					var member_id = ${memberVo.member_id }; 
 				}
-				
-				
-				 /* var member_id = ${memberVo.member_id };  */
 				
 	 $.getJSON("productDetail/ReplyList"+"?idx="+product_id,function(data){  
 				var str= "";
@@ -68,7 +65,7 @@ function replyList(){
 console.log("어디가 오류일까?? 1111");
 
 console.log("어디가 오류일까?? 222222");
-
+ */
 
 </script>	
 	
@@ -463,7 +460,7 @@ console.log("어디가 오류일까?? 222222");
 									<c:if test="${memberVo.member_id==null}">
 										<button type="button" class="btn btn-primary"
 											data-toggle="modal" data-target="#exampleModal">문의하기</button>
-										<div class="modal fade" id="exampleModal" tabindex="-1"
+										<div class="modal" id="exampleModal" tabindex="-1"
 											role="dialog" aria-labelledby="exampleModalLabel"
 											aria-hidden="true">
 											<div class="modal-dialog" role="document">
@@ -503,9 +500,8 @@ console.log("어디가 오류일까?? 222222");
 									</c:if>
 									<c:if test="${memberVo.member_id!=null}">
 										<!-- 문의하기 창 생셩 modal test -->
-										<button type="button" class="btn btn-primary"
-											data-toggle="modal" data-target="#questionModal">문의하기</button>
-										<div class="modal fade" id="questionModal" tabindex="-1"
+										<button id="questionModal" type="button" class="btn btn-primary">문의하기</button>
+										<div class="modal" id="questionModalForm" tabindex="-1"
 											role="dialog" aria-labelledby="questionModalLabel"
 											aria-hidden="true">
 											<div class="modal-dialog" role="document">
@@ -547,61 +543,16 @@ console.log("어디가 오류일까?? 222222");
 										</div>
 
 										<!-- 문의하기 창 생셩 modal test -->
-
-
-										<%-- <section class="replyForm">
-
-											 <form role="form" method="post" autocomplete="off"> 
-											<input type="hidden" name="product_id" id="product_id" value="${productDetailOne.product_id}"/>
-										 	<input type="hidden" name="member_id" id="member_id" value="${memberVo.member_id }"/>
-											<div class="input_area"><!--null 값 validation 처리 할 것!!!!!!!!!!!!!!!!  -->
-													<label for="question_title" id="question_label">문의 제목</label>
-												<textarea name="question_title" id="question_title">문의 제목</textarea>
-												<textarea name="question_content" id="question_content">컨텐츠</textarea>
-											</div>
-													<button type="button" id="reply_btn">문의글 달기</button>
-											</form>
-										</section>  --%>
 									</c:if>
-
 									<!-- 여기에 문의글 ajax 들어감 -->
 									<section class="replyList">
 										<h4>최근 문의글 목록</h4>
-										<div class="col-lg-12">
-
-							<!-- 				<table class="table--replyList">
-												<thead>
-													<tr>
-														<th scope="col" class="border-0 bg-light">
-															<div class="p-2 px-3 text-uppercase">아이디</div>
-														</th>
-														<th scope="col" class="border-0 bg-light">
-															<div class="p-2 px-3 text-uppercase">문의 제목</div>
-														</th>
-														<th scope="col" class="border-0 bg-light">
-															<div class="py-2 text-uppercase">문의 내용</div>
-														</th>
-														<th scope="col" class="border-0 bg-light">
-															<div class="p-2 px-3 text-uppercase">작성 날짜</div>
-														</th>
-													</tr>
-												</thead>
-												<tbody>
-													function에서 답글 리스트 넣는 위치.
-
-												</tbody>
-											</table> -->
-										</div>
 										<div id="345">
 										
 										</div>
 	
     <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}" width="1000px" height="300px"  frameborder="0" scrolling="no"></iframe>
-								<p>여기 아닌가요?</p>
-									
-									<!-- 	<script>
-												replyList(); 
-										</script> -->
+						
 										 
 									</section>
 									<!-- 여기에 문의글 ajax 들어감. -->
@@ -637,18 +588,15 @@ console.log("어디가 오류일까?? 222222");
 							<c:forEach items="${productRecommendList }" var="bean">
 								<td><a
 									href="${root }order/productDetail?idx=${bean.product_id}">
-										<img src="http://placehold.it/50x60&text=recmdThumb"
+										<img src="${productDetailOne.product_image }"
 										width="180" height="60" class="img-fluid"
-										alt="Responsive image" style="display: block;">
+										alt="dummy에 이미지가 없어서 그래요.." style="display: block;">
 										<p style="text-align: center;">${bean.product_name }</p>
 								</a></td>
 							</c:forEach>
 						</tr>
 					</tbody>
 				</table>
-
-
-
 
 				<!-- 위치테스트여 -->
 
@@ -665,7 +613,6 @@ console.log("어디가 오류일까?? 222222");
 		<!-- Footer end -->
 	</div>
 	<!-- #content end -->
-	</div>
 	<!-- wrapper end -->
 
 	<!-- jQuery -->
@@ -682,11 +629,11 @@ console.log("어디가 오류일까?? 222222");
 	<script type="text/javascript">
 	
 	/* iframe reload */
-			$(document).on('click','#reply_btn',function(){
+		/* 	$(document).on('click','#reply_btn',function(){
 				var url = '${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}';
 				
 				$('#question.jsp').attr('src',url);
-			});
+			}); */
 
 			
 			
@@ -730,10 +677,6 @@ console.log("어디가 오류일까?? 222222");
 							document.getElementById("order_detail_option").value = selectbox;
 							console.log(document.getElementById("cart_option"));
 						});
-		/*
-		상품 재고 보다 구입수량 많으면 막으려고 함. 
-		$("#paybtn")
-		*/
 	</script>
 	<!--  form 다중 액션 처리 -->
 	<script type="text/javascript">
@@ -754,7 +697,8 @@ console.log("어디가 오류일까?? 222222");
 
 <!-- ajax 문의글 리스트 출력. -->
 		<script type="text/javascript">
-				/* function replyList(){
+				/*  ajax */ 
+			/* 	function replyList(){
 					console.log("리플라이리스트 자동실행?");
 					console.log("replyList() function run...");
 								var product_id = ${productDetailOne.product_id};
@@ -768,7 +712,7 @@ console.log("어디가 오류일까?? 222222");
 								
 								  var member_id = ${memberVo.member_id };  
 								
-					 $.getJSON("productDetail/registReply"+"?idx="+product_id,function(data){  
+					 $.getJSON("productDetail/ReplyList"+"?idx="+product_id,function(data){  
 								var str= "";
 						$(data).each(function(){
 							console.log(data);
@@ -788,9 +732,13 @@ console.log("어디가 오류일까?? 222222");
 				}
 				console.log("어디가 오류일까?? 1111");
 				
-				console.log("어디가 오류일까?? 222222"); */
+				console.log("어디가 오류일까?? 222222");  */
 		/* ajax 문의 글 입력 할 때 */
-		$("#reply_btn").click(function() {
+	 	/* $("#reply_btn").click(function(){ */
+	 	$("#questionModal").click(function(){
+	 		
+	 		$('#questionModalForm').modal('show');
+	 			$("#reply_btn").click(function(){
 							console.log("어디가 오류일까?? 버튼이녀석이니??");
 							var formObj = $(".replyForm form[role='form']");
 							var product_id = $("#product_id").val();
@@ -801,7 +749,7 @@ console.log("어디가 오류일까?? 222222");
 							}
 							var question_title = $("#question_title").val();
 							var question_content = $("#question_content").val();
-							/*session.setAttribute("product_id",$("#product_id").val());  */
+	
 
 							var data = {
 								product_id : product_id,
@@ -809,30 +757,27 @@ console.log("어디가 오류일까?? 222222");
 								question_content : question_content,
 								member_id : member_id
 							};
-							$
-									.ajax({
-										url : "${root }order/productDetail/question",
-										type : "post",
-										data : data,
-										contentType : "application/x-www-form-urlencoded; charset=UTF-8",
-										success : function() {
-											replyList();
-											$("#question_content").val("");
-											$("#question_title").val("");
-											alert('문의 글이 정상 등록되었습니다.');
-											$('#questionModal').modal('hide');
-											var url = '${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}';
-											
-											$('#question.jsp').attr('src',url);
-										}
-
-									})
-									
-							console.log(data);
-
+							$.ajax({
+								url : "${root }order/productDetail/question",
+								type : "post",
+								data : data,
+								contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+								success : function() {
+									 /* replyList();  */
+									$("#question_content").val("");
+									$("#question_title").val("");
+									alert('문의 글이 정상 등록되었습니다.'); 
+									$('#questionModalForm').modal('hide');
+									var url = '${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}';
+									$('#question.jsp').attr('src',url);
+									console.log('아이프레임 리로드 하라고 새끼들아 화나게 하지말고');
+									document.getElementById("question.jsp").contentDocument.location.reload(true);	
+								}
 							})
-									
-									
+							console.log(data);
+							}) 
+							
+	 	})					
 									
 
 		/* ajax end  */
