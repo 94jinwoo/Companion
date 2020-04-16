@@ -84,6 +84,53 @@
 			</c:forEach>
 		</tbody>
 	</table>
+<!-- pagination [start] -->
+	    <nav aria-label="Page navigation example">
+				<%
+					String str = request.getQueryString();
+					String result = str.substring(0,5);
+					String REALURL = (String)request.getAttribute("trueUrl");
+					out.println((String)request.getAttribute("trueUrl"));
+					out.println((String)request.getAttribute("trueUrl"));
+					out.println((String)request.getAttribute("trueUrl"));
+					out.println((String)request.getAttribute("trueUrl"));
+					out.println((String)request.getAttribute("trueUrl"));
+					if(REALURL==null){
+						REALURL="";
+					}
+				%>
+	 	   <ul class="pagination">
+			<c:if test="${prev }">
+		  	     <li class="page-item">
+		    	   	<a class="page-link" href="${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}&num=${startPageNum - 1 }" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				    </a>
+		   		</li>
+			</c:if>
+		   		<c:forEach begin="${startPageNum }" end="${endPageNum }" var="num">
+					<span>
+						<c:if test="${select != num}">
+							<li class="page-item">
+								<a class="page-link" href="${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}&num=${num }">${num }</a>
+							</li>	
+					  	</c:if>  
+					 	<c:if test="${select == num}">
+							<li class="page-item">
+								<a class="page-link bg-info text-white" href="#" >${num }</a>	
+							</li>	
+					 	</c:if>		
+					</span>
+				</c:forEach>
+			<c:if test="${next }">
+				<li class="page-item">
+					<a class="page-link" href="${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}&num=${endPageNum + 1 }" aria-label="Next">
+		     		   <span aria-hidden="true">&raquo;</span>
+		   			</a>	      
+		      </li>
+	      	</c:if>
+	      </ul>
+		</nav>
+	<!-- pagination [end] -->	
 
 </body>
 <script>

@@ -13,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bit.companion.model.entity.login.MemberVo;
 import com.bit.companion.model.entity.order.OrderQuestionVo;
@@ -30,8 +29,6 @@ public class OrderQuestionController {
 	//문의하기 댓글 작성.
 	@RequestMapping(value="order/productDetail/question", method=RequestMethod.POST)
 	public String registReply(OrderQuestionVo orderQuestionVo,HttpSession session) throws SQLException {
-		logger.debug("OrderQuestion Controller 동작중!!!!");
-		System.out.println("컨트롤러 동작하는거 맞냐..");
 		MemberVo member = (MemberVo)session.getAttribute("memberVo");
 		orderQuestionVo.setMember_id(member.getMember_id());
 		System.out.println(member.getMember_id());
@@ -55,9 +52,23 @@ public class OrderQuestionController {
 	
 	
 	@RequestMapping(value="order/productDetail/ReplyList",method = RequestMethod.GET)
-	public String ReplyList(Model model,@RequestParam("idx") int product_id) throws SQLException{
+	public String ReplyList(Model model,@RequestParam("idx") int product_id,@RequestParam("num") int num) throws SQLException{
 		System.out.println("OrderQuestionController 의 ReplyList function 실행....");
-		List<OrderQuestionVo> reply = orderQuestionService.replyList(model, product_id);
+		OrderPagenation page = new OrderPagenation();
+		page.setPostNum(4);
+		page.setNum(num);
+		page.setCount(orderQuestionService.replyListAllCount(model, product_id));
+		System.out.println("총 상품 개수 : "+ page.getCount());
+		model.addAttribute("pageNum",page.getPageNum());
+		model.addAttribute("startPageNum",page.getStartPageNum());
+		model.addAttribute("endPageNum",page.getEndPageNum());
+		model.addAttribute("prev",page.getPrev());
+		model.addAttribute("next",page.getNext());
+		model.addAttribute("select",num);
+		
+		 
+		
+		List<OrderQuestionVo> reply = orderQuestionService.replyList(model, product_id,page.getDisplayPost(),page.getPostNum());
 		
 		return "order/question";
 	}

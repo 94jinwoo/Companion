@@ -7,7 +7,13 @@
 	<insert id="registReply">
 		insert into `question` values (default,100,null,#{product_id},#{member_id},now(),null,#{question_title},#{question_content},null,null,default,default);
 	</insert>
-	<select id="OrderQuestionList" resultType="orderQuestionBean" parameterType="int">
-	select * from `question` where product_id=#{value}
+	<select id="OrderQuestionList" resultType="orderQuestionBean" parameterType="hashMap">
+	select * from `question` where product_id=#{product_id} limit #{displayPost},#{postNum};
 	</select> 
+	<!-- 페이징용 모든 문의글 개수 파악  -->
+	<select id="ReplyListAllCount" resultType= "int" parameterType="int">
+	select count(*) as count from `question` where product_id=#{value};
+	</select>
+	
+	
   </mapper>
