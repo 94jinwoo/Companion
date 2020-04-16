@@ -56,9 +56,7 @@ public class OrderQuestionController {
 	
 	@RequestMapping(value="order/productDetail/ReplyList",method = RequestMethod.GET)
 	public String ReplyList(Model model,@RequestParam("idx") int product_id) throws SQLException{
-		logger.debug("GET replyList call...");
-		logger.debug("왜 특정 데이터만 실행?");
-		
+		System.out.println("OrderQuestionController 의 ReplyList function 실행....");
 		List<OrderQuestionVo> reply = orderQuestionService.replyList(model, product_id);
 		
 		return "order/question";
