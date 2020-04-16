@@ -65,10 +65,7 @@ public class OrderQuestionController {
 		model.addAttribute("prev",page.getPrev());
 		model.addAttribute("next",page.getNext());
 		model.addAttribute("select",num);
-		
-		 
-		
-		List<OrderQuestionVo> reply = orderQuestionService.replyList(model,product_id,page.getDisplayPost(),page.getPostNum());
+		orderQuestionService.replyList(model,product_id,page.getDisplayPost(),page.getPostNum());
 		
 		return "order/question";
 	}
