@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/main.css">
-    <link rel="stylesheet" href="${root }css/mypage/mypage.css">
+    <link rel="stylesheet" href="${root }css/mypage/mypurchaselist.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -58,7 +58,7 @@
 	                            <c:otherwise>
 	                                <ul class="nav navbar-nav ml-auto">
 	                                    <li class="nav-item">
-	                                        <a class="nav-link" href="${root }mypurchaselist">주문내역</a>
+	                                        <a class="nav-link active" href="${root }mypurchaselist">주문내역</a>
 	                                    </li>
 	                                    <li class="nav-item">
 	                                        <a class="nav-link" href="${root }mypagereserve">예약조회</a>
@@ -82,88 +82,60 @@
 	                    </div>
 	                </div>
 	            </nav>
-	            <div class="maincontent">
+	            <div class="categories">
+					<a href="#homeSubmenu"> <i class="fas fa-user"></i> 마이페이지</a> <span></span> 
+					<a href="#"> <i class="fas fa-shopping-cart"></i> 주문내역</a>
+					<hr class="mb-4">
+				</div>
+	            <section class="section">
+
 	            	<c:forEach items="${myPurchaseDetail }" var="bean">
-		            	<div><!-- 1개 아이템의 구역 나중에 foreach로 감싸기-->
-								<table>
-									<thead>
-										<tr>
-											<th colspan="2" style="text-align:left">주문일 ${bean.order_date }</th>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<th>
-												<a href="${root }purchaseDetail?o=${bean.order_id }" style="text-decoration:none">주문상세보기</a>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td rowspan="7"><!-- 내용부분 -->
-												${bean.product_thumb }
-											</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td>
-												<!-- 배달상태 -->
-												${bean.order_state_member }
-											</td>
-										</tr>
-										<tr>
-											<td colspan="5">
-												상품이름 : ${bean.product_name } </br>
-											</td>
-											<td>
-												배송조회
-											</td>
-										</tr>
-										<tr>
-											<td colspan="5">
-												옵션 : ${bean.order_detail_option } </br>
-											</td>
-											<td>
-												<a href="${root }askProduct?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none">
-													<button>문의하기</button>
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td colspan="5">
-												가격 : ${bean.order_detail_price }원 / ${bean.order_detail_quantity }개
-											</td>										
-											<td>
-												<a href="${root }askExchange?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none">
-													<button>교환신청</button>
-												</a>
-											</td>										
-										</tr>
-										<tr>
-											<td colspan="5"></td>
-											<td>
-												<a href="${root }askReturn?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none">
-													<button>반품신청</button>
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td colspan="5"></td>
-											<td>
-												<a href="${root }myReview?a=${bean.product_id }" style="text-decoration:none">
-													<button>구매후기 쓰기</button>
-												</a>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-		            	</div>
+					<div class="topB clearfix">
+						<div class="float--left">
+							<label for="date">&nbsp;[주문일자]&nbsp;</label>
+							<span>${bean.order_date }</span>
+						</div>
+						<div class="float--right">
+							<a href="${root }purchaseDetail?o=${bean.order_id }" style="text-decoration:none" class="cBtn">주문상세보기</a>
+						</div>
+					</div>
+					<div class="bigB clearfix">	
+						<div class="imgBox float--left">
+							<img id="proImg" src="${bean.product_thumb }" alt="Img"/>
+						</div>
+						<div class="contentBox float--right">
+							<table class="table">
+								<thead></thead>
+								<tbody>
+									<tr>
+									<th>상품이름</th>
+									<td id="tx">${bean.product_name }</td>
+									</tr>
+									<tr>
+									<th>옵션</th>
+									<td id="tx">${bean.order_detail_option }</td>
+									</tr>
+									<tr>
+									<th>가격</th>
+									<td id="tx">${bean.order_detail_price }원 / ${bean.order_detail_quantity }개</td>
+									</tr>
+									<tr>
+									<th>배송상태</th>
+									<td id="tx">${bean.order_state_member }</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="btnBox float--right">
+							<a href="#" style="text-decoration:none" class="cBtn innerBtn">배송조회</a>
+							<a href="${root }askProduct?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">문의하기</a>
+							<a href="${root }askExchange?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">교환신청</a>
+							<a href="${root }askReturn?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">반품신청</a>
+							<a href="${root }myReview?a=${bean.product_id }" style="text-decoration:none" class="cBtn innerBtn">후기작성</a>
+						</div>
+					</div>
 	            	</c:forEach>
-	            </div>
+	            </section>
 			</div>
 			
         <!-- Footer  -->

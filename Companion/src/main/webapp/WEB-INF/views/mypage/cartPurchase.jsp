@@ -122,10 +122,17 @@
                
                 
                       <h4>주문상세내역</h4>
-               <table class="table">
+               <table class="table table_layout">
+               <colgroup>
+               <col class="col1">
+               <col class="col2">
+               <col class="col3">
+               <col class="col4">
+               <col class="col5">
+               </colgroup>
                    <thead>
                        <tr>
-	                       <th colspan='2'>상품 이름</th>
+	                       <th>상품 이름</th>
 	                       <th>옵션</th>
 	                       <th>수량</th>
 	                       <th>상품금액</th>
@@ -138,15 +145,15 @@ int i=0;
 %>
 <c:forEach items="${cartOrderList }" var="bean">
                        <tr>
-                           <td>
+                           <td class="imgTbox">
                            		<!-- 썸네일 -->
-                           		<img src="<spring:url value='${bean.product_thumb }'/>" alt="Img"/>
-                           </td>
-                           <td>
+                           		<div class="imgBox">
+	                           		<img id="proImg" src="${bean.product_thumb }" alt="Img"/>
+                           		</div>
                            		<!-- 상품이름 --> 
                            		${bean.product_name }
                            		<input type="hidden" name="product_name<%=i %>" id="product_name<%=i %>" value="${bean.product_name }">
-                     	   </td>
+                           </td>
                            <td>
                            		<!-- 옵션 -->   
                            		${bean.cart_option }
@@ -197,9 +204,11 @@ i+=1;
                         <tr>
                             <th>주소</th>
                             <td>
-                            	<input type="text" class="input--text" placeholder="${sessionScope.memberVo.member_addr1 }" aria-label="email" aria-describedby="basic-addon1" readonly> </br> 
-                            	<input type="text" class="input--text" placeholder="${sessionScope.memberVo.member_addr2 }" aria-label="email" aria-describedby="basic-addon1" readonly>
-                            	<input type="text" class="input--text" placeholder="${sessionScope.memberVo.member_addr3 }" aria-label="email" aria-describedby="basic-addon1" readonly>
+                            	<input type="text" class="form-control" placeholder="${sessionScope.memberVo.member_addr1 }" aria-label="email" aria-describedby="basic-addon1" readonly>
+                            	<div class="flexG">
+                            	<input type="text" class="form-control" placeholder="${sessionScope.memberVo.member_addr2 }" aria-label="email" aria-describedby="basic-addon1" readonly>
+                            	<input type="text" class="form-control" placeholder="${sessionScope.memberVo.member_addr3 }" aria-label="email" aria-describedby="basic-addon1" readonly>
+                            	</div>
                             </td>
                         </tr>
                     </tbody>
@@ -232,7 +241,7 @@ i+=1;
 						<tr>
 							<th>받으실 곳</th>
 							<td><input type="text" class="input--text" name="order_addr1" id="sample6_postcode" placeholder="우편번호">
-								<button type="button" id="postSearch">우편 검색</button> </br> 
+								<button type="button" id="postSearch" class="cBtn">우편검색</button> </br> 
 								<input type="text" class="input--text" name="order_addr2" id="sample6_address" placeholder="주소"> 
 								<input type="text" class="input--text" name="order_addr3" id="sample6_detailAddress" placeholder="상세주소"></td>
 						</tr>

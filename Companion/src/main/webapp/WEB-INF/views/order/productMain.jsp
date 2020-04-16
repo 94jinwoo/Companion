@@ -43,7 +43,7 @@
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="nav navbar-nav ml-auto">
 								<li class="nav-item">
-                                <a class="nav-link active" href="/companion/order/productMain?c=100&num=1">사료</a>
+                                <a class="nav-link" href="/companion/order/productMain?c=100&num=1">사료</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/companion/order/productMain?c=200&num=1">간식</a>
@@ -106,7 +106,7 @@
 				<nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                     <!-- sideBar에서 클릭하면 category_id를 넘겨야 함.  -->
-                        <li class="breadcrumb-item active" aria-current="page"><a href="${root }order/productMain/orderByLike?<%=request.getQueryString() %>">추천순</a></li>
+                        <li class="breadcrumb-item" aria-current="page"><a href="${root }order/productMain/orderByLike?<%=request.getQueryString() %>">추천순</a></li>
                         <li class="breadcrumb-item"><a href="${root }order/productMain/orderBySelling?<%=request.getQueryString() %>">판매인기순</a></li>
                         <li class="breadcrumb-item"><a href="${root }order/productMain/orderByLowPrice?<%=request.getQueryString() %>">낮은가격순</a></li>
                         <li class="breadcrumb-item"><a href="${root }order/productMain/orderByHighPrice?<%=request.getQueryString() %>">높은가격순</a></li>
