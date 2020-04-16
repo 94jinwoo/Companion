@@ -87,7 +87,7 @@
 	            <div class="categories">
                 <a href="#homeSubmenu">
                 	<i class="fas fa-shopping-cart"></i>
-                    장바구니
+              		      장바구니
                 </a>
                 <hr class="mb-4">
             	</div>
