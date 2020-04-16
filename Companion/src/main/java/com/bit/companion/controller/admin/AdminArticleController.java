@@ -123,7 +123,7 @@ public class AdminArticleController {
 				bean.setArticle_thumb(File.separator+"imgUpload"+ymdPath+File.separator+"s"+File.separator+"s_"+fileName);
 			} else {
 				//fileName = File.separator + "images" + File.separator + "none.png";
-				fileName = "/images/none.png";
+				fileName = "/images/null.png";
 				bean.setArticle_image(fileName);
 				bean.setArticle_thumb(fileName);
 			}

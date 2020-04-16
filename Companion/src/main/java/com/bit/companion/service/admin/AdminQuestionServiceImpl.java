@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import com.bit.companion.model.admin.AdminQuestionDao;
@@ -56,6 +57,7 @@ public class AdminQuestionServiceImpl implements AdminQuestionService{
 	}
 
 	// question edit
+	@Transactional
 	@Override
 	public void update(AdminQuestionVo bean) {
 		try {
@@ -66,6 +68,7 @@ public class AdminQuestionServiceImpl implements AdminQuestionService{
 	}
 
 	// question delete
+	@Transactional
 	@Override
 	public void delete(AdminQuestionVo bean) {
 		try {

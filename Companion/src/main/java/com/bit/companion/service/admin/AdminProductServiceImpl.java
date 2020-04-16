@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import com.bit.companion.model.admin.AdminProductDao;
@@ -58,6 +59,7 @@ public class AdminProductServiceImpl implements AdminProductService{
 	}
 
 	// product add - insertOne
+	@Transactional
 	@Override
 	public void insert(AdminProductVo bean) {
 		try {
@@ -68,6 +70,7 @@ public class AdminProductServiceImpl implements AdminProductService{
 	}
 
 	// product edit - updateOne
+	@Transactional
 	@Override
 	public void update(AdminProductVo bean) {
 		try {
@@ -78,6 +81,7 @@ public class AdminProductServiceImpl implements AdminProductService{
 	}
 
 	// product delete - deleteOne
+	@Transactional
 	@Override
 	public void delete(int product_id) {
 		try {
@@ -86,6 +90,5 @@ public class AdminProductServiceImpl implements AdminProductService{
 			e.printStackTrace();
 		}
 	}
-
 
 }
