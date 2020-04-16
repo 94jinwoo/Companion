@@ -548,7 +548,7 @@
 							<c:forEach items="${productRecommendList }" var="bean">
 								<td><a
 									href="${root }order/productDetail?idx=${bean.product_id}">
-										<img src="${productDetailOne.product_image }"
+										<img src="${bean.product_image }"
 										width="180" height="60" class="img-fluid"
 										alt="dummy에 이미지가 없어서 그래요.." style="display: block;">
 										<p style="text-align: center;">${bean.product_name }</p>
