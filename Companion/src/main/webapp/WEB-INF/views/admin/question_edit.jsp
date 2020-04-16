@@ -33,6 +33,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<!-- .container-fluid [start] -->
 			<div class="container-fluid">
+			
 				<!-- menu toggle button [start] -->
 			    <button type="button" id="sidebarCollapse" class="btn btn-jacaranda">
 			        <i class="fas fa-align-left"></i>
@@ -44,6 +45,7 @@
 			        <i class="fas fa-align-justify"></i>
 			    </button>
 			    <!-- menu toggle button [end] -->
+			    
 				<!-- top menu bar [start] -->
 			    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			        <ul class="nav navbar-nav ml-auto">
@@ -53,8 +55,10 @@
 			        </ul>
 			    </div>
 			    <!-- top menu bar [end] -->
+			
 			</div>
 			<!-- .container-fluid [end] -->
+		
 		</nav>
 		<!-- nav [end] -->
 		
@@ -76,8 +80,17 @@
 					<option value="">전체</option>
 					</select>
 				    </td>	
-				  </tr>
-				  <tr>
+				    <th>
+				    	<div>
+				    	<label for="title">비밀글여부</label>
+				    	</div>
+				    </th>
+				    <td>
+				    	<div>
+				    	<label>${adminQuestionOne.question_secret_name }</label>
+				    	<input type="hidden" name="question_secret_name" id="question_secret_name" value="${adminQuestionOne.question_secret_name }"/>
+				    	</div>
+				    </td>	
 				    <th>
 				    	<div>
 				    	<label for="title">문의상태</label>
@@ -93,19 +106,6 @@
 				  <tr>
 				    <th>
 				    	<div>
-				    	<label for="title">비밀글여부</label>
-				    	</div>
-				    </th>
-				    <td>
-				    	<div>
-				    	<label>${adminQuestionOne.question_secret_name }</label>
-				    	<input type="hidden" name="question_secret_name" id="question_secret_name" value="${adminQuestionOne.question_secret_name }"/>
-				    	</div>
-				    </td>	
-				  </tr>
-				  <tr>
-				    <th>
-				    	<div>
 				    	<label for="title">주문ID</label>
 				    	</div>
 				    </th>
@@ -115,21 +115,6 @@
 				    	<input type="hidden" name="order_id" id="order_id" value="${adminQuestionOne.order_id }" />
 				    	</div>
 				    </td>	
-				  </tr>
-				  <tr>
-				    <th>
-				    	<div>
-				    	<label for="title">상품명</label>
-				    	</div>
-				    </th>
-				    <td>
-				    	<div>
-	  					<label>${adminQuestionOne.product_name }</label>
-				    	<input type="hidden" name="product_name" id="product_name" value="${adminQuestionOne.product_name }"/>
-				    	</div>
-				    </td>	
-				  </tr>
-				  <tr>
 				    <th>
 				    	<div>
 				    	<label for="title">회원ID</label>
@@ -142,8 +127,18 @@
 				    	</div>
 				    </td>	
 				  </tr>
-				  
 				  <tr>
+				    <th>
+				    	<div>
+				    	<label for="title">상품명</label>
+				    	</div>
+				    </th>
+				    <td colspan="3">
+				    	<div>
+	  					<label>${adminQuestionOne.product_name }</label>
+				    	<input type="hidden" name="product_name" id="product_name" value="${adminQuestionOne.product_name }"/>
+				    	</div>
+				    </td>	
 				    <th>
 				    	<div>
 				    	<label for="date">문의일</label>
@@ -159,6 +154,17 @@
 				  <tr>
 				    <th>
 				    	<div>
+				    	<label for="title">제목</label>
+				    	</div>
+				    </th>
+				    <td colspan="3">
+				    	<div>
+				    	<label>${adminQuestionOne.question_title }</label>
+				    	<input type="hidden" name="question_title" id="question_title" value="${adminQuestionOne.question_title }"/>
+				    	</div>
+				    </td>
+				     <th>
+				    	<div>
 				    	<label for="date">답변일</label>
 				    	</div>
 				    </th>
@@ -170,20 +176,7 @@
 			    			<label>${adminQuestionOne.question_answerdate }</label>
 				    	</c:if>
 				    	</div>
-				    </td>	
-				  </tr>
-				  <tr>
-				    <th>
-				    	<div>
-				    	<label for="title">제목</label>
-				    	</div>
-				    </th>
-				    <td>
-				    	<div>
-				    	<label>${adminQuestionOne.question_title }</label>
-				    	<input type="hidden" name="question_title" id="question_title" value="${adminQuestionOne.question_title }"/>
-				    	</div>
-				    </td>	
+				    </td>		
 				  </tr>
 				  <tr>
 				    <th>
@@ -204,7 +197,7 @@
 						<label for="content">답변</label>
 						</div>
 					</th>
-				    <td>
+				    <td colspan="5">
 				    	<div>
 				    	<textarea class="ckeditor" name="question_answer" id="question_answer" rows="10" cols="80">${adminQuestionOne.question_answer }</textarea>
 				    	</div>

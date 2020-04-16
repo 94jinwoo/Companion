@@ -80,7 +80,7 @@
 	                                        <a class="nav-link" href="${root }mypagereserve">예약조회</a>
 	                                    </li>
 	                                    <li class="nav-item">
-	                                        <a class="nav-link" href="#">주문내역</a>
+	                                        <a class="nav-link" href="${root }mypurchaselist">주문내역</a>
 	                                    </li>
 	                                    <li class="nav-item">
 	                                        <a class="nav-link" href="${root }mycart">장바구니</a>

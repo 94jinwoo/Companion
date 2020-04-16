@@ -32,46 +32,6 @@
 	<script src="${root}js/bootstrap/bootstrap.js"></script>
 	<!-- MAIN JS -->
 	<script src="${root }js/main.js"></script>
-<script type="text/javascript">
-/* function replyList(){
-	console.log("리플라이리스트 자동실행?");
-	console.log("replyList() function run...");
-				var product_id = ${productDetailOne.product_id};
-				
-				if(member_id==null){
-					var member_id="";
-				}else if(member_id!=null) {
-					var member_id = ${memberVo.member_id }; 
-				}
-				
-	 $.getJSON("productDetail/ReplyList"+"?idx="+product_id,function(data){  
-				var str= "";
-		$(data).each(function(){
-			console.log(data);
-			var question_date = new Date(this.question_date);
-			question_date = question_date.toLocaleDateString("ko-US");
-				str += "<tr data-productId='" + this.product_id + "'>"
-			     + "<td class='border-0 align-middle userName'>" + this.member_id + "</td>"
-			     + "<td class='border-0 align-middle replyTitle'>" + this.question_title + "</td>"
-			     + "<td class='border-0 align-middle replyContent'>" + this.question_content + "</td>"
-			     + "<td class='border-0 align-middle date'>" + question_date + "</td>"
-			     + "</tr>"; 
-			     console.log(question_date);
-		});
-			  $("table.table--replyList tbody").html(str); 
-			  $("345").html(str);
-	});
-}
-console.log("어디가 오류일까?? 1111");
-
-console.log("어디가 오류일까?? 222222");
- */
-
-</script>	
-	
-	
-	
-	
 </head>
 
 <body>
@@ -551,7 +511,7 @@ console.log("어디가 오류일까?? 222222");
 										
 										</div>
 	
-    <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}" width="1000px" height="300px"  frameborder="0" scrolling="no"></iframe>
+    <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}&num=1" width="1000px" height="300px"  frameborder="0" scrolling="no"></iframe>
 						
 										 
 									</section>
@@ -627,16 +587,6 @@ console.log("어디가 오류일까?? 222222");
 	<script src="${root}js/order/productDetail.js"></script>
 	<script src="${root}js/order/productDetail.js"></script>
 	<script type="text/javascript">
-	
-	/* iframe reload */
-		/* 	$(document).on('click','#reply_btn',function(){
-				var url = '${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}';
-				
-				$('#question.jsp').attr('src',url);
-			}); */
-
-			
-			
 		$(function() {
 			$('.bt_up').click(function() {
 				var n = $('.bt_up').index(this);
@@ -697,91 +647,57 @@ console.log("어디가 오류일까?? 222222");
 
 <!-- ajax 문의글 리스트 출력. -->
 		<script type="text/javascript">
-				/*  ajax */ 
-			/* 	function replyList(){
-					console.log("리플라이리스트 자동실행?");
-					console.log("replyList() function run...");
-								var product_id = ${productDetailOne.product_id};
-								
-								if(member_id==null){
-									var member_id="";
-								}else if(member_id!=null) {
-									var member_id = ${memberVo.member_id }; 
-								}
-								
-								
-								  var member_id = ${memberVo.member_id };  
-								
-					 $.getJSON("productDetail/ReplyList"+"?idx="+product_id,function(data){  
-								var str= "";
-						$(data).each(function(){
-							console.log(data);
-							var question_date = new Date(this.question_date);
-							question_date = question_date.toLocaleDateString("ko-US");
-								str += "<tr data-productId='" + this.product_id + "'>"
-							     + "<td class='border-0 align-middle userName'>" + this.member_id + "</td>"
-							     + "<td class='border-0 align-middle replyTitle'>" + this.question_title + "</td>"
-							     + "<td class='border-0 align-middle replyContent'>" + this.question_content + "</td>"
-							     + "<td class='border-0 align-middle date'>" + question_date + "</td>"
-							     + "</tr>"; 
-							     console.log(question_date);
-						});
-		 				  $("table.table--replyList tbody").html(str); 
-		 				  $("345").html(str);
-					})
-				}
-				console.log("어디가 오류일까?? 1111");
-				
-				console.log("어디가 오류일까?? 222222");  */
-		/* ajax 문의 글 입력 할 때 */
-	 	/* $("#reply_btn").click(function(){ */
-	 	$("#questionModal").click(function(){
-	 		
+	var overlap = false;
+
+	/* 중복 입력 방지 */	
+ 	$("#questionModal").off().on('click', function(){ 
 	 		$('#questionModalForm').modal('show');
-	 			$("#reply_btn").click(function(){
-							console.log("어디가 오류일까?? 버튼이녀석이니??");
-							var formObj = $(".replyForm form[role='form']");
-							var product_id = $("#product_id").val();
-							if (member_id == null) {
-								var member_id = "";
-							} else if (member_id != null) {
-								var member_id = $("#member_id").val();
-							}
-							var question_title = $("#question_title").val();
-							var question_content = $("#question_content").val();
-	
-
-							var data = {
-								product_id : product_id,
-								question_title : question_title,
-								question_content : question_content,
-								member_id : member_id
-							};
-							$.ajax({
-								url : "${root }order/productDetail/question",
-								type : "post",
-								data : data,
-								contentType : "application/x-www-form-urlencoded; charset=UTF-8",
-								success : function() {
-									 /* replyList();  */
-									$("#question_content").val("");
-									$("#question_title").val("");
-									alert('문의 글이 정상 등록되었습니다.'); 
-									$('#questionModalForm').modal('hide');
-									var url = '${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}';
-									$('#question.jsp').attr('src',url);
-									console.log('아이프레임 리로드 하라고 새끼들아 화나게 하지말고');
-									document.getElementById("question.jsp").contentDocument.location.reload(true);	
-								}
-							})
+	 				
+	 				var doSomething = $("#reply_btn").off().on('click', function(){
+	 					
+	 					console.log("믿었던 너가 두번 실행하는 배신을 하는거냐?");
+	 					
+	 			/* 				$('#questionModal').bind('click'); */
+			 						console.log("어디가 오류일까?? 버튼이녀석이니??");
+								/* 	var formObj = $(".replyForm form[role='form']"); */
+									var product_id = $("#product_id").val();
+									if (member_id == null) {
+										var member_id = "";
+									} else if (member_id != null) {
+										var member_id = $("#member_id").val();
+									}
+									var question_title = $("#question_title").val();
+									var question_content = $("#question_content").val();
+									var data = {
+										product_id : product_id,
+										question_title : question_title,
+										question_content : question_content,
+										member_id : member_id
+									};
+										$.ajax({
+											url : "${root }order/productDetail/question",
+											type : "post",
+											data : data,
+											contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+											success : function() {
+												$("#question_content").val("");
+												$("#question_title").val("");
+												alert('문의 글이 정상 등록되었습니다.');  
+												$('#questionModalForm').modal('hide');
+												 document.getElementById("question.jsp").contentDocument.location.reload(true); 	
+												/* var url = '${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}'; 
+												$('#question.jsp').attr('src',url); */ 
+											
+											}
+										});
 							console.log(data);
-							}) 
-							
-	 	})					
-									
-
+	 						});
+	 			/* 	$('#questionModal').unbind('click',function(){
+						 doSomething();
+					});	 */
+	 				
 		/* ajax end  */
-
+ 		});
 	</script>
 
 

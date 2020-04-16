@@ -158,7 +158,7 @@
 			</table>
 			</div>
 			<div class="inputArea">
-				<label for="product_content">상품소개</label>
+				<label for="product_content" class="sr-only">상품소개</label>
 				<div class="inputAreaC">${adminProductOne.product_content }</div>
 			</form>
 		</section>

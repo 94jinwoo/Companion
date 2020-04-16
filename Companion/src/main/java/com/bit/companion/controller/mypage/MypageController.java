@@ -1,14 +1,15 @@
 package com.bit.companion.controller.mypage;
 
-import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,7 +19,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.bit.companion.model.entity.login.MemberVo;
 import com.bit.companion.model.entity.mypage.MyCartOrderList;
 import com.bit.companion.model.entity.mypage.MyCartOrderVo;
+import com.bit.companion.model.entity.mypage.MyPurchaseDetailVo;
+import com.bit.companion.model.entity.mypage.MyPurchaseListVo;
+import com.bit.companion.model.entity.mypage.MyReviewVo;
 import com.bit.companion.model.entity.mypage.MypageCartVo;
+import com.bit.companion.model.entity.mypage.MypageQuestionVo;
 import com.bit.companion.service.mypage.MypageService;
 
 @Controller
@@ -42,7 +47,117 @@ public class MypageController {
 		if(bean==null) {
 			return "redirect:/login";
 		}
+		String member_id=bean.getMember_id();
+		/* order_id찾아오기 */
+		List<MyPurchaseListVo> myPurchaseList=(List) mypageService.purchaseList(member_id);
+		String order_id="";
+		List<MyPurchaseDetailVo> myPurchaseDetailList=new ArrayList<>();
+		for(int i=0; i<myPurchaseList.size();i++) {
+			order_id=myPurchaseList.get(i).getOrder_id();
+			java.sql.Date order_date=myPurchaseList.get(i).getOrder_date();
+			String order_state_member=myPurchaseList.get(i).getOrder_state_member();
+			List<MyPurchaseDetailVo> list=(List) mypageService.purchaseDetailList(order_id,order_date,order_state_member);
+			myPurchaseDetailList.addAll(list);
+		}
+		session.setAttribute("myPurchaseDetail", myPurchaseDetailList);
 		return "mypage/myPurchaseList";
+	}
+	
+	@RequestMapping(value="/purchaseDetail",method=RequestMethod.GET)
+	public String myPurchaseDetail(Model model,@RequestParam("o") String order_id,HttpSession session) {
+		MemberVo bean=(MemberVo) session.getAttribute("memberVo");
+		if(bean==null) {
+			return "redirect:/login";
+		}
+		String member_id=bean.getMember_id();
+		MyPurchaseListVo myPurchaseDetail=(MyPurchaseListVo) mypageService.myPurchaseDetail(order_id,member_id);
+		model.addAttribute("myPurchaseDetail", myPurchaseDetail);
+		java.sql.Date order_date=myPurchaseDetail.getOrder_date();
+		String order_state_member=myPurchaseDetail.getOrder_state_member();
+		List<MyPurchaseDetailVo> orderList=(List) mypageService.purchaseDetailList(order_id,order_date,order_state_member);
+		model.addAttribute("purchaseDetailList", orderList);
+		return "mypage/myPurchaseDetail";
+	}
+	
+	@RequestMapping(value="/askProduct",method=RequestMethod.GET)
+	public String myAskProduct(Model model,HttpSession session,@RequestParam("a") String product_id,@RequestParam("b") String order_id) {
+		MemberVo bean=(MemberVo) session.getAttribute("memberVo");
+		if(bean==null) {
+			return "redirect:/login";
+		}
+		model.addAttribute("product_id", product_id);
+		model.addAttribute("order_id",order_id);
+		return "mypage/myAskProduct";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/askProduct",method=RequestMethod.POST)
+	public int myAskProductInsert(HttpSession session,String question_type_id,String order_id,String product_id,String question_title,String question_content) {
+		MypageQuestionVo bean=new MypageQuestionVo();
+		
+		MemberVo member=(MemberVo)session.getAttribute("memberVo");
+		String member_id=member.getMember_id();
+		
+		bean.setMember_id(member_id);
+		bean.setQuestion_type_id(question_type_id);
+		bean.setOrder_id(order_id);
+		bean.setProduct_id(product_id);
+		bean.setQuestion_title(question_title);
+		bean.setQuestion_content(question_content);
+		
+		int result=0;
+		result=mypageService.myAskProductInsert(bean);
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/registReview",method=RequestMethod.POST)
+	public int myReviewInsert(HttpSession session,String product_id,String review_title,String review_content) {
+		MyReviewVo bean=new MyReviewVo();
+		
+		MemberVo member=(MemberVo)session.getAttribute("memberVo");
+		String member_id=member.getMember_id();
+		
+		bean.setMember_id(member_id);
+		bean.setProduct_id(product_id);
+		bean.setArticle_title(review_title);
+		bean.setArticle_content(review_content);
+		
+		int result=0;
+		result=mypageService.myReviewInsert(bean);
+		return result;
+	}
+	
+	@RequestMapping(value="/askExchange",method=RequestMethod.GET)
+	public String myAskExchange(Model model,HttpSession session,@RequestParam("a") String product_id,@RequestParam("b") String order_id) {
+		MemberVo bean=(MemberVo) session.getAttribute("memberVo");
+		if(bean==null) {
+			return "redirect:/login";
+		}
+		model.addAttribute("product_id", product_id);
+		model.addAttribute("order_id",order_id);
+		return "mypage/myAskExchange";
+	}
+	
+	@RequestMapping(value="/askReturn",method=RequestMethod.GET)
+	public String myAskReturn(Model model,HttpSession session,@RequestParam("a") String product_id,@RequestParam("b") String order_id) {
+		MemberVo bean=(MemberVo) session.getAttribute("memberVo");
+		if(bean==null) {
+			return "redirect:/login";
+		}
+		model.addAttribute("product_id", product_id);
+		model.addAttribute("order_id",order_id);
+		return "mypage/myAskReturn";
+	}
+	
+	@RequestMapping(value="/myReview",method=RequestMethod.GET)
+	public String myReview(Model model,HttpSession session,@RequestParam("a") String product_id) {
+		MemberVo bean=(MemberVo) session.getAttribute("memberVo");
+		if(bean==null) {
+			return "redirect:/login";
+		}
+		model.addAttribute("product_id",product_id);
+		return "mypage/MyReview";
 	}
 	
 	@RequestMapping(value="/mypagechk",method=RequestMethod.POST)

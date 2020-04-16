@@ -47,10 +47,10 @@
 			    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			        <ul class="nav navbar-nav ml-auto">
 			            <li class="nav-item">
-			                <a class="nav-link active" href="${root }admin/faq_list">FAQ 목록</a>
+			                <a class="nav-link" href="${root }admin/faq_list">FAQ 목록</a>
 			            </li>
 			            <li class="nav-item">
-			                <a class="nav-link" href="${root }admin/faq_add">FAQ 등록</a>
+			                <a class="nav-link active" href="${root }admin/faq_add">FAQ 등록</a>
 			            </li>
 			        </ul>
 			    </div>
