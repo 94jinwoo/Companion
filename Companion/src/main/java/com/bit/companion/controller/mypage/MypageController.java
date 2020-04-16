@@ -95,6 +95,8 @@ public class MypageController {
 	public int myAskProductInsert(HttpSession session,String question_type_id,String order_id,String product_id,String question_title,String question_content) {
 		MypageQuestionVo bean=new MypageQuestionVo();
 		
+		System.out.println("question_type_id : "+question_type_id);
+		
 		MemberVo member=(MemberVo)session.getAttribute("memberVo");
 		String member_id=member.getMember_id();
 		
