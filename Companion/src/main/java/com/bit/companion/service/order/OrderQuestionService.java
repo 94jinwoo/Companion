@@ -9,5 +9,6 @@ import com.bit.companion.model.entity.order.OrderQuestionVo;
 
 public interface OrderQuestionService {
 	void registReply(OrderQuestionVo orderQuestionVo) throws SQLException;
-	List<OrderQuestionVo> replyList(Model model,int product_id) throws SQLException;
+	List<OrderQuestionVo> replyList(Model model,int product_id,int displayPost,int postNum) throws SQLException;
+	int replyListAllCount(Model model,int product_id) throws SQLException;
 }

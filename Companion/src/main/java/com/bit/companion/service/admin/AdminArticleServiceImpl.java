@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -61,6 +62,7 @@ public class AdminArticleServiceImpl implements AdminArticleService {
 	}
 	
 	// article add - insertOne
+	@Transactional
 	@Override
 	public void insert(AdminArticleVo bean, int board_id) {
 		try {
@@ -74,6 +76,7 @@ public class AdminArticleServiceImpl implements AdminArticleService {
 	}
 
 	// article edit - updateOne
+	@Transactional
 	@Override
 	public void update(AdminArticleVo bean, int board_id, Search search, RedirectAttributes rttr) {
 		try {
@@ -93,6 +96,7 @@ public class AdminArticleServiceImpl implements AdminArticleService {
 	}
 
 	// article delete - deleteOne
+	@Transactional
 	@Override
 	public void delete(AdminArticleVo bean, int board_id, Search search, RedirectAttributes rttr) {
 		try {

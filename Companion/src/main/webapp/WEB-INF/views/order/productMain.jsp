@@ -121,11 +121,10 @@
 			        <div class="col-md-3 col-sm-6"> 
 			            <div class="product-grid productbox">
 			                <div class="product-image">
-			                    <a href="${root }order/productDetail?idx=${bean.product_id }">
-						          
+			                <!-- a에 링크 2개 걸 때 onclick 이벤트 쓰면 됨 예시
+			                 onclick="parent.question.jsp.location.href='${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}&num=1'  -->
+ 			                    <a href="${root }order/productDetail?idx=${bean.product_id }&num=1"> 
 						                <img class="pic-1" src="${bean.product_image }"/>
-						                <img class="pic-2" src="${bean.product_thumb }"/>
-						                
 			                    </a>
 
 			                </div>
@@ -138,10 +137,10 @@
 			                    <li class="fa fa-star"></li>
 			                </ul>
 			                <div class="product-content">
-			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }"> ${bean.category_name }</a></h3> 
+			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }&num=1"> ${bean.category_name }</a></h3> 
 			              
 	
-			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }"> ${bean.product_name }</a>
+			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }&num=1"> ${bean.product_name }</a>
 			             
 			             <!-- 따봉 로그인 세션 검사  -->
 			             <c:set var = "memberID" value="${memberVo.member_id }"/>         

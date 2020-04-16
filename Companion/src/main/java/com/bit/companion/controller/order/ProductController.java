@@ -107,7 +107,7 @@ public class ProductController {
 		OrderPagenation page = new OrderPagenation();
 		page.setNum(num);
 		page.setCount(productService.count(model,category_id));
-		System.out.println("총 상품 갯수 : "+ page.getCount());
+		System.out.println("총 상품 개수 : "+ page.getCount());
 		model.addAttribute("pageNum",page.getPageNum());
 		model.addAttribute("startPageNum",page.getStartPageNum());
 		model.addAttribute("endPageNum",page.getEndPageNum());

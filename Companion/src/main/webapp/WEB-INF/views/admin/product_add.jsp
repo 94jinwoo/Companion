@@ -70,7 +70,7 @@
 		<div class="main--title">
 				<h1>[Admin] 상품 등록</h1>
 		</div>
-			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data" onsubmit="return validation_submit();">
 			<table>
 				<thead>
 				</thead>
@@ -273,7 +273,37 @@ $("#product_image").change(function(){
 	}
 });
 
-
+//validation
+function validation_submit() {
+	if($("#product_name").val() == ""){
+		alert('상품명을 입력해주세요.');
+		$('#product_name').focus();
+		return false;
+	}
+	if($(".category1 option:selected").val() == ""){
+		alert('1차 분류를 선택해주세요.');
+		return false;
+	}
+	if($(".category2 option").size() != 1 && $(".category2 option").index($(".category2 option:selected")) == 0){
+		alert('2차 분류를 선택해주세요.');
+		return false;
+	}
+	if($("#product_price").val() == ""){
+		alert('가격을 입력해주세요.');
+		$('#product_price').focus();
+		return false;
+	}
+	if($("#product_stock").val() == ""){
+		alert('수량을 입력해주세요.');
+		$('#product_stock').focus();
+		return false;
+	}
+	if(CKEDITOR.instances.product_content.getData() == ""){
+		alert('내용을 입력해주세요.');
+		$('#product_content').focus();
+		return false;
+	}
+};
 </script>
 
 </body>

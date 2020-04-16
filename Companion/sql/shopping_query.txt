@@ -113,7 +113,8 @@ select count(*) as AllProductNum,product.* from product where category_id=#{cate
 insert into `question` values (default,100,null,#{product_id},#{member_id},now(),null,#{question_title},#{question_content},null,null,default,default);
 
 <!-- 답글 조회 -->
-select * from `question` where product_id=#{value}
+<!-- pagin 추가 -->
+select * from `question` where product_id=#{value} limit #{displayPost},#{postNum};
 
 ----------------------------product_detail_page 답글 기능 end -----------------
 
