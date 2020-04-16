@@ -88,7 +88,9 @@
 					<hr class="mb-4">
 				</div>
 	            <section class="section">
-
+				<div class="main--title">
+					<h1>나의 주문내역</h1>
+	       		</div>	
 	            	<c:forEach items="${myPurchaseDetail }" var="bean">
 					<div class="topB clearfix">
 						<div class="float--left">

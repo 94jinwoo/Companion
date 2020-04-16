@@ -202,7 +202,7 @@
 									<td><a href="#"><span>2020-04-08</span></a></td>
 								</tr>
 								<tr>
-									<td colspan="4" style="text-align:center"><a href="#">주문내역 자세히>></a></td>
+									<td colspan="4" style="text-align:center"><a href="${root }mypurchaselist">주문내역 자세히>></a></td>
 								</tr>
 							</tbody>
 						</table>

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/main.css">
-    <link rel="stylesheet" href="${root }css/mypage/orderPurchase.css">
+    <link rel="stylesheet" href="${root }css/mypage/myPurchaseD.css">
 
 	<!-- Font Awesome JS -->
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -70,7 +70,7 @@
                               <c:otherwise>
                                   <ul class="nav navbar-nav ml-auto">
                                       <li class="nav-item">
-                                          <a class="nav-link" href="${root }mypurchaselist">주문내역</a>
+                                          <a class="nav-link active" href="${root }mypurchaselist">주문내역</a>
                                       </li>
                                       <li class="nav-item">
                                           <a class="nav-link" href="${root }mypagereserve">예약조회</a>
@@ -97,15 +97,31 @@
 		<!-- menu -->
 			
 			<!--content  -->
+				<div class="categories">
+					<a href="#homeSubmenu"> <i class="fas fa-user"></i> 마이페이지</a> <span></span> 
+					<a href="#"> <i class="fas fa-clipboard"></i> 주문내역</a>
+					<hr class="mb-4">
+				</div>	
+			
+			
 	<!-- .title-group start-->
   <section class="section">
- 
-                      <h4>주문상세보기</h4></br>
+			<div class="main--title">
+				<h1>주문 상세내역</h1><br/>
+	        </div>
                       <h5>주문일 : ${myPurchaseDetail.order_date } / 주문번호 : ${myPurchaseDetail.order_id }</h5>
-               <table class="table">
+               <table class="table table_layout">
+               <colgroup>
+               <col class="col1">
+               <col class="col2">
+               <col class="col3">
+               <col class="col4">
+               <col class="col5">
+               <col class="col6">
+               </colgroup>
                    <thead>
                        <tr>
-	                       <th colspan='2'>상품 이름</th>
+	                       <th>상품 이름</th>
 	                       <th>옵션</th>
 	                       <th>수량</th>
 	                       <th>상품금액</th>
@@ -116,14 +132,14 @@
                    <tbody>
 <c:forEach items="${purchaseDetailList }" var="bean">
                        <tr>
-                           <td>
+                           <td class="imgTbox">
+                           <div class="imgBox">
                            		<!-- 썸네일 -->
-                           		${bean.product_thumb }
-                           </td>
-                           <td>
+                           		<img id="proImg" alt="Img" src="${bean.product_thumb }">
+                           </div>
                            		<!-- 상품이름 --> 
                            		${bean.product_name }
-                     	   </td>
+                           </td>
                            <td>
                            		<!-- 옵션 -->   
                            		${bean.order_detail_option }
@@ -146,47 +162,61 @@
                        </tr>
 </c:forEach>
                    </tbody>
-               </table></br>
-               
-               <h5>수령인 정보</h5>
-               <table class="table">
-               		<tr>
-               			<th>받는 사람</th>
-               			<td colspan="6">${myPurchaseDetail.order_name }</td>
-               		</tr>
-               		<tr>
-               			<th>연락처</th>
-               			<td colspan="6">${myPurchaseDetail.order_phone }</td>
-               		</tr>
-               		<tr>
-               			<th>배송주소</th>
-               			<td colspan="6">${myPurchaseDetail.order_addr1 } : ${myPurchaseDetail.order_addr2 } ${myPurchaseDetail.order_addr3 }</td>
-               		</tr>
-               		<tr>
-               			<th>배송요청사항</th>
-               			<td colspan="6">${myPurchaseDetail.order_msg }</td>
-               		</tr>
-               </table></br>
-               
-               <h5>결제 정보</h5>
-               <table class="table">
-               		<tr>
-               			<th>총 상품가격</th>
-               			<td colspan="6">${myPurchaseDetail.order_amount-2500 }</td>
-               		</tr>
-               		<tr>
-               			<th>배송비</th>
-               			<td colspan="6">2500</td>
-               		</tr>
-               		<tr>
-               			<th>총 결제금액</th>
-               			<td colspan="6">${myPurchaseDetail.order_amount }</td>
-               		</tr>
-               		<tr>
-               			<th>결제수단</th>
-               			<td colspan="6">카카오 페이</td>
-               		</tr>
                </table>
+               <div class="layB clearfix">
+               
+               <div class="halfBox float--left">
+               	<h5>수령인 정보</h5>
+	               <table class="halfTable">
+	               <thead></thead>
+	               <tbody>
+	               		<tr>
+	               			<th><label>받는 사람</label></th>
+	               			<td>${myPurchaseDetail.order_name }</td>
+	               		</tr>
+	               		<tr>
+	               			<th><label>연락처</label></th>
+	               			<td>${myPurchaseDetail.order_phone }</td>
+	               		</tr>
+	               		<tr>
+	               			<th><label>배송주소</label></th>
+	               			<td>${myPurchaseDetail.order_addr1 } : ${myPurchaseDetail.order_addr2 } ${myPurchaseDetail.order_addr3 }</td>
+	               		</tr>
+	               		<tr>
+	               			<th><label>배송요청사항</label></th>
+	               			<td>${myPurchaseDetail.order_msg }</td>
+	               		</tr>
+	               	</tbody>	
+	               </table>
+               </div>
+               <div class="halfBox float--right">
+               <h5>결제 정보</h5>
+               <table class="halfTable">
+               <thead></thead>
+               <tbody>
+               		<tr>
+               			<th><label>총 상품가격</label></th>
+               			<td>${myPurchaseDetail.order_amount-2500 }</td>
+               		</tr>
+               		<tr>
+               			<th><label>배송비</label></th>
+               			<td>2500</td>
+               		</tr>
+               		<tr>
+               			<th><label>총 결제금액</label></th>
+               			<td>${myPurchaseDetail.order_amount }</td>
+               		</tr>
+               		<tr>
+               			<th><label>결제수단</label></th>
+               			<td>카카오 페이</td>
+               		</tr>
+               	</tbody>	
+               </table>
+               </div>
+               </div>
+               <div class="btnbox">
+	            	<button type="button" class="cBtn backBtn" onclick="history.back();">이전으로</button>
+	           </div>
       	</section>  
       
        <!-- Footer  -->

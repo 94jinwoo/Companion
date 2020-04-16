@@ -98,8 +98,8 @@
 			
 			<!--content  -->
 				<div class="categories">
-					<a href="#homeSubmenu"> <i class="fas fa-home"></i> 호텔서비스</a> <span></span> 
-					<a href="#"> <i class="fas fa-home"></i> 이용안내</a>
+					<a href="#homeSubmenu"> <i class="fas fa-shopping-cart"></i> 쇼핑하기</a> <span></span> 
+					<a href="#"> <i class="fas fa-clipboard-list"></i> 주문서작성</a>
 					<hr class="mb-4">
 				</div>
 	<!-- .title-group start-->
