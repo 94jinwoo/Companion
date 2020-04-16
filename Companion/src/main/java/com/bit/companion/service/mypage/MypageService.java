@@ -54,4 +54,6 @@ public interface MypageService {
 
 	int myReviewInsert(MyReviewVo bean);
 
+	void insertPayment(MyCartOrderVo bean);
+
 }

@@ -130,6 +130,11 @@ public class MypageServiceImpl implements MypageService {
 		return mypageDao.myReviewInsert(bean);
 	}
 
+	@Override
+	public void insertPayment(MyCartOrderVo bean) {
+		mypageDao.insertPayment(bean);
+	}
+
 
 
 }

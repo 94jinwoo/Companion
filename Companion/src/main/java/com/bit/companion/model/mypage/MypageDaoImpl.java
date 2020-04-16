@@ -199,10 +199,8 @@ public class MypageDaoImpl implements MypageDao {
 	public void insertOrders(MyCartOrderVo bean) {
 		/* insert into order_detail table */
 		sqlSession.insert("mypage.insertOrder_detail",bean);
-		/* insert into delivery table */
-		sqlSession.insert("mypage.insertDelivery",bean);
-		/* insert into payment table */
-		sqlSession.insert("mypage.insertPayment",bean);
+//		/* insert into delivery table */
+//		sqlSession.insert("mypage.insertDelivery",bean);
 		/* delete from cart */
 		HashMap<String,String> cartInfo=new HashMap<>();
 		cartInfo.put("member_id", bean.getMember_id());
@@ -211,6 +209,12 @@ public class MypageDaoImpl implements MypageDao {
 		sqlSession.delete("mypage.deleteCart", cartInfo);
 	}
 
+	@Override
+	public void insertPayment(MyCartOrderVo bean) {
+		/* insert into payment table */
+		sqlSession.insert("mypage.insertPayment",bean);
+	}
+	
 	@Override
 	public int deleteOneQuestion(String member_id, String question_id) {
 		HashMap<String,String> questionInfo=new HashMap<>();
@@ -266,6 +270,7 @@ public class MypageDaoImpl implements MypageDao {
 	public int myReviewInsert(MyReviewVo bean) {
 		return sqlSession.insert("mypage.reviewProductInsert",bean);
 	}
+
 	
 
 }

@@ -328,9 +328,11 @@ public class MypageController {
 			bean.setPayment_date(payment_date);
 			bean.setDelivery_number(delivery_number);
 			bean.setOrder_id(order_id);
+			/* order_detail에 insert,cart에서 delete */
 			mypageService.insertOrders(bean);
 			System.out.println(i+"번쨰order_id : "+bean.getOrder_id());
 		}
+		mypageService.insertPayment(bean);
 		session.removeAttribute("cartList");
 		session.removeAttribute("cartOrderList");
 		session.removeAttribute("cartOrderPrice");
