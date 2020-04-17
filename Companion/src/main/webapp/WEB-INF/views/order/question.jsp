@@ -72,15 +72,25 @@
 			</tr>
 		</thead>
 		<tbody>
-					
 			<c:forEach items="${ReplyList}" var="bean" varStatus="status">
 				<tr>
 					<td>${(ReplyTotal-status.index)-(pagination_p.page-1)*pagination_p.listSize}</td>
 					<td>${bean.member_id }</td>
-					<td><a href="${root }order/productDetail/ReplyDetail?question_id=${bean.question_id}">${bean.question_title }</a></td>
+					<!-- 공개 -->
+					<c:if test="${bean.question_secret_id == 0 }">
+						<td><a href="${root }order/productDetail/ReplyDetail?question_id=${bean.question_id}">${bean.question_title }</a></td>
+					</c:if>
+					<!-- 비공개 -->
+					<c:if test="${bean.question_secret_id == 1 }">
+						<c:if test="${memberVo.member_id == bean.member_id}">
+							<td><a href="${root }order/productDetail/ReplyDetail?question_id=${bean.question_id}">비밀글입니다 이건내꺼</a></td>
+						</c:if>
+						<c:if test="${memberVo.member_id != bean.member_id}">
+							<td><a href=javascript:; class="secret">비밀글입니다</a></td>
+						</c:if>
+					</c:if>
 					<td>${bean.question_content }</td>
-				<td><fmt:formatDate value="${bean.question_date}" pattern="yyyy-MM-dd"/></td>
-					
+					<td><fmt:formatDate value="${bean.question_date}" pattern="yyyy-MM-dd"/></td>
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -99,8 +109,20 @@
 		<!-- pagination [end] -->
 	<!-- pagination [end] -->	
 
-
 </body>
+
+<!-- jQuery -->
+<script src="${root }js/jquery-1.12.4.js"></script>
+<!-- Popper.JS -->
+<script src="${root }js/bootstrap/popper.js"></script>
+<!-- Bootstrap JS -->
+<script src="${root }js/bootstrap/bootstrap.js"></script>
+
+<script type="text/javascript">
+$(".secret").click(function(){
+	alert("비밀글로 작성자만 조회할 수 있습니다.");
+});
+</script>
 </html>
 
 

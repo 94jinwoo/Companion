@@ -71,7 +71,7 @@
 		update `order` set order_state_id = 9 where order_id=#{value};
 	</update>
 	<!-- 주문취소 -->
-	<update id="updateCancle">
+	<update id="updateCancel">
 		update `order` set order_state_id = 10 where order_id=#{value};
 	</update>
 	

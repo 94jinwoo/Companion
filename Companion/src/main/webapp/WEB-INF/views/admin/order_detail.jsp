@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/admin/main.css">
-    <link rel="stylesheet" href="${root }css/admin/home.css">
+    <link rel="stylesheet" href="${root }css/admin/order.css">
     <!-- Font Awesome JS -->
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -67,34 +67,90 @@
 				<input type = "hidden" name="order_id" value="${bean.order_id }"/>
 				<c:choose>
 					<c:when test="${bean.order_state_admin eq '주문취소' }">
-						현재 주문 상태 : ${bean.order_state_admin }<br/>
-						취소된 주문입니다.
+						<div class="card">
+							<img alt="주문취소" src="${root }imgs/admin/cancel.png">
+							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
+							<div class="container">
+								<div class="card-content">
+									<strong>취소된 주문입니다.</strong>
+								</div>
+							</div>
+						</div>
 					</c:when>
 					<c:when test="${bean.order_state_admin eq '결제완료' }">
-						현재 주문 상태 : ${bean.order_state_admin }<br/>
-						<button type="button" id="btn-cancle">주문취소</button>
-						<button type="button" id="btn-release">출고요청</button>
+						<div class="card">
+							<img alt="주문취소" src="${root }imgs/admin/payment.png">
+							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
+							<div class="container">
+								<div class="card-content">
+									<strong>결제가 완료된 주문입니다.</strong><br/>
+									<div class="btn-group">
+										<button class="Cbtn" type="button" id="btn-cancel">주문취소</button>
+										<button class="Cbtn" type="button" id="btn-release">출고요청</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</c:when>
 					<c:when test="${bean.order_state_admin eq '출고처리중' }">
 						현재 주문 상태 : ${bean.order_state_admin }<br/>	
 						<button type="button" id="btn-releaseDone">출고완료</button>
 					</c:when>
 					<c:when test="${bean.order_state_admin eq '출고완료' }">
-						현재 주문 상태 : ${bean.order_state_admin }<br/>
-						<button type="button" id="btn-deliveryDone">배송완료</button>
+						<div class="card">
+							<img alt="주문취소" src="${root }imgs/admin/release.png">
+							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
+							<div class="container">
+								<div class="card-content">
+									<strong>출고가 완료된 주문입니다.</strong><br/>
+									<div class="btn-group">
+										<button class="Cbtn" type="button" id="btn-deliveryDone">배송완료</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</c:when>
 					<c:when test="${bean.order_state_admin eq '배송완료' }">
+						<div class="card">
+							<img alt="배송완료" src="${root }imgs/admin/delivery.png">
+							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
+							<div class="container">
+								<div class="card-content">
+									<strong>배송 완료된 주문입니다.</strong><br/>
+									<div class="btn-group">
+										<button class="Cbtn" type="button" id="btn-purchaseConfirm">구매확정</button>
+										<button class="Cbtn" type="button" id="btn-exchange">교환</button>
+										<button class="Cbtn" type="button" id="btn-return">반품</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</c:when>
+					<c:when test="${bean.order_state_admin eq '구매확정' }">
 						현재 주문 상태 : ${bean.order_state_admin }<br/>
-						<button type="button" id="btn-releaseDone">구매확정</button>
-						<button type="button" id="btn-releaseDone">교환</button>
-						<button type="button" id="btn-releaseDone">반품</button>
+						구매가 확정된 상품입니다.
+					</c:when>
+					<c:when test="${bean.order_state_admin eq '교환' }">
+						현재 주문 상태 : ${bean.order_state_admin }<br/>
+						<button type="button" id="btn-purchaseConfirm">구매확정</button>
+					</c:when>
+					<c:when test="${bean.order_state_admin eq '반품' }">
+						<div class="card">
+							<img alt="반품" src="${root }imgs/admin/return.png">
+							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
+							<div class="container">
+								<div class="card-content">
+									<strong>반품된 주문입니다.</strong><br/>
+								</div>
+							</div>
+						</div>
 					</c:when>
 					<c:otherwise>
 						현재 주문 상태 : ${bean.order_state_admin }<br/>
-						<button type="button" id="btn-cancle">주문취소</button>
-						<button type="button" id="btn-releaseDone">구매확정</button>
-						<button type="button" id="btn-releaseDone">교환</button>
-						<button type="button" id="btn-releaseDone">반품</button>
+						<button type="button" id="btn-cancel">주문취소</button>
+						<button type="button" id="btn-purchaseConfirm">구매확정</button>
+						<button type="button" id="btn-exchange">교환</button>
+						<button type="button" id="btn-return">반품</button>
 					</c:otherwise>
 				</c:choose>
 			</form>
@@ -254,10 +310,10 @@
     			return false;
     		}
     	});
-    	$('#btn-cancle').click(function(){
-    		var con = confirm('주문취소를 하시겠습니까?');
+    	$('#btn-releaseDone').click(function(){
+    		var con = confirm('출고완료를 하시겠습니까?');
     		if(con){
-    			formObj.attr('action','${root}admin/order_cancle');
+    			formObj.attr('action','${root}admin/release_done');
     			formObj.submit();
     		} else {
     			return false;
@@ -272,10 +328,37 @@
     			return false;
     		}
     	});
-    	$('#btn-releaseDone').click(function(){
-    		var con = confirm('출고완료를 하시겠습니까?');
+    	$('#btn-purchaseConfirm').click(function(){
+    		var con = confirm('구매확정을 하시겠습니까?');
     		if(con){
-    			formObj.attr('action','${root}admin/release_done');
+    			formObj.attr('action','${root}admin/purchase_confirm');
+    			formObj.submit();
+    		} else {
+    			return false;
+    		}
+    	});
+    	$('#btn-exchange').click(function(){
+    		var con = confirm('교환하시겠습니까?');
+    		if(con){
+    			formObj.attr('action','${root}admin/order_exchange');
+    			formObj.submit();
+    		} else {
+    			return false;
+    		}
+    	});
+    	$('#btn-return').click(function(){
+    		var con = confirm('반품하시겠습니까?');
+    		if(con){
+    			formObj.attr('action','${root}admin/order_return');
+    			formObj.submit();
+    		} else {
+    			return false;
+    		}
+    	});
+    	$('#btn-cancel').click(function(){
+    		var con = confirm('주문취소를 하시겠습니까?');
+    		if(con){
+    			formObj.attr('action','${root}admin/order_cancel');
     			formObj.submit();
     		} else {
     			return false;

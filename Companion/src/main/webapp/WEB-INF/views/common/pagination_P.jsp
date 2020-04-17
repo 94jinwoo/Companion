@@ -10,7 +10,7 @@
 		</c:if>
 		<c:forEach begin="${param.startPage}" end="${param.endPage}" var="idx">
 			<li class="page-item <c:out value="${param.page == idx ? 'active': ''}"/>" >
-				<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination_p.range}', '${pagination_p.rangeSize}', '${pagination_p.product_id}' )">${idx}</a>
+				<a class="page-link" href=javascript:; onClick="fn_pagination('${idx}', '${pagination_p.range}', '${pagination_p.rangeSize}', '${pagination_p.product_id}' )">${idx}</a>
 			</li>
 		</c:forEach>
 			<c:if test="${param.next}">

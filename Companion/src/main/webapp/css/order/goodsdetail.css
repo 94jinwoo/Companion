@@ -1,23 +1,5 @@
 /*-------------------CONTENT STYLE--------------------*/
 
-/* ---------------------------------------------------
-    CAROUSEL STYLE
------------------------------------------------------ */
-
-#carouselExampleInterval {
-    position: relative;
-    height: 650px;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-.carousel-inner {
-    display: inline-block;
-    overflow: hidden;
-    max-height: 650px;
-    height: 100%;
-}
-.carousel-item img{
-    max-height: 650px;
-}
 
 .textcontent{
     margin-top: 10px;
@@ -53,7 +35,10 @@
 	font-size:18px;
 }
 .goods-text .title{
-	text-align: center;
+	text-align: right;
+	letter-spacing:6px;
+	padding-right:50px;
+	line-height:1.5;
 
 }
 .goods-text>h5{
@@ -146,9 +131,10 @@
   border-color: #0F4C81;
 }
 .btn--group{
-	display:block;
+	width:100%;
+	float:right;
 	margin-top:20px;
-	margin-left:50px;
+	margin-left: 80px;
 }
 #question_label{
 	width:76px;
