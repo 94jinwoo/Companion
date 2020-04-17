@@ -91,7 +91,7 @@
 			<div class="main--title">
 				<h1>상품 문의하기</h1>
 			</div>
-			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+			<form role="form" name="myAskProduct" method="post" autocomplete="off" enctype="multipart/form-data">
 				<input type="hidden" name="product_id" id="product_id" value="${product_id }">
 				<input type="hidden" name="order_id" id="order_id" value="${order_id }">
 				<input type="hidden" name="question_type_id" id="question_type_id" value="">
@@ -129,7 +129,7 @@
 				    </th>
 				    <td>
 				    	<div>
-				    	<input type="text" name="ask_title" id="ask_title" class="input--text textT" placeholder="제목을 입력해 주세요."/>
+				    	<input type="text" name="question_title" id="ask_title" class="input--text textT" placeholder="제목을 입력해 주세요."/>
 				    	</div>
 				    </td>	
 				  </tr>
@@ -141,27 +141,27 @@
 					</th>
 				    <td>
 				    	<div>
-					    	<textarea name="ask_product" id="ask_product" rows="10" cols="80" class="input--text textA"></textarea>
+					    	<textarea name="question_content" id="ask_product" rows="10" cols="80" class="input--text textA"></textarea>
 				    	</div>
 				    </td>
 				  </tr>
 				  <!-- 이미지 업로드 구현해보기 -->
-				  <%-- <tr>
+				  <tr>
 				    <th>
 				    	<div>
-						<label for="article_image">파일 첨부</label>
+						<label for="question_image">사진 첨부</label>
 						</div>
 					</th>
 				    <td>
 				    	<div class="file-add">
-				    	<input type="file" name="file" id="question_image"/>
-						<div class="select_img">
-							<img alt="원본이미지" src="<spring:url value='${adminQuestionOne.question_image }'/>"/>
-							<input type="hidden" name="question_image" value="${adminQuestionOne.question_image }"/>
+				    	<input type="file" multiple name="file" id="question_image"/>
+						<div class="inputArea">
+							<div class="select_img"><img src=""/></div>
 						</div>
 					</div>
 				    </td>
-				  </tr> --%>
+				    
+				  </tr>
 				</tbody>
 				</table>
 				<div class="btnbox">
@@ -191,7 +191,7 @@
 
 <script type="text/javascript">
 <!-- 이미지 등록시 출력 -->	
-$('#article_image').change(function(){
+$('#question_image').change(function(){
 	if(this.files&&this.files[0]){
 		var reader = new FileReader;
 		reader.onload = function(data){
@@ -207,33 +207,17 @@ $("#back_btn").click(function(){
 });
 
 $("#ask_btn").click(function(){
-	var product_id=$("#product_id").val();
-	var order_id=$("#order_id").val();
-	var question_type_id=$("#question_type_id").val();
 	var question_title=$("#ask_title").val();
 	var question_content=$("#ask_product").val();
-	var askData={"product_id" : product_id, "order_id" : order_id, "question_type_id" : question_type_id, "question_title" : question_title, "question_content" : question_content};
-	if(ask_title=="") {
+	if(question_title=="") {
 		alert("입력된 제목이 없습니다.");
 		return;
 	}
-	if(ask_product==""){
+	if(question_content==""){
 		alert("입력된 내용이 없습니다.");
 		return;
 	}
-	$.ajax({
-		type : "POST",
-		url : "/companion/askProduct",
-		data : askData,
-		success : function(result){
-			if(result==1){
-				alert("문의 등록완료");
-				history.back();
-			}else{
-				alert("에러.");
-			}
-		}
-	});
+	document.myAskProduct.submit();
 });
 
 /* 문의 유형 선택 */

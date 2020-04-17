@@ -9,9 +9,15 @@ public interface AdminOrderService {
 
 	void release(int order_id);
 
-	void cancle(int order_id);
+	void cancel(int order_id);
 
 	void delivery(int order_id);
 
 	void releaseDone(int order_id);
+
+	void purchase(int order_id);
+
+	void exchange(int order_id);
+
+	void orderReturn(int order_id);
 }
