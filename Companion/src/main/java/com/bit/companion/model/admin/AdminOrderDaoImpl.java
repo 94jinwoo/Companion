@@ -34,4 +34,34 @@ public class AdminOrderDaoImpl implements AdminOrderDao {
 		return sqlSession.selectList("adminOrder.selectOneDetail",order_id);
 	}
 
+	@Override
+	public void updateRelease(int order_id) throws SQLException {
+		sqlSession.update("adminOrder.updateRelease", order_id);
+	}
+
+	@Override
+	public void updateCancle(int order_id) throws SQLException {
+		sqlSession.update("adminOrder.updateCancle", order_id);
+	}
+
+	@Override
+	public void updateDelivery(int order_id) throws SQLException {
+		sqlSession.update("adminOrder.updateDelivery",order_id);
+	}
+
+	@Override
+	public void updateDelivering(int order_id) throws SQLException {
+		sqlSession.update("adminOrder.updateDelivering",order_id);
+	}
+
+	@Override
+	public void updateReleaseDone(int order_id) throws SQLException {
+		sqlSession.update("adminOrder.updateReleaseDone",order_id);
+	}
+
+	@Override
+	public void updateAdminDelivery(int order_id) throws SQLException {
+		sqlSession.update("adminOrder.updateAdminDelivery",order_id);
+	}
+
 }

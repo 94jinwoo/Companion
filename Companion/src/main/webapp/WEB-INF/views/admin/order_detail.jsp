@@ -62,9 +62,42 @@
 		<!-- .container-fluid [start] -->
 		<div class="container-fluid">
 			<h1>주문 내역 상세보기</h1>
-			<div>
-				
-			</div>
+			<a href="${root }admin/order_list" class="btn btn-primary">목록</a>
+			<form method="POST" role="form">
+				<input type = "hidden" name="order_id" value="${bean.order_id }"/>
+				<c:choose>
+					<c:when test="${bean.order_state_admin eq '주문취소' }">
+						현재 주문 상태 : ${bean.order_state_admin }<br/>
+						취소된 주문입니다.
+					</c:when>
+					<c:when test="${bean.order_state_admin eq '결제완료' }">
+						현재 주문 상태 : ${bean.order_state_admin }<br/>
+						<button type="button" id="btn-cancle">주문취소</button>
+						<button type="button" id="btn-release">출고요청</button>
+					</c:when>
+					<c:when test="${bean.order_state_admin eq '출고처리중' }">
+						현재 주문 상태 : ${bean.order_state_admin }<br/>	
+						<button type="button" id="btn-releaseDone">출고완료</button>
+					</c:when>
+					<c:when test="${bean.order_state_admin eq '출고완료' }">
+						현재 주문 상태 : ${bean.order_state_admin }<br/>
+						<button type="button" id="btn-deliveryDone">배송완료</button>
+					</c:when>
+					<c:when test="${bean.order_state_admin eq '배송완료' }">
+						현재 주문 상태 : ${bean.order_state_admin }<br/>
+						<button type="button" id="btn-releaseDone">구매확정</button>
+						<button type="button" id="btn-releaseDone">교환</button>
+						<button type="button" id="btn-releaseDone">반품</button>
+					</c:when>
+					<c:otherwise>
+						현재 주문 상태 : ${bean.order_state_admin }<br/>
+						<button type="button" id="btn-cancle">주문취소</button>
+						<button type="button" id="btn-releaseDone">구매확정</button>
+						<button type="button" id="btn-releaseDone">교환</button>
+						<button type="button" id="btn-releaseDone">반품</button>
+					</c:otherwise>
+				</c:choose>
+			</form>
 			<h2>주문자 정보</h2>
 			<table class="table">
 				<tbody>
@@ -210,5 +243,44 @@
     <script src="${root }js/bootstrap/bootstrap.js"></script>
     <!-- MAIN JS -->
     <script src="${root }js/main.js"></script>
+    <script type="text/javascript">
+    	var formObj = $("form[role='form']");
+    	$('#btn-release').click(function(){
+    		var con = confirm('출고요청을 하시겠습니까?');
+    		if(con){
+    			formObj.attr('action','${root}admin/order_release');
+    			formObj.submit();
+    		} else {
+    			return false;
+    		}
+    	});
+    	$('#btn-cancle').click(function(){
+    		var con = confirm('주문취소를 하시겠습니까?');
+    		if(con){
+    			formObj.attr('action','${root}admin/order_cancle');
+    			formObj.submit();
+    		} else {
+    			return false;
+    		}
+    	});
+    	$('#btn-deliveryDone').click(function(){
+    		var con = confirm('배달완료를 하시겠습니까?');
+    		if(con){
+    			formObj.attr('action','${root}admin/delivery_done');
+    			formObj.submit();
+    		} else {
+    			return false;
+    		}
+    	});
+    	$('#btn-releaseDone').click(function(){
+    		var con = confirm('출고완료를 하시겠습니까?');
+    		if(con){
+    			formObj.attr('action','${root}admin/release_done');
+    			formObj.submit();
+    		} else {
+    			return false;
+    		}
+    	});
+    </script>
 </body>
 </html>

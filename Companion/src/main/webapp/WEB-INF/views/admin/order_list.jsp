@@ -154,7 +154,8 @@
 			
     		// DataTable
     		var chkbox = $('#dataTable').DataTable({
-    			searching:false
+    			searching:false,
+    			order:[[0,'desc']]
     		});
 			/*
      		// 체크박스 전체선택, 전체해제

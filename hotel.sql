@@ -116,7 +116,7 @@ SELECT
                     (SELECT p.payment_amount from `payment` p where p.order_id=o.order_id and o.order_id=171) as payment_amount,
                     (SELECT p_s.payment_state_name from `payment_state` p_s, `payment` p where p_s.payment_state_id=p.payment_state_id and p.order_id=171) as payment_state_name
 				    from `order` o where o.order_id=171;
-
+select * from article;
 SELECT p.payment_date from `payment` p, `order` o where p.order_id=o.order_id and o.order_id=171;
 select 
 		o_d.order_detail_id,
@@ -139,5 +139,13 @@ select * from `delivery_state`;
 select * from `payment`;
 select * from `payment_state`;
 
-delete from `payment` where payment_id=131;
+select * from `article`;
+
+delete from `payment` where order_id=177;
+
+delete from `delivery` where order_id=177;
+
+delete from `order` where order_id=177;
+
+delete from `order_detail` where order_id=177;
 commit;
