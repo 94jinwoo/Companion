@@ -153,4 +153,6 @@ UPDATE `PRODUCT` SET
 delete from `product` where product_id>800 and product_id<900
 update product set product_thumb=null where product_id>=1000
 select * from `order`
-select * from `product`
+select * from `product`;
+select * from `category`;
+update category set category_name="목욕용품" where category_id=500;

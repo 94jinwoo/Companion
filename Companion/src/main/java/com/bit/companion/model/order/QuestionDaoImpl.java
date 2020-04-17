@@ -8,6 +8,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bit.companion.common.Pagination;
+import com.bit.companion.common.Pagination_P;
+import com.bit.companion.controller.order.OrderPagenation;
 import com.bit.companion.model.entity.order.OrderQuestionVo;
 
 @Repository
@@ -25,20 +28,21 @@ public class QuestionDaoImpl implements QuestionDao {
 	
 	//문의글 목록.
 	@Override
-	public List<OrderQuestionVo> replyList(int product_id,int displayPost,int postNum) throws SQLException {
+	public List<OrderQuestionVo> replyList(Pagination_P pagination_p) throws SQLException {
 		System.out.println("replyList DAO 실행.");
-		//question table 셀렉트. 문의글 목록 전부 불러오기 실행.
-		HashMap data = new HashMap();
-		data.put("displayPost",displayPost);
-		data.put("postNum", postNum);
-		data.put("product_id",product_id);
-		return sqlSession.selectList("orderQuestion.OrderQuestionList",data);
+		return sqlSession.selectList("orderQuestion.OrderQuestionList",pagination_p);
 	}
 
 	@Override
-	public int replyListAllCount(int product_id) throws SQLException {
+	public int replyListAllCount(Pagination_P pagination_p) throws SQLException {
 		System.out.println("모든 문의글 개수 파악합니다.");
-		return sqlSession.selectOne("orderQuestion.ReplyListAllCount",product_id);
+		return sqlSession.selectOne("orderQuestion.ReplyListAllCount",pagination_p);
+	}
+
+	//문의글 조회
+	@Override
+	public OrderQuestionVo replyDetail(int question_id) throws SQLException {
+		return sqlSession.selectOne("orderQuestion.ReplyDetail", question_id);
 	}
 
 }

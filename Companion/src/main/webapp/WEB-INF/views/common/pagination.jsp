@@ -25,7 +25,6 @@
     function fn_prev(page, range, rangeSize, searchType, keyword) {
     		var page = ((range - 2) * rangeSize) + 1 + 4;
     		var range = range - 1;
-/*     		var url = "${pageContext.request.contextPath}/notice/list"; */
     		var url = "${getList}";
       		url = url + "?page=" + page;
     		url = url + "&range=" + range;

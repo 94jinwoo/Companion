@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import com.bit.companion.common.Pagination;
+import com.bit.companion.common.Pagination_P;
+import com.bit.companion.controller.order.OrderPagenation;
+import com.bit.companion.model.entity.admin.AdminArticleVo;
 import com.bit.companion.model.entity.order.OrderQuestionVo;
 import com.bit.companion.model.order.QuestionDao;
 
@@ -24,20 +28,24 @@ public class OrderQuestionServiceImpl implements OrderQuestionService {
 	}
 	//문의글 목록.
 	@Override
-	public List<OrderQuestionVo> replyList(Model model,int product_id,int displayPost,int postNum) throws SQLException {
+	public void replyList(Model model, int product_id, Pagination_P pagination_p, int page, int range) throws SQLException {
 		System.out.println("문의글 목록/  replyList");
-		List<OrderQuestionVo> list = null;
-		list = questionDao.replyList(product_id,displayPost,postNum);
 		
+		pagination_p.setProduct_id(product_id);
+		int listCnt = questionDao.replyListAllCount(pagination_p);
+		
+		// Pagination
+		pagination_p.pageInfo(page, range, listCnt);
+		List<OrderQuestionVo> list = questionDao.replyList(pagination_p);
+		
+		model.addAttribute("ReplyTotal", listCnt);
 		model.addAttribute("ReplyList",list);
-		return list;
 	}
 	
-	
+	//문의글 조회
 	@Override
-	public int replyListAllCount(Model model, int product_id) throws SQLException {
-		System.out.println("문의글 목록 총 개수 파악 그 페이징 하려고 합니다.");
-		return questionDao.replyListAllCount(product_id);
+	public void detail(Model model, int question_id) throws SQLException {
+		model.addAttribute("ReplyDetail",questionDao.replyDetail(question_id));
 	}
-
+	
 }
