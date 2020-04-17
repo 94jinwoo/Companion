@@ -80,7 +80,7 @@
 		                <input type="password" name="member_pw"  id="member_pw" class="form-control" placeholder="패스워드를 입력해주세요" required>
 		                <div class="checkbox mb-3">
 		                  <label>
-		                    <input type="checkbox" value="remember-me"> 아이디 저장
+		                    <input id="id_save_check" type="checkbox" value="remember-me"> 아이디 저장
 		                  </label>
 		                  <c:if test="${loginChk==false }">
 							<div style="color: red">아이디 또는 비밀번호가 일치하지 않습니다.</div>
@@ -161,6 +161,57 @@
 				}
 				document.login.submit();
 			});
+			/* 쿠키에 저장된 값을 불러와서 id칸에 입력. 없으면 공백 */
+			var key=getCookie("key");
+			$("#member_id").val(key);
+			
+			/* 저장된 id를 채웠다면. id저장하기를 체크상태로 두기. */
+			if($("#member_id").val()!=""){
+				$("#id_save_check").attr("checked",true);
+			}
+			
+			/* 체크박스에 변화가 있을 때 작동. 체크시 7일 저장. 해제시 삭제 */
+			$("#id_save_check").change(function(){
+				if($("#id_save_check").is(":checked")){
+					setCookie("key",$("#member_id").val(),7);
+				}else{
+					deleteCookie("key");
+				}
+			});
+			
+			/* 체크박스에 체크한 후 아이디 입력시 쿠키 7일 저장 */
+			$("#member_id").keyup(function(){
+				if($("#id_save_check").is(":checked")){
+					setCookie("key",$("#member_id").val(),7);
+				}
+			});
+			
+			function setCookie(cookieName, value, exdays){
+			    var exdate = new Date();
+			    exdate.setDate(exdate.getDate() + exdays);
+			    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+			    document.cookie = cookieName + "=" + cookieValue;
+			}
+			 
+			function deleteCookie(cookieName){
+			    var expireDate = new Date();
+			    expireDate.setDate(expireDate.getDate() - 1);
+			    document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+			}
+			 
+			function getCookie(cookieName) {
+			    cookieName = cookieName + '=';
+			    var cookieData = document.cookie;
+			    var start = cookieData.indexOf(cookieName);
+			    var cookieValue = '';
+			    if(start != -1){
+			        start += cookieName.length;
+			        var end = cookieData.indexOf(';', start);
+			        if(end == -1)end = cookieData.length;
+			        cookieValue = cookieData.substring(start, end);
+			    }
+			    return unescape(cookieValue);
+			}
 		});
 	</script>
 	
