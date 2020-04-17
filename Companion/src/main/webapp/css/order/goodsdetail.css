@@ -148,14 +148,17 @@
 	width:420px;
 	height:100px;
 }
-
+#questiont{
+	float:right;
+}
+/*******************************************************************/
 .replyList h4{
 	margin-top:20px;
 	
 }
 .table--replyList{
 	text-align: center;
-	width:100%;
+	width:968px;
 	
 }
 .table--replyList tr{
@@ -163,14 +166,26 @@
 	
 }
 .table--replyList th{
-	width:200px;
-	line-height: 1;
+	line-height: 2;
 	font-size:20px;
+	letter-spacing:6px;
 }
 .table--replyList td{
-	line-height: 2;
+	line-height: 2.5;
 	font-size:18px;
 }
+.othersBlock{
+color: rgba(0,0,0,0.2);
+}
+
+/* TABLE_LAYOUT STYLE */
+.table_layout { margin:0px; table-layout:fixed; }
+.table_layout .col1 { width: 180px; } /* 글번호 */ 
+.table_layout .col2 { width: auto } /* 제목 */
+.table_layout .col3 { width: 200px; } /* 아이디 */
+.table_layout .col4 { width: 200px; } /* 작성날짜 */
+
+/*******************************************************************/
 
 .recomB{
 	width:100%;
@@ -189,4 +204,28 @@
 }
 .recomB tbody tr td p{
 	font-weight:500;
+}
+/***************  questionDetail.jsp css  ********************/
+.quesDetailT{
+	width:800px;
+	margin-left:80px;
+}
+.quesDetailT label{
+	margin-bottom:0;
+}
+.quesDetailT thead{
+	font-size:18px;
+	border-bottom: 1px solid #b3b7bb;
+}
+.quesDetailT tbody{
+	font-size:16px;
+}
+.quesDetailT tr{
+	line-height:2;
+	
+}
+.btn__group{
+	float:right;
+	margin-top:20px;
+	margin-right:80px;
 }

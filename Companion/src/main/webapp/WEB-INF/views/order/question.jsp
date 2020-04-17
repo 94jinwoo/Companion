@@ -26,56 +26,30 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-.replyList h4{
-	margin-top:20px;
-	
-}
-.table--replyList{
-	text-align: center;
-	width:100%;
-	
-}
-.table--replyList tr{
-	border-bottom: 1px solid #b3b7bb;
-	
-}
-.table--replyList th{
-	width:200px;
-	line-height: 1;
-	font-size:20px;
-}
-.table--replyList td{
-	line-height: 2;
-	font-size:18px;
-}
+
 </style>
 </head>
 <body>
-	<table class="table--replyList">
+	<h4>최근 문의글 목록</h4>
+	<table class="table--replyList table_layout">
+	<colgroup>
+		<col class="col1">
+		<col class="col2">
+		<col class="col3">
+		<col class="col4">
+	</colgroup>
 		<thead>
 			<tr>
-				<th scope="col" class="border-0 bg-light">
-					<div class="p-2 px-3 text-uppercase">글번호</div>
-				</th>
-				<th scope="col" class="border-0 bg-light">
-					<div class="p-2 px-3 text-uppercase">아이디</div>
-				</th>
-				<th scope="col" class="border-0 bg-light">
-					<div class="p-2 px-3 text-uppercase">문의 제목</div>
-				</th>
-				<th scope="col" class="border-0 bg-light">
-					<div class="py-2 text-uppercase">문의 내용</div>
-				</th>
-				<th scope="col" class="border-0 bg-light">
-					<div class="p-2 px-3 text-uppercase">작성 날짜</div>
-				</th>
+				<th scope="row">글번호</th>
+				<th scope="row">문의 제목</th>
+				<th scope="row">아이디</th>
+				<th scope="row">작성날짜</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${ReplyList}" var="bean" varStatus="status">
 				<tr>
 					<td>${(ReplyTotal-status.index)-(pagination_p.page-1)*pagination_p.listSize}</td>
-					<td>${bean.member_id }</td>
 					<!-- 공개 -->
 					<c:if test="${bean.question_secret_id == 0 }">
 						<td><a href="${root }order/productDetail/ReplyDetail?question_id=${bean.question_id}">${bean.question_title }</a></td>
@@ -83,13 +57,13 @@
 					<!-- 비공개 -->
 					<c:if test="${bean.question_secret_id == 1 }">
 						<c:if test="${memberVo.member_id == bean.member_id}">
-							<td><a href="${root }order/productDetail/ReplyDetail?question_id=${bean.question_id}">비밀글입니다 이건내꺼</a></td>
+							<td><a href="${root }order/productDetail/ReplyDetail?question_id=${bean.question_id}" class="mySecret">${bean.question_title }</a></td>
 						</c:if>
 						<c:if test="${memberVo.member_id != bean.member_id}">
-							<td><a href=javascript:; class="secret">비밀글입니다</a></td>
+							<td class="othersBlock"><a href=javascript:; class="secret">비밀글입니다</a></td>
 						</c:if>
 					</c:if>
-					<td>${bean.question_content }</td>
+					<td>${bean.member_id }</td>
 					<td><fmt:formatDate value="${bean.question_date}" pattern="yyyy-MM-dd"/></td>
 				</tr>
 			</c:forEach>

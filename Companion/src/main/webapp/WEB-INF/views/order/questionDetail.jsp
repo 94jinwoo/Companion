@@ -25,26 +25,74 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<span>글번호</span>
-	<p>${ReplyDetail.question_id }</p>
-	<span>제목</span>
-	<span>${ReplyDetail.question_title }</span>
-	<span>작성자</span>
-	<span>${ReplyDetail.member_id }</span>
-	<span>작성일</span>
-	<span><fmt:formatDate value="${ReplyDetail.question_date}" pattern="yyy-MM-dd"/></span>
-	<span>내용</span>
-	<span>${ReplyDetail.question_content }</span>
-	
-	<span>상태</span>
-	<span>${ReplyDetail.question_state_name }</span>
-	<span>비밀글</span>
-	<span>${ReplyDetail.question_secret_name }</span>
-	<span>답변</span>
-	<span>${ReplyDetail.question_answer }</span>
-	<span>답변일</span>
-	<span><fmt:formatDate value="${ReplyDetail.question_answerdate}" pattern="yyy-MM-dd"/></span>
-	<button type="button" id="back_Btn">목록</button>
+	<table class="quesDetailT">
+		<thead>
+			<tr>
+				<th class="clearfix">
+				<div class="float--left">
+						<label>&nbsp;[제목]&nbsp;</label>
+						<span>${ReplyDetail.question_title }</span>
+					</div>
+					<div class="float--right">
+						<label>&nbsp;[글번호]&nbsp;</label>
+						<span>${ReplyDetail.question_id }&nbsp;</span>
+					</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="clearfix">
+					<div class="float--left">
+						<label>&nbsp;[작성자]&nbsp;</label>
+						<span>${ReplyDetail.member_id }</span>
+					</div>
+					<div class="float--right">
+						<label>&nbsp;[작성일자]&nbsp;</label>
+						<span><fmt:formatDate value="${ReplyDetail.question_date}" pattern="yyy-MM-dd"/>&nbsp;</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="clearfix">
+					<div class="float--right">
+						<label>&nbsp;[비밀글]&nbsp;</label>
+						<span>${ReplyDetail.question_secret_name }&nbsp;</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">${ReplyDetail.question_content }</td>
+			</tr>
+		</tbody>
+	</table>
+	<hr class="mb-3" style="width:920px">
+	<table class="quesDetailT">
+		<thead>
+			<tr>
+				<th class="clearfix">
+				<div class="float--left">
+						<label>&nbsp;[답변상태]&nbsp;</label>
+						<span>${ReplyDetail.question_state_name }</span>
+					</div>
+					<div class="float--right">
+						<label>&nbsp;[답변일]&nbsp;</label>
+						<span><fmt:formatDate value="${ReplyDetail.question_answerdate}" pattern="yyy-MM-dd"/></span>
+					</div>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>답변</th>
+				<td>${ReplyDetail.question_answer }</td>
+				
+			</tr>
+		</tbody>
+	</table>
+	<div class="btn__group">
+		<button type="button" id="back_Btn" class="mainBtn">이전으로</button>
+	</div>
 </body>
 
 <script type="text/javascript">

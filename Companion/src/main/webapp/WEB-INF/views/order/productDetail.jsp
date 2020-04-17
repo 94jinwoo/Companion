@@ -401,19 +401,13 @@
 
 					<!-- 문의글 start-->
 					<div id="contact2" role="tabpanel" aria-labelledby="contact-tab"
-						class="tab-pane fade px-4 py-5">
+						class="tab-pane fade px-4 py-3">
 						<div class="row">
 							<div class="col-lg-12" id="inquiry">
 								<!-- 테이블로 넣자  -->
-								<div class="row">
-									<div class="col-sm-6">
-										<h4>문의하기</h4>
-									</div>
-									<div class="col-sm-6">구매하시려는 상품에 대해 궁금하신 점이 있으신 경우 문의 해
-										주세요</div>
-
+								<div id="questiont">
+									구매하시려는 상품에 대해 궁금하신 점이 있으신 경우 문의 해주세요
 								</div>
-
 
 								<div id="reply">
 									<c:if test="${memberVo.member_id==null}">
@@ -508,13 +502,8 @@
 									</c:if>
 									<!-- 여기에 문의글 ajax 들어감 -->
 									<section class="replyList">
-										<h4>최근 문의글 목록</h4>
-										<div id="345">
-										
-										</div>
-	
+									<br/><br/>
     <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?product_id=${productDetailOne.product_id}" width="1000px" height="400px"  frameborder="0" scrolling="no"></iframe>
-						
 										 
 									</section>
 									<!-- 여기에 문의글 ajax 들어감. -->
