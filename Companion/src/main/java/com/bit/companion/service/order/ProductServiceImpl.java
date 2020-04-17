@@ -3,6 +3,9 @@ package com.bit.companion.service.order;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.mail.Session;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -31,11 +34,19 @@ public class ProductServiceImpl implements ProductService {
 		}
 	}
 
+	@SuppressWarnings("null")
 	@Override
 	public void detail(Model model,int product_id) {
+		ProductVo list;
+//		//상품 조회 목록 세션 선언.
+//		HttpSession session = null;
+//		session.setAttribute("ToDayView",product_id);
+		
 		try {
-			productDao.ProductDetailOne(product_id);
+			list = productDao.ProductDetailOne(product_id);
 			model.addAttribute("productDetailOne",productDao.ProductDetailOne(product_id));
+			
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
