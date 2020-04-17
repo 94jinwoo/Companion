@@ -39,16 +39,16 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th scope="col" class="border-0 bg-light">
-							<div class="p-2 px-3 text-uppercase">이용후기</div>
+						<th>
+							<div class="p-2 px-3 text-uppercase">이미지</div>
 						</th>
-						<th scope="col" class="border-0 bg-light">
+						<th>
 							<div class="py-2 text-uppercase">제목</div>
 						</th>
-						<th scope="col" class="border-0 bg-light">
-							<div class="p-2 px-3 text-uppercase">아이디</div>
+						<th>
+							<div class="p-2 px-3 text-uppercase">작성자</div>
 						</th>
-						<th scope="col" class="border-0 bg-light">
+						<th>
 							<div class="py-2 text-uppercase">날짜</div>
 						</th>
 					</tr>
@@ -56,25 +56,20 @@
 				<tbody>
 					<c:forEach items="${ReviewList }" var="bean" varStatus="status">
 						<tr>
-							<th scope="row" class="border-0">
-								<div class="p-2">
-									<img src="<spring:url value='${bean.article_image }'/>" alt="이미지90x90" width="90"
-										class="img-fluid rounded shadow-sm">
-									<div class="ml-3 d-inline-block align-middle">
-										<h5 class="mb-0"><a href="#" class="text-dark d-inline-block align-middle">${bean.article_title }</a></h5>
-										<span class="text-muted font-weight-normal font-italic d-block">옵션</span>
-									</div>
-								</div>
-							</th>
+							<!-- 이미지 -->
+							<td>
+								<img src="<spring:url value='${bean.article_image }'/>" alt="이미지90x90" width="90">
+							</td>
+							
+							<!-- 제목 -->
+							<td><a href="${root }order/productDetail/ReviewDetail?article_id=${bean.article_id}"
+									 class="text-dark d-inline-block align-middle">${bean.article_title }</a></td>
+							
+							<!-- 작성자 -->
+							<td>${bean.member_id }</td>
 
-							<!-- 상품번호 출력 -->
-							<td class="border-0 align-middle"><strong>${productDetailOne.product_name }</strong></td>
-
-							<!-- 후기작성자 아이디 출력 -->
-							<td class="border-0 align-middle">${bean.member_id }</td>
-
-							<!-- 후기작성날짜 출력 -->
-							<td class="border-0 align-middle"><fmt:formatDate value="${bean.article_date}" pattern="yyy-MM-dd"/></td>
+							<!-- 작성일 -->
+							<td><fmt:formatDate value="${bean.article_date}" pattern="yyy-MM-dd"/></td>
 
 						</tr>
 

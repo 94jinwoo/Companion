@@ -1,4 +1,5 @@
 use companion;
+/*
 select * from `member`;
 insert into `member` values('admin','1234','어드민',null,'010-0000-0001','admin@admin.com','55555','서울시','비트캠프',0);
 
@@ -153,7 +154,13 @@ UPDATE `PRODUCT` SET
 delete from `product` where product_id>800 and product_id<900
 update product set product_thumb=null where product_id>=1000
 select * from `order`
-select * from `product`;
+select * from `product` where product_name="테스트이름2";
 select * from `category`;
 update category set category_name="목욕용품" where category_id=500;
+*/
 
+select aa.*, pp.*,
+(select DISTINCT od.order_detail_option from `article` a, `member` m, `order` o, `order_detail` od, `product` p 
+where a.member_id=m.member_id and m.member_id=o.member_id and o.order_id=od.order_id and a.product_id=od.product_id and a.product_id=1 and a.member_id='admin') as "option"
+from `article` aa, `product` pp where aa.board_id=3 and aa.product_id=1 and	aa.product_id=pp.product_id;
+select * from `article` where product_id=1;

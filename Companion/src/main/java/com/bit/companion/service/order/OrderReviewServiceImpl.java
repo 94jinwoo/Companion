@@ -17,7 +17,7 @@ public class OrderReviewServiceImpl implements OrderReviewService {
 	@Autowired
 	OrderReviewDao orderReviewDao;
 	
-	//이용 후기.
+	//list
 	@Override
 	public void reviewList(Model model, int product_id, Pagination_P pagination_p, int page, int range){
 		try {
@@ -31,7 +31,17 @@ public class OrderReviewServiceImpl implements OrderReviewService {
 			
 			model.addAttribute("ReviewTotal",listCnt);
 			model.addAttribute("ReviewList",list);
-		}catch (Exception e) {
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	//detail
+	@Override
+	public void detail(Model model, int article_id) {
+		try {
+			model.addAttribute("ReviewDetail",orderReviewDao.reviewDetail(article_id));
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}

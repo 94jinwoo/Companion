@@ -16,16 +16,22 @@ public class OrderReviewDaoImpl implements OrderReviewDao {
 	@Autowired
 	SqlSession sqlSession;
 
+	//list
 	@Override
 	public List<OrderReviewVo> selectAll( Pagination_P pagination_p) throws SQLException {
-		//이용 후기
 		return sqlSession.selectList("orderReview.reviewList",pagination_p);
 	}
 
-	//총 게시글
+	//total
 	@Override
 	public int total(Pagination_P pagination_p) throws SQLException {
 		return sqlSession.selectOne("orderReview.reviewTotal",pagination_p);
+	}
+
+	//detail
+	@Override
+	public Object reviewDetail(int article_id) throws SQLException {
+		return sqlSession.selectOne("orderReview.reviewDetail", article_id);
 	}
 	
 }

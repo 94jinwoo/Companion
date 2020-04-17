@@ -27,7 +27,7 @@ public class OrderReviewController {
 	@Autowired
 	OrderReviewService orderReviewService;
 	
-	// 이용후기 (ARTICLE) TABLE LIST
+		// list
 		@RequestMapping(value="order/productDetail/ReviewList",method = RequestMethod.GET)
 		public String ReplyList(Model model,@RequestParam("product_id") int product_id 
 				, @RequestParam(required = false, defaultValue = "1") int page
@@ -38,5 +38,12 @@ public class OrderReviewController {
 			orderReviewService.reviewList(model, product_id, pagination_p,page, range);
 			
 			return "order/review";
+		}
+		
+		// detail
+		@RequestMapping(value = "order/productDetail/ReviewDetail", method = RequestMethod.GET)
+		public String ReplyDetail(Model model, @RequestParam int article_id) throws SQLException{
+			orderReviewService.detail(model, article_id);
+			return "order/reviewDetail";
 		}
 }

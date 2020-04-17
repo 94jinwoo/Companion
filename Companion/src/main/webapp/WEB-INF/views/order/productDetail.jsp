@@ -294,7 +294,7 @@
 
 					<div id="post-use" role="tabpanel" aria-labelledby="post-use-tab"
 						class="tab-pane fade px-4 py-5">
-						 <iframe name="review.jsp" id="review.jsp" src="${root }order/productDetail/ReviewList?product_id=${productDetailOne.product_id}" width="1000px" height="400px"  frameborder="0" scrolling="no"></iframe>
+						 <iframe name="review.jsp" id="review.jsp" src="${root }order/productDetail/ReviewList?product_id=${productDetailOne.product_id}" width="1000px" height="600px"  frameborder="0" scrolling="no"></iframe>
 					</div>
 					<!-- #post-use end  -->
 					<!-- 후기글 End -->

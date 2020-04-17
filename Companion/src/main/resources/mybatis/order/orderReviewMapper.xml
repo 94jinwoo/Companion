@@ -5,7 +5,7 @@
   
 <mapper namespace="orderReview">
 	
-	<!-- 이용후기 & 이용후기 개수(review_count) 파악  -->
+	<!-- 리스트  -->
 	<select id="reviewList" resultType="orderReviewBean">
 		select 
 			a.*, p.*
@@ -17,8 +17,13 @@
 							ORDER BY a.article_id DESC limit #{startList},#{listSize}
 	</select>
 	
+	<!-- 총 게시글 -->
 	<select id="reviewTotal" resultType= "int">
 		select count(*) as listCnt from `article` where product_id=#{product_id} and board_id=3
 	</select>
 	
+	<!-- 디테일 -->
+	<select id="reviewDetail" parameterType="int" resultType="orderReviewBean">
+		select * from `article` where article_id=#{value}
+	</select>
 </mapper>
