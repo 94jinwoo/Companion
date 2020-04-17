@@ -203,22 +203,6 @@
 				    	</div>
 				    </td>
 				  </tr>
-				  <tr>
-				    <th>
-				    	<div>
-						<label for="article_image">파일 첨부</label>
-						</div>
-					</th>
-				    <td>
-				    	<div class="file-add">
-				    	<input type="file" name="file" id="question_image"/>
-						<div class="select_img">
-							<img alt="원본이미지" src="<spring:url value='${adminQuestionOne.question_image }'/>"/>
-							<input type="hidden" name="question_image" value="${adminQuestionOne.question_image }"/>
-						</div>
-					</div>
-				    </td>
-				  </tr>
 				</tbody>
 				</table>
 				<!-- table에 잡아넣기끝 -->

@@ -44,5 +44,13 @@
 	<span>${ReplyDetail.question_answer }</span>
 	<span>답변일</span>
 	<span><fmt:formatDate value="${ReplyDetail.question_answerdate}" pattern="yyy-MM-dd"/></span>
+	<button type="button" id="back_Btn">목록</button>
 </body>
+
+<script type="text/javascript">
+//목록 버튼
+$("#back_Btn").click(function(){
+	location.href = ${root}+"order/productDetail/ReplyList?product_id="+${ReplyDetail.product_id};
+});
+</script>
 </html>

@@ -318,7 +318,7 @@
 						<div class="row">
 							<!-- 후기글 start -->
 							<div class="col-lg-12">
-								<%-- <table class="table">
+								<table class="table">
 									<thead>
 										<tr>
 											<th scope="col" class="border-0 bg-light">
@@ -375,7 +375,7 @@
 										</c:forEach>
 										<!--C;FOREACH  -->
 									</tbody>
-								</table> --%>
+								</table>
 								<ul class="pagination">
 									<li class="page-item"><a class="page-link" href="#"
 										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
@@ -486,6 +486,10 @@
 																		id="question_title">
 																	<textarea name="question_content" class="form-control"
 																		id="question_content" placeholder="문의하실 내용을 입력해주세요."></textarea>
+																	<label for="question_secret2" id="question_secret2" class="col-form-label">공개글</label>
+																	<input type="radio" name="question_secret_id" value="0" checked="checked">
+																	<label for="question_secret1" id="question_secret1" class="col-form-label">비밀글</label>
+																	<input type="radio" name="question_secret_id" value="1" >
 																</div>
 															</div>
 															<div class="modal-footer">
@@ -662,11 +666,13 @@
 									}
 									var question_title = $("#question_title").val();
 									var question_content = $("#question_content").val();
+									var question_secret_id = $('input[name="question_secret_id"]:checked').val();
 									var data = {
 										product_id : product_id,
 										question_title : question_title,
 										question_content : question_content,
-										member_id : member_id
+										member_id : member_id,
+										question_secret_id : question_secret_id
 									};
 										$.ajax({
 											url : "${root }order/productDetail/question",
