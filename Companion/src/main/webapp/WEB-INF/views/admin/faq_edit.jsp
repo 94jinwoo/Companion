@@ -149,7 +149,7 @@ $(document).ready(function(){
 	});
 });	
 
-<!-- 이미지 등록시 출력 -->	
+// 이미지 등록시 출력	
 $('#article_image').change(function(){
 	if(this.files&&this.files[0]){
 		var reader = new FileReader;

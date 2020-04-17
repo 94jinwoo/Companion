@@ -15,4 +15,16 @@ public interface AdminOrderDao {
 
 	List<AdminOrderDetailVo> selectOneDetail(int order_id) throws SQLException;
 
+	void updateRelease(int order_id) throws SQLException;
+
+	void updateCancle(int order_id) throws SQLException;
+
+	void updateDelivery(int order_id) throws SQLException;
+
+	void updateDelivering(int order_id) throws SQLException;
+
+	void updateReleaseDone(int order_id) throws SQLException;
+
+	void updateAdminDelivery(int order_id) throws SQLException;
+
 }

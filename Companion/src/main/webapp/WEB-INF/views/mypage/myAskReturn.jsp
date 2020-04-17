@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/main.css">
-    <link rel="stylesheet" href="${root }css/mypage/mypage.css">
+    <link rel="stylesheet" href="${root }css/mypage/questionF.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -89,13 +89,14 @@
 		<!-- section [start] -->
 		<section class="section">
 			<div class="main--title">
-				<h1>상품 교환신청</h1>
+				<h1>상품 반품신청</h1>
 			</div>
 			<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
 				<input type="hidden" name="product_id" id="product_id" value="${product_id }">
 				<input type="hidden" name="order_id" id="order_id" value="${order_id }">
 				<input type="hidden" name="question_type_id" id="question_type_id" value="1">
-				<table>
+				<table class="table">
+				<thead></thead>
 				<tbody>
 				  <tr>
 				    <th>
@@ -105,7 +106,7 @@
 				    </th>
 				    <td>
 				    	<div>
-				    	<input type="text" name="ask_title" id="ask_title" placeholder="제목을 입력해 주세요."/>
+				    	<input type="text" name="ask_title" id="ask_title" class="input--text textT" placeholder="제목을 입력해 주세요."/>
 				    	</div>
 				    </td>	
 				  </tr>
@@ -117,7 +118,7 @@
 					</th>
 				    <td>
 				    	<div>
-					    	<textarea name="ask_product" id="ask_product" rows="10" cols="80"></textarea>
+					    	<textarea name="ask_product" id="ask_product" rows="10" cols="80" class="input--text textA"></textarea>
 				    	</div>
 				    </td>
 				  </tr>
@@ -140,9 +141,9 @@
 				  </tr> --%>
 				</tbody>
 				</table>
-				<div class="btn-group">
-					<button type="button" id="ask_btn" class="btn">등록</button>
-					<button type="button" id="back_btn" class="btn">취소</button>
+				<div class="btnbox">
+					<button type="button" id="ask_btn" class="Cbtn">등록</button>
+					<button type="button" id="back_btn" class="Cbtn">취소</button>
 				</div>
 			</form>
 			

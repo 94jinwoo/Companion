@@ -32,7 +32,6 @@
                     (SELECT p_s.payment_state_name from `payment_state` p_s, `payment` p where p_s.payment_state_id=p.payment_state_id and p.order_id=#{value}) as payment_state_name
 				    from `order` o where o.order_id=#{value};
 	</select>
-	
 	<select id="selectOneDetail" resultType="adminOrderDetailBean">
 		select 
 		o_d.order_detail_id,
@@ -45,4 +44,44 @@
         (select p.product_price from `product` p where o_d.product_id=p.product_id and o.order_id=#{value}) as product_price
         from `order_detail` o_d, `order` o where o_d.order_id=o.order_id and o.order_id=#{value};
 	</select>
+	
+	<!-- order update -->
+	<!-- 출고처리중 -->
+	<update id="updateRelease">
+		update `order` set order_state_id = 4 where order_id=#{value};
+	</update>
+	<!-- 출고완료 -->
+	<update id="updateReleaseDone">
+		update `order` set order_state_id = 5 where order_id=#{value};
+	</update>
+	<!-- 배송완료 -->
+	<update id="updateAdminDelivery">
+		update `order` set order_state_id = 6 where order_id=#{value};
+	</update>
+	<!-- 구매확정 -->
+	<update id="updatePurchaseConfirm">
+		update `order` set order_state_id = 7 where order_id=#{value};
+	</update>
+	<!-- 교환 -->
+	<update id="updateExchange">
+		update `order` set order_state_id = 8 where order_id=#{value};
+	</update>
+	<!-- 반품 -->
+	<update id="updateReturn">
+		update `order` set order_state_id = 9 where order_id=#{value};
+	</update>
+	<!-- 주문취소 -->
+	<update id="updateCancle">
+		update `order` set order_state_id = 10 where order_id=#{value};
+	</update>
+	
+	<!-- delivery update -->
+	<!-- 배송중 -->
+	<update id="updateDelivering">
+		update `delivery` set delivery_state_id = 1 where order_id=#{value};
+	</update>
+	<!-- 배송완료 -->
+	<update id="updateDelivery">
+		update `delivery` set delivery_state_id = 2 where order_id=#{value};
+	</update>
 </mapper>

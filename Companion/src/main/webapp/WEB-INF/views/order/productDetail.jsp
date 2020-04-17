@@ -446,7 +446,6 @@
 										</div>
 
 										<section class="replyList">
-											<p>문의글 리스트 왜 안나오는데???</p>
 											<!-- null 값이어도 값이 들어가야함. -->
 											<!-- 근데 뭐가 문제인지 모르겠음. -->
 											<table class="table--replyList">
@@ -511,7 +510,7 @@
 										
 										</div>
 	
-    <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}&num=1" width="1000px" height="300px"  frameborder="0" scrolling="no"></iframe>
+    <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?product_id=${productDetailOne.product_id}" width="1000px" height="400px"  frameborder="0" scrolling="no"></iframe>
 						
 										 
 									</section>
