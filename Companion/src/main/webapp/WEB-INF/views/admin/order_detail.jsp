@@ -69,7 +69,7 @@
 					<c:when test="${bean.order_state_admin eq '주문취소' }">
 						<div class="card">
 							<img alt="주문취소" src="${root }imgs/admin/cancel.png">
-							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
+							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/bqlqn" title="bqlqn">bqlqn</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
 							<div class="container">
 								<div class="card-content">
 									<strong>취소된 주문입니다.</strong>
@@ -79,7 +79,7 @@
 					</c:when>
 					<c:when test="${bean.order_state_admin eq '결제완료' }">
 						<div class="card">
-							<img alt="주문취소" src="${root }imgs/admin/payment.png">
+							<img alt="결제완료" src="${root }imgs/admin/payment.png">
 							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
 							<div class="container">
 								<div class="card-content">
@@ -93,12 +93,22 @@
 						</div>
 					</c:when>
 					<c:when test="${bean.order_state_admin eq '출고처리중' }">
-						현재 주문 상태 : ${bean.order_state_admin }<br/>	
-						<button type="button" id="btn-releaseDone">출고완료</button>
+						<div class="card">
+							<img alt="출고처리중" src="${root }imgs/admin/releasing.png">
+							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
+							<div class="container">
+								<div class="card-content">
+									<strong>출고 처리 중인 주문입니다.</strong><br/>
+									<div class="btn-group">
+										<button class="Cbtn" type="button" id="btn-releaseDone">출고완료</button>
+									</div>
+								</div>
+							</div>
+						</div>					
 					</c:when>
 					<c:when test="${bean.order_state_admin eq '출고완료' }">
 						<div class="card">
-							<img alt="주문취소" src="${root }imgs/admin/release.png">
+							<img alt="출고완료" src="${root }imgs/admin/release.png">
 							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
 							<div class="container">
 								<div class="card-content">
@@ -127,12 +137,29 @@
 						</div>
 					</c:when>
 					<c:when test="${bean.order_state_admin eq '구매확정' }">
-						현재 주문 상태 : ${bean.order_state_admin }<br/>
-						구매가 확정된 상품입니다.
+						<div class="card">
+							<img alt="구매확정" src="${root }imgs/admin/soldout.png">
+							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
+							<div class="container">
+								<div class="card-content">
+									<strong>구매 확정된 주문입니다.</strong><br/>
+								</div>
+							</div>
+						</div>
 					</c:when>
 					<c:when test="${bean.order_state_admin eq '교환' }">
-						현재 주문 상태 : ${bean.order_state_admin }<br/>
-						<button type="button" id="btn-purchaseConfirm">구매확정</button>
+						<div class="card">
+							<img alt="교환" src="${root }imgs/admin/exchange.png">
+							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
+							<div class="container">
+								<div class="card-content">
+									<strong>교환된 주문입니다.</strong><br/>
+									<div class="btn-group">
+										<button type="button" id="btn-purchaseConfirm">구매확정</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</c:when>
 					<c:when test="${bean.order_state_admin eq '반품' }">
 						<div class="card">
@@ -146,11 +173,21 @@
 						</div>
 					</c:when>
 					<c:otherwise>
-						현재 주문 상태 : ${bean.order_state_admin }<br/>
-						<button type="button" id="btn-cancel">주문취소</button>
-						<button type="button" id="btn-purchaseConfirm">구매확정</button>
-						<button type="button" id="btn-exchange">교환</button>
-						<button type="button" id="btn-return">반품</button>
+						<div class="card">
+							<img alt="물음표" src="${root }imgs/admin/mark.png">
+							<!-- 아이콘 제작자 <a href="https://www.flaticon.com/kr/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->
+							<div class="container">
+								<div class="card-content">
+									<strong>현재 주문 상태 : ${bean.order_state_admin }</strong>
+									<div class="btn-group">
+										<button class="Cbtn" type="button" id="btn-cancel">주문취소</button>
+										<button class="Cbtn" type="button" id="btn-purchaseConfirm">구매확정</button>
+										<button class="Cbtn" type="button" id="btn-exchange">교환</button>
+										<button class="Cbtn" type="button" id="btn-return">반품</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</c:otherwise>
 				</c:choose>
 			</form>

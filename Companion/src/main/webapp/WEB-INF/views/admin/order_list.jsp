@@ -59,10 +59,6 @@
 			<div class="main--title clearfix">
 				<h1>[Admin] 주문내역</h1>
 			</div>
-			<div class="float-right">		
-			<button>주문취소</button>
-			<button>출고요청</button>
-			</div>
 		<!-- .container-fluid [start] -->
 		<div class="container-fluid">
 			<table class="table table-bordered dataTable" id="dataTable">
