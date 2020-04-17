@@ -24,9 +24,13 @@ import com.bit.companion.model.entity.order.ProductVo;
 import com.bit.companion.service.order.OrderQuestionService;
 import com.bit.companion.service.order.OrderReviewService;
 import com.bit.companion.service.order.ProductService;
+import com.bit.companion.service.order.SessionService;
 @Controller
 public class ProductController {
 	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
+	
+	@Autowired
+	SessionService sessionService;
 	
 	@Autowired
 	ProductService productService;
@@ -54,8 +58,10 @@ public class ProductController {
 	@RequestMapping(value = "/order/productDetail",method=RequestMethod.GET)
 	public String productDetail(Model model,@RequestParam("idx") int product_id,HttpSession session,ServletRequest request) throws SQLException {
 		MemberVo memberVo=(MemberVo)session.getAttribute("memberVo");
+		
+		request.setAttribute("Product_id",product_id);
+		
 		if(memberVo==null) {
-			
 		}else {
 			memberVo.setMember_id((memberVo.getMember_id()));
 		}
@@ -68,6 +74,9 @@ public class ProductController {
 		
 		//상품 추천
 		productService.productRecommend(model, product_id);
+		
+		//세션 설마 여기서 해야하냐?
+		sessionService.SessionList(model,product_id);
 		
 		return "order/productDetail";
 	}

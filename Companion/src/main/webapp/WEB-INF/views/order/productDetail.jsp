@@ -106,6 +106,9 @@
 						<!--  상품 정보 -->
 						<h2 class="goods-title">[ ${productDetailOne.product_name } ]
 							상품 번호 ${productDetailOne.product_id }</h2>
+							<!-- 세션에 담아야 해요.!  -->
+					
+							 
 						<h4>[ 카테고리NUM=${productDetailOne.category_id } ]</h4>
 						<p class="goos-text">상품 설명은 하단에 있습니다.</p>
 
@@ -506,11 +509,8 @@
 									<!-- 여기에 문의글 ajax 들어감 -->
 									<section class="replyList">
 										<h4>최근 문의글 목록</h4>
-										<div id="345">
-										
-										</div>
 	
-    <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?product_id=${productDetailOne.product_id}" width="1000px" height="400px"  frameborder="0" scrolling="no"></iframe>
+    <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?product_id=${productDetailOne.product_id}" width="1000px" height="700px"  frameborder="0" scrolling="no"></iframe>
 						
 										 
 									</section>
@@ -558,6 +558,32 @@
 				</table>
 
 				<!-- 위치테스트여 -->
+							<!-- 조회한 상품 세션 저장용입니당. -->
+							<%
+							int product_id = (int)(request.getAttribute("Product_id"));
+							out.println(product_id);
+							session.setAttribute("Session",product_id);
+							%>
+							
+						<!-- 아 리스트 나오나 테스트 한번만 해봅시다! -->	
+			<c:forEach items="${sessionList }" var="bean" begin="1" end="2"> 
+				<div class="scroll-right-content">
+					 <div class="goods-content">
+						<a href="#"><img src="${bean.product_image }" alt="70x70"></a>
+					</div> 
+					<div class="goods-content">
+						<a href="#"><img src="${root }imgs/infochk.png" alt="70x70"></a>
+					</div>
+					<div class="scroll-up" id="topBtn">
+						<a href="#" role="button"><h3 class="up">↑</h3></a>
+					</div>
+				</div>
+		 	</c:forEach> 				
+							
+							
+							<!-- 조회한 상품 세션 저장용입니당. -->
+
+
 
 			</div>
 			<!-- #myTab2Content end-->
@@ -583,7 +609,6 @@
 	<!-- MAIN JS -->
 	<script src="${root }js/main.js"></script>
 	<!-- productDetail JS -->
-	<script src="${root}js/order/productDetail.js"></script>
 	<script src="${root}js/order/productDetail.js"></script>
 	<script type="text/javascript">
 		$(function() {
