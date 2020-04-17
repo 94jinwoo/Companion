@@ -104,9 +104,9 @@
   		select * from `order` where order_id=#{order_id} and member_id=#{member_id}
   	</select>
   	<insert id="askProuctInsert" parameterType="mypageQuestionBean">
-  		insert into question values (default,#{question_type_id},#{order_id},#{product_id},#{member_id},now(),null,#{question_title},#{question_content},null,null,default,default)
+  		insert into question values (default,#{question_type_id},#{order_id},#{product_id},#{member_id},now(),null,#{question_title},#{question_content},#{question_image},null,default,default)
   	</insert>
   	<insert id="reviewProductInsert" parameterType="myReviewProduct">
-  		insert into article values ('3',default,#{member_id},#{article_title},#{article_content},now(),'0',null,null,#{product_id})
+  		insert into article values ('3',default,#{member_id},#{article_title},#{article_content},now(),'0',#{article_image},#{article_thumb},#{product_id})
   	</insert>
   </mapper>

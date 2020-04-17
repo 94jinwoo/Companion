@@ -106,40 +106,40 @@
 										<div class="col-2">
 											<img id="proImg" src="${bean.product_thumb }"alt="Img"/>
 										</div>
-										<div class="col-5">${bean.product_name }</div>
+										<div class="col-4">${bean.product_name }</div>
 										<c:choose>
 											<c:when test="${bean.question_type_id=='0' }">
-												<div class="col-1"></div>
+												<div class="col-2">교환</div>
 											</c:when>
 											<c:when test="${bean.question_type_id=='1' }">
-												<div class="col-1"></div>
+												<div class="col-2">환불</div>
 											</c:when>
 											<c:when test="${bean.question_type_id=='2' }">
-												<div class="col-1"></div>
+												<div class="col-2">출하 전 취소</div>
 											</c:when>
 											<c:when test="${bean.question_type_id=='3' }">
-												<div class="col-1"></div>
+												<div class="col-2">배송</div>
 											</c:when>
 											<c:when test="${bean.question_type_id=='4' }">
-												<div class="col-1"></div>
+												<div class="col-2">불량 A/S</div>
 											</c:when>
 											<c:when test="${bean.question_type_id=='5' }">
-												<div class="col-1"></div>
+												<div class="col-2">주문/결제</div>
 											</c:when>
 											<c:when test="${bean.question_type_id=='6' }">
-												<div class="col-1"></div>
+												<div class="col-2">상품/재입고</div>
 											</c:when>
 											<c:when test="${bean.question_type_id=='7' }">
-												<div class="col-1"></div>
+												<div class="col-2">쿠폰/적립금</div>
 											</c:when>
 											<c:when test="${bean.question_type_id=='8' }">
-												<div class="col-1"></div>
+												<div class="col-2">회원 관련</div>
 											</c:when>
 											<c:when test="${bean.question_type_id=='9' }">
-												<div class="col-1"></div>
+												<div class="col-2">기타 문의</div>
 											</c:when>
 											<c:when test="${bean.question_type_id=='100' }">
-												<div class="col-1"></div>
+												<div class="col-2">상품/문의</div>
 											</c:when>
 										</c:choose>
 										<div class="col-2">${bean.question_date }</div>
