@@ -82,7 +82,6 @@
                                </c:when>
                                <c:otherwise>
                                    <ul class="nav navbar-nav ml-auto">
-                                       <p>${sessionScope.memberVo.member_name }님이 로그인 중입니다.</p>
                                        <li class="nav-item">
                                            <a class="nav-link" href="#">주문내역</a>
                                        </li>
@@ -112,9 +111,9 @@
 				
 				<!--content  -->
 					<div class="categories">
-						<a href="#homeSubmenu"> <i class="fas fa-home"></i> 호텔서비스</a> <span></span> 
-						<a href="#"> <i class="fas fa-home"></i> 이용안내</a>
-						<hr class="mb-4">
+					<a href="#homeSubmenu"> <i class="fas fa-shopping-cart"></i> 쇼핑하기</a> <span></span> 
+					<a href="#"> <i class="fas fa-clipboard-list"></i> 주문서작성</a>
+					<hr class="mb-4">
 					</div>
 		<!-- .title-group start-->
    <section class="section">
@@ -137,39 +136,52 @@
                 
                  
                        <h4>주문상세내역</h4>
-                <table class="table">
+                <table class="table table_layout">
+	               <colgroup>
+	               <col class="col1">
+	               <col class="col2">
+	               <col class="col3">
+	               <col class="col4">
+	               <col class="col5">
+	               </colgroup>
                     <thead>
                         <tr>
-                            <th>상품 이미지</th>
-                            <th>상품/옵션 정보</th>
+                            <th>상품 이름</th>
+                            <th>옵션</th>
                             <th>수량</th>
                             <th>상품금액</th>
-                            <th>배송비</th>
                             <th>합계금액</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><img src="${orderProductPurchaseOne.product_image }" class="img-fluid" alt="더미에 이미지가 없어 ㅠ"></td>
-                            <td><input type="hidden" class="form-control" name="product_id" value="${orderProductPurchaseOne.product_id }">
-                            이름:${orderProductPurchaseOne.product_name } / 
-                            <!-- 옵션 값  -->
-                             <% String select1= request.getParameter("selectBox");
-                            out.println(select1);
-                            request.setAttribute("cart_option",request.getParameter("selectBox"));
-                            %>
-                          <input type="hidden" class="form-control" name="order_detail_option" id="order_detail_option" value="<%=request.getParameter("selectBox") %>"/> 
+                            <td class="imgTbox">
+                            	<!-- 이미지 -->
+                            	<div class="imgBox">
+	                            	<img id="proImg" src="${orderProductPurchaseOne.product_image }" class="img-fluid" alt="더미에 이미지가 없어 ㅠ">
+                            	</div>
+                            	<!-- 상품이름 -->
+                            	<input type="hidden" class="form-control" name="product_id" value="${orderProductPurchaseOne.product_id }">
+                            	${orderProductPurchaseOne.product_name }
+                            <td>
+                            	<!-- 옵션 값  -->
+                            	<%
+                            	String select1= request.getParameter("selectBox");
+                            	out.println(select1);
+                           		request.setAttribute("cart_option",request.getParameter("selectBox"));
+                            	%>
+                          		<input type="hidden" class="form-control" name="order_detail_option" id="order_detail_option" value="<%=request.getParameter("selectBox") %>"/> 
 	                        </td>
-                            <td><%int order_detail_quantity= Integer.parseInt(request.getParameter("order_detail_quantity")); 
-                            out.println(order_detail_quantity);%>
-                            <%
-                             request.setAttribute("order_detail_quantity",request.getParameter("order_detail_quantity"));
-                            %>   
+                            <td>
+                            	<%int order_detail_quantity= Integer.parseInt(request.getParameter("order_detail_quantity")); 
+                            	out.println(order_detail_quantity);%>
+                           		<%
+                             	request.setAttribute("order_detail_quantity",request.getParameter("order_detail_quantity"));
+                            	%>   
                               <input type="hidden" class="form-control" name="order_detail_quantity" id="order_detail_quantity" value="<%=request.getParameter("order_detail_quantity") %>"/>  
                          	  <input type="hidden" class="form-control" name="product_stock" id="product_stock" value="${orderProductPurchaseOne.product_stock }"/>
                             <td>${orderProductPurchaseOne.product_price * order_detail_quantity}
                             </td>
-                            <td>2,500원</td>
                             <td>${orderProductPurchaseOne.product_price * order_detail_quantity +2500}</td>
                             
                         </tr>
@@ -229,7 +241,7 @@
 							<tr>
 								<th>받으실 곳</th>
 								<td><input type="text" class="input--text" name="order_addr1" id="sample6_postcode" placeholder="우편번호">
-									<button type="button" id="postSearch">우편 검색</button> <br /> 
+									<button type="button" id="postSearch" class="cBtn">우편 검색</button> <br /> 
 									<input type="text" class="input--text" name="order_addr2" id="sample6_address" placeholder="주소"> 
 									<input type="text" class="input--text" name="order_addr3" id="sample6_detailAddress" placeholder="상세주소"></td>
 							</tr>

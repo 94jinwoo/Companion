@@ -104,10 +104,10 @@
 					</div>
 					<div class="col-md-7" id="descrip">
 						<!--  상품 정보 -->
-						<h2 class="goods-title">[ ${productDetailOne.product_name } ]
-							상품 번호 ${productDetailOne.product_id }</h2>
-						<h4>[ 카테고리NUM=${productDetailOne.category_id } ]</h4>
-						<p class="goos-text">상품 설명은 하단에 있습니다.</p>
+						<h2 class="goods-title">${productDetailOne.product_name }</h2>
+							<!-- 상품 번호 ${productDetailOne.product_id } -->
+						<%-- <h4>[ 카테고리NUM=${productDetailOne.category_id } ]</h4> --%>
+						<p class="goos-text">상품 설명은 하단에 있습니다.</p><br/>
 
 						<!-- 셀렉트박스 옵션 값 가져오기.  -->
 
@@ -238,9 +238,8 @@
 									<c:choose>
 										<c:when test="${memberVo.member_id!=null }">
 											<button id="like_btn" type="button"
-												class="btn btn-outline-danger" data-toggle="modal"
-												data-target=".bd-example-modal-sm">좋아요! (
-												${productDetailOne.like_id } )</button>
+												class="btn btn-outline-danger btn-lg" data-toggle="modal"
+												data-target=".bd-example-modal-sm">♥ ( ${productDetailOne.like_id } )</button>
 										</c:when>
 										<c:when test="${memberVo.member_id==null }">
 											<button id="noneLgnLike_btn" type="button"
