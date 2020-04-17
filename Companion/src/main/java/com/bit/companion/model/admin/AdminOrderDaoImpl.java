@@ -40,8 +40,8 @@ public class AdminOrderDaoImpl implements AdminOrderDao {
 	}
 
 	@Override
-	public void updateCancle(int order_id) throws SQLException {
-		sqlSession.update("adminOrder.updateCancle", order_id);
+	public void updateCancel(int order_id) throws SQLException {
+		sqlSession.update("adminOrder.updateCancel", order_id);
 	}
 
 	@Override
@@ -62,6 +62,23 @@ public class AdminOrderDaoImpl implements AdminOrderDao {
 	@Override
 	public void updateAdminDelivery(int order_id) throws SQLException {
 		sqlSession.update("adminOrder.updateAdminDelivery",order_id);
+	}
+
+	@Override
+	public void updatePurchase(int order_id) throws SQLException {
+		sqlSession.update("adminOrder.updatePurchaseConfirm",order_id);
+	}
+
+	// 교환
+	@Override
+	public void updateExchange(int order_id) throws SQLException {
+		sqlSession.update("adminOrder.updateExchange",order_id);
+	}
+
+	// 반품
+	@Override
+	public void updateReturn(int order_id) throws SQLException {
+		sqlSession.update("adminOrder.updateReturn",order_id);
 	}
 
 }

@@ -17,7 +17,7 @@ public interface AdminOrderDao {
 
 	void updateRelease(int order_id) throws SQLException;
 
-	void updateCancle(int order_id) throws SQLException;
+	void updateCancel(int order_id) throws SQLException;
 
 	void updateDelivery(int order_id) throws SQLException;
 
@@ -27,4 +27,9 @@ public interface AdminOrderDao {
 
 	void updateAdminDelivery(int order_id) throws SQLException;
 
+	void updatePurchase(int order_id) throws SQLException;
+
+	void updateExchange(int order_id) throws SQLException;
+
+	void updateReturn(int order_id) throws SQLException;
 }

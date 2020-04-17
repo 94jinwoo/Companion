@@ -103,7 +103,9 @@
 					</div>
 					<div class="bigB clearfix">	
 						<div class="imgBox float--left">
-							<img id="proImg" src="${bean.product_thumb }" alt="Img"/>
+							<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
+								<img id="proImg" src="${bean.product_thumb }" alt="Img"/>
+							</a>
 						</div>
 						<div class="contentBox float--right">
 							<table class="table">
@@ -111,7 +113,11 @@
 								<tbody>
 									<tr>
 									<th>상품이름</th>
-									<td id="tx">${bean.product_name }</td>
+									<td id="tx">
+										<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
+											${bean.product_name }
+										</a>
+									</td>
 									</tr>
 									<tr>
 									<th>옵션</th>

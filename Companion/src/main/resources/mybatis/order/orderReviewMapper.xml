@@ -3,10 +3,27 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace="orderReview">
+<mapper namespace="orderReview">
 	
-	<!-- 이용후기 & 이용후기 개수(review_count) 파악  -->
-	<select id="OrderReviewList" resultType="orderReviewBean" parameterType="int">
-		select article.*,(select count(*) from article where product_id=#{product_id}) as review_count from article where board_id=3 and product_id=#{product_id};
+	<!-- 리스트  -->
+	<select id="reviewList" resultType="orderReviewBean">
+		select 
+			a.*, p.*
+				from `article` a, `product` p
+					where 
+						a.board_id=3 and
+						a.product_id=#{product_id} and
+						a.product_id=p.product_id
+							ORDER BY a.article_id DESC limit #{startList},#{listSize}
 	</select>
-  </mapper>
+	
+	<!-- 총 게시글 -->
+	<select id="reviewTotal" resultType= "int">
+		select count(*) as listCnt from `article` where product_id=#{product_id} and board_id=3
+	</select>
+	
+	<!-- 디테일 -->
+	<select id="reviewDetail" parameterType="int" resultType="orderReviewBean">
+		select * from `article` where article_id=#{value}
+	</select>
+</mapper>

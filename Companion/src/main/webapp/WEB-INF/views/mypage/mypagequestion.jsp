@@ -104,9 +104,15 @@
 									<div class="row">
 										<!-- 나중에 해당 상품페이지로 이동하게 앵커달기 -->
 										<div class="col-2">
-											<img id="proImg" src="${bean.product_thumb }"alt="Img"/>
+											<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
+												<img id="proImg" src="${bean.product_thumb }"alt="Img"/>
+											</a>
 										</div>
-										<div class="col-4">${bean.product_name }</div>
+										<div class="col-4">
+											<a href="${root }order/productDetail?idx=${bean.product_id }">
+												${bean.product_name }
+											</a>
+										</div>
 										<c:choose>
 											<c:when test="${bean.question_type_id=='0' }">
 												<div class="col-2">교환</div>

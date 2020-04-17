@@ -139,13 +139,15 @@ select * from `delivery_state`;
 select * from `payment`;
 select * from `payment_state`;
 
-select * from `article`;
+select * from `article` where board_id=2;
 
-delete from `payment` where order_id=177;
+delete from `article` where board_id=2 and article_date like '2020-04-14%';
 
-delete from `delivery` where order_id=177;
+delete from `payment` where order_id>178;
 
-delete from `order` where order_id=177;
+delete from `delivery` where order_id>178;
 
-delete from `order_detail` where order_id=177;
+delete from `order` where order_id>178;
+
+delete from `order_detail` where order_id>178;
 commit;

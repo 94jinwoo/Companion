@@ -1,0 +1,23 @@
+.card {
+    width : 30%;
+}
+.card img {
+    width: 200px;
+    margin: 20px auto;
+}
+
+.card .container {
+    margin: 0;
+}
+
+.card .container .card-content {
+    text-align: center;
+}
+
+.btn-group {
+    width: 100%;
+    margin: 10px;
+}
+button {
+    margin: 0 10px;
+}

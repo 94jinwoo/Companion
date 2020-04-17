@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<!-- jQuery -->
+	<!-- jQuery -->
 	<script src="${root}js/jquery-1.12.4.js"></script>
 	<!-- Popper.JS -->
 	<script src="${root}js/bootstrap/popper.js"></script>
@@ -81,8 +81,6 @@
 			<jsp:param value="${pagination_p.endPage }" name="endPage"/>
 		</jsp:include>
 		<!-- pagination [end] -->
-	<!-- pagination [end] -->	
-
 </body>
 
 <!-- jQuery -->
@@ -98,13 +96,3 @@ $(".secret").click(function(){
 });
 </script>
 </html>
-
-
-
-
-
-
-
-
-
-
