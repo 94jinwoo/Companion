@@ -42,4 +42,43 @@ public class AdminOrderServiceImpl implements AdminOrderService {
 		}
 	}
 
+	@Override
+	public void release(int order_id) {
+		try {
+			adminOrderDao.updateRelease(order_id); // 출고
+			adminOrderDao.updateDelivering(order_id); // 배송중
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void cancle(int order_id) {
+		try {
+			adminOrderDao.updateCancle(order_id); // 주문취소
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void delivery(int order_id) {
+		try {
+			adminOrderDao.updateAdminDelivery(order_id);
+			adminOrderDao.updateDelivery(order_id); // 배송완료
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void releaseDone(int order_id) {
+		try {
+			adminOrderDao.updateReleaseDone(order_id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

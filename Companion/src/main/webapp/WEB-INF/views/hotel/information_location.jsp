@@ -190,8 +190,8 @@
 	'<div class="map-section">'+
 	'서울 서초구 강남대로 459 백암빌딩 구관<br/>(우) 06611(지번) 서초동 1303-34</div>'+
 	'<div class="map-toolbar clearfix">'+
-	'<a href="https://map.kakao.com/link/map/Hello World!,37.503268, 127.024286" class="map-button" target="_blank">큰지도보기</a>'+
-	'<a href="https://map.kakao.com/link/to/Hello World!,37.503268, 127.024286" class="map-button" target="_blank">길찾기</a></div>'+
+	'<a href="https://map.kakao.com/link/map/Companion,37.503268, 127.024286" class="map-button" target="_blank">큰지도보기</a>'+
+	'<a href="https://map.kakao.com/link/to/Companion,37.503268, 127.024286" class="map-button" target="_blank">길찾기</a></div>'+
 	'</div>',
     iwPosition = new kakao.maps.LatLng(37.503268, 127.024286);
 	

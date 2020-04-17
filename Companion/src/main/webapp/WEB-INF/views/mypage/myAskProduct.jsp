@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/main.css">
-    <link rel="stylesheet" href="${root }css/mypage/mypage.css">
+    <link rel="stylesheet" href="${root }css/mypage/questionF.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -95,8 +95,32 @@
 				<input type="hidden" name="product_id" id="product_id" value="${product_id }">
 				<input type="hidden" name="order_id" id="order_id" value="${order_id }">
 				<input type="hidden" name="question_type_id" id="question_type_id" value="">
-				<table>
+				  <!-- 문의 유형 select -->
+				  <!-- 문의 유형 select -->
+				<table class="table">
+				<thead></thead>
 				<tbody>
+					<tr>
+						<th><label for="selectOption">문의유형</label></th>
+						<td>
+							<div class="opBox">
+			                    	<select name="selectOption" id="selectOption" class="form-control selec" onchange="changeOption()">
+			                    		<option value="" selected disabled>문의 유형 선택</option>
+			                    		<option value="0">교환</option>
+			                    		<option value="1">환불</option>
+			                    		<option value="2">출하 전 취소</option>
+			                    		<option value="3">배송</option>
+			                    		<option value="4">불량 A/S</option>
+			                    		<option value="5">주문/결제</option>
+			                    		<option value="6">상품/재입고</option>
+			                    		<option value="7">쿠폰/적립금</option>
+			                    		<option value="8">회원 관련</option>
+			                    		<option value="9">기타 문의</option>
+			                    	</select>				  
+						  	</div>
+						</td>
+						
+					</tr>
 				  <tr>
 				    <th>
 				    	<div>
@@ -105,27 +129,10 @@
 				    </th>
 				    <td>
 				    	<div>
-				    	<input type="text" name="question_title" id="ask_title" placeholder="제목을 입력해 주세요."/>
+				    	<input type="text" name="question_title" id="ask_title" class="input--text textT" placeholder="제목을 입력해 주세요."/>
 				    	</div>
 				    </td>	
 				  </tr>
-				  <!-- 문의 유형 select -->
-					<div class="opBox">
-	                    	<select style="width:100px; height:34px;" name="selectOption" id="selectOption" class="form-control" onchange="changeOption()">
-	                    		<option value="" selected disabled>문의 유형 선택</option>
-	                    		<option value="0">교환</option>
-	                    		<option value="1">환불</option>
-	                    		<option value="2">출하 전 취소</option>
-	                    		<option value="3">배송</option>
-	                    		<option value="4">불량 A/S</option>
-	                    		<option value="5">주문/결제</option>
-	                    		<option value="6">상품/재입고</option>
-	                    		<option value="7">쿠폰/적립금</option>
-	                    		<option value="8">회원 관련</option>
-	                    		<option value="9">기타 문의</option>
-	                    	</select>				  
-				  	</div>
-				  <!-- 문의 유형 select -->
 				  <tr>
 				    <th>
 				    	<div>
@@ -134,7 +141,7 @@
 					</th>
 				    <td>
 				    	<div>
-					    	<textarea name="question_content" id="ask_product" rows="10" cols="80"></textarea>
+					    	<textarea name="question_content" id="ask_product" rows="10" cols="80" class="input--text textA"></textarea>
 				    	</div>
 				    </td>
 				  </tr>
@@ -157,9 +164,9 @@
 				  </tr>
 				</tbody>
 				</table>
-				<div class="btn-group">
-					<button type="button" id="ask_btn" class="btn">등록</button>
-					<button type="button" id="back_btn" class="btn">취소</button>
+				<div class="btnbox">
+					<button type="button" id="ask_btn" class="Cbtn">등록</button>
+					<button type="button" id="back_btn" class="Cbtn">취소</button>
 				</div>
 			</form>
 			

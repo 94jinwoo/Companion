@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/main.css">
-    <link rel="stylesheet" href="${root }css/mypage/mypage.css">
+    <link rel="stylesheet" href="${root }css/mypage/questionF.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -89,11 +89,12 @@
 		<!-- section [start] -->
 		<section class="section">
 			<div class="main--title">
-				<h1>상품 문의하기</h1>
+				<h1>상품 후기작성</h1>
 			</div>
 			<form name="myReview" role="form" method="post" autocomplete="off" enctype="multipart/form-data">
 				<input type="hidden" name="product_id" id="product_id" value="${product_id }">
-				<table>
+				<table class="table">
+				<thead></thead>
 				<tbody>
 				  <tr>
 				    <th>
@@ -103,7 +104,7 @@
 				    </th>
 				    <td>
 				    	<div>
-				    	<input type="text" name="review_title" id="review_title" placeholder="제목을 입력해 주세요."/>
+				    	<input type="text" name="review_title" id="review_title" class="input--text textT" placeholder="제목을 입력해 주세요."/>
 				    	</div>
 				    </td>	
 				  </tr>
@@ -115,7 +116,7 @@
 					</th>
 				    <td>
 				    	<div>
-					    	<textarea name="review_content" id="review_content" rows="10" cols="80"></textarea>
+					    	<textarea name="review_content" id="review_content" rows="10" cols="80" class="input--text textA"></textarea>
 				    	</div>
 				    </td>
 				  </tr>
@@ -139,9 +140,9 @@
 				  
 				</tbody>
 				</table>
-				<div class="btn-group">
-					<button type="button" id="review_btn" class="btn">등록</button>
-					<button type="button" id="back_btn" class="btn">취소</button>
+				<div class="btnbox">
+					<button type="button" id="review_btn" class="Cbtn">등록</button>
+					<button type="button" id="back_btn" class="Cbtn">취소</button>
 				</div>
 			</form>
 			

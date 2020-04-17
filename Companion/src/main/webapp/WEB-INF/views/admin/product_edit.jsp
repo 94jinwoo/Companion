@@ -173,7 +173,7 @@
 			</table>
 			
 			<div class="btn__group">
-				<button type="button" id="update_Btn" class="btn">수정</button>
+				<button type="button" id="modify_btn" class="btn">수정</button>
 				<button type="button" id="back_Btn" class="btn">취소</button>
 			</div>
 			
@@ -203,7 +203,7 @@ $(document).ready(function () {
 
 //수정 버튼
 var formObj = $("form[role='form']");
-$("#update_Btn").click(function(){
+$("#modify_btn").click(function(){
 	$(".category2").attr('disabled', false);
 	formObj.submit();
 });

@@ -1,0 +1,152 @@
+/* TABLE_LAYOUT STYLE */
+.table_layout { margin:0px; table-layout:fixed; }
+.table_layout .col1 { width: 350px; } /* 상품이름 */
+.table_layout .col2 { width: 150px; } /* 옵션 */
+.table_layout .col3 { width: 100px; } /* 수량 */
+.table_layout .col4 { width: 120px; } /* 상품금액 */
+.table_layout .col5 { width: 150px; } /* 합계금액 */
+.table_layout .col6 { width: auto; } /* 합계금액 */
+label{
+	margin-bottom:0;
+}
+
+ul{
+    list-style: none;
+}
+
+.cBtn{
+    height: 34px;
+    background: #eee linear-gradient(to botton, #fcfcfc, #eee );
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+    color: #333;
+}
+.cBtn:hover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.07);
+}
+
+
+.btn.btn--primary {
+    border: 1px solid #0F4C81;
+    color: #fff;
+    height: 34px;
+    background: #0F4C81 linear-gradient(rgb(22, 121, 207), #0F4C81);
+  }
+/* INPUT TEXT */
+.input--text{
+	width:200px;
+    height: 34px;
+    padding: 10px;
+    border: 1px solid#ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    /* box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075); */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    font-size: 16px;
+    margin-left:10px;
+    margin-top:5px;
+}
+.input--text:last-child{
+	margin-bottom:5px;
+	width:300px;
+}
+.input--text:focus{
+    border-color: #51a7e8;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075),
+                0 0 5px rgba(81,127,232,0.5);
+}
+/* Vendeor Prefix(브라우저 업체별 접두사) */
+.input--text::-webkit-input-placeholder{color: #cacaca;}
+.input--text::-ms-input-placeholder{color: #cacaca;}
+.input--text::-moz-input-placeholder{color: #cacaca;}
+
+/* SECTION */
+
+.section{
+    position: relative;
+}
+.table{
+    border-bottom: 1px solid rgb(185, 184, 184);
+    text-align: center;
+}
+.table thead{
+    background-color: rgba(197, 194, 194, 0.438);
+}
+.table thead tr{
+    text-align: center;
+    height: 50px;
+    margin: 0;
+}
+.table tbody tr{
+}
+.table tbody td{
+    text-align: center;
+    padding:8px;
+    line-height:5;
+}
+.imgTbox{
+	display:flex;
+	margin-left:10px;
+}
+.imgBox{
+	width:80px;
+	height:80px;
+	margin-right:20px;
+}
+.imgBox #proImg{
+	width:100%;
+	heigth:100%;
+}
+.layB{
+	width:100%;
+	margin-left:25px;
+}
+
+.halfBox{
+	width:45%;
+	height:210px;
+	margin-top:20px;
+}
+.halfTable{
+	margin:5px 20px 20px 20px;
+	width:85%;
+}
+.halfTable tr{
+	border-bottom:1px solid gray;
+	
+}
+.halfTable th{
+	width:130px;
+	text-align: right;
+	padding-right:10px; 
+	height:40px;
+	letter-spacing:2px;
+}
+.halfTable td{
+	padding-left:10px; 
+}
+
+.btnbox{
+	width:100%;
+	margin:0 auto;
+	height:50px;
+}
+.backBtn{
+	margin-left:900px;
+}
