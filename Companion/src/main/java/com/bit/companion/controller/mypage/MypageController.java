@@ -115,17 +115,15 @@ public class MypageController {
 		bean.setQuestion_title(question_title);
 		bean.setQuestion_content(question_content);
 		
-		String imgUploadPath=uploadPath+File.separator+"imgUpload";
-		String ymdPath=UploadFileUtils.calcPath(imgUploadPath);
-		String fileName=null;
-		
-		if(file!=null) {
+		if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
+			String imgUploadPath=uploadPath+File.separator+"imgUpload";
+			String ymdPath=UploadFileUtils.calcPath(imgUploadPath);
+			String fileName=null;
 			fileName=UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+			bean.setQuestion_image(File.separator+"imgUpload"+ymdPath+File.separator+fileName);
 		} else {
-			fileName=uploadPath+File.separator+"images"+File.separator+"none.png";
 		}
 		
-		bean.setQuestion_image(File.separator+"imgUpload"+ymdPath+File.separator+fileName);
 		
 		System.out.println(bean.toString());
 		
@@ -146,18 +144,16 @@ public class MypageController {
 		bean.setArticle_title(review_title);
 		bean.setArticle_content(review_content);
 		
-		String imgUploadPath=uploadPath+File.separator+"imgUpload";
-		String ymdPath=UploadFileUtils.calcPath(imgUploadPath);
-		String fileName=null;
-		
-		if(file!=null) {
+		if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
+			String imgUploadPath=uploadPath+File.separator+"imgUpload";
+			String ymdPath=UploadFileUtils.calcPath(imgUploadPath);
+			String fileName=null;
 			fileName=UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+			bean.setArticle_image(File.separator+"imgUpload"+ymdPath+File.separator+fileName);
+			bean.setArticle_thumb(File.separator+"imgUpload"+ymdPath+File.separator+"s"+File.separator+"s_"+fileName);
 		} else {
-			fileName=uploadPath+File.separator+"images"+File.separator+"none.png";
 		}
 		
-		bean.setArticle_image(File.separator+"imgUpload"+ymdPath+File.separator+fileName);
-		bean.setArticle_thumb(File.separator+"imgUpload"+ymdPath+File.separator+"s"+File.separator+"s_"+fileName);
 		
 		System.out.println(bean.toString());
 		

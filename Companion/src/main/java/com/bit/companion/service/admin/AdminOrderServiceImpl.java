@@ -54,9 +54,9 @@ public class AdminOrderServiceImpl implements AdminOrderService {
 	}
 
 	@Override
-	public void cancle(int order_id) {
+	public void cancel(int order_id) {
 		try {
-			adminOrderDao.updateCancle(order_id); // 주문취소
+			adminOrderDao.updateCancel(order_id); // 주문취소
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -76,6 +76,36 @@ public class AdminOrderServiceImpl implements AdminOrderService {
 	public void releaseDone(int order_id) {
 		try {
 			adminOrderDao.updateReleaseDone(order_id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	// 구매 확정
+	@Override
+	public void purchase(int order_id) {
+		try {
+			adminOrderDao.updatePurchase(order_id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	// 교환
+	@Override
+	public void exchange(int order_id) {
+		try {
+			adminOrderDao.updateExchange(order_id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	// 반품
+	@Override
+	public void orderReturn(int order_id) {
+		try {
+			adminOrderDao.updateReturn(order_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
