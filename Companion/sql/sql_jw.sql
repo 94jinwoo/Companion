@@ -156,3 +156,4 @@ select * from `order`
 select * from `product`;
 select * from `category`;
 update category set category_name="목욕용품" where category_id=500;
+

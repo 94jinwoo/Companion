@@ -58,8 +58,6 @@ public class ProductController {
 	}else {
 		memberVo.setMember_id((memberVo.getMember_id()));
 	}
-		//이용 후기 리스트 출력
-		orderReviewService.orderReviewList(model, product_id);
 		
 		//상품 상세 페이지 정보 출력.
 		productService.detail(model, product_id);	

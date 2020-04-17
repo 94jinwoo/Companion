@@ -14,14 +14,20 @@ public class OrderReviewVo {
 	private String article_thumb;
 	private int product_id;
 	private String board_type;
-	private int review_count;
+	private String product_name;
+	private String product_option1;
+	private String product_option2;
+	private String product_option3;
+	private String product_option4;
+	private String product_option5;
 	
 	public OrderReviewVo() {
 	}
 	
 	public OrderReviewVo(int board_id, int article_id, String member_id, String article_title, String article_content,
 			Date article_date, int article_count, String article_image, String article_thumb, int product_id,
-			String board_type, int review_count) {
+			String board_type, String product_name, String product_option1, String product_option2,
+			String product_option3, String product_option4, String product_option5) {
 		super();
 		this.board_id = board_id;
 		this.article_id = article_id;
@@ -34,7 +40,12 @@ public class OrderReviewVo {
 		this.article_thumb = article_thumb;
 		this.product_id = product_id;
 		this.board_type = board_type;
-		this.review_count = review_count;
+		this.product_name = product_name;
+		this.product_option1 = product_option1;
+		this.product_option2 = product_option2;
+		this.product_option3 = product_option3;
+		this.product_option4 = product_option4;
+		this.product_option5 = product_option5;
 	}
 
 	@Override
@@ -43,7 +54,9 @@ public class OrderReviewVo {
 				+ ", article_title=" + article_title + ", article_content=" + article_content + ", article_date="
 				+ article_date + ", article_count=" + article_count + ", article_image=" + article_image
 				+ ", article_thumb=" + article_thumb + ", product_id=" + product_id + ", board_type=" + board_type
-				+ ", review_count=" + review_count + "]";
+				+ ", product_name=" + product_name + ", product_option1=" + product_option1 + ", product_option2="
+				+ product_option2 + ", product_option3=" + product_option3 + ", product_option4=" + product_option4
+				+ ", product_option5=" + product_option5 + "]";
 	}
 
 	public int getBoard_id() {
@@ -134,16 +147,52 @@ public class OrderReviewVo {
 		this.board_type = board_type;
 	}
 
-	public int getReview_count() {
-		return review_count;
+	public String getProduct_name() {
+		return product_name;
 	}
 
-	public void setReview_count(int review_count) {
-		this.review_count = review_count;
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
 	}
 
-	
-	
-	
-	
+	public String getProduct_option1() {
+		return product_option1;
+	}
+
+	public void setProduct_option1(String product_option1) {
+		this.product_option1 = product_option1;
+	}
+
+	public String getProduct_option2() {
+		return product_option2;
+	}
+
+	public void setProduct_option2(String product_option2) {
+		this.product_option2 = product_option2;
+	}
+
+	public String getProduct_option3() {
+		return product_option3;
+	}
+
+	public void setProduct_option3(String product_option3) {
+		this.product_option3 = product_option3;
+	}
+
+	public String getProduct_option4() {
+		return product_option4;
+	}
+
+	public void setProduct_option4(String product_option4) {
+		this.product_option4 = product_option4;
+	}
+
+	public String getProduct_option5() {
+		return product_option5;
+	}
+
+	public void setProduct_option5(String product_option5) {
+		this.product_option5 = product_option5;
+	}
+
 }
