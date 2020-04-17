@@ -146,7 +146,7 @@
 									<table class="col-sm-8">
 										<tr>
 											<td><input type="text" name="order_detail_quantity"
-												value="1" placeholder="1" id="order_detail_quantity"
+												value="1" id="order_detail_quantity"
 												class="num form-control" /></td>
 											<td>
 												<div width="10" height="10" class="bt_down">
@@ -547,7 +547,7 @@
 							<c:forEach items="${productRecommendList }" var="bean">
 								<td><a
 									href="${root }order/productDetail?idx=${bean.product_id}">
-										<img src="${productDetailOne.product_image }"
+										<img src="${bean.product_image }"
 										width="180" height="60" class="img-fluid"
 										alt="dummy에 이미지가 없어서 그래요.." style="display: block;">
 										<p style="text-align: center;">${bean.product_name }</p>
@@ -607,16 +607,12 @@
 			frm.optionValue.value = frm.selectBox.options[frm.selectBox.selectedIndex].value;
 		}
 
-		$("#cartBtn")
-				.click(
-						function() {
+		$("#cartBtn").click(function() {
 							/* selectBox test */
 							console.log("장바구니 버튼 클릭");
 
-							var cart_quantity = $("#order_detail_quantity")
-									.val();
-							var selectbox = $("#selectBox option:selected")
-									.text();
+							var cart_quantity = $("#order_detail_quantity").val();
+							var selectbox = $("#selectBox option:selected").text();
 
 							$("#selectBox option:selected").text();
 							console.log($("#selectBox option:selected").text());
@@ -702,6 +698,16 @@
 
 	<!-- 그 그 좋아요버튼 AJAX 처리. 아 에이젝스 개빡세네 왤케 많아 근데 미치겠네 진짜 -->
 	<script type="text/javascript">
+		/* 구매시에 옵션 값 validation */
+		$("#purchaseBtn").click(function(){
+			var puchaseNumber = $('#order_detail_quantity').val();
+			
+			if(puchaseNumber<=0){
+				alert('구매 수량은 0 이하가 될 수 없습니다.');
+				return false;				
+			}
+		});
+	
 		/*   로그인 여부 체크  */
 		$("#noneLgnLike_btn").click(function() {
 			alert('로그인이 필요합니다.');

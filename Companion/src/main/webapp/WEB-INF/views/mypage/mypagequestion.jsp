@@ -106,7 +106,42 @@
 										<div class="col-2">
 											<img id="proImg" src="${bean.product_thumb }"alt="Img"/>
 										</div>
-										<div class="col-6">${bean.product_name }</div>
+										<div class="col-5">${bean.product_name }</div>
+										<c:choose>
+											<c:when test="${bean.question_type_id=='0' }">
+												<div class="col-1"></div>
+											</c:when>
+											<c:when test="${bean.question_type_id=='1' }">
+												<div class="col-1"></div>
+											</c:when>
+											<c:when test="${bean.question_type_id=='2' }">
+												<div class="col-1"></div>
+											</c:when>
+											<c:when test="${bean.question_type_id=='3' }">
+												<div class="col-1"></div>
+											</c:when>
+											<c:when test="${bean.question_type_id=='4' }">
+												<div class="col-1"></div>
+											</c:when>
+											<c:when test="${bean.question_type_id=='5' }">
+												<div class="col-1"></div>
+											</c:when>
+											<c:when test="${bean.question_type_id=='6' }">
+												<div class="col-1"></div>
+											</c:when>
+											<c:when test="${bean.question_type_id=='7' }">
+												<div class="col-1"></div>
+											</c:when>
+											<c:when test="${bean.question_type_id=='8' }">
+												<div class="col-1"></div>
+											</c:when>
+											<c:when test="${bean.question_type_id=='9' }">
+												<div class="col-1"></div>
+											</c:when>
+											<c:when test="${bean.question_type_id=='100' }">
+												<div class="col-1"></div>
+											</c:when>
+										</c:choose>
 										<div class="col-2">${bean.question_date }</div>
 										<div class="col-2">
 											<button class="btn btn-primary" style="width:120px;" onclick="toggleQuestion(${bean.question_id })" id="questionBtn_${bean.question_id }">
