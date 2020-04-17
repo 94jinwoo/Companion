@@ -1,10 +1,13 @@
 package com.bit.companion.controller.mypage;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.bit.companion.model.entity.login.MemberVo;
 import com.bit.companion.model.entity.mypage.MyCartOrderList;
@@ -25,9 +29,14 @@ import com.bit.companion.model.entity.mypage.MyReviewVo;
 import com.bit.companion.model.entity.mypage.MypageCartVo;
 import com.bit.companion.model.entity.mypage.MypageQuestionVo;
 import com.bit.companion.service.mypage.MypageService;
+import com.bit.companion.util.UploadFileUtils;
 
 @Controller
 public class MypageController {
+	
+	// upload path
+	@Resource(name="uploadPath")
+	private String uploadPath;
 	
 	@Autowired
 	MypageService mypageService;
@@ -90,9 +99,8 @@ public class MypageController {
 		return "mypage/myAskProduct";
 	}
 	
-	@ResponseBody
-	@RequestMapping(value="/askProduct",method=RequestMethod.POST)
-	public int myAskProductInsert(HttpSession session,String question_type_id,String order_id,String product_id,String question_title,String question_content) {
+	@RequestMapping(value={"/askExchange", "/askReturn", "/askProduct"},method=RequestMethod.POST)
+	public String myAskProductInsert(HttpSession session,String question_type_id,String order_id,String product_id,String question_title,String question_content,MultipartFile file) throws IOException, Exception {
 		MypageQuestionVo bean=new MypageQuestionVo();
 		
 		System.out.println("question_type_id : "+question_type_id);
@@ -107,14 +115,27 @@ public class MypageController {
 		bean.setQuestion_title(question_title);
 		bean.setQuestion_content(question_content);
 		
+		String imgUploadPath=uploadPath+File.separator+"imgUpload";
+		String ymdPath=UploadFileUtils.calcPath(imgUploadPath);
+		String fileName=null;
+		
+		if(file!=null) {
+			fileName=UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+		} else {
+			fileName=uploadPath+File.separator+"images"+File.separator+"none.png";
+		}
+		
+		bean.setQuestion_image(File.separator+"imgUpload"+ymdPath+File.separator+fileName);
+		
+		System.out.println(bean.toString());
+		
 		int result=0;
 		result=mypageService.myAskProductInsert(bean);
-		return result;
+		return "redirect:mypurchaselist";
 	}
 	
-	@ResponseBody
-	@RequestMapping(value="/registReview",method=RequestMethod.POST)
-	public int myReviewInsert(HttpSession session,String product_id,String review_title,String review_content) {
+	@RequestMapping(value="/myReview",method=RequestMethod.POST)
+	public String myReviewInsert(HttpSession session,String product_id,String review_title,String review_content,MultipartFile file) throws IOException, Exception {
 		MyReviewVo bean=new MyReviewVo();
 		
 		MemberVo member=(MemberVo)session.getAttribute("memberVo");
@@ -125,9 +146,24 @@ public class MypageController {
 		bean.setArticle_title(review_title);
 		bean.setArticle_content(review_content);
 		
+		String imgUploadPath=uploadPath+File.separator+"imgUpload";
+		String ymdPath=UploadFileUtils.calcPath(imgUploadPath);
+		String fileName=null;
+		
+		if(file!=null) {
+			fileName=UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+		} else {
+			fileName=uploadPath+File.separator+"images"+File.separator+"none.png";
+		}
+		
+		bean.setArticle_image(File.separator+"imgUpload"+ymdPath+File.separator+fileName);
+		bean.setArticle_thumb(File.separator+"imgUpload"+ymdPath+File.separator+"s"+File.separator+"s_"+fileName);
+		
+		System.out.println(bean.toString());
+		
 		int result=0;
 		result=mypageService.myReviewInsert(bean);
-		return result;
+		return "redirect:mypurchaselist";
 	}
 	
 	@RequestMapping(value="/askExchange",method=RequestMethod.GET)
