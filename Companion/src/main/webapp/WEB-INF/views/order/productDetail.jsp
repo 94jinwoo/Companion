@@ -104,10 +104,10 @@
 					</div>
 					<div class="col-md-7" id="descrip">
 						<!--  상품 정보 -->
-						<h2 class="goods-title">[ ${productDetailOne.product_name } ]
-							상품 번호 ${productDetailOne.product_id }</h2>
-						<h4>[ 카테고리NUM=${productDetailOne.category_id } ]</h4>
-						<p class="goos-text">상품 설명은 하단에 있습니다.</p>
+						<h2 class="goods-title">${productDetailOne.product_name }</h2>
+							<!-- 상품 번호 ${productDetailOne.product_id } -->
+						<%-- <h4>[ 카테고리NUM=${productDetailOne.category_id } ]</h4> --%>
+						<p class="goos-text">상품 설명은 하단에 있습니다.</p><br/>
 
 						<!-- 셀렉트박스 옵션 값 가져오기.  -->
 
@@ -238,9 +238,8 @@
 									<c:choose>
 										<c:when test="${memberVo.member_id!=null }">
 											<button id="like_btn" type="button"
-												class="btn btn-outline-danger" data-toggle="modal"
-												data-target=".bd-example-modal-sm">좋아요! (
-												${productDetailOne.like_id } )</button>
+												class="btn btn-outline-danger btn-lg" data-toggle="modal"
+												data-target=".bd-example-modal-sm">♥ ( ${productDetailOne.like_id } )</button>
 										</c:when>
 										<c:when test="${memberVo.member_id==null }">
 											<button id="noneLgnLike_btn" type="button"
@@ -319,7 +318,7 @@
 						<div class="row">
 							<!-- 후기글 start -->
 							<div class="col-lg-12">
-								<%-- <table class="table">
+								<table class="table">
 									<thead>
 										<tr>
 											<th scope="col" class="border-0 bg-light">
@@ -376,7 +375,7 @@
 										</c:forEach>
 										<!--C;FOREACH  -->
 									</tbody>
-								</table> --%>
+								</table>
 								<ul class="pagination">
 									<li class="page-item"><a class="page-link" href="#"
 										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
@@ -446,7 +445,6 @@
 										</div>
 
 										<section class="replyList">
-											<p>문의글 리스트 왜 안나오는데???</p>
 											<!-- null 값이어도 값이 들어가야함. -->
 											<!-- 근데 뭐가 문제인지 모르겠음. -->
 											<table class="table--replyList">
@@ -488,6 +486,10 @@
 																		id="question_title">
 																	<textarea name="question_content" class="form-control"
 																		id="question_content" placeholder="문의하실 내용을 입력해주세요."></textarea>
+																	<label for="question_secret2" id="question_secret2" class="col-form-label">공개글</label>
+																	<input type="radio" name="question_secret_id" value="0" checked="checked">
+																	<label for="question_secret1" id="question_secret1" class="col-form-label">비밀글</label>
+																	<input type="radio" name="question_secret_id" value="1" >
 																</div>
 															</div>
 															<div class="modal-footer">
@@ -511,7 +513,7 @@
 										
 										</div>
 	
-    <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}&num=1" width="1000px" height="300px"  frameborder="0" scrolling="no"></iframe>
+    <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?product_id=${productDetailOne.product_id}" width="1000px" height="400px"  frameborder="0" scrolling="no"></iframe>
 						
 										 
 									</section>
@@ -664,11 +666,13 @@
 									}
 									var question_title = $("#question_title").val();
 									var question_content = $("#question_content").val();
+									var question_secret_id = $('input[name="question_secret_id"]:checked').val();
 									var data = {
 										product_id : product_id,
 										question_title : question_title,
 										question_content : question_content,
-										member_id : member_id
+										member_id : member_id,
+										question_secret_id : question_secret_id
 									};
 										$.ajax({
 											url : "${root }order/productDetail/question",

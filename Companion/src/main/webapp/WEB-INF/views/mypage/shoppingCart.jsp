@@ -132,8 +132,8 @@
 <c:forEach items="${cartList }" var="bean">
                     <tr>
                         <td><input type="checkbox" name="list[<%=i %>]" class="oneCheck" data-cartNum="${bean.cart_id }" value="${bean.cart_id }" onclick="checkSum()"></td>
-						<input type="hidden" id="price ${bean.cart_id }" value="${bean.product_price }" >
-						<input type="hidden" id="quantity ${bean.cart_id }" value="${bean.cart_quantity }" >
+						<input type="hidden" id="price${bean.cart_id }" value="${bean.product_price }" >
+						<input type="hidden" id="quantity${bean.cart_id }" value="${bean.cart_quantity }" >
                        	<% i+=1; %>
                         <td class="imgTbox">
 	                        <div class="imgBox">

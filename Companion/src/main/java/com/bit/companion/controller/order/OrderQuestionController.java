@@ -10,10 +10,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.bit.companion.common.Pagination;
+import com.bit.companion.common.Pagination_P;
+import com.bit.companion.common.Search;
 import com.bit.companion.model.entity.login.MemberVo;
 import com.bit.companion.model.entity.order.OrderQuestionVo;
 import com.bit.companion.service.order.OrderQuestionService;
@@ -50,26 +54,23 @@ public class OrderQuestionController {
 //		return reply;
 //	}
 	
-	
 	@RequestMapping(value="order/productDetail/ReplyList",method = RequestMethod.GET)
-	public String ReplyList(Model model,@RequestParam("idx") int product_id,@RequestParam("num") int num) throws SQLException{
-		System.out.println("OrderQuestionController 의 ReplyList function 실행....");
-		OrderPagenation page = new OrderPagenation();
-		page.setPostNum(4);
-		page.setNum(num);
-		page.setCount(orderQuestionService.replyListAllCount(model, product_id));
-		System.out.println("총 상품 개수 : "+ page.getCount());
-		model.addAttribute("pageNum",page.getPageNum());
-		model.addAttribute("startPageNum",page.getStartPageNum());
-		model.addAttribute("endPageNum",page.getEndPageNum());
-		model.addAttribute("prev",page.getPrev());
-		model.addAttribute("next",page.getNext());
-		model.addAttribute("select",num);
-		orderQuestionService.replyList(model,product_id,page.getDisplayPost(),page.getPostNum());
+	public String ReplyList(Model model,@RequestParam("product_id") int product_id 
+			, @RequestParam(required = false, defaultValue = "1") int page
+			, @RequestParam(required = false, defaultValue = "1") int range 
+			,@ModelAttribute("pagination_p") Pagination_P pagination_p 
+			) throws SQLException{
+		
+		orderQuestionService.replyList(model, product_id, pagination_p,page, range);
 		
 		return "order/question";
 	}
 	
+	@RequestMapping(value = "order/productDetail/ReplyDetail", method = RequestMethod.GET)
+	public String ReplyDetail(Model model, @RequestParam int question_id) throws SQLException{
+		orderQuestionService.detail(model, question_id);
+		return "order/questionDetail";
+	}
 	
 	
 

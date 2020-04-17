@@ -126,11 +126,10 @@
 				<div class="success">
 					<h2>주문이 완료되었습니다!</h2>
 					<a href="${root }" class="btn btn--primary" id="payApi"
-						role="button"> 메인페이지로 돌아가기. </a>
+						role="button">메인페이지로 돌아가기</a>
 					<!-- 	<button onclick="window.open='../order/payApi'">결제하기</button> -->
 					<!-- 	<a class="btn btn-primary" id="payApi" href="../order/payApi" role="button"> 결제하기 </a> -->
-					<a href="${root }mypagechk" class="btn btn--primary" role="button">주문
-						내역 확인하기.</a>
+					<a href="${root }mypurchaselist" class="btn btn--primary" role="button">주문내역 확인하기</a>
 				</div>
 
 			</section><!-- container end -->

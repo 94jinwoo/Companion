@@ -5,15 +5,29 @@
   
   <mapper namespace="orderQuestion">
 	<insert id="registReply">
-		insert into `question` values (default,100,null,#{product_id},#{member_id},now(),null,#{question_title},#{question_content},null,null,default,default);
+		insert into `question` values (default,100,null,#{product_id},#{member_id},now(),null,#{question_title},#{question_content},"/images/null.png",null,#{question_secret_id},default);
 	</insert>
-	<select id="OrderQuestionList" resultType="orderQuestionBean" parameterType="hashMap">
-	select * from `question` where product_id=#{product_id} limit #{displayPost},#{postNum};
+	<select id="OrderQuestionList" resultType="orderQuestionBean">
+	select * from `question` where product_id=#{product_id} ORDER BY question_id DESC limit #{startList},#{listSize};
 	</select> 
 	<!-- 페이징용 모든 문의글 개수 파악  -->
-	<select id="ReplyListAllCount" resultType= "int" parameterType="int">
-	select count(*) as count from `question` where product_id=#{value};
+	<select id="ReplyListAllCount" resultType= "int">
+	select count(*) as listCnt from `question` where product_id=#{product_id};
 	</select>
-	
+	<select id="ReplyDetail" parameterType="int" resultType="orderQuestionBean">
+	SELECT
+			q.*,
+			t.question_type_name,
+			st.question_state_name,
+			se.question_secret_name,
+			p.product_name
+				FROM `QUESTION` q, `QUESTION_TYPE` t, `QUESTION_STATE` st, `QUESTION_SECRET` se, `PRODUCT` p
+					WHERE 
+						q.question_type_id=t.question_type_id and
+						q.question_state_id=st.question_state_id and
+						q.question_secret_id=se.question_secret_id and
+						q.product_id=p.product_id and
+						q.question_id=#{value}
+	</select>
 	
   </mapper>
