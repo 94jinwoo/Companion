@@ -104,8 +104,8 @@
 										<div class="col-2">${bean.service_name }</div>
 										<div class="col-6">${bean.reserve_state_name }</div>
 										<div class="col-2">예약일: ${bean.reserve_date }</div>
-										<div class="col-1">
-											<button class="btn btn-primary" style="width:120px;" onclick="toggleReserve(${bean.reserve_id })" id="reserveBtn_${bean.reserve_id }">
+										<div class="col-2">
+											<button class="mainBtn" onclick="toggleReserve(${bean.reserve_id })" id="reserveBtn_${bean.reserve_id }">
 												내역 상세보기
 											</button>
 										</div>
@@ -158,7 +158,7 @@
        function toggleReserve(reserve_id){
         	if($('#'+reserve_id).css("display")=="none"){
         		$('#'+reserve_id).show();
-        		$('#reserveBtn_'+reserve_id).text("닫 기");
+        		$('#reserveBtn_'+reserve_id).text("상세보기 닫기");
         	}else{
         		$('#'+reserve_id).hide();
         		$('#reserveBtn_'+reserve_id).text("내역 상세보기");

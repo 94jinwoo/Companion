@@ -11,7 +11,9 @@
 ul{
     list-style: none;
 }
-
+ ul ul a {
+    background:none;
+}
 
 /* BTN */
 .Cbtn{
