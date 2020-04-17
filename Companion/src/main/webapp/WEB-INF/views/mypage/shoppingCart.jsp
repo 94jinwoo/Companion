@@ -137,9 +137,13 @@
                        	<% i+=1; %>
                         <td class="imgTbox">
 	                        <div class="imgBox">
-	                        	<img id="proImg" src="${bean.product_thumb }" alt="Img"/>
+	                        	<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
+	                        		<img id="proImg" src="${bean.product_thumb }" alt="Img"/>
+	                        	</a>
 	                        </div>
-	                        ${bean.product_name }
+	                        <a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
+		                        ${bean.product_name }
+		                    </a>
                         </td>
 	                    <td>${bean.cart_option }<br/>
 	                    	<div class="opBox">

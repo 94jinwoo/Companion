@@ -135,10 +135,14 @@
                            <td class="imgTbox">
                            <div class="imgBox">
                            		<!-- 썸네일 -->
-                           		<img id="proImg" alt="Img" src="${bean.product_thumb }">
+                           		<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
+                           			<img id="proImg" alt="Img" src="${bean.product_thumb }">
+                           		</a>
                            </div>
                            		<!-- 상품이름 --> 
-                           		${bean.product_name }
+                           		<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
+	                           		${bean.product_name }
+	                           	</a>
                            </td>
                            <td>
                            		<!-- 옵션 -->   
