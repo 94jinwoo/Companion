@@ -1,11 +1,14 @@
 package com.bit.companion.controller.order;
 
+import java.awt.List;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
-import javax.mail.Session;
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.omg.CORBA.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bit.companion.model.entity.login.MemberVo;
 import com.bit.companion.model.entity.order.OrderQuestionVo;
+import com.bit.companion.model.entity.order.ProductVo;
 import com.bit.companion.service.order.OrderQuestionService;
 import com.bit.companion.service.order.OrderReviewService;
 import com.bit.companion.service.order.ProductService;
@@ -48,21 +52,19 @@ public class ProductController {
 	
 	//DETAIL PAGE
 	@RequestMapping(value = "/order/productDetail",method=RequestMethod.GET)
-	public String productDetail(Model model,@RequestParam("idx") int product_id,HttpSession session) throws SQLException {
-
-		
+	public String productDetail(Model model,@RequestParam("idx") int product_id,HttpSession session,ServletRequest request) throws SQLException {
 		MemberVo memberVo=(MemberVo)session.getAttribute("memberVo");
-		
-	if(memberVo==null) {
-		
-	}else {
-		memberVo.setMember_id((memberVo.getMember_id()));
-	}
-		//이용 후기 리스트 출력
-		orderReviewService.orderReviewList(model, product_id);
+		if(memberVo==null) {
+			
+		}else {
+			memberVo.setMember_id((memberVo.getMember_id()));
+		}
 		
 		//상품 상세 페이지 정보 출력.
 		productService.detail(model, product_id);	
+
+		//이용 후기 리스트 출력
+		orderReviewService.orderReviewList(model, product_id);
 		
 		//상품 추천
 		productService.productRecommend(model, product_id);
