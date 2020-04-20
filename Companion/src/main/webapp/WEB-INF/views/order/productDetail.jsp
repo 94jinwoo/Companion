@@ -81,7 +81,9 @@
 			<div class="categories">
 				<a href="/companion/order/productMain?c=100"> <i
 					class="fas fa-shopping-cart"></i> 쇼핑하기
-				</a> <span>></span> <a href="/companion/order/productMain?c=100"> 사료
+				</a>
+				<span>></span>
+				<a href="/companion/order/productMain?c=100"> 사료
 				</a>
 				<hr class="mb-4">
 			</div>

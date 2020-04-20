@@ -46,13 +46,7 @@
 			    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			        <ul class="nav navbar-nav ml-auto">
 			            <li class="nav-item">
-			                <a class="nav-link" href="#">아이템1</a>
-			            </li>
-			            <li class="nav-item">
-			                <a class="nav-link" href="#">아이템2</a>
-			            </li>
-			            <li class="nav-item">
-			                <a class="nav-link" href="#">아이템3</a>
+			                <a href="${root }" class="nav-link">홈페이지로 이동</a>
 			            </li>
 			        </ul>
 			    </div>
@@ -64,12 +58,20 @@
 		<!-- .section [start] -->
 		<section class="section">
 			<div class="main--title">
-				<h1>대시보드</h1>
+				<h1 style="font-weight:600; font-size:30px;">대시보드</h1>
 			</div>
-				<ul>
+			<div class="costboard">
+				<div class="halfBoard">
+					[오늘 매출액] &nbsp;&nbsp;<fmt:formatNumber value="${todaySum.daily_sum}" pattern="###,###,###원"/>
+				</div>
+				<div class="halfBoard">
+					[이번달 매출액] &nbsp;&nbsp;<fmt:formatNumber value="${monthSum.monthly_sum}" pattern="###,###,###원"/>
+				</div>
+			 </div>
+			<%-- 	<ul>
 					<li>오늘 매출액 : <fmt:formatNumber value="${todaySum.daily_sum}" pattern="###,###,###원"/></li>
 					<li>이번달 매출액 : <fmt:formatNumber value="${monthSum.monthly_sum}" pattern="###,###,###원"/></li>
-				</ul>
+				</ul> --%>
             <div class="row">
                 <div class="card col-xl-5.5">
                     <div class="card-header">
@@ -149,7 +151,7 @@
             </div>
         </div>
         </section>
-		<!-- .container-fluid [end] -->
+		<!-- .section [end] -->
 		<!-- Footer  -->
 		<jsp:include page="../common/footer.jsp"/>
 	</div>
