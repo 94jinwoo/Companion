@@ -103,12 +103,12 @@
 								<li class="list-group-item list-group-item">
 									<div class="row">
 										<!-- 나중에 해당 상품페이지로 이동하게 앵커달기 -->
-										<div class="col-2">
+										<%-- <div class="col-2">
 											<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
 												<img id="proImg" src="${bean.product_thumb }"alt="Img"/>
 											</a>
-										</div>
-										<div class="col-4">
+										</div> --%>
+										<div class="col-6">
 											<a href="${root }order/productDetail?idx=${bean.product_id }">
 												${bean.product_name }
 											</a>
@@ -150,7 +150,7 @@
 										</c:choose>
 										<div class="col-2">${bean.question_date }</div>
 										<div class="col-2">
-											<button class="btn btn-primary" style="width:120px;" onclick="toggleQuestion(${bean.question_id })" id="questionBtn_${bean.question_id }">
+											<button class="btn btn-outline-primary" style="width:120px;" onclick="toggleQuestion(${bean.question_id })" id="questionBtn_${bean.question_id }">
 												문의내용 보기
 											</button>
 										</div>
@@ -167,7 +167,7 @@
 												${bean.question_content }
 											</div>
 				                           	<div class="col-1">
-				                           		<button onclick="deleteQuestion(${bean.question_id})">삭제</button>
+				                           		<button class="btn btn-outline-secondary" onclick="deleteQuestion(${bean.question_id})" style="float:right; margin-right:6px;"><i class="fas fa-times"></i></button>
 				                           	</div>
 										</li>
 <c:choose>

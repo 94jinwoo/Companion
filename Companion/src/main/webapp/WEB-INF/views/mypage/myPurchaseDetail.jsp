@@ -98,7 +98,7 @@
 			
 			<!--content  -->
 				<div class="categories">
-					<a href="#homeSubmenu"> <i class="fas fa-user"></i> 마이페이지</a> <span></span> 
+					<a href="#homeSubmenu"> <i class="fas fa-user"></i> 마이페이지</a> <span>></span> 
 					<a href="#"> <i class="fas fa-clipboard"></i> 주문내역</a>
 					<hr class="mb-4">
 				</div>	

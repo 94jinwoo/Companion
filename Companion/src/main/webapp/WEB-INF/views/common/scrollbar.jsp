@@ -38,9 +38,9 @@
 <%-- 				<a href="#"><img src="${root }imgs/TEST11.jpg" alt="70x70"></a> --%>
  				<a href="${root }order/productDetail?idx=${bean.product_id}&num=1"><img src="${bean.product_image }" alt="70x70"></a> 
 			</div> 
-			<div class="goods-content">
+			<%-- <div class="goods-content">
 				<a href="#"><img src="${root }imgs/infochk.png" alt="70x70"></a>
-			</div>
+			</div> --%>
  	</c:forEach> 
 			<div class="scroll-up" id="topBtn">
 				<a href="#" role="button"><h3 class="up">↑</h3></a>

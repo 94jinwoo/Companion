@@ -83,10 +83,10 @@
 	                </div>
 	            </nav>
 	            <div class="categories">
-					<a href="#homeSubmenu"> <i class="fas fa-user"></i> 마이페이지</a> <span></span> 
-					<a href="#"> <i class="fas fa-shopping-cart"></i> 주문내역</a>
+					<a href="#homeSubmenu"> <i class="fas fa-user"></i> 마이페이지</a> <span>></span> 
+					<a href="#"> <i class="fas fa-clipboard"></i> 주문내역</a>
 					<hr class="mb-4">
-				</div>
+				</div>	
 	            <section class="section">
 				<div class="main--title">
 					<h1>나의 주문내역</h1>
