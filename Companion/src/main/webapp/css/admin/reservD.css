@@ -41,16 +41,16 @@ table tbody tr td{
 .inputAreaName input{
 	width:100%;
 }
-.reserve-box{
+.state-box{
 	display:flex;
 	margin-top:5px;
 }
-.reserve-box input{
+.state-box input{
 	width:20px;
 	margin-top:6px;
 	
 }
-.reserve-box label{
+.state-box label{
 	margin-right:30px;
 }
 

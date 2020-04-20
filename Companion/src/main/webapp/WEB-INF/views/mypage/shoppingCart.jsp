@@ -205,11 +205,9 @@
                 <div class="btn--group clearfix">
                     <div class="selectP float--left">
                         <button type="button" id="selectDelete_btn">선택 상품 삭제</button>
-                        <button type="button" id="allDelete_btn">전체 상품 삭제</button>
                     </div>
                     <div class="orderP float--right">
-                        <button id="choiceProduct" class="">선택 상품 주문</button>
-                        <button id="choiceAllProduct" class="btn-order">전체 상품 주문</button>
+                        <button id="choiceProduct" class="btn-order">선택 상품 주문</button>
                     </div>
                 </div>
                 <!-- 버튼그룹 end-->

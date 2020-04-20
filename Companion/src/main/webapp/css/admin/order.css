@@ -1,13 +1,15 @@
 .card {
-    width : 30%;
+    width : 40%;
+    border-radius:10px;
 }
 .card img {
-    width: 200px;
+    width: 150px;
     margin: 20px auto;
 }
 
 .card .container {
     margin: 0;
+    margin-bottom:10px;
 }
 
 .card .container .card-content {
@@ -15,9 +17,93 @@
 }
 
 .btn-group {
-    width: 100%;
-    margin: 10px;
+    margin:10px auto 0;
+   	justify-contnent:center;
 }
 button {
-    margin: 0 10px;
+    margin: 0 5px;
+}
+
+.layB{
+	width:100%;
+	margin-bottom:30px;
+}
+.layB h2{
+	margin: 15px;
+	font-size:22px;
+	font-weight:600;
+}
+.halfBox{
+	width:45%;
+	height:310px;
+	margin-top:20px;
+	border:1px solid #d5d5d5;
+	border-radius:10px;
+}
+.halfTable{
+	margin:auto;
+}
+.halfTable tr{
+	border-bottom:1px solid gray;
+	
+}
+.halfTable th{
+	width:95px;
+	text-align: right;
+	height:40px;
+	letter-spacing:2px;
+}
+.halfTable td{
+	padding-left:15px; 
+	width:125px;
+}
+.halfTable tr:last-child{
+	border-bottom:none;
+	
+}
+/****************************************/
+.halfLBox{
+	width:54%;
+	height:310px;
+	margin-top:20px;
+	border:1px solid #d5d5d5;
+	border-radius:10px;
+}
+
+.halfLtable{
+	margin:auto;
+}
+.halfLtable tr{
+	border-bottom:1px solid gray;
+	
+}
+.halfLtable th{
+	width:120px;
+	text-align: right;
+	height:40px;
+	letter-spacing:2px;
+}
+.halfLtable td{
+	padding-left:15px; 
+	width:150px;
+}
+.halfLtable tr:last-child{
+	border-bottom:none;
+	
+}
+.table thead th{
+	padding:8px;
+}
+
+/* TABLE_LAYOUT STYLE */
+.table_layout1 { margin:0px; table-layout:fixed; }
+.table_layout1 .col1 { width: auto; } /* 상품이름 */ 
+.table_layout1 .col2 { width: 200px; } /* 옵션 */
+.table_layout1 .col3 { width: 150px; } /* 단가 */
+.table_layout1 .col4 { width: 100px; } /* 수량 */
+.table_layout1 .col5 { width: 200px; } /* 소계 */
+
+.amount{
+	font-size:18px;
+	font-weight:600;
 }

@@ -73,24 +73,24 @@
 				<tbody>
 					<tr>
 						<th><label for="member_grade">회원구분</label></th>
-						<td colspan="3">
-							<div class="inputArea">
+						<td colspan="3" class="clearfix">
+							<div class="state-box float--left">
 								<%-- <input type="hidden" id="member_grade" name="member_grade" value="${adminMemberOne.member_grade }"/> --%>
 								
 								<c:if test="${adminMemberOne.member_grade == 0}">
 									<span>관리자</span>
 								</c:if>
 								<c:if test="${adminMemberOne.member_grade == 1}">
-									<label>운영자</label>
 									<input type="radio" name="member_grade" value="1" checked="checked">
-									<label>회원</label>
+									<label>운영자</label>
 									<input type="radio" name="member_grade" value="2">
+									<label>회원</label>
 								</c:if>
 								<c:if test="${adminMemberOne.member_grade == 2}">
-									<label>운영자</label>
 									<input type="radio" name="member_grade" value="1" >
-									<label>회원</label>
+									<label>운영자</label>
 									<input type="radio" name="member_grade" value="2" checked="checked">
+									<label>회원</label>
 								</c:if>
 								
 							</div>
