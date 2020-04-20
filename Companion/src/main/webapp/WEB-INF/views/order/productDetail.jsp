@@ -451,21 +451,7 @@
 						</tr>
 					</tbody>
 				</table>
-
 				<!-- 위치테스트여 -->
-							<!-- 조회한 상품 세션 저장용입니당. -->
-	<%-- 						<%
-							int product_id = (int)(request.getAttribute("Product_id"));
-							session.setAttribute("Session",product_id);
-							
-							ArrayList<Object> list = new ArrayList<Object>();
-							list = (ArrayList)session.getAttribute("productList");
- 
-							for(int i=0;i<list.size();i++){
-									out.println(list.get(i));
-								}
-							%> --%>
-							<!-- 조회한 상품 세션 저장용입니당. -->
 			</div>
 			<!-- #myTab2Content end-->
 		</div>
