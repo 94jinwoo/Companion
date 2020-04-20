@@ -451,21 +451,7 @@
 						</tr>
 					</tbody>
 				</table>
-
 				<!-- 위치테스트여 -->
-							<!-- 조회한 상품 세션 저장용입니당. -->
-	<%-- 						<%
-							int product_id = (int)(request.getAttribute("Product_id"));
-							session.setAttribute("Session",product_id);
-							
-							ArrayList<Object> list = new ArrayList<Object>();
-							list = (ArrayList)session.getAttribute("productList");
- 
-							for(int i=0;i<list.size();i++){
-									out.println(list.get(i));
-								}
-							%> --%>
-							<!-- 조회한 상품 세션 저장용입니당. -->
 			</div>
 			<!-- #myTab2Content end-->
 		</div>
@@ -553,8 +539,18 @@
 	/* 중복 입력 방지 */	
  	$("#questionModal").off().on('click', function(){ 
 	 		$('#questionModalForm').modal('show');
-	 				
 	 				var doSomething = $("#reply_btn").off().on('click', function(){
+	 					
+				 		if($("#question_title").val() == ""){
+				 			alert('제목을 입력해주세요.');
+				 			$('#question_title').focus();
+				 			return false;
+				 		}
+				 		if($("#question_content").val() == ""){
+				 			alert('내용을 입력해주세요.');
+				 			$('#question_content').focus();
+				 			return false;
+				 		}
 	 					
 	 					console.log("믿었던 너가 두번 실행하는 배신을 하는거냐?");
 	 					

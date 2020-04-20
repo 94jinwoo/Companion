@@ -16,19 +16,17 @@ public class SessionDaoImpl implements SessionDao {
 
 	@Autowired
 	SqlSession sqlSession;
-	
-	
-//	@Override
-//	public ArrayList<Object> sessionList(int product_id){
-//			ArrayList<Object> list=(ArrayList<Object>) sqlSession.selectList("session.sessionList",product_id);
-//		return list;
-//	}
-
 
 	@Override
 	public List<SessionVo> sessionList(List<Object> list) throws SQLException {
-		List<SessionVo> mylist=sqlSession.selectList("session.sessionList",list);
-		return mylist; 
+//		List<SessionVo> mylist=sqlSession.selectList("session.sessionList",list);
+		List<SessionVo> mylist2=new ArrayList<>();;
+		for(int i=0; i<list.size(); i++) {
+			SessionVo bean=sqlSession.selectOne("session.sessionList",list.get(i));
+			mylist2.add(bean);
+		}
+		System.out.println(mylist2.toString());
+		return mylist2; 
 	} 
 
 }

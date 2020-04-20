@@ -7,18 +7,12 @@
 	
 	
 	<!-- 세션매퍼라고. -->
-	<select id="sessionList" resultType="sessionBean" parameterType="java.util.Map">
+	<select id="sessionList" resultType="sessionBean" parameterType="int">
 		select 
 			product_id,product_name,product_image,product_thumb,category_id
 		from 
 			product 
-		where product_id in 
-		<foreach collection="list" item="item" separator="or" index="index" open="(" close=")">
-		
-			#{item.value}
-		
-		</foreach>
-		
+		where product_id = #{product_id}
 	</select>
 	
 	
