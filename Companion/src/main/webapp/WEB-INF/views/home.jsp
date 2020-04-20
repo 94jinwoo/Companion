@@ -214,7 +214,8 @@
                     </div>
                 </div>
 
-                <div class="row mb-2">
+                <!-- 여여여 -->
+                <!-- <div class="row mb-2">
                     <div class="col-md-6">
                         <div
                             class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -262,7 +263,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+                <!-- 여여여 -->
             </div>
         </div>
 		<!-- Footer  -->

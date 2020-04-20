@@ -227,9 +227,9 @@
 			</table>
 			</div>
 			
-			<div class="halfRBox float--right">
+			<div class="halfLBox float--right">
 			<h2>수령인 정보</h2>
-			<table class="halfRtable">
+			<table class="halfLtable">
 				<tbody>
 					<tr>
 						<th>수령인</th>
@@ -297,37 +297,49 @@
 			</div>
 			<!-- .layB [end] -->
 			
+			<div class="layB">
+				<h2>주문 상품 정보</h2>
+				<table class="table table_layout1">
+				<colgroup>
+					<col class="col1">
+					<col class="col2">
+					<col class="col3">
+					<col class="col4">
+					<col class="col5">
+				</colgroup>
+					<thead>
+						<tr>
+							<th scope="row">상품 이름</th>
+							<th scope="row">상품 옵션</th>
+							<th scope="row">상품 단가</th>
+							<th scope="row">상품 수량</th>
+							<th scope="row">소 계</th>
+						</tr>
+					</thead>
+					<tbody>
+					<c:forEach items="${list }" var="product">
+						<tr>
+							<td>${product.product_name }</td>
+							<td>${product.order_detail_option }</td>
+							<td>${product.product_price }</td>
+							<td>${product.order_detail_quantity }</td>
+							<td style="text-align:right; padding-right:60px;">${product.order_detail_price }</td>
+						</tr>
+					</c:forEach>
+					<tr>
+						<td colspan="3"></td>
+						<td>택배비</td>
+						<td style="text-align:right; padding-right:60px;">2,500</td>
+					</tr>
+					<tr>
+						<td colspan="3"></td>
+						<td class="amount">총 계</td>
+						<td class="amount" style="text-align:right; padding-right:60px;">${bean.order_amount }</td>
+					</tr>
+					</tbody>
+				</table>
 			
-			<h3>주문 상품 정보</h3>
-			<table class="table">
-				<thead>
-					<tr>
-						<th>상품 이름</th>
-						<th>상품 옵션</th>
-						<th>상품 단가</th>
-						<th>상품 수량</th>
-						<th>소 계</th>
-					</tr>
-				</thead>
-				<tbody>
-				<c:forEach items="${list }" var="product">
-					<tr>
-						<td>${product.product_name }</td>
-						<td>${product.order_detail_option }</td>
-						<td>${product.product_price }</td>
-						<td>${product.order_detail_quantity }</td>
-						<td>${product.order_detail_price }</td>
-					</tr>
-				</c:forEach>
-				<tr>
-					<th>택배비</th>
-					<td>2,500</td>
-					<th>총 계</th>
-					<td>${bean.order_amount }</td>
-				</tr>
-				</tbody>
-			</table>
-			<h3>결제 정보</h3>
+			<h2>결제 정보</h2>
 			<table class="table">
 				<thead>
 					<tr>
@@ -344,6 +356,10 @@
 					</tr>
 				</tbody>
 			</table>
+			</div>
+			<!-- .layB [end] -->
+			
+			
 			</section>
 			<!-- .section [end] -->
 		<!-- Footer  -->

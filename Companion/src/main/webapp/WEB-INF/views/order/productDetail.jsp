@@ -539,8 +539,18 @@
 	/* 중복 입력 방지 */	
  	$("#questionModal").off().on('click', function(){ 
 	 		$('#questionModalForm').modal('show');
-	 				
 	 				var doSomething = $("#reply_btn").off().on('click', function(){
+	 					
+				 		if($("#question_title").val() == ""){
+				 			alert('제목을 입력해주세요.');
+				 			$('#question_title').focus();
+				 			return false;
+				 		}
+				 		if($("#question_content").val() == ""){
+				 			alert('내용을 입력해주세요.');
+				 			$('#question_content').focus();
+				 			return false;
+				 		}
 	 					
 	 					console.log("믿었던 너가 두번 실행하는 배신을 하는거냐?");
 	 					

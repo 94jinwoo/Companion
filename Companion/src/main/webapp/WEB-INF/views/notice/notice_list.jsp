@@ -75,14 +75,6 @@
 				<div class="total-count float--left">
 					<h4>총 ${total } 건</h4>
 				</div>
-				<div class="search-group float--right">
-					<select class="input--text" name="searchType" id="searchType">
-						<option value="article_title">제목</option>
-						<option value="article_date">작성일</option>
-					</select> <input class="input--text" type="text" name="keyword"
-						id="keyword">
-					<button name="search_Btn" id="search_Btn">검색</button>
-				</div>
 			</div>
 			<table class="table-bbs table_layout">
 			<colgroup>

@@ -104,7 +104,7 @@
 		<!-- section [end] -->
 		
 		<!-- pagination [start] -->
-		<jsp:include page="../common/pagination.jsp">
+		<jsp:include page="../common/pagination_S.jsp">
 			<jsp:param value="${search.prev }" name="prev"/>
 			<jsp:param value="${search.next }" name="next"/>
 			<jsp:param value="${search.page }" name="page"/>
