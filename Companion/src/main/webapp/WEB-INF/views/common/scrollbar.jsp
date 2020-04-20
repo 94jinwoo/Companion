@@ -18,11 +18,8 @@
 	</div>
 	
 		<div class="scroll-right-content">
-			<p>${productList}</p>
 		 	<c:forEach items="${sessionList }" var="bean"  begin="0" end="2" step="1">
-		 		<p>${bean.product_id }</p>
 					 <div class="goods-content">
-		<%-- 				<a href="#"><img src="${root }imgs/TEST11.jpg" alt="70x70"></a> --%>
 		 				<a href="${root }order/productDetail?idx=${bean.product_id}"><img src="${bean.product_image }" alt="70x70"></a> 
 					</div> 
 		 	</c:forEach> 
