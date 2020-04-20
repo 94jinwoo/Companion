@@ -235,8 +235,6 @@ ul{
     border: 1px solid #0F4C81;
     color: #fff;
     background: #0F4C81 linear-gradient(rgb(22, 121, 207), #0F4C81);
-    
-    border: 1px solid ;
 }
 .btn-order:hover{
     background: #fff;
