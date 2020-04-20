@@ -1,6 +1,7 @@
 package com.bit.companion.model.order;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -17,13 +18,17 @@ public class SessionDaoImpl implements SessionDao {
 	SqlSession sqlSession;
 	
 	
+//	@Override
+//	public ArrayList<Object> sessionList(int product_id){
+//			ArrayList<Object> list=(ArrayList<Object>) sqlSession.selectList("session.sessionList",product_id);
+//		return list;
+//	}
+
+
 	@Override
-	public List<SessionVo> sessionList(int product_id){
-		
-			List<SessionVo> list=sqlSession.selectList("session.sessionList",product_id);
-				
-		
-		return list;
-	}
+	public List<SessionVo> sessionList(List<Object> list) throws SQLException {
+		List<SessionVo> mylist=sqlSession.selectList("session.sessionList",list);
+		return mylist; 
+	} 
 
 }
