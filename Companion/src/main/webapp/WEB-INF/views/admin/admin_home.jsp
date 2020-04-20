@@ -61,14 +61,15 @@
 			<!-- .container-fluid [end] -->
 		</nav>
 		<!-- nav [end] -->
-		<!-- .container-fluid [start] -->
-		<div class="container-fluid">
-			<h1>대시보드</h1>
+		<!-- .section [start] -->
+		<section class="section">
+			<div class="main--title">
+				<h1>대시보드</h1>
+			</div>
 				<ul>
 					<li>오늘 매출액 : <fmt:formatNumber value="${todaySum.daily_sum}" pattern="###,###,###원"/></li>
 					<li>이번달 매출액 : <fmt:formatNumber value="${monthSum.monthly_sum}" pattern="###,###,###원"/></li>
 				</ul>
-			<h2>그래프</h2>
             <div class="row">
                 <div class="card col-xl-5.5">
                     <div class="card-header">
@@ -77,7 +78,7 @@
                         "일별 매출"
                     </div>
                     <div class="card-body">
-                        <canvas id="myAreaChart" width="601" height="240" style="display: block; width: 601px; height: 240px;" class="chartjs-render-monitor"></canvas>
+                        <canvas id="myAreaChart" width="500" height="240" style="display: block; width: 500px; height: 240px;" class="chartjs-render-monitor"></canvas>
                     </div>
                 </div>
             	<div class="card col-xl-5.5">
@@ -87,11 +88,10 @@
 						"월별 매출"
 					</div>
 					<div class="card-body">
-						<canvas id="myBarChart" width="601" height="240" style="display: block; width: 601px; height: 240px;" class="chartjs-render-monitor"></canvas>
+						<canvas id="myBarChart" width="500" height="240" style="display: block; width: 500px; height: 240px;" class="chartjs-render-monitor"></canvas>
 					</div>
 				</div>
 			</div>
-		</div>
 		<div class="card">
             <div class="card-header"><svg class="svg-inline--fa fa-table fa-w-16 mr-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M464 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM224 416H64v-96h160v96zm0-160H64v-96h160v96zm224 160H288v-96h160v96zm0-160H288v-96h160v96z"></path></svg><!-- <i class="fas fa-table mr-1"></i> -->상품 목록</div>
             <div class="card-body">
@@ -148,6 +148,7 @@
                 </div>
             </div>
         </div>
+        </section>
 		<!-- .container-fluid [end] -->
 		<!-- Footer  -->
 		<jsp:include page="../common/footer.jsp"/>

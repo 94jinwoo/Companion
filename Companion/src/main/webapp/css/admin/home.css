@@ -1,28 +1,5 @@
 /*-------------------CONTENT STYLE--------------------*/
 
-/* ---------------------------------------------------
-    CAROUSEL STYLE
------------------------------------------------------ */
-
-#carouselExampleInterval {
-    position: relative;
-    height: 650px;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
-  }
-  .carousel-inner {
-    display: inline-block;
-    overflow: hidden;
-    max-height: 650px;
-    height: 100%;
-    border-radius: 20px;
-}
-.carousel-item img{
-    max-height: 650px;
-}
-
-.textcontent{
-    margin-top: 10px;
-}
 
 /* ---------------------------------------------------
     BLOG STYLE

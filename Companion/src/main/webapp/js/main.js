@@ -17,7 +17,7 @@ $(document).ready(function () {
 
 //right scrollbar 상단이동 버튼
 var topBtn = $('#topBtn');
-var delay = 1000;
+var delay = 500;
 topBtn.on('click', function() {
   $('html, body').stop().animate({scrollTop: 0}, delay);
 });

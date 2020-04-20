@@ -17,7 +17,8 @@
     border-radius: 20px;
 }
 .carousel-item img{
-    max-height: 650px;
+	height:600px;
+    max-height: 600px;
 }
 
 .textcontent{
