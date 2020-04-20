@@ -47,6 +47,21 @@ public class MypageController {
 		if(bean==null) {
 			return "redirect:/login";
 		}
+		String member_id=bean.getMember_id();
+		/* order_id찾아오기 & order table에서 member_id로 다 찾아오기 */
+		List<MyPurchaseListVo> myPurchaseList=(List) mypageService.purchaseList(member_id);
+		String order_id="";
+		List<MyPurchaseDetailVo> myPurchaseDetailList=new ArrayList<>();
+		/* 뽑아온 order_id를 통해서 order_detail table에서 정보 뽑아오기 */
+		for(int i=0; i<myPurchaseList.size();i++) {
+			order_id=myPurchaseList.get(i).getOrder_id();
+			java.sql.Date order_date=myPurchaseList.get(i).getOrder_date();
+			String order_state_member=myPurchaseList.get(i).getOrder_state_member();
+			List<MyPurchaseDetailVo> list=(List) mypageService.purchaseDetailList(order_id,order_date,order_state_member);
+			myPurchaseDetailList.addAll(list);
+		}
+		session.setAttribute("myPurchase1", myPurchaseDetailList.get(0));
+		session.setAttribute("myPurchase2", myPurchaseDetailList.get(1));
 		return "mypage/mypagechk";
 	}
 	
@@ -57,10 +72,11 @@ public class MypageController {
 			return "redirect:/login";
 		}
 		String member_id=bean.getMember_id();
-		/* order_id찾아오기 */
+		/* order_id찾아오기 & order table에서 member_id로 다 찾아오기 */
 		List<MyPurchaseListVo> myPurchaseList=(List) mypageService.purchaseList(member_id);
 		String order_id="";
 		List<MyPurchaseDetailVo> myPurchaseDetailList=new ArrayList<>();
+		/* 뽑아온 order_id를 통해서 order_detail table에서 정보 뽑아오기 */
 		for(int i=0; i<myPurchaseList.size();i++) {
 			order_id=myPurchaseList.get(i).getOrder_id();
 			java.sql.Date order_date=myPurchaseList.get(i).getOrder_date();
