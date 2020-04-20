@@ -26,21 +26,50 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<span>글번호</span>
-	<span>${ReviewDetail.article_id }</span>
-	<span>제목</span>
-	<span>${ReviewDetail.article_title }</span>
-	<span>작성자</span>
-	<span>${ReviewDetail.member_id }</span>
-	<span>작성일</span>
-	<span><fmt:formatDate value="${ReviewDetail.article_date}" pattern="yyy-MM-dd"/></span>
 
-	<span>이미지</span>
-	<span><img src="<spring:url value='${ReviewDetail.article_image }'/>"></span>
-	<span>내용</span>
-	<span>${ReviewDetail.article_content }</span>
-	
-	<button type="button" id="back_Btn">목록</button>
+	<table class="DetailT">
+		<thead>
+			<tr>
+				<th class="clearfix">
+					<div class="float--left">
+						<label>&nbsp;[제목]&nbsp;</label>
+						<span>${ReviewDetail.article_title }</span>
+					</div>
+					<div class="float--right">
+						<label>&nbsp;[글번호]&nbsp;</label>
+						<span>${ReviewDetail.article_id }&nbsp;</span>
+					</div>			
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="clearfix">
+					<div class="float--left">
+						<label>&nbsp;[작성자]&nbsp;</label>
+						<span>${ReviewDetail.member_id }</span>
+					</div>
+					<div class="float--right">
+						<label>&nbsp;[작성일자]&nbsp;</label>
+						<span><fmt:formatDate value="${ReviewDetail.article_date}" pattern="yyy-MM-dd"/>&nbsp;</span>
+					</div>
+				</td>
+			</tr>
+			<tr class="reviewCon">
+				<td class="clearfix">
+				<div class="reviewPhoto float--left">
+					<img src="<spring:url value='${ReviewDetail.article_image }'/>" alt="reviewImg">
+				</div>
+				<div class="reviewText float--right">
+					<span>${ReviewDetail.article_content }</span>
+				</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="btn__group">
+		<button type="button" id="back_Btn" class="mainBtn">이전으로</button>
+	</div>
 </body>
 
 <script type="text/javascript">

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${root }css/bootstrap/bootstrap.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="${root }css/main.css">
-    <link rel="stylesheet" href="${root }css/home.css">
+    <link rel="stylesheet" href="${root }css/login/join.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -55,7 +55,7 @@
 	                                    <li class="nav-item">
 	                                        <a class="nav-link" href="${root }login">로그인</a>
 	                                    </li>
-	                                    <li class="nav-item">
+	                                    <li class="nav-item active">
 	                                        <a class="nav-link" href="${root }login/memberadd">회원가입</a>		
 	                                    </li>
 	                                </ul>
@@ -72,98 +72,145 @@
 	            </nav>
 	            
 	            
-				<div class="maincontent">
-				
-					<form name="memberadd" method="post" autocomplete="off">
-						<label for="member_id">*ID</label>
-						<input type="text" name="member_id" id="member_id" placeholder="ID">
-						<button type="button" id="id_chk_btn">중복확인</button></br>
-						<!-- 아이디 체크여부  //1 안함  2 함//-->
-						<input type="hidden" name="id_chk_value" id="id_chk_value" value="1">
-						
-						
-						<label for="member_pw">*PW</label>
-						<input type="password" name="member_pw" id="member_pw" placeholder="8자 이상. 영문.숫자.특수문자 포함"></br>
-				
-						<label for="member_pw_chk">*PW확인</label>
-						<input type="password" id="member_pw_chk" placeholder="PW확인"></br>
-						
-						<label for="member_name">*NAME</label>	
-						<input type="text" name="member_name" id="member_name" placeholder="name"></br>
-						
-						<label for="member_tel">TEL</label>
-						<input type="text" name="member_tel" id="member_tel" placeholder="일반전화"></br>
-						
-						<label for="member_phone">*PHONE</label>
-						<input type="text" name="member_phone" id="member_phone" placeholder="phone number without -"></br>
-						
-	            <c:choose>
+				<section class="section">
+				<!--  test  sdflkjskdlfdklsjf -->
+				<form name="memberadd" method="post" autocomplete="off" class="form-join needs-validation" novalidate>
+                <img class="mb-4" src="..." alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">회원가입</h1>
+                <!-- ID -->
+                <div class="mb-3">
+                    <label for="member_id">*아이디</label>
+                    <div class="address-box clear-fix">
+                    <input type="text" class="form-control" name="member_id" id="member_id" placeholder="8자 이상,영어,숫자" required>
+                    <input type="button" class="adressbtn" id="id_chk_btn" value="중복확인버튼">
+                    </div>
+					<!-- 아이디 체크여부  //1 안함  2 함//-->
+					<input type="hidden" name="id_chk_value" id="id_chk_value" value="1">
+                </div>
+                
+                <!-- Password -->
+                <div class="mb-3">
+                    <label for="member_pw">*비밀번호</label>
+                    <input type="password" class="form-control" name="member_pw" id="member_pw" placeholder="8자이상, 영어, 숫자, 특수문자" required>
+                </div>
+                <!-- Password Confirmation -->
+                <div class="mb-3">
+                    <label for="member_pw_chk">*비밀번호확인</label>
+                    <input type="password" class="form-control" id="member_pw_chk" placeholder="위 비밀번호와 동일하게 입력" required>
+                </div>
+                
+                <!-- Name -->
+                <div class="mb-3">
+                    <label for="member_name">이름</label>
+                    <input type="text" class="form-control" name="member_name" id="member_name" placeholder="공백없이 실명 입력" required>
+                </div>
+                
+                <!-- tel -->
+                <div class="mb-3">
+                    <label for="member_tel">집전화번호</label>
+                    <input type="text" class="form-control" name="member_tel" id="member_tel" placeholder="'-' 없이 숫자만 입력" required>
+                </div>
+                
+                <!-- phone -->
+                <div class="mb-3">
+                    <label for="member_phone">휴대폰번호</label>
+                        <input type="text" class="form-control" name="member_phone" id="member_phone" placeholder="'-' 없이 숫자만 입력" required>
+                </div>
+                
+                <!-- Email -->
+                <c:choose>
 	            	<c:when test="${k_email!=null }">
 	            	<!-- 카톡 로그인을 통해서 왔을때 -->
+	            	 <div class="mb-3">
 						<label for="member_email">*E-MAIL</label>
-						<input type="email" name="member_email" id="member_email" value="${k_email }" readonly="readonly">
+						<input type="email" name="member_email" id="member_email" class="form-control" value="${k_email }" readonly="readonly">
 					<!-- 이메일 중복확인,인증은 한 것으로 처리 -->
 						<input type="hidden" name="email_chk_value" id="email_chk_value" value="2">
 						<!-- 이메일 인증여부 //1안함 2함// -->
 						<input type="hidden" name="email_overlap_chk_value" id="email_overlap_chk_value" value="2">
 						<!-- 이메일 중복확인여부 //1 안함 2 함 // -->
+						</div>
 	            	</c:when>
 	            	<c:otherwise>
 	            	<!-- 그냥 회원가입으로 왔을 떄 -->
+	            	 <div class="mb-3">
 						<label for="member_email">*E-MAIL</label>
-						<input type="email" name="member_email" id="member_email" placeholder="E-mail contains @">
-						<button type="button" id="email_overlap_chk">중복확인</button>
-						<button type="button" id="email_chk_btn">인증번호받기</button></br>
-						<p name="email_chk_panel" id="email_chk_panel" style="display:none">
-							<input type="text" name="member_email_chk" id="member_email_chk" placeholder="받으신 인증번호를 입력해 주세요.">
-							<button type="button" id="email_chk_btn2">확인</button>
+						<input type="email" name="member_email" id="member_email" class="form-control" placeholder="이메일 형식에 맞춰 입력">
+						<button type="button" id="email_overlap_chk" class="adressbtn">중복확인</button>
+						<button type="button" id="email_chk_btn" class="adressbtn">인증번호받기</button></br>
+						
+						<p name="email_chk_panel" id="email_chk_panel"  class="address-box clear-fix" style="display:none">
+							<input type="text" name="member_email_chk" id="member_email_chk" class="form-control" placeholder="받으신 인증번호를 입력해 주세요.">
+							<input type="button" class="adressbtn" id="email_chk_btn2" value="확인">
 						</p>
 						<input type="hidden" name="email_random_msg" id="email_random_msg" value="">
 						<input type="hidden" name="email_chk_value" id="email_chk_value" value="1">
 						<!-- 이메일 인증여부 //1안함 2함// -->
 						<input type="hidden" name="email_overlap_chk_value" id="email_overlap_chk_value" value="1">
 						<!-- 이메일 중복확인여부 //1 안함 2 함 // -->
+						</div>
 	            	</c:otherwise>
 	            </c:choose>
-						</br>
-						<label>*ADDRESS</label>
-						<p>
-						
-							<input type="text" name="member_addr1" id="sample2_postcode" placeholder="5글자 숫자" readonly="readonly">
-							<button type="button" id="postSearch">우편번호 검색</button></br>
-							
-							<input type="text" name="member_addr2" id="sample2_address" placeholder="주소" readonly="readonly"></br>
-							
-							<input type="text" name="member_addr3" id="sample2_detailAddress" placeholder="상세주소"></br></br>
-							
-							<input type="hidden" id="sample2_extraAddress" placeholder="참고항목"></br></br>
-							
-						</p>
-						
-						
-						<input type="hidden" name="member_grade" id="member_grade" value="2">
-						
-						<button type="button" id="memberadd_btn">가입</button>
-						<button type="button" onclick="history.back();">뒤로</button>
-					</form>
-	
-				</div>
+	            
+                <!-- address -->
+                <div class="mb-3">
+                    <label for="address">*주소</label>
+                    <div class="address-box clear-fix">
+                        <input type="text" class="form-control" name="member_addr1" id="sample2_postcode" placeholder="우편번호">
+                        <input type="button" class="adressbtn" id="postSearch" onclick="sample2_execDaumPostcode()" value="우편번호 찾기"></br>
+                    </div>
+                    <input type="text" class="form-control" name="member_addr2" id="sample2_address" placeholder="주소">
+                    <input type="text" class="form-control" name="member_addr3" id="sample2_detailAddress" placeholder="상세주소">
+                    <input type="hidden" id="sample2_extraAddress" placeholder="참고항목">
+                </div>
+            
+            	<input type="hidden" name="member_grade" id="member_grade" value="2">
+            	
+                <!-- 약관동의 체크박스 -->
+                <hr class="mb-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="">
+                    <label class="custom-control-label" for="same-address">개인정보 수집 및 이용에 동의합니다. (필수)</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="">
+                    <label class="custom-control-label" for="save-info">이용약관에 동의합니다. (필수)</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="">
+                    <label class="custom-control-label" for="save-info">개인정도 제3자 제공에 동의합니다. (선택)</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="">
+                    <label class="custom-control-label" for="save-info">개인정보 처리 위탁에 동의합니다. (선택)</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="">
+                    <label class="custom-control-label" for="save-info">만 14세 이상입니다. (필수)</label>
+                </div>
+                <hr class="mb-4">
+               
+                <button class="btn btn-lg btn-primary btn-block" type="button" id="memberadd_btn">회원가입</button>
+                <!-- Divider Text -->
+                <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-3">
+                    <div class="border-bottom w-100 ml-6"></div>
+                    <span class="px-3 font-weight-bold text-muted">OR</span>
+                    <div class="border-bottom w-100 mr-6"></div>
+                </div>
+            
+                <button class="btn btn-lg btn-warning btn-block" type="submit">
+                    <i class="fas fa-comment"></i>&nbsp;&nbsp;&nbsp;카카오톡 로그인
+                </button>
+                <button type="button" onclick="history.back();">뒤로</button>
+            
+            </form>	
+					
+				</section>
 			</div>
 			
-        <div id="footer">
-            <!-- test main content end-->
-            <hr class="mb-2">
-            <footer class="companion-footer">
-                    <div class="paragraph-group">
-                        <p>상호:COMPANION | 대표 : 최길동 | 개인정보보호관리책임자 : 최길동 | 전화 : 02-000-000 ㅣ 이메일 : <a href="mailto:companion@companion.com" target="_top">companion@companion.com</a></p>
-                        <p>주소:서울특별시 서초구 강남대로 459 (서초동, 백암빌딩) 3층 | 사업자등록번호 : 000-00-00000 | 통신판매 : 2020-서울강남-0000</p>
-                        <p>호스팅제공자:(주)Companion</p>
-                        <br/>
-                        <a href="#">[홈페이지 이용약관]</a> <a href="#">[개인정보취급방침]</a><br/>
-                        <p>Copyright ⓒ 2020 COMPANION All rights reserved.</p>
-                    </div>
-            </footer>
-        </div>
+        <!-- Footer  -->
+		<jsp:include page="../common/footer.jsp" />
+		<!-- Footer end -->
 
 		</div>
 	</div>

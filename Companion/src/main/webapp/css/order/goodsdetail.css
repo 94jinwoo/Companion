@@ -180,10 +180,51 @@ color: rgba(0,0,0,0.2);
 
 /* TABLE_LAYOUT STYLE */
 .table_layout { margin:0px; table-layout:fixed; }
-.table_layout .col1 { width: 180px; } /* Í∏ÄÎ≤àÌò∏ */ 
-.table_layout .col2 { width: auto } /* Ï†úÎ™© */
-.table_layout .col3 { width: 200px; } /* ÏïÑÏù¥Îîî */
-.table_layout .col4 { width: 200px; } /* ÏûëÏÑ±ÎÇ†Ïßú */
+.table_layout .col1 { width: 180px; } /* ±€π¯»£ */ 
+.table_layout .col2 { width: auto } /* πÆ¿«¡¶∏Ò */
+.table_layout .col3 { width: 200px; } /* æ∆¿Ãµ */
+.table_layout .col4 { width: 200px; } /* ¿€º∫≥Ø¬• */
+
+/*******************************************************************/
+/*******************************************************************/
+.reviewListH3{
+	width:150px;
+	text-align:center;
+	line-height:1.5;
+	border-bottom: 1px solid #b3b7bb;
+	font-size:22px;
+}
+.table--reviewList{
+	text-align: center;
+	width:968px;
+	
+}
+.table--reviewList tr{
+	border-bottom: 1px solid #b3b7bb;
+}
+.table--reviewList th{
+	line-height: 2;
+	font-size:20px;
+	letter-spacing:6px;
+}
+.table--reviewList tbody tr{
+	height:80px;
+}
+.table--reviewList td{
+	line-height: 2.5;
+	font-size:18px;
+}
+.table--reviewList td img{
+	height:80px;
+	width:80px;
+	margin:0 auto;
+}
+/* TABLE_LAYOUT STYLE */
+.table_layout2 { margin:0px; table-layout:fixed; }
+.table_layout2 .col1 { width: 180px; } /* ¿ÃπÃ¡ˆ */ 
+.table_layout2 .col2 { width: auto } /* ¡¶∏Ò */
+.table_layout2 .col3 { width: 200px; } /* ¿€º∫¿⁄ */
+.table_layout2 .col4 { width: 200px; } /* ¿€º∫≥Ø¬• */
 
 /*******************************************************************/
 
@@ -205,27 +246,56 @@ color: rgba(0,0,0,0.2);
 .recomB tbody tr td p{
 	font-weight:500;
 }
-/***************  questionDetail.jsp css  ********************/
-.quesDetailT{
+/***************  questionDetail & reviewDetail css  ********************/
+.DetailT{
 	width:800px;
 	margin-left:80px;
 }
-.quesDetailT label{
+.DetailT label{
 	margin-bottom:0;
 }
-.quesDetailT thead{
+.DetailT thead{
 	font-size:18px;
 	border-bottom: 1px solid #b3b7bb;
 }
-.quesDetailT tbody{
+.DetailT tbody{
 	font-size:16px;
 }
-.quesDetailT tr{
+.DetailT tr{
 	line-height:2;
 	
 }
 .btn__group{
 	float:right;
 	margin-top:20px;
-	margin-right:60px;
+	margin-right:120px;
+}
+
+/*************** reviewDetail Contents css  ********************/
+.reviewCon{
+	height:200px;
+	min-height:200px;
+	background:tomato;
+}
+.reviewPhoto{
+	margin-top:20px;
+	height:200px;
+	width:250px;
+}
+.reviewPhoto img{
+	padding:15px;
+	height:200px;
+	min-height:200px;
+	width:200px;
+	min-width:200px;
+	background:tomato;
+	margin-left:25px;
+	border-radius:10px;
+}
+.reviewText{
+	margin-top:20px;
+	text-align:left;
+	font-size:18px;
+	width:530px;
+	padding-right:20px;
 }
