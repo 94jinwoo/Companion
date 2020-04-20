@@ -26,61 +26,46 @@
 <link rel="stylesheet" href="${root}css/order/goodsdetail.css">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg">
-		<h2 class="navbar-brand">
-			이용후기 ${ReviewTotal }건
-		</h2>
-	</nav>
-	<hr class="my-1">
+	<h3 class="reviewListH3">이용후기 ${ReviewTotal }건</h3>
 
-	<div class="row">
-		<!-- 후기글 start -->
-		<div class="col-lg-12">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>
-							<div class="p-2 px-3 text-uppercase">이미지</div>
-						</th>
-						<th>
-							<div class="py-2 text-uppercase">제목</div>
-						</th>
-						<th>
-							<div class="p-2 px-3 text-uppercase">작성자</div>
-						</th>
-						<th>
-							<div class="py-2 text-uppercase">날짜</div>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${ReviewList }" var="bean" varStatus="status">
-						<tr>
-							<!-- 이미지 -->
-							<td>
-								<img src="<spring:url value='${bean.article_image }'/>" alt="이미지90x90" width="90">
-							</td>
-							
-							<!-- 제목 -->
-							<td><a href="${root }order/productDetail/ReviewDetail?article_id=${bean.article_id}"
-									 class="text-dark d-inline-block align-middle">${bean.article_title }</a></td>
-							
-							<!-- 작성자 -->
-							<td>${bean.member_id }</td>
+	<table class="table--reviewList table_layout2">
+	<colgroup>
+		<col class="col1">
+		<col class="col2">
+		<col class="col3">
+		<col class="col4">
+	</colgroup>
+		<thead>
+		<tr>
+			<th scope="row">이미지</th>
+			<th scope="row">제목</th>
+			<th scope="row">작성자</th>
+			<th scope="row">작성날짜</th>
+		</tr>
+		</thead>
+		<tbody>
+		<c:forEach items="${ReviewList }" var="bean" varStatus="status">
+			<tr>
+				<!-- 이미지 -->
+				<td>
+					<img src="<spring:url value='${bean.article_image }'/>" alt="Img80" width="80px">
+				</td>
+				
+				<!-- 제목 -->
+				<td><a href="${root }order/productDetail/ReviewDetail?article_id=${bean.article_id}"
+						 class="text-dark d-inline-block align-middle">${bean.article_title }</a></td>
+				
+				<!-- 작성자 -->
+				<td>${bean.member_id }</td>
 
-							<!-- 작성일 -->
-							<td><fmt:formatDate value="${bean.article_date}" pattern="yyy-MM-dd"/></td>
+				<!-- 작성일 -->
+				<td><fmt:formatDate value="${bean.article_date}" pattern="yyy-MM-dd"/></td>
 
-						</tr>
+			</tr>
 
-					</c:forEach>
-				</tbody>
-			</table>
-		</div>
-		<!-- col-lg-12 end -->
-	</div>
-	<!-- row end -->
-						
+		</c:forEach>
+		</tbody>
+	</table>					
 	<br/>
 		<!-- pagination [start] -->
 		<jsp:include page="../common/pagination_P.jsp">

@@ -25,7 +25,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table class="quesDetailT">
+	<table class="DetailT">
 		<thead>
 			<tr>
 				<th class="clearfix">
