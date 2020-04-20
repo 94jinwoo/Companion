@@ -119,7 +119,7 @@
 							role="form">
 							<div class="goods-text row">
 								<div class="col-sm-4 title">배송비</div>
-								<div class="col-sm-8">2,500원 (5만원이상 구매 시 무료)</div>
+								<div class="col-sm-8">2,500원</div>
 								<div class="col-sm-4 title">재 고</div>
 								<div class="col-sm-8">${productDetailOne.product_stock }</div>
 								<input type="hidden" name="product_stock"
