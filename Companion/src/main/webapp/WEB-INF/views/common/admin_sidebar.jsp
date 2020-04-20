@@ -110,9 +110,6 @@
                                  <a href="${root }" class="nav-link">홈페이지로</a>
                              </li>
                              <li>
-                                 <a href="${root }mypagechk" class="nav-link">마이페이지</a>
-                             </li>
-                             <li>
                                  <a href="${root }logout" class="nav-link">로그아웃</a>
                              </li>
                          </ul>

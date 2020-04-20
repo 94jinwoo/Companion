@@ -43,14 +43,8 @@
 				<!-- top menu bar [start] -->
 			    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			        <ul class="nav navbar-nav ml-auto">
-			            <li class="nav-item">
-			                <a class="nav-link" href="#">아이템1</a>
-			            </li>
-			            <li class="nav-item">
-			                <a class="nav-link" href="#">아이템2</a>
-			            </li>
-			            <li class="nav-item">
-			                <a class="nav-link" href="#">아이템3</a>
+			            <li class="nav-item active">
+			                <a class="nav-link" href="#">주문관리</a>
 			            </li>
 			        </ul>
 			    </div>
@@ -59,10 +53,17 @@
 			<!-- .container-fluid [end] -->
 		</nav>
 		<!-- nav [end] -->
-		<!-- .container-fluid [start] -->
-		<div class="container-fluid">
-			<h1>주문 내역 상세보기</h1>
-			<a href="${root }admin/order_list" class="btn btn-primary">목록</a>
+		<!-- .section [start] -->
+			<section class="section">
+			<div class="clearfix">
+				<div class="main--title float--left">
+				
+					<h1>[Admin] 주문 내역 상세보기</h1>
+				</div>
+				<div class="float--right">
+					<a href="${root }admin/order_list" class="mainBtn">목록으로</a>
+				</div>
+			</div>
 			<form method="POST" role="form">
 				<input type = "hidden" name="order_id" value="${bean.order_id }"/>
 				<c:choose>
@@ -191,37 +192,61 @@
 					</c:otherwise>
 				</c:choose>
 			</form>
+			<div class="layB clearfix">
+			<div class="halfBox float--left">
 			<h2>주문자 정보</h2>
-			<table class="table">
+			<table class="halfTable">
 				<tbody>
 					<tr>
 						<th>주문번호</th>
 						<td>${bean.order_id }</td>
-						<th>주문자</th>
-						<td>${bean.member_name }</td>
+					</tr>
+					<tr>
 						<th>아이디</th>
 						<td>${bean.member_id }</td>
+						<th>주문자</th>
+						<td>${bean.member_name }</td>
 					</tr>
 					<tr>
 						<th>주문상태</th>
 						<td>${bean.order_state_admin }</td>
-						<th colspan="3">주문일자</th>
+					</tr>
+					<tr>
+						<th>주문일자</th>
 						<td>${bean.order_date }</td>
 					</tr>
 					<tr>
 						<th>연락처</th>
-						<td>${bean.member_phone }</td>
+						<td colspan="3">${bean.member_phone }</td>
+					</tr>
+					<tr>
 						<th>이메일</th>
 						<td colspan="3">${bean.member_email }</td>
 					</tr>
 				</tbody>
 			</table>
-			<h3>수령인 정보</h3>
-			<table class="table">
+			</div>
+			
+			<div class="halfRBox float--right">
+			<h2>수령인 정보</h2>
+			<table class="halfRtable">
 				<tbody>
 					<tr>
 						<th>수령인</th>
 						<td>${bean.order_name }</td>
+						<th>배송상태</th>
+						<td>
+						<c:choose>
+							<c:when test="${bean.delivery_state_name eq null }">
+								출고요청 전
+							</c:when>
+							<c:otherwise>
+								${bean.delivery_state_name }
+							</c:otherwise>
+						</c:choose>
+						</td>
+					</tr>
+					<tr>
 						<th>연락처1</th>
 						<td>${bean.order_phone }</td>
 						<th>연락처2</th>
@@ -230,6 +255,8 @@
 					<tr>
 						<th>우편번호</th>
 						<td>${bean.order_addr1 }</td>
+					</tr>
+					<tr>
 						<th>주소</th>
 						<td colspan="3">${bean.order_addr2 } ${bean.order_addr3 }</td>
 					</tr>
@@ -256,24 +283,21 @@
 							</c:otherwise>
 						</c:choose>
 						</td>
-						<th>배송상태</th>
-						<td>
-						<c:choose>
-							<c:when test="${bean.delivery_state_name eq null }">
-								출고요청 전
-							</c:when>
-							<c:otherwise>
-								${bean.delivery_state_name }
-							</c:otherwise>
-						</c:choose>
-						</td>
+						
 					</tr>
 					<tr>
-						<th>배송 시<br/>요청사항</th>
-						<td colspan="5">${bean.order_msg }</td>
+						<th style="letter-spacing:0; font-size:15px;">배송 요청사항</th>
+						<td colspan="3">${bean.order_msg }</td>
 					</tr>
 				</tbody>
 			</table>
+			</div>
+			<!-- .halfBox [end] -->
+			
+			</div>
+			<!-- .layB [end] -->
+			
+			
 			<h3>주문 상품 정보</h3>
 			<table class="table">
 				<thead>
@@ -320,8 +344,8 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>
-		<!-- .container-fluid [end] -->
+			</section>
+			<!-- .section [end] -->
 		<!-- Footer  -->
 		<jsp:include page="../common/footer.jsp"/>
 	</div>

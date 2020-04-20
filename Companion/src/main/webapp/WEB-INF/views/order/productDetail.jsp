@@ -295,105 +295,7 @@
 
 					<div id="post-use" role="tabpanel" aria-labelledby="post-use-tab"
 						class="tab-pane fade px-4 py-5">
-						<nav class="navbar navbar-expand-lg">
-							<h2 class="navbar-brand">
-								이용후기
-								<c:forEach begin="1" end="1" items="${orderReviewList }"
-									var="bean">${bean.review_count }</c:forEach>
-								건
-							</h2>
-							<div class="collapse navbar-collapse" id="navbarText">
-								<ul class="navbar-nav mr-auto">
-									<li class="nav-item"><a class="nav-link" href="#"></a></li>
-								</ul>
-								<span class="navbar-text"> <a href="#" class="mx-1">최신순</a>
-									<span>/</span> <a href="#" class="mx-1">평점높은순</a> <span>/</span>
-									<a href="#" class="mx-1">평점낮은순</a>
-
-								</span>
-							</div>
-						</nav>
-						<hr class="my-1">
-
-
-						<div class="row">
-							<!-- 후기글 start -->
-							<div class="col-lg-12">
-								<table class="table">
-									<thead>
-										<tr>
-											<th scope="col" class="border-0 bg-light">
-												<div class="p-2 px-3 text-uppercase">이용후기</div>
-											</th>
-											<th scope="col" class="border-0 bg-light">
-												<div class="py-2 text-uppercase">구매상품 : (product_name)</div>
-											</th>
-											<th scope="col" class="border-0 bg-light">
-												<div class="p-2 px-3 text-uppercase">아이디(member_id)</div>
-											</th>
-											<th scope="col" class="border-0 bg-light">
-												<div class="py-2 text-uppercase">날짜 (후기작성date)</div>
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<c:forEach items="${orderReviewList }" var="bean">
-											<!--C;FOREACH  -->
-											<tr>
-												<th scope="row" class="border-0">
-													<div class="p-2">
-														<img src="#" alt="이미지90x90" width="90"
-															class="img-fluid rounded shadow-sm">
-														<div class="ml-3 d-inline-block align-middle">
-															<h5 class="mb-0">
-																<a href="#"
-																	class="text-dark d-inline-block align-middle">
-																	${bean.article_title } </a>
-															</h5>
-															<span
-																class="text-muted font-weight-normal font-italic d-block">
-																옵션 (product_option1) </span>
-														</div>
-													</div>
-												</th>
-
-												<td class="border-0 align-middle"><strong>
-														[${productDetailOne.product_name }] 상품 번호
-														${bean.product_id }
-												</strong></td>
-												<!-- 상품번호 출력 -->
-
-												<td class="border-0 align-middle"><strong>${bean.member_id }</strong>
-												</td>
-												<!-- 후기작성자 아이디 출력 -->
-
-												<td class="border-0 align-middle"><a href="#"
-													class="text-dark">${bean.article_date }</a></td>
-												<!-- 후기작성날짜 출력 -->
-
-											</tr>
-
-										</c:forEach>
-										<!--C;FOREACH  -->
-									</tbody>
-								</table>
-								<ul class="pagination">
-									<li class="page-item"><a class="page-link" href="#"
-										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-									</a></li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item"><a class="page-link" href="#">4</a></li>
-									<li class="page-item"><a class="page-link" href="#">5</a></li>
-									<li class="page-item"><a class="page-link" href="#"
-										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-									</a></li>
-								</ul>
-							</div>
-							<!-- col-lg-12 end -->
-						</div>
-						<!-- row end -->
+						 <iframe name="review.jsp" id="review.jsp" src="${root }order/productDetail/ReviewList?product_id=${productDetailOne.product_id}" width="1000px" height="570px"  frameborder="0" scrolling="no"></iframe>
 					</div>
 					<!-- #post-use end  -->
 					<!-- 후기글 End -->
@@ -402,19 +304,13 @@
 
 					<!-- 문의글 start-->
 					<div id="contact2" role="tabpanel" aria-labelledby="contact-tab"
-						class="tab-pane fade px-4 py-5">
+						class="tab-pane fade px-4 py-3">
 						<div class="row">
 							<div class="col-lg-12" id="inquiry">
 								<!-- 테이블로 넣자  -->
-								<div class="row">
-									<div class="col-sm-6">
-										<h4>문의하기</h4>
-									</div>
-									<div class="col-sm-6">구매하시려는 상품에 대해 궁금하신 점이 있으신 경우 문의 해
-										주세요</div>
-
+								<div id="questiont">
+									구매하시려는 상품에 대해 궁금하신 점이 있으신 경우 문의 해주세요
 								</div>
-
 
 								<div id="reply">
 									<c:if test="${memberVo.member_id==null}">
@@ -509,10 +405,8 @@
 									</c:if>
 									<!-- 여기에 문의글 ajax 들어감 -->
 									<section class="replyList">
-										<h4>최근 문의글 목록</h4>
-	
-    <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?product_id=${productDetailOne.product_id}" width="1000px" height="700px"  frameborder="0" scrolling="no"></iframe>
-						
+									<br/><br/>
+    <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?product_id=${productDetailOne.product_id}" width="1000px" height="400px"  frameborder="0" scrolling="no"></iframe>
 										 
 									</section>
 									<!-- 여기에 문의글 ajax 들어감. -->
