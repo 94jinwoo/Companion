@@ -131,7 +131,7 @@
 			"columns" : [ 
 				{ "width" : "25px" }, 
 				{ "width" : "25px" },
-				{ "width" : "25px" }, 
+				{ "width" : "30px" }, 
 				{ "width" : "200px" }, 
 				{ "width" : "25px" },
 				{ "width" : "25px" },
