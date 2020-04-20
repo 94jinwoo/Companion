@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.*" %>
 <c:url value="/" var="root"></c:url>
 <!DOCTYPE html>
 <html>
@@ -561,30 +562,16 @@
 							<!-- 조회한 상품 세션 저장용입니당. -->
 							<%
 							int product_id = (int)(request.getAttribute("Product_id"));
-							out.println(product_id);
 							session.setAttribute("Session",product_id);
+							
+							ArrayList<Object> list = new ArrayList<Object>();
+							list = (ArrayList)session.getAttribute("productList");
+
+							for(int i=0;i<list.size();i++){
+									out.println(list.get(i));
+								}
 							%>
-							
-						<!-- 아 리스트 나오나 테스트 한번만 해봅시다! -->	
-			<c:forEach items="${sessionList }" var="bean" begin="1" end="2"> 
-				<div class="scroll-right-content">
-					 <div class="goods-content">
-						<a href="#"><img src="${bean.product_image }" alt="70x70"></a>
-					</div> 
-					<div class="goods-content">
-						<a href="#"><img src="${root }imgs/infochk.png" alt="70x70"></a>
-					</div>
-					<div class="scroll-up" id="topBtn">
-						<a href="#" role="button"><h3 class="up">↑</h3></a>
-					</div>
-				</div>
-		 	</c:forEach> 				
-							
-							
 							<!-- 조회한 상품 세션 저장용입니당. -->
-
-
-
 			</div>
 			<!-- #myTab2Content end-->
 		</div>

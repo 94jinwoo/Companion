@@ -1,7 +1,9 @@
 package com.bit.companion.model.order;
 
-import java.sql.SQLException;
+import java.util.Enumeration;
 import java.util.List;
+
+import javax.mail.Session;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +23,6 @@ public class SessionDaoImpl implements SessionDao {
 	public List<SessionVo> sessionList(int product_id){
 		
 			List<SessionVo> list=sqlSession.selectList("session.sessionList",product_id);
-				
-		
 		return list;
 	}
 
