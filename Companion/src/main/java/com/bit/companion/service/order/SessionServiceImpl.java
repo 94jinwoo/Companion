@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.mail.Session;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,29 +16,37 @@ import com.bit.companion.model.order.SessionDao;
 @Service
 public class SessionServiceImpl implements SessionService {
 
+	List<SessionVo> result=null;
+
 	@Autowired
 	SessionDao sessionDao;
 	
 	
 	@Override
 	public void SessionList(Model model,int product_id) {
-		Session session;
-		System.out.println("sessionList SERVICE RUN......");
+		HttpSession session = null;
 		
+		List<Object> list = new ArrayList<Object>();
+		System.out.println(product_id);
+		
+		if(list.size()>5) {
+			list.remove(0);
+		}
+		list.add(product_id);
 		 
-		
-		
-		List<SessionVo> list = null;
-		try {
-			list=sessionDao.sessionList(product_id);
-			model.addAttribute("sessionList",list);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		for(int i=0;i<list.size();i++) { 
+			list.get(i);
+			System.out.println("프로덕트 아이디?? 리스트에 담겨있니??");
 		}
-		for(int i=0;i<list.size();i++) {
-			System.out.println(list.get(i));
-		}
-		
+			try {  
+				result=sessionDao.sessionList(list);
+				
+//				session.setAttribute(,result);
+				model.addAttribute("sessionList",result);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
 	}
 }
 

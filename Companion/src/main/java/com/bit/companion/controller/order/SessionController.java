@@ -29,11 +29,9 @@ public class SessionController {
 	
 	@RequestMapping(value="/common/scrollbar",method=RequestMethod.GET)
 	public String sessionListController(Model model,HttpSession session,HttpServletRequest request) throws SQLException {
-
 		
 		int product_id = (int)session.getAttribute("Session");
 		sessionService.SessionList(model, product_id);
-		
 
 		return "/common/scrollbar";
 	}

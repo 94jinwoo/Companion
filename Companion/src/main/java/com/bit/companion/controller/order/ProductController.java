@@ -45,8 +45,6 @@ public class ProductController {
 	
 	OrderQuestionVo orderQuestionVo;
 	
-//	String CategoryNUM;
-	
 	//페이지 정렬용 URL 패턴 메서드
 	public void urlPattern(HttpServletRequest request) {
 		String url = request.getRequestURI();
@@ -59,15 +57,12 @@ public class ProductController {
 	@RequestMapping(value = "/order/productDetail",method=RequestMethod.GET)
 	public String productDetail(Model model,@RequestParam("idx") int product_id,HttpSession session,ServletRequest request,HttpServletResponse response) throws SQLException {
 		MemberVo memberVo=(MemberVo)session.getAttribute("memberVo");
+	
 		request.setAttribute("Product_id",product_id);
-		if(list.size()>5) {
-			list.remove(0);
-		}
 		
-		list.add(product_id);
-		session.setAttribute("productList",list);
-		
+		//멤버
 		if(memberVo==null) {
+
 		}else {
 			memberVo.setMember_id((memberVo.getMember_id()));
 		}
@@ -82,7 +77,10 @@ public class ProductController {
 		productService.productRecommend(model, product_id);
 		
 		//세션
-		sessionService.SessionList(model,product_id);
+		if(list!=null) {
+			session.setAttribute("productList",list); 
+			sessionService.SessionList(model,product_id);
+		}
 		
 		return "order/productDetail";
 	}
