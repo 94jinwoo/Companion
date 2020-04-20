@@ -144,7 +144,7 @@
 						<td colspan="3" class="clearfix">
 						<form role="form" method="post" autocomplete="off" action="${root}admin/reservation_edit">
 							<input type="hidden" value="${adminReservationOne.reserve_id }" name="reserve_id">
-							<div class="reserve-box float--left">
+							<div class="state-box float--left">
 							
 								<c:if test="${adminReservationOne.reserve_state_id == 0 }">
 									<input type="radio" name="reserve_state_id" value="0" checked="checked"/><label>예약대기</label>

@@ -82,7 +82,7 @@
                     <label for="member_id">*아이디</label>
                     <div class="address-box clear-fix">
                     <input type="text" class="form-control" name="member_id" id="member_id" placeholder="8자 이상,영어,숫자" required>
-                    <input type="button" class="adressbtn" id="id_chk_btn" value="중복확인버튼">
+                    <input type="button" class="adressbtn" id="id_chk_btn" value="중복확인">
                     </div>
 					<!-- 아이디 체크여부  //1 안함  2 함//-->
 					<input type="hidden" name="id_chk_value" id="id_chk_value" value="1">
@@ -133,10 +133,13 @@
 	            	</c:when>
 	            	<c:otherwise>
 	            	<!-- 그냥 회원가입으로 왔을 떄 -->
+	            	
 	            	 <div class="mb-3">
 						<label for="member_email">*E-MAIL</label>
-						<input type="email" name="member_email" id="member_email" class="form-control" placeholder="이메일 형식에 맞춰 입력">
-						<button type="button" id="email_overlap_chk" class="adressbtn">중복확인</button>
+						<div class="address-box clear-fix">
+							<input type="email" name="member_email" id="member_email" class="form-control" placeholder="이메일 형식에 맞춰 입력">
+							<input type="button" id="email_overlap_chk" class="adressbtn" value="중복확인">
+						</div>
 						<button type="button" id="email_chk_btn" class="adressbtn">인증번호받기</button></br>
 						
 						<p name="email_chk_panel" id="email_chk_panel"  class="address-box clear-fix" style="display:none">
@@ -168,40 +171,29 @@
             	
                 <!-- 약관동의 체크박스 -->
                 <hr class="mb-4">
+                 
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="">
-                    <label class="custom-control-label" for="same-address">개인정보 수집 및 이용에 동의합니다. (필수)</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="">
-                    <label class="custom-control-label" for="save-info">이용약관에 동의합니다. (필수)</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="">
-                    <label class="custom-control-label" for="save-info">개인정도 제3자 제공에 동의합니다. (선택)</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="">
-                    <label class="custom-control-label" for="save-info">개인정보 처리 위탁에 동의합니다. (선택)</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="">
-                    <label class="custom-control-label" for="save-info">만 14세 이상입니다. (필수)</label>
-                </div>
+		          <input type="checkbox" class="custom-control-input" id="agree_check1">
+		          <label class="custom-control-label" for="agree_check1">개인정보 수집 및 이용에 동의합니다. (필수)</label>
+	        	</div>
+		        <div class="custom-control custom-checkbox">
+		          <input type="checkbox" class="custom-control-input" id="agree_check2">
+		          <label class="custom-control-label" for="agree_check2">이용약관에 동의합니다. (필수)</label>
+		        </div>
                 <hr class="mb-4">
                
-                <button class="btn btn-lg btn-primary btn-block" type="button" id="memberadd_btn">회원가입</button>
+                <button class="btn btn-lg btn-outline-primary btn-block" type="button" id="memberadd_btn">회원가입</button>
                 <!-- Divider Text -->
                 <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-3">
                     <div class="border-bottom w-100 ml-6"></div>
-                    <span class="px-3 font-weight-bold text-muted">OR</span>
                     <div class="border-bottom w-100 mr-6"></div>
                 </div>
             
-                <button class="btn btn-lg btn-warning btn-block" type="submit">
+            	<button class="btn btn-lg btn-outline-secondary btn-block" type="button" onclick="history.back();">뒤로</button>
+                <!-- <button class="btn btn-lg btn-warning btn-block" type="submit">
                     <i class="fas fa-comment"></i>&nbsp;&nbsp;&nbsp;카카오톡 로그인
-                </button>
-                <button type="button" onclick="history.back();">뒤로</button>
+                </button> -->
+           <!--      <button type="button" onclick="history.back();" class="mainBtn">뒤로</button> -->
             
             </form>	
 					
@@ -417,10 +409,18 @@
 					alert("비밀번호 양식이 올바르지 않습니다.\n8자이상 / 영문.숫자.특수문자 조합");
 					return;
 				}
-				if(!regPhone.test(order_phone)){
+				if(!regPhone.test(member_phone)){
 			   		  alert('잘못된 휴대폰 번호입니다.\n-를 뺴고 입력해 주세요.');
 			   		  return;    
 			   	}
+			 	if($("#agree_check1").is(":checked")==false){
+					alert("모든 약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
+                    return;
+				}
+				if($("#agree_check2").is(":checked")==false){
+					alert("모든 약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
+                    return;
+				} 
 				document.memberadd.submit();
 			});
 			
