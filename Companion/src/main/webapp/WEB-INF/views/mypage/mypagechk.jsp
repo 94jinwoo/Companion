@@ -189,23 +189,57 @@
 								</tr>
 							</thead>
 							<tbody>
-								<!-- myPurchase1 에 정보 담겨있음. MyPurchaseDetailVo -->
-								<tr>
-									<td class="imgbox"><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><img src="${myPurchase1.product_thumb }" alt="80x80"></a></td>
-									<td><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><span>${myPurchase1.product_name }</span></a></td>
-									<td><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><span>${myPurchase1.order_detail_quantity }</span></a></td>
-									<td><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><span>${myPurchase1.order_date }</span></a></td>
-								</tr>
- 								<!-- myPurchase1 에 정보 담겨있음. MyPurchaseDetailVo -->
-								<tr>
-									<td class="imgbox"><a href="${root }order/productDetail?idx=${myPurchase2.product_id }"><img src="${myPurchase2.product_thumb }" alt="80x80"></a></td>
-									<td><a href="${root }order/productDetail?idx=${myPurchase2.product_id }"><span>${myPurchase2.product_name }</span></a></td>
-									<td><a href="${root }order/productDetail?idx=${myPurchase2.product_id }"><span>${myPurchase2.order_detail_quantity }</span></a></td>
-									<td><a href="${root }order/productDetail?idx=${myPurchase2.product_id }"><span>${myPurchase2.order_date }</span></a></td>
-								</tr>
+								<c:choose>
+									<c:when test="${myPurchase1!=null && myPurchase2==null }">
+		 								<!-- myPurchase1 에 정보 담겨있음. MyPurchaseDetailVo -->
+										<tr>
+											<td class="imgbox"><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><img src="${myPurchase1.product_thumb }" alt="80x80"></a></td>
+											<td><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><span>${myPurchase1.product_name }</span></a></td>
+											<td><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><span>${myPurchase1.order_detail_quantity }</span></a></td>
+											<td><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><span>${myPurchase1.order_date }</span></a></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</c:when>
+									<c:when test="${myPurchase1!=null && myPurchase2!=null }">
+										<!-- myPurchase1 에 정보 담겨있음. MyPurchaseDetailVo -->
+										<tr>
+											<td class="imgbox"><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><img src="${myPurchase1.product_thumb }" alt="80x80"></a></td>
+											<td><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><span>${myPurchase1.product_name }</span></a></td>
+											<td><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><span>${myPurchase1.order_detail_quantity }</span></a></td>
+											<td><a href="${root }order/productDetail?idx=${myPurchase1.product_id }"><span>${myPurchase1.order_date }</span></a></td>
+										</tr>
+		 								<!-- myPurchase2 에 정보 담겨있음. MyPurchaseDetailVo -->
+										<tr>
+											<td class="imgbox"><a href="${root }order/productDetail?idx=${myPurchase2.product_id }"><img src="${myPurchase2.product_thumb }" alt="80x80"></a></td>
+											<td><a href="${root }order/productDetail?idx=${myPurchase2.product_id }"><span>${myPurchase2.product_name }</span></a></td>
+											<td><a href="${root }order/productDetail?idx=${myPurchase2.product_id }"><span>${myPurchase2.order_detail_quantity }</span></a></td>
+											<td><a href="${root }order/productDetail?idx=${myPurchase2.product_id }"><span>${myPurchase2.order_date }</span></a></td>
+										</tr>
+									</c:when>
+									<c:otherwise>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</c:otherwise>
+								</c:choose>
 								<tr>
 									<td colspan="4" style="text-align:center"><a href="${root }mypurchaselist">주문내역 자세히>></a></td>
 								</tr>
+							
 							</tbody>
 						</table>
 						

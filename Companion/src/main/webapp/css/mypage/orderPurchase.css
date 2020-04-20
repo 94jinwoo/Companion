@@ -272,14 +272,13 @@ ul{
 }
 .btn-order{
     border: 1px solid #0F4C81;
-    color: #fff;
-    background: #0F4C81 linear-gradient(rgb(22, 121, 207), #0F4C81);
-    border: 1px solid ;
+    background: #fff;
+    color: #0F4C81;
     border-radius: 4px;
 }
 .btn-order:hover{
-    background: #0F4C81 linear-gradient(#0F4C81, rgb(22, 121, 207));
-    color: #fff;
+	color: #fff;
+    background: #0F4C81 linear-gradient(rgb(22, 121, 207), #0F4C81);
 }
 
 .section .chk-non{

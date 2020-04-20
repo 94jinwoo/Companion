@@ -1,14 +1,13 @@
 package com.bit.companion.controller.order;
 
-import java.awt.List;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.omg.CORBA.Request;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bit.companion.model.entity.login.MemberVo;
 import com.bit.companion.model.entity.order.OrderQuestionVo;
-import com.bit.companion.model.entity.order.ProductVo;
 import com.bit.companion.service.order.OrderQuestionService;
 import com.bit.companion.service.order.OrderReviewService;
 import com.bit.companion.service.order.ProductService;
@@ -28,6 +26,9 @@ import com.bit.companion.service.order.SessionService;
 @Controller
 public class ProductController {
 	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
+	
+	//조회목록용 리스트
+	ArrayList<Object> list = new ArrayList<Object>();
 	
 	@Autowired
 	SessionService sessionService;
@@ -44,8 +45,6 @@ public class ProductController {
 	
 	OrderQuestionVo orderQuestionVo;
 	
-//	String CategoryNUM;
-	
 	//페이지 정렬용 URL 패턴 메서드
 	public void urlPattern(HttpServletRequest request) {
 		String url = request.getRequestURI();
@@ -56,24 +55,29 @@ public class ProductController {
 	
 	//DETAIL PAGE
 	@RequestMapping(value = "/order/productDetail",method=RequestMethod.GET)
-	public String productDetail(Model model,@RequestParam("idx") int product_id,HttpSession session,ServletRequest request) throws SQLException {
+	public String productDetail(Model model,@RequestParam("idx") int product_id,HttpSession session,ServletRequest request,HttpServletResponse response) throws SQLException {
 		MemberVo memberVo=(MemberVo)session.getAttribute("memberVo");
-		
+	
 		request.setAttribute("Product_id",product_id);
 		
+		//멤버
 		if(memberVo==null) {
+
 		}else {
 			memberVo.setMember_id((memberVo.getMember_id()));
 		}
-		
+
 		//상품 상세 페이지 정보 출력.
 		productService.detail(model, product_id);	
 		
 		//상품 추천
 		productService.productRecommend(model, product_id);
 		
-		//세션 설마 여기서 해야하냐?
-		sessionService.SessionList(model,product_id);
+		//세션
+		if(list!=null) {
+			session.setAttribute("productList",list); 
+			sessionService.SessionList(model,product_id);
+		}
 		
 		return "order/productDetail";
 	}
