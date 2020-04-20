@@ -60,8 +60,17 @@ public class MypageController {
 			List<MyPurchaseDetailVo> list=(List) mypageService.purchaseDetailList(order_id,order_date,order_state_member);
 			myPurchaseDetailList.addAll(list);
 		}
-		session.setAttribute("myPurchase1", myPurchaseDetailList.get(0));
-		session.setAttribute("myPurchase2", myPurchaseDetailList.get(1));
+		if(myPurchaseDetailList.size()>=1) {
+			session.setAttribute("myPurchase1", myPurchaseDetailList.get(0));
+		}else {
+			session.setAttribute("myPurchase1", null);
+		}
+		if(myPurchaseDetailList.size()>=2) {
+			session.setAttribute("myPurchase2", myPurchaseDetailList.get(1));
+		}else {
+			session.setAttribute("myPurchase2", null);
+		}
+			
 		return "mypage/mypagechk";
 	}
 	

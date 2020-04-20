@@ -417,7 +417,7 @@
 					alert("비밀번호 양식이 올바르지 않습니다.\n8자이상 / 영문.숫자.특수문자 조합");
 					return;
 				}
-				if(!regPhone.test(order_phone)){
+				if(!regPhone.test(member_phone)){
 			   		  alert('잘못된 휴대폰 번호입니다.\n-를 뺴고 입력해 주세요.');
 			   		  return;    
 			   	}
