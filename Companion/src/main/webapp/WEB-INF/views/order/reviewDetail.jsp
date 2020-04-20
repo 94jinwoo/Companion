@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:url value="/" var="root"></c:url>
 <!DOCTYPE html>
 <html>
@@ -25,18 +26,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<table class="DetailT">
 		<thead>
 			<tr>
 				<th class="clearfix">
-				<div class="float--left">
+					<div class="float--left">
 						<label>&nbsp;[제목]&nbsp;</label>
-						<span>${ReplyDetail.question_title }</span>
+						<span>${ReviewDetail.article_title }</span>
 					</div>
 					<div class="float--right">
 						<label>&nbsp;[글번호]&nbsp;</label>
-						<span>${ReplyDetail.question_id }&nbsp;</span>
-					</div>
+						<span>${ReviewDetail.article_id }&nbsp;</span>
+					</div>			
 				</th>
 			</tr>
 		</thead>
@@ -45,48 +47,23 @@
 				<td class="clearfix">
 					<div class="float--left">
 						<label>&nbsp;[작성자]&nbsp;</label>
-						<span>${ReplyDetail.member_id }</span>
+						<span>${ReviewDetail.member_id }</span>
 					</div>
 					<div class="float--right">
 						<label>&nbsp;[작성일자]&nbsp;</label>
-						<span><fmt:formatDate value="${ReplyDetail.question_date}" pattern="yyy-MM-dd"/>&nbsp;</span>
+						<span><fmt:formatDate value="${ReviewDetail.article_date}" pattern="yyy-MM-dd"/>&nbsp;</span>
 					</div>
 				</td>
 			</tr>
-			<tr>
+			<tr class="reviewCon">
 				<td class="clearfix">
-					<div class="float--right">
-						<label>&nbsp;[비밀글]&nbsp;</label>
-						<span>${ReplyDetail.question_secret_name }&nbsp;</span>
-					</div>
+				<div class="reviewPhoto float--left">
+					<img src="<spring:url value='${ReviewDetail.article_image }'/>" alt="reviewImg">
+				</div>
+				<div class="reviewText float--right">
+					<span>${ReviewDetail.article_content }</span>
+				</div>
 				</td>
-			</tr>
-			<tr>
-				<td colspan="4">${ReplyDetail.question_content }</td>
-			</tr>
-		</tbody>
-	</table>
-	<hr class="mb-3" style="width:920px">
-	<table class="quesDetailT">
-		<thead>
-			<tr>
-				<th class="clearfix">
-				<div class="float--left">
-						<label>&nbsp;[답변상태]&nbsp;</label>
-						<span>${ReplyDetail.question_state_name }</span>
-					</div>
-					<div class="float--right">
-						<label>&nbsp;[답변일]&nbsp;</label>
-						<span><fmt:formatDate value="${ReplyDetail.question_answerdate}" pattern="yyy-MM-dd"/></span>
-					</div>
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>답변</th>
-				<td>${ReplyDetail.question_answer }</td>
-				
 			</tr>
 		</tbody>
 	</table>
@@ -98,7 +75,7 @@
 <script type="text/javascript">
 //목록 버튼
 $("#back_Btn").click(function(){
-	location.href = ${root}+"order/productDetail/ReplyList?product_id="+${ReplyDetail.product_id};
+	location.href = ${root}+"order/productDetail/ReviewList?product_id="+${ReviewDetail.product_id};
 });
 </script>
 </html>

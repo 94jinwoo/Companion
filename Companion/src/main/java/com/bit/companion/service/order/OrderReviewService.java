@@ -5,9 +5,12 @@ import java.util.List;
 
 import org.springframework.ui.Model;
 
+import com.bit.companion.common.Pagination_P;
 import com.bit.companion.model.entity.order.OrderReviewVo;
 
-//이용 후기 리스트
 public interface OrderReviewService {
-	List<OrderReviewVo> orderReviewList(Model model,int product_id);
+	//list
+	void reviewList(Model model, int article_id, Pagination_P pagination_p, int page, int range);
+	//detail
+	void detail(Model model, int article_id);
 }

@@ -83,7 +83,7 @@
                                <c:otherwise>
                                    <ul class="nav navbar-nav ml-auto">
                                        <li class="nav-item">
-                                           <a class="nav-link" href="#">주문내역</a>
+                                           <a class="nav-link" href="${root }mypurchaselist">주문내역</a>
                                        </li>
                                        <li class="nav-item">
                                            <a class="nav-link" href="${root }mypagereserve">예약조회</a>
@@ -257,9 +257,9 @@
 							</tr>
 							<tr>
 								<th>요청사항</th>
-								<td><input type="text" class="form-control"
-									name="order_msg" id="order_msg" placeholder="40자 내로 써주세요"
-									aria-label="Username" aria-describedby="basic-addon1"></td>
+								<td><textarea cols="65" rows="4" maxlength="40" form="payForm" 
+								name="order_msg" id="order_msg" placeholder="40자 내로 써주세요."
+								aria-label="Username" aria-describedby="basic-addon1"></textarea></td>
 							</tr>
 						</tbody>
 					</table>

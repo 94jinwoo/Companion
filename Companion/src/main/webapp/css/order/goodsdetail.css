@@ -148,14 +148,17 @@
 	width:420px;
 	height:100px;
 }
-
+#questiont{
+	float:right;
+}
+/*******************************************************************/
 .replyList h4{
 	margin-top:20px;
 	
 }
 .table--replyList{
 	text-align: center;
-	width:100%;
+	width:968px;
 	
 }
 .table--replyList tr{
@@ -163,14 +166,67 @@
 	
 }
 .table--replyList th{
-	width:200px;
-	line-height: 1;
+	line-height: 2;
 	font-size:20px;
+	letter-spacing:6px;
 }
 .table--replyList td{
-	line-height: 2;
+	line-height: 2.5;
 	font-size:18px;
 }
+.othersBlock{
+color: rgba(0,0,0,0.2);
+}
+
+/* TABLE_LAYOUT STYLE */
+.table_layout { margin:0px; table-layout:fixed; }
+.table_layout .col1 { width: 180px; } /* 글번호 */ 
+.table_layout .col2 { width: auto } /* 문의제목 */
+.table_layout .col3 { width: 200px; } /* 아이디 */
+.table_layout .col4 { width: 200px; } /* 작성날짜 */
+
+/*******************************************************************/
+/*******************************************************************/
+.reviewListH3{
+	width:150px;
+	text-align:center;
+	line-height:1.5;
+	border-bottom: 1px solid #b3b7bb;
+	font-size:22px;
+}
+.table--reviewList{
+	text-align: center;
+	width:968px;
+	
+}
+.table--reviewList tr{
+	border-bottom: 1px solid #b3b7bb;
+}
+.table--reviewList th{
+	line-height: 2;
+	font-size:20px;
+	letter-spacing:6px;
+}
+.table--reviewList tbody tr{
+	height:80px;
+}
+.table--reviewList td{
+	line-height: 2.5;
+	font-size:18px;
+}
+.table--reviewList td img{
+	height:80px;
+	width:80px;
+	margin:0 auto;
+}
+/* TABLE_LAYOUT STYLE */
+.table_layout2 { margin:0px; table-layout:fixed; }
+.table_layout2 .col1 { width: 180px; } /* 이미지 */ 
+.table_layout2 .col2 { width: auto } /* 제목 */
+.table_layout2 .col3 { width: 200px; } /* 작성자 */
+.table_layout2 .col4 { width: 200px; } /* 작성날짜 */
+
+/*******************************************************************/
 
 .recomB{
 	width:100%;
@@ -189,4 +245,57 @@
 }
 .recomB tbody tr td p{
 	font-weight:500;
+}
+/***************  questionDetail & reviewDetail css  ********************/
+.DetailT{
+	width:800px;
+	margin-left:80px;
+}
+.DetailT label{
+	margin-bottom:0;
+}
+.DetailT thead{
+	font-size:18px;
+	border-bottom: 1px solid #b3b7bb;
+}
+.DetailT tbody{
+	font-size:16px;
+}
+.DetailT tr{
+	line-height:2;
+	
+}
+.btn__group{
+	float:right;
+	margin-top:20px;
+	margin-right:120px;
+}
+
+/*************** reviewDetail Contents css  ********************/
+.reviewCon{
+	height:200px;
+	min-height:200px;
+	background:tomato;
+}
+.reviewPhoto{
+	margin-top:20px;
+	height:200px;
+	width:250px;
+}
+.reviewPhoto img{
+	padding:15px;
+	height:200px;
+	min-height:200px;
+	width:200px;
+	min-width:200px;
+	background:tomato;
+	margin-left:25px;
+	border-radius:10px;
+}
+.reviewText{
+	margin-top:20px;
+	text-align:left;
+	font-size:18px;
+	width:530px;
+	padding-right:20px;
 }

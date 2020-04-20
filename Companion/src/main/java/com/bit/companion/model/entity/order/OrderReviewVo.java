@@ -14,14 +14,13 @@ public class OrderReviewVo {
 	private String article_thumb;
 	private int product_id;
 	private String board_type;
-	private int review_count;
 	
 	public OrderReviewVo() {
 	}
-	
+
 	public OrderReviewVo(int board_id, int article_id, String member_id, String article_title, String article_content,
 			Date article_date, int article_count, String article_image, String article_thumb, int product_id,
-			String board_type, int review_count) {
+			String board_type) {
 		super();
 		this.board_id = board_id;
 		this.article_id = article_id;
@@ -34,7 +33,6 @@ public class OrderReviewVo {
 		this.article_thumb = article_thumb;
 		this.product_id = product_id;
 		this.board_type = board_type;
-		this.review_count = review_count;
 	}
 
 	@Override
@@ -43,7 +41,7 @@ public class OrderReviewVo {
 				+ ", article_title=" + article_title + ", article_content=" + article_content + ", article_date="
 				+ article_date + ", article_count=" + article_count + ", article_image=" + article_image
 				+ ", article_thumb=" + article_thumb + ", product_id=" + product_id + ", board_type=" + board_type
-				+ ", review_count=" + review_count + "]";
+				+ "]";
 	}
 
 	public int getBoard_id() {
@@ -134,16 +132,5 @@ public class OrderReviewVo {
 		this.board_type = board_type;
 	}
 
-	public int getReview_count() {
-		return review_count;
-	}
-
-	public void setReview_count(int review_count) {
-		this.review_count = review_count;
-	}
-
-	
-	
-	
 	
 }

@@ -8,11 +8,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.bit.companion.common.Pagination_P;
 import com.bit.companion.model.entity.order.OrderQuestionVo;
 import com.bit.companion.model.entity.order.OrderReviewVo;
 import com.bit.companion.service.order.OrderQuestionService;
@@ -23,24 +25,25 @@ public class OrderReviewController {
 	private static final Logger logger = LoggerFactory.getLogger(OrderQuestionController.class);
 	
 	@Autowired
-	OrderQuestionService orderQuestionService;
-	
-	@Autowired
 	OrderReviewService orderReviewService;
 	
-	
-	// 이용후기 (ARTICLE) TABLE LIST
-		@ResponseBody
-		@RequestMapping(value="order/productDetail/REVIEW",method = RequestMethod.GET)
-		public List<OrderReviewVo> getReplyList(Model model,@RequestParam("idx") int product_id) throws SQLException{
-			logger.debug("order/productDetail/Review  Controller call...");
+		// list
+		@RequestMapping(value="order/productDetail/ReviewList",method = RequestMethod.GET)
+		public String ReplyList(Model model,@RequestParam("product_id") int product_id 
+				, @RequestParam(required = false, defaultValue = "1") int page
+				, @RequestParam(required = false, defaultValue = "1") int range 
+				,@ModelAttribute("pagination_p") Pagination_P pagination_p 
+				) throws SQLException{
 			
-//			List<OrderQuestionVo> reply = orderQuestionService.replyList(null, product_id);
-			List<OrderReviewVo> reply = orderReviewService.orderReviewList(model, product_id);
+			orderReviewService.reviewList(model, product_id, pagination_p,page, range);
 			
-			
-			return reply;
+			return "order/review";
 		}
-	
-	
+		
+		// detail
+		@RequestMapping(value = "order/productDetail/ReviewDetail", method = RequestMethod.GET)
+		public String ReplyDetail(Model model, @RequestParam int article_id) throws SQLException{
+			orderReviewService.detail(model, article_id);
+			return "order/reviewDetail";
+		}
 }

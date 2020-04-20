@@ -100,7 +100,7 @@
 	            	<ul class="list-group list-unstyled components">
 						<c:forEach items="${questionList }" var="bean">
 							<ul>
-								<li class="list-group-item list-group-item-primary">
+								<li class="list-group-item list-group-item">
 									<div class="row">
 										<!-- 나중에 해당 상품페이지로 이동하게 앵커달기 -->
 										<div class="col-2">
