@@ -81,7 +81,6 @@ public class ProductController {
 		//세션
 		if(list!=null) {
 			sessionService.SessionList(model,list); 
-			System.out.println(list.toString());
 			session.setAttribute("productList",list); 
 		}
 		
@@ -91,7 +90,6 @@ public class ProductController {
 	/* 답글 입력용 */
 	@RequestMapping(value = "/order/productDetail/orderQuestion")
 	public String orderQuestion(Model model) {
-		System.out.println("답글 입력 메서드 실행.");
 		return "order/orderQuestion";
 	}
 	
@@ -99,7 +97,6 @@ public class ProductController {
 	//@RequestParam("num") 은 페이지 번호.
 	@RequestMapping(value = "/order/productMain",method = RequestMethod.GET)
 	public String listPage(Model model,@RequestParam("c") int category_id, @RequestParam("num") int num,HttpServletRequest request) throws Exception {
-		logger.debug("페이지 개수 확인용 컨트롤러 작동 확인?");
 		OrderPagenation page = new OrderPagenation();
 		page.setNum(num);
 		page.setCount(productService.count(model, category_id));
@@ -125,7 +122,6 @@ public class ProductController {
 		OrderPagenation page = new OrderPagenation();
 		page.setNum(num);
 		page.setCount(productService.count(model,category_id));
-		System.out.println("총 상품 개수 : "+ page.getCount());
 		model.addAttribute("pageNum",page.getPageNum());
 		model.addAttribute("startPageNum",page.getStartPageNum());
 		model.addAttribute("endPageNum",page.getEndPageNum());
@@ -133,12 +129,6 @@ public class ProductController {
 		model.addAttribute("next",page.getNext());
 		model.addAttribute("select",num);
  
-		logger.debug("상품 정렬(추천순) 컨트롤러 작동 확인");
-		logger.debug("카테고리 아이디 : "+Integer.toString(category_id) );
-		logger.debug("jsp 에서 받아오는 NUM 값 : "+Integer.toString(num));
-		System.out.println("하단 페이징 번호 pageNum : " + page.getPageNum());
-		System.out.println("표시되는 페이지 중 첫번 쨰 번호 startPageNum : " + page.getStartPageNum());
-		System.out.println(" 끝나는 번호 endPageNum : "+page.getEndPageNum());
 		urlPattern(request);	
 		productService.Alignment(model,category_id,page.getDisplayPost(),page.getPostNum());
 		
@@ -148,8 +138,6 @@ public class ProductController {
 	///판매량 정렬
 	@RequestMapping(value = "/order/productMain/orderBySelling",method=RequestMethod.GET)
 	public String productOrderBySellingOrder(Model model,@RequestParam("c") int category_id, @RequestParam("num") int num,HttpServletRequest request) throws Exception {
-		logger.debug("상품 정렬(판매량순) 컨트롤러 작동 확인");
-		logger.debug("카테고리 아이디 : "+Integer.toString(category_id) );
 		OrderPagenation page = new OrderPagenation();
 		page.setNum(num);
 		page.setCount(productService.count(model, category_id));
@@ -168,8 +156,6 @@ public class ProductController {
 	//낮은 가격 순 정렬
 	@RequestMapping(value = "/order/productMain/orderByLowPrice",method=RequestMethod.GET)
 	public String productOrderByLowPrice(Model model,@RequestParam("c") int category_id, @RequestParam("num") int num,HttpServletRequest request) throws Exception {
-		logger.debug("상품 정렬(낮은 가격 순) 컨트롤러 작동 확인");
-		logger.debug("카테고리 아이디 : "+Integer.toString(category_id) );
 		OrderPagenation page = new OrderPagenation();
 		page.setNum(num);
 		page.setCount(productService.count(model, category_id));
@@ -187,8 +173,6 @@ public class ProductController {
 	//높은 가격 순 정렬
 	@RequestMapping(value = "/order/productMain/orderByHighPrice",method=RequestMethod.GET)
 	public String productOrderByHighPrice(Model model,@RequestParam("c") int category_id, @RequestParam("num") int num,HttpServletRequest request) throws Exception {
-		logger.debug("상품 정렬(높은 가격 순) 컨트롤러 작동 확인");
-		logger.debug("카테고리 아이디 : "+Integer.toString(category_id) );
 		OrderPagenation page = new OrderPagenation();
 		page.setNum(num);
 		page.setCount(productService.count(model, category_id));
@@ -206,8 +190,6 @@ public class ProductController {
 	//등록일 순 정렬
 	@RequestMapping(value = "/order/productMain/orderByDate",method=RequestMethod.GET)
 	public String productOrderByDate(Model model,@RequestParam("c") int category_id, @RequestParam("num") int num,HttpServletRequest request) throws Exception {
-		logger.debug("상품 정렬(등록일 순) 컨트롤러 작동 확인");
-		logger.debug("카테고리 아이디 : "+Integer.toString(category_id) );
 		OrderPagenation page = new OrderPagenation();
 		page.setNum(num);
 		page.setCount(productService.count(model, category_id));
