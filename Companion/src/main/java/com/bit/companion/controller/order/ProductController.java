@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletRequest;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bit.companion.common.Pagination_C;
-import com.bit.companion.common.Pagination_P;
 import com.bit.companion.model.entity.login.MemberVo;
 import com.bit.companion.model.entity.order.OrderQuestionVo;
 import com.bit.companion.service.order.OrderQuestionService;
@@ -31,7 +29,7 @@ public class ProductController {
 	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 	
 	//조회목록용 리스트
-	ArrayList<Object> list = new ArrayList<Object>();
+	static ArrayList<Object> list = new ArrayList<Object>();
 	
 	@Autowired
 	SessionService sessionService;
@@ -66,18 +64,17 @@ public class ProductController {
 		
 		//상품 추천
 		productService.productRecommend(model, product_id);
-		if(list.size()>2) {
-			list.add(0, product_id);;
-			list.remove(3);
-		}else {
-			list.add(0,product_id);
-		}
-		//세션
-		if(list!=null) {
-			sessionService.SessionList(model,list); 
-			System.out.println(list.toString());
-			session.setAttribute("productList",list); 
-		}
+		
+//		세션
+			if(list.size()>2) {
+				list.add(0, product_id);;
+				list.remove(3);
+			}else {
+				list.add(0,product_id);
+			}
+			if(list!=null) {
+				sessionService.SessionList(model,list); 
+			}
 		
 		return "order/productDetail";
 	}
@@ -85,7 +82,6 @@ public class ProductController {
 	// question insert
 	@RequestMapping(value = "/order/productDetail/orderQuestion")
 	public String orderQuestion(Model model) {
-		System.out.println("답글 입력 메서드 실행.");
 		return "order/orderQuestion";
 	}
 	
@@ -97,8 +93,12 @@ public class ProductController {
 			, @RequestParam(required = false, defaultValue = "date") String sort 
 			, @ModelAttribute("pagination_c") Pagination_C pagination_c
 			) throws Exception {
+		
+		
+		sessionService.SessionList(model,list); 
 		pagination_c.setSort(sort);
 		productService.listPage(model, category_id, page, range, pagination_c);
+		
 		return "order/productMain";
 	}
 

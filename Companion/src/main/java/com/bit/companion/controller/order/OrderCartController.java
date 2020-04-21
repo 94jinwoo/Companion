@@ -36,22 +36,6 @@ public class OrderCartController {
 	 public String orderCartAdd(Model model,HttpSession session,OrderVo orderVo,HttpServletRequest request) throws SQLException{
 	 		MemberVo member = (MemberVo)session.getAttribute("memberVo");
 	 		orderVo.setMember_id(member.getMember_id());
-		/*
-		 * orderVo.setCart_option((String)request.getAttribute("selectbox"));
-		 * orderVo.setCart_quantity((int)request.getAttribute("cart_quantity"));
-		 */
-	 		
-	 		logger.debug("cart_option 확인");
-	 		logger.debug(orderVo.getCart_option());
-
-		logger.debug("member_id 확인");
-		logger.debug(member.getMember_name());
-		logger.debug("옵션 수량 확인. 확인");
-		logger.debug((Integer.toString(orderVo.getOrder_detail_quantity())));
-		logger.debug("product_ id 확인");
-		logger.debug((Integer.toString(orderVo.getProduct_id())));
-		logger.debug("cart_quantity 확인");
-		logger.debug((Integer.toString(orderVo.getCart_quantity())));
 		
 		
 		orderService.insertCart(model,orderVo);
@@ -64,20 +48,6 @@ public class OrderCartController {
 	//장바구니 주문.
 	@RequestMapping(value="/order/orderCartPurchase",method=RequestMethod.POST)
 	public String orderCartPurchase(HttpServletRequest req,Model model,List<OrderVo> orderVo) throws SQLException {
-//		HttpSession session = req.getSession();
-//		String uid = (String)session.getAttribute("info_userid");
-//		
-//		List<OrderVo> list = new ArrayList<OrderVo>(); 
-//		Map<String,Object> map = new HashMap<String,Object>();
-//		//Map으로 다중 INSERT 하겠음.
-//
-//		int length = list.size();
-//		logger.debug("length 확인 : "+ length);
-//		logger.debug("list.size 확인 : "+ list.size());
-//		
-//		for(int i=0; i<length;i++) {
-//			OrderVo ordervo = new OrderVo();
-//		}
 		orderService.insert_test(orderVo);
 		 
 		return "/order/successOrder";

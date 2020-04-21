@@ -74,22 +74,23 @@
                 </a>
                 <span>></span>
                 <a href="#">
-                    
+                
                     <%
-                    String categoryFind = (String)request.getQueryString().substring(0,5);
-                    if("c=100".equals(categoryFind)){
+                    
+                    String categoryFind = (String)request.getQueryString().substring(0,15);
+                    if("category_id=100".equals(categoryFind)){
                     	out.println("사료");
-                    }else if("c=200".equals(categoryFind)){
+                    }else if("category_id=200".equals(categoryFind)){
                     	out.println("간식");
-                    }else if("c=300".equals(categoryFind)){
+                    }else if("category_id=300".equals(categoryFind)){
                     	out.println("장난감");
-                    }else if("c=400".equals(categoryFind)){
+                    }else if("category_id=400".equals(categoryFind)){
                     	out.println("미용용품");
-                    }else if("c=500".equals(categoryFind)){
+                    }else if("category_id=500".equals(categoryFind)){
                     	out.println("목욕용품");
-                    }else if("c=600".equals(categoryFind)){
+                    }else if("category_id=600".equals(categoryFind)){
                     	out.println("위생용품");
-                    }else if("c=700".equals(categoryFind)){	
+                    }else if("category_id=700".equals(categoryFind)){	
                     	out.println("산책용품");
                     }
                     %>
@@ -122,40 +123,36 @@
 			                <div class="product-image">
 			                <!-- a에 링크 2개 걸 때 onclick 이벤트 쓰면 됨 예시
 			                 onclick="parent.question.jsp.location.href='${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}&num=1'  -->
- 			                    <a href="${root }order/productDetail?idx=${bean.product_id }&num=1"> 
+ 			                    <a href="${root }order/productDetail?idx=${bean.product_id }"> 
 						                <img class="pic-1" src="${bean.product_image }"/>
 			                    </a>
 
 			                </div>
+			                <!-- 슬라이드 가려지기 전 화면.  -->
 			                <ul class="rating">
-			                <!-- 별갯수 알려주는곳. -->
-			                    <li class="fa fa-star"></li>
-			                    <li class="fa fa-star"></li>
-			                    <li class="fa fa-star"></li>
-			                    <li class="fa fa-star"></li>
-			                    <li class="fa fa-star"></li>
+					                             <!-- 따봉 로그인 세션 검사  -->
+					             <c:set var = "memberID" value="${memberVo.member_id }"/>         
+					               <c:choose>
+											<c:when test="${memberVo.member_id==null}">	
+							                    <a id=btn href="${root }login"><img  src="${root }imgs/shopping/찬따봉.jpg"></a><span class="badge badge-pill badge-danger">${bean.like_id }</span></h3>
+							               </c:when>  
+											<c:when test="${memberVo.member_id!=null }">	
+							                    <a id=btn href='javascript:like_func();'><img id="like_img" src="${root }imgs/shopping/찬따봉.jpg"></a><span class="badge badge-pill badge-danger">${bean.like_id }</span></h3>
+							               </c:when>  
+		 			                </c:choose>       
+			            						  <!-- 따봉 로그인 세션 검사  -->   
 			                </ul>
 			                <div class="product-content">
-			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }&num=1"> ${bean.category_name }</a></h3> 
+			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }"> ${bean.category_name }</a></h3> 
 			              
 	
-			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }&num=1"> ${bean.product_name }</a>
+			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }"> ${bean.product_name }</a>
 			             
-			             <!-- 따봉 로그인 세션 검사  -->
-			             <c:set var = "memberID" value="${memberVo.member_id }"/>         
-			               <c:choose>
-									<c:when test="${memberVo.member_id==null}">	
-					                    <a id=btn href="${root }login"><img  src="${root }imgs/shopping/빈따봉1.jpg"></a><span class="badge badge-pill badge-danger">${bean.like_id }</span></h3>
-					               </c:when>  
-									<c:when test="${memberVo.member_id!=null }">	
-					                    <a id=btn href='javascript:like_func();'><img id="like_img" src="${root }imgs/shopping/빈따봉1.jpg"></a><span class="badge badge-pill badge-danger">${bean.like_id }</span></h3>
-					               </c:when>  
- 			                </c:choose>       
-					 
-			               <!-- 따봉 로그인 세션 검사  -->   
+			
 			                    <div class="price">${bean.product_price }
 			                        <span>${bean.product_price +5600}</span>
 			                    </div>
+			                 
 			                </div>
 			            </div>
 			        </div>

@@ -36,10 +36,6 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public void detail(Model model,int product_id) {
 		ProductVo list;
-//		//상품 조회 목록 세션 선언.
-//		HttpSession session = null;
-//		session.setAttribute("ToDayView",product_id);
-		
 		try {
 			list = productDao.ProductDetailOne(product_id);
 			model.addAttribute("productDetailOne",productDao.ProductDetailOne(product_id));
@@ -81,11 +77,9 @@ public class ProductServiceImpl implements ProductService {
 			pagination_c.setCategory_id(category_id);
 			pagination_c.setListSize(12);
 			int listCnt= productDao.count(pagination_c);
-			System.out.println(listCnt);
 			
 			pagination_c.pageInfo(page, range, listCnt);
 			List<ProductVo> list=productDao.listPage(pagination_c);
-			System.out.println(list.toString());
 			
 			model.addAttribute("listPage",list);
 		} catch (Exception e) {
