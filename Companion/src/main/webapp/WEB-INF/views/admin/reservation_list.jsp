@@ -48,7 +48,7 @@
 			    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			        <ul class="nav navbar-nav ml-auto">
 			            <li class="nav-item">
-			                <a class="nav-link active" href="${root }admin/reservation_list">예약관리 목록</a>
+			                <a class="nav-link active" href="${root }admin/reservation_list">예약 목록</a>
 			            </li>
 			        </ul>
 			    </div>

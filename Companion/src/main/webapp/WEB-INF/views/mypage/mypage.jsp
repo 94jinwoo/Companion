@@ -153,7 +153,7 @@
 						</tbody>
 					</table>
 					<div class="btnbox">
-	            	<button type="button" class="cBtn backBtn" onclick="history.back();">이전으로</button>
+	            	<button type="button" class="cBtn backBtn" onclick="location.href='${root}mypagechk';">이전으로</button>
 	            	</div>
 	            </div>
 			</div>

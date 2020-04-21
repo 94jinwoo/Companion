@@ -6,7 +6,7 @@
   
 <mapper namespace="adminReview">
 
-	<!-- member list -->
+	<!-- review list -->
 	<select id="selectAll" resultType="adminArticleBean">
 		SELECT 
 			a.*,
@@ -14,7 +14,7 @@
 				FROM `ARTICLE` a WHERE board_id=3 ORDER BY article_id DESC
 	</select>
 	
-	<!-- member detail -->
+	<!-- review detail -->
 	<select id="selectOne" parameterType="int" resultType="adminArticleBean">
 		SELECT 
 			a.*,
@@ -22,4 +22,9 @@
 			FROM `ARTICLE` a
 				WHERE article_id=#{article_id} AND board_id=3
 	</select>
+	
+	<!-- review delete -->
+	<delete id="deleteOne" parameterType="adminArticleBean">
+		delete from `ARTICLE` WHERE article_id=#{article_id} AND board_id=3
+	</delete>
 </mapper>

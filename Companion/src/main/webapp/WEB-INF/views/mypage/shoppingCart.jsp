@@ -187,7 +187,7 @@
                     </tr>
                 </table>
                 <!-- table end -->
-                <a href="${root }order/productMain?c=100"><span><< 쇼핑계속하기</span></a>
+                <a href="${root }order/productMain?category_id=100"><span><< 쇼핑계속하기</span></a>
                 <!-- 주문금액 합계 start -->
                 <div class="coast clearfix">
                     <ul class="coast-group float--right">

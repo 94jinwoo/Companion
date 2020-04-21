@@ -75,6 +75,7 @@
 				</thead>
 				<tbody>
 				<c:forEach items="${list }" var="bean">
+				
 					<tr>
 						<td><a href="${root }admin/order_detail?order_id=${bean.order_id}">${bean.order_id }</a></td>
 						<td>
@@ -115,7 +116,7 @@
 							</c:choose>
 						</td>
 						<td><fmt:formatNumber value="${bean.order_amount }" pattern="###,###,###"/></td>
-						<td>${bean.member_name }(${bean.member_id })</td>
+						<td><a href="${root }admin/order_detail?order_id=${bean.order_id}">${bean.member_name }(${bean.member_id })</a></td>
 						<td>${bean.order_name }</td>
 						<td>${bean.order_phone }</td>
 						<td>${bean.order_date }</td>
