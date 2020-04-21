@@ -10,10 +10,6 @@ public interface ProductDao {
 	List<ProductVo> ProductSelectAll() throws SQLException;
 	ProductVo ProductDetailOne(int product_id) throws SQLException;
 	List<ProductVo> ProductCategorySelect(int category_id) throws SQLException;
-	/*
-	 * List<ProductVo> ProductCategorySelect(int category_id) throws SQLException;
-	 */ 
-	
 	List<ProductVo> productRecommendList(int product_id) throws SQLException;
 	
 	// total

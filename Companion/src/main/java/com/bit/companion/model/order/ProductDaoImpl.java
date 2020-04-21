@@ -20,7 +20,6 @@ public class ProductDaoImpl implements ProductDao{
 	@Autowired
 	SqlSession sqlSession;
 	
-	//프로덕트 페이지 목록 출력이지만 지금 안쓰고 있음.
 	@Override
 	public List<ProductVo> ProductSelectAll() throws SQLException {
 		return sqlSession.selectList("product.ProductSelectAll");
