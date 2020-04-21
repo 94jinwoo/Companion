@@ -79,12 +79,17 @@
 				</div>
 			</nav>
 			<div class="categories">
-				<a href="/companion/order/productMain?c=100"> <i
-					class="fas fa-shopping-cart"></i> 쇼핑하기
-				</a>
+				&nbsp;&nbsp;&nbsp;<i class="fas fa-shopping-cart"></i> 쇼핑하기
 				<span>></span>
-				<a href="/companion/order/productMain?c=100"> 사료
-				</a>
+					<a href="/companion/order/productMain?category_id=${productDetailOne.category_id }"> 
+					<c:if test="${productDetailOne.category_id == 100}">사료</c:if>
+					<c:if test="${productDetailOne.category_id == 200}">간식</c:if>
+					<c:if test="${productDetailOne.category_id == 300}">장난감</c:if>
+					<c:if test="${productDetailOne.category_id == 400}">미용용품</c:if>
+					<c:if test="${productDetailOne.category_id == 500}">목욕용품</c:if>
+					<c:if test="${productDetailOne.category_id == 600}">위생용품</c:if>
+					<c:if test="${productDetailOne.category_id == 700}">산책용품</c:if>
+					</a> 
 				<hr class="mb-4">
 			</div>
 

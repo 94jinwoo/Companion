@@ -24,7 +24,6 @@ public class SessionDaoImpl implements SessionDao {
 			SessionVo bean=sqlSession.selectOne("session.sessionList",list.get(i));
 			mylist2.add(bean);
 		}
-		System.out.println(mylist2.toString());
 		return mylist2; 
 	} 
 

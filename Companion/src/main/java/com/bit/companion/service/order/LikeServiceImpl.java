@@ -21,38 +21,10 @@ public class LikeServiceImpl implements LikeService {
 	@Override
 	public int likeInsert(LikeVo likeVo) throws Exception{
 		int result;
-		System.out.println("라이크 인설트 실행전...");
 		result = likedao.likeInsert(likeVo);
-		System.out.println("라이크 인설트 실행 후후후후..."); 
 		return result; 
 	} 
 
-//	@Override
-//	public void likeUpdate(Model model,int product_id,String member_id) {
-//		int list; 
-//		try {
-//			list = likedao.likeInsert(product_id, member_id);
-//			model.addAttribute("likeinsert",list);
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//		
-//	}
-//
-//	@Override
-//	public void inquiry(Model model, int product_id, String member_id) {
-//		
-//	}
-//
-//	@Override
-//	public void productLikeInquiry(Model model, int product_id) {
-//		
-//	}
-//
-//	@Override
-//	public void likeDelete(Model model, int product_id, String member_id) {
-//		
-//	}
 
 
 }
