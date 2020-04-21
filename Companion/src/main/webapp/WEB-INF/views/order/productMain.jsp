@@ -156,7 +156,6 @@
 			                    <div class="price">${bean.product_price }
 			                        <span>${bean.product_price +5600}</span>
 			                    </div>
-			                    <a class="add-to-cart" href="">+ Add To Cart</a>
 			                </div>
 			            </div>
 			        </div>
