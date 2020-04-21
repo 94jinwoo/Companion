@@ -1,6 +1,5 @@
 package com.bit.companion.model.entity.login;
 
-// 회원가입시킬 객체정보
 public class MemberVo {
 	private String member_id;
 	private String member_pw;

@@ -46,7 +46,7 @@ public interface MypageService {
 
 	List purchaseList(String member_id);
 
-	List purchaseDetailList(String order_id,Date order_date,String order_state_member);
+	List purchaseDetailList(String order_id,Date order_date,String order_state_member,String order_state_id);
 
 	MyPurchaseListVo myPurchaseDetail(String order_id, String member_id);
 
@@ -55,5 +55,7 @@ public interface MypageService {
 	int myReviewInsert(MyReviewVo bean);
 
 	void insertPayment(MyCartOrderVo bean);
+
+	int confirmPurchase(String member_id, String order_id);
 
 }

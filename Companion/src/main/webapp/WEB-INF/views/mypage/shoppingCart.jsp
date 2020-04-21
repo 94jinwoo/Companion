@@ -213,7 +213,6 @@
                 <!-- 버튼그룹 end-->
                 <div class="chk-non">
                     <i class="fas fa-exclamation-circle"></i>
-                    <span>주문서 작성단계에서 할인/마일리지 적용을 하실 수 있습니다</span>
                 </div>
             </section>      
 			<!-- section end -->

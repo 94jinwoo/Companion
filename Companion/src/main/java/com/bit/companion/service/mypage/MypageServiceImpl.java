@@ -111,8 +111,8 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public List purchaseDetailList(String order_id, Date order_date,String order_state_member) {
-		return mypageDao.purchaseDetailList(order_id,order_date,order_state_member);
+	public List purchaseDetailList(String order_id, Date order_date,String order_state_member,String order_state_id) {
+		return mypageDao.purchaseDetailList(order_id,order_date,order_state_member,order_state_id);
 	}
 
 	@Override
@@ -133,6 +133,11 @@ public class MypageServiceImpl implements MypageService {
 	@Override
 	public void insertPayment(MyCartOrderVo bean) {
 		mypageDao.insertPayment(bean);
+	}
+
+	@Override
+	public int confirmPurchase(String member_id, String order_id) {
+		return mypageDao.confirmPurchase(member_id,order_id);
 	}
 
 
