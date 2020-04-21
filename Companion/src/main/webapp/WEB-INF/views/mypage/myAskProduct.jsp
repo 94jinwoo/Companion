@@ -85,7 +85,14 @@
 			<!-- .container-fluid [end] -->
 		</nav>
 		<!-- nav [end] -->
-		
+		<div class="categories">
+			<a href="${root }mypagechk"> <i class="fas fa-user"></i> 마이페이지</a>
+			<span>></span> 
+			<a href="${root }mypurchaselist"> <i class="fas fa-clipboard"></i> 주문내역</a>
+			<span>></span> 
+			<a href="#"> <i class="fas fa-edit"></i> 상품문의</a>
+			<hr class="mb-4">
+		</div>	
 		<!-- section [start] -->
 		<section class="section">
 			<div class="main--title">

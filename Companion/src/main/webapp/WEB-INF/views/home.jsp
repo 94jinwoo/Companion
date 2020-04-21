@@ -119,18 +119,18 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <a href="${root }order/productMain?c=300">
-                                            <img src="${root }imgs/shopping/shopmain1.jpg" class="d-block w-100" alt="...">
+                                        <a href="${root }order/productMain?c=100&num=1">
+                                            <img src="${root }imgs/shopping/shop01.jpg" class="d-block w-100" alt="...">
                                         </a>
                                     </div>
                                     <div class="carousel-item">
-                                        <a href="${root }order/productMain?c=100">
-                                            <img src="${root }imgs/shopping/shopmain2.jpg" class="d-block w-100" alt="...">
+                                        <a href="${root }order/productMain?c=200&num=1">
+                                            <img src="${root }imgs/shopping/shop02.jpg" class="d-block w-100" alt="...">
                                         </a>
                                     </div>
                                     <div class="carousel-item">
-                                        <a href="${root }order/productMain?c=400">
-                                            <img src="${root }imgs/shopping/shopmain3.jpg" class="d-block w-100" alt="...">
+                                        <a href="${root }order/productMain?c=700&num=1">
+                                            <img src="${root }imgs/shopping/shop03.jpg" class="d-block w-100" alt="...">
                                         </a>
                                     </div>
                                 </div>
@@ -159,17 +159,17 @@
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <a href="${root }hotel/infouse">
-                                            <img src="${root }imgs/hotel/hotelmain1.jpg" class="d-block w-100" alt="...">
+                                            <img src="${root }imgs/hotel/hotel01.jpg" class="d-block w-100" alt="...">
                                         </a>
                                     </div>
                                     <div class="carousel-item">
                                         <a href="${root }hotel/infouse">
-                                            <img src="${root }imgs/hotel/hotelmain2.jpg" class="d-block w-100" alt="...">
+                                            <img src="${root }imgs/hotel/hotel02.jpg" class="d-block w-100" alt="...">
                                         </a>
                                     </div>
                                     <div class="carousel-item">
                                         <a href="${root }hotel/infouse">
-                                            <img src="${root }imgs/hotel/hotelmain3.jpg" class="d-block w-100" alt="...">
+                                            <img src="${root }imgs/hotel/hotel03.jpg" class="d-block w-100" alt="...">
                                         </a>
                                     </div>
                                 </div>
@@ -197,18 +197,18 @@
                                 <p class="lead my-3">신성한 사료&간식 유통기한100%책임제<br>
                                 	매일매일 찾아오는 신상용품을 만나보세요 
                                 </p>
-                                <p class="lead mb-0"><a href="${root }order/productMain?c=100" class="text-gray font-weight-bold">쇼핑몰 바로가기 ></a></p>
+                                <p class="lead mb-0"><a href="${root }order/productMain?c=100&num=1" class="text-gray font-weight-bold">쇼핑몰 바로가기 ></a></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="jumbotron text-white rounded bg-comp">
+                        <div class="jumbotron text-gray rounded">
                             <div class="col-md-12 px-0">
                                 <h1 class="display-4">최고의 힐링 공간<br>호텔&nbsp;& 데이케어</h1>
                                 <p class="lead my-3">24시간 전문가 상주로 안심하고 맡길 수 있습니다.<br>
                                 	매일 수의사 회진으로 일상 건강 관리가 가능합니다.
                                 </p>
-                                <p class="lead mb-0"><a href="${root }hotel/reservation" class="text-white font-weight-bold">호텔예약 바로가기 ></a></p>
+                                <p class="lead mb-0"><a href="${root }hotel/reservation" class="text-gray font-weight-bold">호텔예약 바로가기 ></a></p>
                             </div>
                         </div>
                     </div>

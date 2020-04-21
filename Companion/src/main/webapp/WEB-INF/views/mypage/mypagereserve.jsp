@@ -102,8 +102,9 @@
 								<li class="list-group-item list-group-item">
 									<div class="row">
 										<div class="col-2">${bean.service_name }</div>
-										<div class="col-6">${bean.reserve_state_name }</div>
-										<div class="col-2">예약일: ${bean.reserve_date }</div>
+										<div class="col-4">${bean.reserve_state_name }</div>
+										<div class="col-2">예약일자</div>
+										<div class="col-2">${bean.reserve_date }</div>
 										<div class="col-2">
 											<button class="mainBtn" onclick="toggleReserve(${bean.reserve_id })" id="reserveBtn_${bean.reserve_id }">
 												내역 상세보기

@@ -23,16 +23,7 @@ public class SessionServiceImpl implements SessionService {
 	
 	
 	@Override
-	public void SessionList(Model model,int product_id) {
-		HttpSession session = null;
-		
-		List<Object> list = new ArrayList<Object>();
-		System.out.println(product_id);
-		
-		if(list.size()>5) {
-			list.remove(0);
-		}
-		list.add(product_id);
+	public void SessionList(Model model, ArrayList<Object> list) {
 		 
 		for(int i=0;i<list.size();i++) { 
 			list.get(i);
@@ -40,7 +31,7 @@ public class SessionServiceImpl implements SessionService {
 		}
 			try {  
 				result=sessionDao.sessionList(list);
-				
+				System.out.println(result.toString());
 //				session.setAttribute(,result);
 				model.addAttribute("sessionList",result);
 			} catch (SQLException e) {
@@ -48,6 +39,7 @@ public class SessionServiceImpl implements SessionService {
 			}
 
 	}
+
 }
 
 

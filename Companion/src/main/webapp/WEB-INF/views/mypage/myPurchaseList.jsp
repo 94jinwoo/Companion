@@ -70,7 +70,7 @@
 	                                        <a class="nav-link" href="${root }mypagequestion">문의조회</a>
 	                                    </li>
 	                                    <li class="nav-item">
-	                                        <a class="nav-link" href="${root }mypagechk">나의정보</a>
+	                                        <a class="nav-link" href="${root }mypagechk">마이페이지</a>
 	                                    </li>
 	                                    <li class="nav-item">
 	                                        <a class="nav-link" href="${root }logout">로그아웃</a>
@@ -83,10 +83,11 @@
 	                </div>
 	            </nav>
 	            <div class="categories">
-					<a href="#homeSubmenu"> <i class="fas fa-user"></i> 마이페이지</a> <span></span> 
-					<a href="#"> <i class="fas fa-shopping-cart"></i> 주문내역</a>
+					<a href="${root }mypagechk"> <i class="fas fa-user"></i> 마이페이지</a>
+					<span>></span> 
+					<a href="#"> <i class="fas fa-clipboard"></i> 주문내역</a>
 					<hr class="mb-4">
-				</div>
+				</div>	
 	            <section class="section">
 				<div class="main--title">
 					<h1>나의 주문내역</h1>

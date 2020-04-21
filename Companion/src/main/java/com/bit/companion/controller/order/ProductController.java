@@ -72,11 +72,17 @@ public class ProductController {
 		
 		//상품 추천
 		productService.productRecommend(model, product_id);
-		
+		if(list.size()>2) {
+			list.add(0, product_id);;
+			list.remove(3);
+		}else {
+			list.add(0,product_id);
+		}
 		//세션
 		if(list!=null) {
+			sessionService.SessionList(model,list); 
+			System.out.println(list.toString());
 			session.setAttribute("productList",list); 
-			sessionService.SessionList(model,product_id);
 		}
 		
 		return "order/productDetail";

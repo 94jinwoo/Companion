@@ -19,7 +19,10 @@
   float: right;
 }
 
-
+/* Vendeor Prefix(브라우저 업체별 접두사) */
+.input--text::-webkit-input-placeholder{color: #cacaca;}
+.input--text::-ms-input-placeholder{color: #cacaca;}
+.input--text::-moz-input-placeholder{color: #cacaca;}
 
 body {
     background: #fafafa;
@@ -115,7 +118,6 @@ span {
     margin-left: 1220px;
     margin-right: 20px;
     position: fixed;
-    height: 300px;
     width: 120px;
     float: right;
     background:rgba(15, 76, 129, 0.9);
@@ -136,8 +138,8 @@ span {
     border-radius: 5px;
 }
 .scroll-right-content img{
-    height: 100%;
-    width: 100%;
+    height: 90px;
+    width: 90px;
     border-radius: 5px;
     align-items: center;
     margin: auto;

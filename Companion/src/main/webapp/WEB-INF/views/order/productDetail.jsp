@@ -81,7 +81,9 @@
 			<div class="categories">
 				<a href="/companion/order/productMain?c=100"> <i
 					class="fas fa-shopping-cart"></i> 쇼핑하기
-				</a> <span>></span> <a href="/companion/order/productMain?c=100"> 사료
+				</a>
+				<span>></span>
+				<a href="/companion/order/productMain?c=100"> 사료
 				</a>
 				<hr class="mb-4">
 			</div>
@@ -117,7 +119,7 @@
 							role="form">
 							<div class="goods-text row">
 								<div class="col-sm-4 title">배송비</div>
-								<div class="col-sm-8">2,500원 (5만원이상 구매 시 무료)</div>
+								<div class="col-sm-8">2,500원</div>
 								<div class="col-sm-4 title">재 고</div>
 								<div class="col-sm-8">${productDetailOne.product_stock }</div>
 								<input type="hidden" name="product_stock"
@@ -451,21 +453,7 @@
 						</tr>
 					</tbody>
 				</table>
-
 				<!-- 위치테스트여 -->
-							<!-- 조회한 상품 세션 저장용입니당. -->
-	<%-- 						<%
-							int product_id = (int)(request.getAttribute("Product_id"));
-							session.setAttribute("Session",product_id);
-							
-							ArrayList<Object> list = new ArrayList<Object>();
-							list = (ArrayList)session.getAttribute("productList");
- 
-							for(int i=0;i<list.size();i++){
-									out.println(list.get(i));
-								}
-							%> --%>
-							<!-- 조회한 상품 세션 저장용입니당. -->
 			</div>
 			<!-- #myTab2Content end-->
 		</div>
@@ -553,8 +541,18 @@
 	/* 중복 입력 방지 */	
  	$("#questionModal").off().on('click', function(){ 
 	 		$('#questionModalForm').modal('show');
-	 				
 	 				var doSomething = $("#reply_btn").off().on('click', function(){
+	 					
+				 		if($("#question_title").val() == ""){
+				 			alert('제목을 입력해주세요.');
+				 			$('#question_title').focus();
+				 			return false;
+				 		}
+				 		if($("#question_content").val() == ""){
+				 			alert('내용을 입력해주세요.');
+				 			$('#question_content').focus();
+				 			return false;
+				 		}
 	 					
 	 					console.log("믿었던 너가 두번 실행하는 배신을 하는거냐?");
 	 					
