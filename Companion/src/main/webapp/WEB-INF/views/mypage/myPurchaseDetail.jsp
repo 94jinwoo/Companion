@@ -82,7 +82,7 @@
                                           <a class="nav-link" href="${root }mypagequestion">문의조회</a>
                                       </li>
                                       <li class="nav-item">
-                                          <a class="nav-link" href="${root }mypagechk">나의정보</a>
+                                          <a class="nav-link" href="${root }mypagechk">마이페이지</a>
                                       </li>
                                       <li class="nav-item">
                                           <a class="nav-link" href="${root }logout">로그아웃</a>

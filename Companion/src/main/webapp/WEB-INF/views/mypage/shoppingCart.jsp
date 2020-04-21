@@ -71,7 +71,7 @@
 	                                        <a class="nav-link" href="${root }mypagequestion">문의조회</a>
 	                                    </li>
 	                                    <li class="nav-item">
-	                                        <a class="nav-link" href="${root }mypagechk">나의정보</a>
+	                                        <a class="nav-link" href="${root }mypagechk">마이페이지</a>
 	                                    </li>
 	                                    <li class="nav-item">
 	                                        <a class="nav-link" href="${root }logout">로그아웃</a>
@@ -187,7 +187,7 @@
                     </tr>
                 </table>
                 <!-- table end -->
-                <a href="${root }order/productMain?c=100"><span><< 쇼핑계속하기</span></a>
+                <a href="${root }order/productMain?category_id=100"><span><< 쇼핑계속하기</span></a>
                 <!-- 주문금액 합계 start -->
                 <div class="coast clearfix">
                     <ul class="coast-group float--right">

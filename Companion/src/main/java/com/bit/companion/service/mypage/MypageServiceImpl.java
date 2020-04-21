@@ -50,13 +50,21 @@ public class MypageServiceImpl implements MypageService {
 	@Override
 	public void questionList(HttpSession session) {
 		List<MypageQuestionVo> questionList = mypageDao.questionList(session);
-		session.setAttribute("questionList", questionList);
+		if(questionList.size()!=0) {
+			session.setAttribute("questionList", questionList);
+		}else {
+			session.setAttribute("questionList", null);
+		}
 	}
 
 	@Override
 	public void reserveList(HttpSession session) {
 		List<MypageReserveVo> reserveList = mypageDao.reserveList(session);
-		session.setAttribute("reserveList", reserveList);
+		if(reserveList.size()!=0) {
+			session.setAttribute("reserveList", reserveList);
+		}else {
+			session.setAttribute("reserveList", null);
+		}
 	}
 
 	@Override

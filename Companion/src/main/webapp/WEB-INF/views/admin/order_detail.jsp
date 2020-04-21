@@ -156,7 +156,7 @@
 								<div class="card-content">
 									<strong>교환된 주문입니다.</strong><br/>
 									<div class="btn-group">
-										<button type="button" id="btn-purchaseConfirm">구매확정</button>
+										<button type="button" id="btn-purchaseConfirm" class="Cbtn">구매확정</button>
 									</div>
 								</div>
 							</div>

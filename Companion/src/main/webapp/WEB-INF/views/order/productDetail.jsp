@@ -246,8 +246,8 @@
 										</c:when>
 										<c:when test="${memberVo.member_id==null }">
 											<button id="noneLgnLike_btn" type="button"
-												class="btn btn-outline-danger" data-toggle="modal"
-												data-target=".bd-example-modal-sm">좋아요! (
+												class="btn btn-outline-danger btn-lg" data-toggle="modal"
+												data-target=".bd-example-modal-sm">♥ (
 												${productDetailOne.like_id } )</button>
 										</c:when>
 									</c:choose>

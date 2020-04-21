@@ -133,11 +133,15 @@
 					                             <!-- 따봉 로그인 세션 검사  -->
 					             <c:set var = "memberID" value="${memberVo.member_id }"/>         
 					               <c:choose>
-											<c:when test="${memberVo.member_id==null}">	
-							                    <a id=btn href="${root }login"><img  src="${root }imgs/shopping/찬따봉.jpg"></a><span class="badge badge-pill badge-danger">${bean.like_id }</span></h3>
+											<c:when test="${memberVo.member_id==null}">
+											<li>	
+							                    <a id=btn href="${root }login"><img  src="${root }imgs/shopping/따봉.png"></a><span class="badge badge-pill badge-primary badge--size">${bean.like_id }</span></h3>
+							                </li>    
 							               </c:when>  
 											<c:when test="${memberVo.member_id!=null }">	
-							                    <a id=btn href='javascript:like_func();'><img id="like_img" src="${root }imgs/shopping/찬따봉.jpg"></a><span class="badge badge-pill badge-danger">${bean.like_id }</span></h3>
+											<li>
+							                    <a id=btn href='javascript:like_func();'><img id="like_img" src="${root }imgs/shopping/따봉.png"></a><span class="badge badge-pill badge-primary badge--size">${bean.like_id }</span></h3>
+							                </li>   
 							               </c:when>  
 		 			                </c:choose>       
 			            						  <!-- 따봉 로그인 세션 검사  -->   
@@ -146,7 +150,7 @@
 			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }"> ${bean.category_name }</a></h3> 
 			              
 	
-			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }"> ${bean.product_name }</a>
+			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }"> ${bean.product_name }</a></h3> 
 			             
 			
 			                    <div class="price">${bean.product_price }
