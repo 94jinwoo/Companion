@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bit.companion.model.entity.admin.AdminArticleVo;
+import com.bit.companion.model.entity.admin.AdminQuestionVo;
 
 @Service
 public class AdminReviewDaoImpl implements AdminReviewDao{
@@ -28,6 +29,12 @@ public class AdminReviewDaoImpl implements AdminReviewDao{
 	@Override
 	public AdminArticleVo selectOne(AdminArticleVo bean) throws SQLException {
 		return sqlSession.selectOne("adminReview.selectOne",bean);
+	}
+	
+	// Review delete - deleteOne
+	@Override
+	public int deleteOne(AdminArticleVo bean) throws SQLException {
+		return sqlSession.delete("adminReview.deleteOne",bean);
 	}
 	
 }

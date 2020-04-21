@@ -97,6 +97,7 @@
 							<h1>나의 예약현황</h1>
 	                </div>
 	            	<ul class="list-group list-unstyled components">
+	            	<c:if test="${reserveList != null}">
 						<c:forEach items="${reserveList }" var="bean">
 							<ul>
 								<li class="list-group-item list-group-item">
@@ -129,6 +130,7 @@
 								</ul>
 							</ul>
 						</c:forEach>	            
+	            	</c:if>
 	            	</ul>
 	            </section>
 			</div>
