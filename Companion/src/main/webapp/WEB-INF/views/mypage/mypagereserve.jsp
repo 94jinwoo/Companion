@@ -134,7 +134,9 @@
 			            	</ul>
 	    				</c:when>            
 	    				<c:otherwise>
-	    					예약하신 사항이 없습니다.
+	    					<div class="empty">
+		    					<span>예약 내역이 없습니다.</span>
+	    					</div>
 	    				</c:otherwise>
 	                </c:choose>
 	            </section>
