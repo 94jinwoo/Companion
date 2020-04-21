@@ -25,14 +25,9 @@ public class SessionServiceImpl implements SessionService {
 	@Override
 	public void SessionList(Model model, ArrayList<Object> list) {
 		 
-		for(int i=0;i<list.size();i++) { 
-			list.get(i);
-			System.out.println("프로덕트 아이디?? 리스트에 담겨있니??");
-		}
 			try {  
 				result=sessionDao.sessionList(list);
 				System.out.println(result.toString());
-//				session.setAttribute(,result);
 				model.addAttribute("sessionList",result);
 			} catch (SQLException e) {
 				e.printStackTrace();

@@ -87,6 +87,7 @@ label{
 .btnBox{
 	width:150px;
 	margin: auto 15px;
+	padding-left:60px;
 }
 .table{
 	margin-bottom:0;
@@ -103,8 +104,12 @@ label{
 	letter-spacing:2px;
 	}
 .innerBtn{
-	margin:2.5px;
-	float:right;
+	margin:auto;
+	margin-bottom:10px;
+}
+.innerBtn:last-child{
+	margin-bottom: 0;
+	
 }
 
 /*

@@ -10,36 +10,6 @@
 		select * from product where category_id=#{category_id} order by #{value};
 	</select>
 	
-	<!--상품 추천순 정렬-->
-	<select id="productOrderByProductLike" resultType="productBean" parameterType="hashMap">
-		 select distinct product.*,(select count(*) from `like` where product.product_id=`like`.product_id) as like_id
-		  from product left join `like` on product.product_id=`like`.product_id 
-		  where product.category_id=#{category_id} order by like_id desc limit #{displayPost},#{postNum};
-	</select>
-	
-	<!-- 상품 판매인기순 -->
-	<select id="productOrderBySellingOrder" resultType="productBean" parameterType="hashMap">
-		select product.*,(select count(*) from `like` where product.product_id=`like`.product_id) as like_id from product 
-		left join order_detail 
-		on
-		 product.product_id=order_detail.product_id where product.category_id=#{category_id}
-		  order by order_detail.order_detail_quantity desc limit #{displayPost},#{postNum}; 
-	</select>
-	
-<!-- 	상품 낮은 가격순 -->
-	<select id="productOrderByLowPrice" resultType="productBean" parameterType="hashMap">
-		select product.*,(select count(*) from `like` where product.product_id=`like`.product_id) as like_id from product where category_id=#{category_id} order by product_price limit #{displayPost},#{postNum};
-	</select>
-	
-	<!-- 상품 높은 가격순 -->
-	<select id="productOrderByHighPrice" resultType="productBean" parameterType="hashMap">
-		select product.*,(select count(*) from `like` where product.product_id=`like`.product_id) as like_id from product where category_id=#{category_id} order by product_price desc limit #{displayPost},#{postNum};
-	</select>
-	<!-- 상품 등록일 순 -->
-	<select id="productOrderByDate" resultType="productBean" parameterType="hashMap">
-		select product.*,(select count(*) from `like` where product.product_id=`like`.product_id) as like_id from product where category_id=#{category_id} order by product_date desc limit #{displayPost},#{postNum};
-	</select>
-	
 	 <!-- 모든 상품 목록 데이터 가져오는 곳.   -->
   	<select id="ProductSelectAll" resultType="productBean">
 	  	select (a.category_id, a.product_id, a.product_name, a.product_content, a.product_price, a.product_stock, a.product_date, 
@@ -56,6 +26,7 @@
 		where product.product_id=`like`.product_id) as like_id from product left join`like` 
 		on product.product_id=`like`.product_id where product.product_id=#{value};
 	</select>
+	
 	<!--  카테고리별 기본 페이지 -->
 	<select id="ProductCategorySelect" resultType="productBean" parameterType="int">
 	  	select distinct product.*,(select count(*) from 
@@ -64,19 +35,51 @@
   	</select> <!-- listpage도 그대로 가져와야함. -->
   	
 <!-- 페이징 START -->
-	
 	<!-- 상품 총 개수 -->
-	<select id="count" resultType="int" parameterType="int">
-		select count(*) from product where category_id=#{category_id};
+	<select id="count" resultType="int">
+		select count(*) as listCnt from `product` p, `category` c 
+			where p.category_id=c.category_id and 
+			(p.category_id=#{category_id} OR category_refid=#{category_id});
 	</select>
 	
-	<!-- 4.10  -->
-	<!-- 게시물을 10개씩 출력하는 쿼리.  -->
-	<!-- HashMap TEST  -->
-	<select id="ListPage" resultType="productBean" parameterType="hashMap" >
-	select distinct product.*,(select count(*) from 
-	  	`like` where product.product_id=`like`.product_id) as like_id from product left join`like` 
-	  	on product.product_id=`like`.product_id where product.category_id=#{category_id} order by product_id limit #{displayPost},#{postNum};
+	<select id="ListPage" resultType="productBean">
+		<if test="sort =='date'">
+			select p.*, (select count(*) from `like` l where p.product_id=l.product_id) as like_id 
+				from `product` p, `category` c 
+					where p.category_id=c.category_id and 
+					(p.category_id=#{category_id} OR c.category_refid=#{category_id})
+						ORDER BY p.product_id DESC limit #{startList},#{listSize}
+		</if>
+		<if test="sort =='like'">
+			select p.*, (select count(l.product_id) from `like` l where p.product_id=l.product_id) as sum, 
+				(select count(*) from `like` l where p.product_id=l.product_id) as like_id 
+				from `product` p, `category` c
+					where p.category_id=c.category_id and 
+					(p.category_id=#{category_id} OR c.category_refid=#{category_id})
+						ORDER BY sum DESC limit #{startList},#{listSize}
+		</if>
+		<if test="sort =='order'">
+			select p.*, (select count(order_detail.order_detail_quantity) from `order_detail` where p.product_id=order_detail.product_id) as sum,
+				(select count(*) from `like` l where p.product_id=l.product_id) as like_id 
+				from `product` p, `category` c
+					where p.category_id=c.category_id and 
+					(p.category_id=#{category_id} OR c.category_refid=#{category_id})
+						ORDER BY sum DESC limit #{startList},#{listSize}
+		</if>
+		<if test="sort =='low'">
+			select p.*, (select count(*) from `like` l where p.product_id=l.product_id) as like_id 
+				from `product` p, `category` c 
+					where p.category_id=c.category_id and 
+					(p.category_id=#{category_id} OR c.category_refid=#{category_id})
+						ORDER BY p.product_price ASC limit #{startList},#{listSize}
+		</if>
+		<if test="sort =='high'">
+			select p.*, (select count(*) from `like` l where p.product_id=l.product_id) as like_id  
+				from `product` p, `category` c 
+					where p.category_id=c.category_id and
+					(p.category_id=#{category_id} OR c.category_refid=#{category_id})
+						ORDER BY p.product_price DESC limit #{startList},#{listSize}
+		</if>
 	</select>
 <!-- 페이징 END -->
 	

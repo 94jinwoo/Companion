@@ -43,25 +43,25 @@
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="nav navbar-nav ml-auto">
 								<li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=100&num=1">사료</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=100&sort=date">사료</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=200&num=1">간식</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=200&sort=date">간식</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=300&num=1">장난감</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=300&sort=date">장난감</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=400&num=1">미용용품</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=400&sort=date">미용용품</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=500&num=1">목욕용품</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=500&sort=date">목욕용품</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=600&num=1">위생용품</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=600&sort=date">위생용품</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=700&num=1">산책용품</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=700&sort=date">산책용품</a>
                             </li>
                         </ul>
 						</div>
@@ -74,22 +74,23 @@
                 </a>
                 <span>></span>
                 <a href="#">
-                    
+                
                     <%
-                    String categoryFind = (String)request.getQueryString().substring(0,5);
-                    if("c=100".equals(categoryFind)){
+                    
+                    String categoryFind = (String)request.getQueryString().substring(0,15);
+                    if("category_id=100".equals(categoryFind)){
                     	out.println("사료");
-                    }else if("c=200".equals(categoryFind)){
+                    }else if("category_id=200".equals(categoryFind)){
                     	out.println("간식");
-                    }else if("c=300".equals(categoryFind)){
+                    }else if("category_id=300".equals(categoryFind)){
                     	out.println("장난감");
-                    }else if("c=400".equals(categoryFind)){
+                    }else if("category_id=400".equals(categoryFind)){
                     	out.println("미용용품");
-                    }else if("c=500".equals(categoryFind)){
+                    }else if("category_id=500".equals(categoryFind)){
                     	out.println("목욕용품");
-                    }else if("c=600".equals(categoryFind)){
+                    }else if("category_id=600".equals(categoryFind)){
                     	out.println("위생용품");
-                    }else if("c=700".equals(categoryFind)){	
+                    }else if("category_id=700".equals(categoryFind)){	
                     	out.println("산책용품");
                     }
                     %>
@@ -106,12 +107,11 @@
 				<nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                     <!-- sideBar에서 클릭하면 category_id를 넘겨야 함.  -->
-                        <li class="breadcrumb-item" aria-current="page"><a href="${root }order/productMain/orderByLike?<%=request.getQueryString() %>">추천순</a></li>
-                        <li class="breadcrumb-item"><a href="${root }order/productMain/orderBySelling?<%=request.getQueryString() %>">판매인기순</a></li>
-                        <li class="breadcrumb-item"><a href="${root }order/productMain/orderByLowPrice?<%=request.getQueryString() %>">낮은가격순</a></li>
-                        <li class="breadcrumb-item"><a href="${root }order/productMain/orderByHighPrice?<%=request.getQueryString() %>">높은가격순</a></li>
-                        <li class="breadcrumb-item"><a href="${root }order/productMain/orderByDate?<%=request.getQueryString() %>">등록일순</a></li>
-       
+                        <li class="breadcrumb-item" aria-current="page"><a href="${root }order/productMain?category_id=${param.category_id}&sort=like">추천순</a></li>
+                        <li class="breadcrumb-item"><a href="${root }order/productMain?category_id=${param.category_id}&sort=order">판매인기순</a></li>
+                        <li class="breadcrumb-item"><a href="${root }order/productMain?category_id=${param.category_id}&sort=low">낮은가격순</a></li>
+                        <li class="breadcrumb-item"><a href="${root }order/productMain?category_id=${param.category_id}&sort=high">높은가격순</a></li>
+                        <li class="breadcrumb-item"><a href="${root }order/productMain?category_id=${param.category_id}&sort=date">등록일순</a></li>
                     </ol>
                     
                 </nav>
@@ -123,90 +123,58 @@
 			                <div class="product-image">
 			                <!-- a에 링크 2개 걸 때 onclick 이벤트 쓰면 됨 예시
 			                 onclick="parent.question.jsp.location.href='${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}&num=1'  -->
- 			                    <a href="${root }order/productDetail?idx=${bean.product_id }&num=1"> 
+ 			                    <a href="${root }order/productDetail?idx=${bean.product_id }"> 
 						                <img class="pic-1" src="${bean.product_image }"/>
 			                    </a>
 
 			                </div>
+			                <!-- 슬라이드 가려지기 전 화면.  -->
 			                <ul class="rating">
-			                <!-- 별갯수 알려주는곳. -->
-			                    <li class="fa fa-star"></li>
-			                    <li class="fa fa-star"></li>
-			                    <li class="fa fa-star"></li>
-			                    <li class="fa fa-star"></li>
-			                    <li class="fa fa-star"></li>
+					                             <!-- 따봉 로그인 세션 검사  -->
+					             <c:set var = "memberID" value="${memberVo.member_id }"/>         
+					               <c:choose>
+											<c:when test="${memberVo.member_id==null}">
+											<li>	
+							                    <a id=btn href="${root }login"><img  src="${root }imgs/shopping/따봉.png"></a><span class="badge badge-pill badge-primary badge--size">${bean.like_id }</span></h3>
+							                </li>    
+							               </c:when>  
+											<c:when test="${memberVo.member_id!=null }">	
+											<li>
+							                    <a id=btn href='javascript:like_func();'><img id="like_img" src="${root }imgs/shopping/따봉.png"></a><span class="badge badge-pill badge-primary badge--size">${bean.like_id }</span></h3>
+							                </li>   
+							               </c:when>  
+		 			                </c:choose>       
+			            						  <!-- 따봉 로그인 세션 검사  -->   
 			                </ul>
 			                <div class="product-content">
-			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }&num=1"> ${bean.category_name }</a></h3> 
+			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }"> ${bean.category_name }</a></h3> 
 			              
 	
-			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }&num=1"> ${bean.product_name }</a>
+			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }"> ${bean.product_name }</a></h3> 
 			             
-			             <!-- 따봉 로그인 세션 검사  -->
-			             <c:set var = "memberID" value="${memberVo.member_id }"/>         
-			               <c:choose>
-									<c:when test="${memberVo.member_id==null}">	
-					                    <a id=btn href="${root }login"><img  src="${root }imgs/shopping/빈따봉1.jpg"></a><span class="badge badge-pill badge-danger">${bean.like_id }</span></h3>
-					               </c:when>  
-									<c:when test="${memberVo.member_id!=null }">	
-					                    <a id=btn href='javascript:like_func();'><img id="like_img" src="${root }imgs/shopping/빈따봉1.jpg"></a><span class="badge badge-pill badge-danger">${bean.like_id }</span></h3>
-					               </c:when>  
- 			                </c:choose>       
-					 
-			               <!-- 따봉 로그인 세션 검사  -->   
+			
 			                    <div class="price">${bean.product_price }
 			                        <span>${bean.product_price +5600}</span>
 			                    </div>
-			                    <a class="add-to-cart" href="">+ Add To Cart</a>
+			                 
 			                </div>
 			            </div>
 			        </div>
        		 </c:forEach>
 		<%-- 	        <% } %> --%>
     </div>
-    
-    <!-- pagination [start] -->
-	    <nav aria-label="Page navigation example">
-				<%
-					String str = request.getQueryString();
-					String result = str.substring(0,5);
-					String REALURL = (String)request.getAttribute("trueUrl");
-					if(REALURL==null){
-						REALURL="";
-					}
-				%>
-	 	   <ul class="pagination">
-			<c:if test="${prev }">
-		  	     <li class="page-item">
-		    	   	<a class="page-link" href="${root }order/productMain/<%=REALURL %>?<%=result %>&num=${startPageNum - 1 }" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				    </a>
-		   		</li>
-			</c:if>
-		   		<c:forEach begin="${startPageNum }" end="${endPageNum }" var="num">
-					<span>
-						<c:if test="${select != num}">
-							<li class="page-item">
-								<a class="page-link" href="${root }order/productMain/<%=REALURL %>?<%=result %>&num=${num }">${num }</a>
-							</li>	
-					  	</c:if>  
-					 	<c:if test="${select == num}">
-							<li class="page-item">
-								<a class="page-link bg-info text-white" href="#" >${num }</a>	
-							</li>	
-					 	</c:if>		
-					</span>
-				</c:forEach>
-			<c:if test="${next }">
-				<li class="page-item">
-					<a class="page-link" href="${root }order/productMain/<%=REALURL %>?<%=result %>&num=${endPageNum + 1 }" aria-label="Next">
-		     		   <span aria-hidden="true">&raquo;</span>
-		   			</a>	      
-		      </li>
-	      	</c:if>
-	      </ul>
-		</nav>
-	<!-- pagination [end] -->		
+    <br/>
+		<!-- pagination [start] -->
+		<jsp:include page="../common/pagination_C.jsp">
+			<jsp:param value="${pagination_c.prev }" name="prev"/>
+			<jsp:param value="${pagination_c.next }" name="next"/>
+			<jsp:param value="${pagination_c.page }" name="page"/>
+			<jsp:param value="${pagination_c.range }" name="range"/>
+			<jsp:param value="${pagination_c.rangeSize }" name="rangeSize"/>
+			<jsp:param value="${pagination_c.startPage }" name="startPage"/>
+			<jsp:param value="${pagination_c.endPage }" name="endPage"/>
+		</jsp:include>
+		<!-- pagination [end] -->
 	
 		</div><!-- container end  --> 
 		<!-- Footer  -->
