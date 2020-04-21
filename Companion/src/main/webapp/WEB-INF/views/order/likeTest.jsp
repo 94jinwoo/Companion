@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -10,14 +10,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>LIKE TEST PAGE</title>
-	
-<%-- 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="${root}css/bootstrap/bootstrap.css">
-		<!-- Our Custom CSS -->
-		<link rel="stylesheet" href="${root}css/home.css">
-		<!-- Our Custom CSS -->
-		<link rel="stylesheet" href="${root}css/main.css">
-		<!-- Font Awesome JS --> --%>
 		<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
 		<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -51,43 +43,10 @@
 	<button type="button" class="btn">simple 여기@!</button>
 	<div id="result"></div>
 
- <%-- 	 	<!-- Popper.JS -->
-		<script src="${root}js/bootstrap/popper.js"></script>
-		<!-- Bootstrap JS -->
-		<script src="${root}js/bootstrap/bootstrap.js"></script>
-		<!-- MAIN JS -->
-   		<script src="${root }js/main.js"></script>
-		<script type="text/javascript">
-	 	 
-				$('.btn').on('click', function () {
-					console.log("대체 클릭은 됨?");
-					var form={
-							member_id:"회원7",							
-							product_id: 1
-						};
-					
-					$.ajax({
-						url: "/order/likeTest1",
-						type: "post",
-						data: form,
-						success:function(){
-							console.log("성공");
-							$('#result').text(data);
-						},
-					    error: function(){
-			                alert("simpleWithObject err");
-			            }
-					});
-				});
-		
-			
-			
-		</script>  --%>
-
 
 </body>
 </html>
-
+ --%>
 
 
 

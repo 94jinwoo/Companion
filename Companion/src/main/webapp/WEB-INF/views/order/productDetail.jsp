@@ -79,12 +79,17 @@
 				</div>
 			</nav>
 			<div class="categories">
-				<a href="/companion/order/productMain?c=100"> <i
-					class="fas fa-shopping-cart"></i> 쇼핑하기
-				</a>
+				&nbsp;&nbsp;&nbsp;<i class="fas fa-shopping-cart"></i> 쇼핑하기
 				<span>></span>
-				<a href="/companion/order/productMain?c=100"> 사료
-				</a>
+					<a href="/companion/order/productMain?category_id=${productDetailOne.category_id }"> 
+					<c:if test="${productDetailOne.category_id == 100}">사료</c:if>
+					<c:if test="${productDetailOne.category_id == 200}">간식</c:if>
+					<c:if test="${productDetailOne.category_id == 300}">장난감</c:if>
+					<c:if test="${productDetailOne.category_id == 400}">미용용품</c:if>
+					<c:if test="${productDetailOne.category_id == 500}">목욕용품</c:if>
+					<c:if test="${productDetailOne.category_id == 600}">위생용품</c:if>
+					<c:if test="${productDetailOne.category_id == 700}">산책용품</c:if>
+					</a> 
 				<hr class="mb-4">
 			</div>
 
@@ -130,7 +135,6 @@
 									<select name="selectBox" id="selectBox"
 										class="form-control col-sm-8"
 										onchange="getSelectValue(this.form);">
-										<!-- 옵션이랑 수량 어떻게 처리???  -->
 										<option value="옵션 1">옵션1</option>
 										<option value="옵션 2">옵션2</option>
 										<option value="옵션 3">옵션3</option>
@@ -142,7 +146,6 @@
 
 
 								</div>
-								<!-- 수량도 받아서 처리해야함.  -->
 								<div class="col-sm-4 title">수량</div>
 								<div class="col-sm-8">
 									<!-- 수량 -->
@@ -229,14 +232,11 @@
 										</div>
 									</div>
 									<!-- modal-(장바구니) end -->
-									<!-- 좋아요... 만들기 시러... -->
 
-									<!-- 장바구니 버튼 눌렀을 때 넘어가야 하는 것들 -->
 									<input type="hidden" name="cart_quantity" id="cart_quantity"
 										value="1" /> <input type="hidden" name="cart_option"
 										id="cart_option" value="1" /> <input type="hidden"
 										name="order_detail_option" id="order_detail_option" value="1" />
-									<!-- 장바구니 버튼 눌렀을 때 넘어가야 하는 것들 end -->
 									<!--로그인 검사  -->
 									<c:choose>
 										<c:when test="${memberVo.member_id!=null }">
@@ -257,7 +257,6 @@
 								<!--상품 추천 목록.  -->
 						</form>
 					</div>
-					<!-- product Detail 페이지로 넘어올 떄 추천 상품 목록을 가지고 넘어와야 함. 해당 상품에 대해서! 로그인 안해도! -->
 
 				</div>
 			</div>
@@ -344,8 +343,6 @@
 										</div>
 
 										<section class="replyList">
-											<!-- null 값이어도 값이 들어가야함. -->
-											<!-- 근데 뭐가 문제인지 모르겠음. -->
 											<table class="table--replyList">
 												<thead>
 												</thead>
@@ -405,13 +402,10 @@
 
 										<!-- 문의하기 창 생셩 modal test -->
 									</c:if>
-									<!-- 여기에 문의글 ajax 들어감 -->
 									<section class="replyList">
 									<br/><br/>
     <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?product_id=${productDetailOne.product_id}" width="1000px" height="400px"  frameborder="0" scrolling="no"></iframe>
-										 
 									</section>
-									<!-- 여기에 문의글 ajax 들어감. -->
 								</div>
 								<!-- reply end -->
 							</div>
@@ -427,12 +421,6 @@
 				<table class="recomB">
 					<thead>
 						<tr>
-							<!-- <td>thumb</td>
-									<td>thumb</td>
-									<td>thumb</td>
-									<td>thumb</td>
-									<td>ID</td>
-									<td>thumb</td> -->
 						</tr>
 						<tr>
 							<th colspan="5">다른 고객이 함께 본 상품</th>
@@ -446,14 +434,13 @@
 									href="${root }order/productDetail?idx=${bean.product_id}">
 										<img src="${bean.product_image }"
 										width="180" height="60" class="img-fluid"
-										alt="dummy에 이미지가 없어서 그래요.." style="display: block;">
+										alt="이미지출력X" style="display: block;">
 										<p style="text-align: center;">${bean.product_name }</p>
 								</a></td>
 							</c:forEach>
 						</tr>
 					</tbody>
 				</table>
-				<!-- 위치테스트여 -->
 			</div>
 			<!-- #myTab2Content end-->
 		</div>
@@ -553,12 +540,6 @@
 				 			$('#question_content').focus();
 				 			return false;
 				 		}
-	 					
-	 					console.log("믿었던 너가 두번 실행하는 배신을 하는거냐?");
-	 					
-	 			/* 				$('#questionModal').bind('click'); */
-			 						console.log("어디가 오류일까?? 버튼이녀석이니??");
-								/* 	var formObj = $(".replyForm form[role='form']"); */
 									var product_id = $("#product_id").val();
 									if (member_id == null) {
 										var member_id = "";
@@ -586,23 +567,14 @@
 												alert('문의 글이 정상 등록되었습니다.');  
 												$('#questionModalForm').modal('hide');
 												 document.getElementById("question.jsp").contentDocument.location.reload(true); 	
-												/* var url = '${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}'; 
-												$('#question.jsp').attr('src',url); */ 
-											
 											}
 										});
 							console.log(data);
 	 						});
-	 			/* 	$('#questionModal').unbind('click',function(){
-						 doSomething();
-					});	 */
-	 				
-		/* ajax end  */
  		});
 	</script>
 
 
-	<!-- 그 그 좋아요버튼 AJAX 처리. 아 에이젝스 개빡세네 왤케 많아 근데 미치겠네 진짜 -->
 	<script type="text/javascript">
 		/* 구매시에 옵션 값 validation */
 		$("#purchaseBtn").click(function(){
@@ -625,7 +597,6 @@
 
 				if (clickNum == 2 || clickNum > 2) {
 					alert('이미 추천을 하신 상품입니다!');
-					console.log('추천수 중복 허용할까그냥...');
 					return false;
 
 				} else {

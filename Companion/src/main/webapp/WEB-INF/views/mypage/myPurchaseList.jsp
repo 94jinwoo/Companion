@@ -136,7 +136,6 @@
 							</table>
 						</div>
 						<div class="btnBox float--right">
-							<a href="#" style="text-decoration:none" class="cBtn innerBtn">배송조회</a>
 							<a href="${root }askProduct?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">문의하기</a>
 							<a href="${root }askExchange?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">교환신청</a>
 							<a href="${root }askReturn?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">반품신청</a>

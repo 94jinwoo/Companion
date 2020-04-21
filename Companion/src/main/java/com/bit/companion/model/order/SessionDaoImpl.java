@@ -19,13 +19,11 @@ public class SessionDaoImpl implements SessionDao {
 
 	@Override
 	public List<SessionVo> sessionList(List<Object> list) throws SQLException {
-//		List<SessionVo> mylist=sqlSession.selectList("session.sessionList",list);
 		List<SessionVo> mylist2=new ArrayList<>();;
 		for(int i=0; i<list.size(); i++) {
 			SessionVo bean=sqlSession.selectOne("session.sessionList",list.get(i));
 			mylist2.add(bean);
 		}
-		System.out.println(mylist2.toString());
 		return mylist2; 
 	} 
 
