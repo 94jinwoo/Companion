@@ -61,19 +61,19 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="nav navbar-nav ml-auto">
 							<li class="nav-item"><a class="nav-link active"
-								href="/companion/order/productMain?c=100&num=1">사료</a></li>
+								href="/companion/order/productMain?category_id=100&sort=date">사료</a></li>
 							<li class="nav-item"><a class="nav-link"
-								href="/companion/order/productMain?c=200&num=1">간식</a></li>
+								href="/companion/order/productMain?category_id=200&sort=date">간식</a></li>
 							<li class="nav-item"><a class="nav-link"
-								href="/companion/order/productMain?c=300&num=1">장난감</a></li>
+								href="/companion/order/productMain?category_id=300&sort=date">장난감</a></li>
 							<li class="nav-item"><a class="nav-link"
-								href="/companion/order/productMain?c=400&num=1">미용용품</a></li>
+								href="/companion/order/productMain?category_id=400&sort=date">미용용품</a></li>
 							<li class="nav-item"><a class="nav-link"
-								href="/companion/order/productMain?c=500&num=1">목욕용품</a></li>
+								href="/companion/order/productMain?category_id=500&sort=date">목욕용품</a></li>
 							<li class="nav-item"><a class="nav-link"
-								href="/companion/order/productMain?c=600&num=1">위생용품</a></li>
+								href="/companion/order/productMain?category_id=600&sort=date">위생용품</a></li>
 							<li class="nav-item"><a class="nav-link"
-								href="/companion/order/productMain?c=700&num=1">산책용품</a></li>
+								href="/companion/order/productMain?category_id=700&sort=date">산책용품</a></li>
 						</ul>
 					</div>
 				</div>

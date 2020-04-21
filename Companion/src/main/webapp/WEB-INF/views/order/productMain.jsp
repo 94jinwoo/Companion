@@ -43,25 +43,25 @@
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="nav navbar-nav ml-auto">
 								<li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=100&num=1">사료</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=100&sort=date">사료</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=200&num=1">간식</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=200&sort=date">간식</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=300&num=1">장난감</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=300&sort=date">장난감</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=400&num=1">미용용품</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=400&sort=date">미용용품</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=500&num=1">목욕용품</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=500&sort=date">목욕용품</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=600&num=1">위생용품</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=600&sort=date">위생용품</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/companion/order/productMain?c=700&num=1">산책용품</a>
+                                <a class="nav-link" href="/companion/order/productMain?category_id=700&sort=date">산책용품</a>
                             </li>
                         </ul>
 						</div>
@@ -106,12 +106,11 @@
 				<nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                     <!-- sideBar에서 클릭하면 category_id를 넘겨야 함.  -->
-                        <li class="breadcrumb-item" aria-current="page"><a href="${root }order/productMain/orderByLike?<%=request.getQueryString() %>">추천순</a></li>
-                        <li class="breadcrumb-item"><a href="${root }order/productMain/orderBySelling?<%=request.getQueryString() %>">판매인기순</a></li>
-                        <li class="breadcrumb-item"><a href="${root }order/productMain/orderByLowPrice?<%=request.getQueryString() %>">낮은가격순</a></li>
-                        <li class="breadcrumb-item"><a href="${root }order/productMain/orderByHighPrice?<%=request.getQueryString() %>">높은가격순</a></li>
-                        <li class="breadcrumb-item"><a href="${root }order/productMain/orderByDate?<%=request.getQueryString() %>">등록일순</a></li>
-       
+                        <li class="breadcrumb-item" aria-current="page"><a href="${root }order/productMain?category_id=${param.category_id}&sort=like">추천순</a></li>
+                        <li class="breadcrumb-item"><a href="${root }order/productMain?category_id=${param.category_id}&sort=order">판매인기순</a></li>
+                        <li class="breadcrumb-item"><a href="${root }order/productMain?category_id=${param.category_id}&sort=low">낮은가격순</a></li>
+                        <li class="breadcrumb-item"><a href="${root }order/productMain?category_id=${param.category_id}&sort=high">높은가격순</a></li>
+                        <li class="breadcrumb-item"><a href="${root }order/productMain?category_id=${param.category_id}&sort=date">등록일순</a></li>
                     </ol>
                     
                 </nav>
@@ -164,49 +163,18 @@
        		 </c:forEach>
 		<%-- 	        <% } %> --%>
     </div>
-    
-    <!-- pagination [start] -->
-	    <nav aria-label="Page navigation example">
-				<%
-					String str = request.getQueryString();
-					String result = str.substring(0,5);
-					String REALURL = (String)request.getAttribute("trueUrl");
-					if(REALURL==null){
-						REALURL="";
-					}
-				%>
-	 	   <ul class="pagination">
-			<c:if test="${prev }">
-		  	     <li class="page-item">
-		    	   	<a class="page-link" href="${root }order/productMain/<%=REALURL %>?<%=result %>&num=${startPageNum - 1 }" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				    </a>
-		   		</li>
-			</c:if>
-		   		<c:forEach begin="${startPageNum }" end="${endPageNum }" var="num">
-					<span>
-						<c:if test="${select != num}">
-							<li class="page-item">
-								<a class="page-link" href="${root }order/productMain/<%=REALURL %>?<%=result %>&num=${num }">${num }</a>
-							</li>	
-					  	</c:if>  
-					 	<c:if test="${select == num}">
-							<li class="page-item">
-								<a class="page-link bg-info text-white" href="#" >${num }</a>	
-							</li>	
-					 	</c:if>		
-					</span>
-				</c:forEach>
-			<c:if test="${next }">
-				<li class="page-item">
-					<a class="page-link" href="${root }order/productMain/<%=REALURL %>?<%=result %>&num=${endPageNum + 1 }" aria-label="Next">
-		     		   <span aria-hidden="true">&raquo;</span>
-		   			</a>	      
-		      </li>
-	      	</c:if>
-	      </ul>
-		</nav>
-	<!-- pagination [end] -->		
+    <br/>
+		<!-- pagination [start] -->
+		<jsp:include page="../common/pagination_C.jsp">
+			<jsp:param value="${pagination_c.prev }" name="prev"/>
+			<jsp:param value="${pagination_c.next }" name="next"/>
+			<jsp:param value="${pagination_c.page }" name="page"/>
+			<jsp:param value="${pagination_c.range }" name="range"/>
+			<jsp:param value="${pagination_c.rangeSize }" name="rangeSize"/>
+			<jsp:param value="${pagination_c.startPage }" name="startPage"/>
+			<jsp:param value="${pagination_c.endPage }" name="endPage"/>
+		</jsp:include>
+		<!-- pagination [end] -->
 	
 		</div><!-- container end  --> 
 		<!-- Footer  -->
