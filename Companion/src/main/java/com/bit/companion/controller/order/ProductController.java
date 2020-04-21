@@ -13,10 +13,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.bit.companion.common.Pagination_C;
+import com.bit.companion.common.Pagination_P;
 import com.bit.companion.model.entity.login.MemberVo;
 import com.bit.companion.model.entity.order.OrderQuestionVo;
 import com.bit.companion.service.order.OrderQuestionService;
@@ -39,21 +42,12 @@ public class ProductController {
 	@Autowired
 	OrderReviewService orderReviewService;
 	
-	
 	@Autowired
 	OrderQuestionService orderQuestionService;
 	
 	OrderQuestionVo orderQuestionVo;
 	
-	//페이지 정렬용 URL 패턴 메서드
-	public void urlPattern(HttpServletRequest request) {
-		String url = request.getRequestURI();
-		String[] url2 = url.split("/");
-		request.setAttribute("trueUrl",url2[4]);
-		System.out.println(url2[4]);
-	}
-	
-	//DETAIL PAGE
+	// DETAIL PAGE
 	@RequestMapping(value = "/order/productDetail",method=RequestMethod.GET)
 	public String productDetail(Model model,@RequestParam("idx") int product_id,HttpSession session,ServletRequest request,HttpServletResponse response) throws SQLException {
 		MemberVo memberVo=(MemberVo)session.getAttribute("memberVo");
@@ -87,123 +81,23 @@ public class ProductController {
 		return "order/productDetail";
 	}
 	
-	/* 답글 입력용 */
+	// question insert
 	@RequestMapping(value = "/order/productDetail/orderQuestion")
 	public String orderQuestion(Model model) {
 		return "order/orderQuestion";
 	}
 	
-	//페이지 개수용.
-	//@RequestParam("num") 은 페이지 번호.
+	// list page
 	@RequestMapping(value = "/order/productMain",method = RequestMethod.GET)
-	public String listPage(Model model,@RequestParam("c") int category_id, @RequestParam("num") int num,HttpServletRequest request) throws Exception {
-		OrderPagenation page = new OrderPagenation();
-		page.setNum(num);
-		page.setCount(productService.count(model, category_id));
-		model.addAttribute("pageNum",page.getPageNum());
-		model.addAttribute("startPageNum",page.getStartPageNum());
-		model.addAttribute("endPageNum",page.getEndPageNum());
-		model.addAttribute("prev",page.getPrev());
-		model.addAttribute("next",page.getNext());
-		model.addAttribute("select",num);
-		/*
-		 * urlPattern(request);
-		 */		productService.listPage(model, page.getDisplayPost(), page.getPostNum(), category_id);
-		
+	public String listPage(Model model,@RequestParam("category_id") int category_id
+			, @RequestParam(required = false, defaultValue = "1") int page
+			, @RequestParam(required = false, defaultValue = "1") int range 
+			, @RequestParam(required = false, defaultValue = "date") String sort 
+			, @ModelAttribute("pagination_c") Pagination_C pagination_c
+			) throws Exception {
+		pagination_c.setSort(sort);
+		productService.listPage(model, category_id, page, range, pagination_c);
 		return "order/productMain";
 	}
-	
-
-	
-	  
-	///추천순 정렬
-	@RequestMapping(value = "/order/productMain/orderByLike",method=RequestMethod.GET)
-	public String productOrderByProductLike(Model model,@RequestParam("c") int category_id, @RequestParam("num") int num,HttpServletRequest request) throws Exception {
-		OrderPagenation page = new OrderPagenation();
-		page.setNum(num);
-		page.setCount(productService.count(model,category_id));
-		model.addAttribute("pageNum",page.getPageNum());
-		model.addAttribute("startPageNum",page.getStartPageNum());
-		model.addAttribute("endPageNum",page.getEndPageNum());
-		model.addAttribute("prev",page.getPrev());
-		model.addAttribute("next",page.getNext());
-		model.addAttribute("select",num);
- 
-		urlPattern(request);	
-		productService.Alignment(model,category_id,page.getDisplayPost(),page.getPostNum());
-		
-		return "order/productMain";
-	}
-	
-	///판매량 정렬
-	@RequestMapping(value = "/order/productMain/orderBySelling",method=RequestMethod.GET)
-	public String productOrderBySellingOrder(Model model,@RequestParam("c") int category_id, @RequestParam("num") int num,HttpServletRequest request) throws Exception {
-		OrderPagenation page = new OrderPagenation();
-		page.setNum(num);
-		page.setCount(productService.count(model, category_id));
-		model.addAttribute("pageNum",page.getPageNum());
-		model.addAttribute("startPageNum",page.getStartPageNum());
-		model.addAttribute("endPageNum",page.getEndPageNum());
-		model.addAttribute("prev",page.getPrev());
-		model.addAttribute("next",page.getNext());
-		model.addAttribute("select",num);
-
-		urlPattern(request);
-		productService.AlignmentOrderBySelling(model, category_id,page.getDisplayPost(),page.getPostNum());
-		
-		return "order/productMain";
-	}
-	//낮은 가격 순 정렬
-	@RequestMapping(value = "/order/productMain/orderByLowPrice",method=RequestMethod.GET)
-	public String productOrderByLowPrice(Model model,@RequestParam("c") int category_id, @RequestParam("num") int num,HttpServletRequest request) throws Exception {
-		OrderPagenation page = new OrderPagenation();
-		page.setNum(num);
-		page.setCount(productService.count(model, category_id));
-		model.addAttribute("pageNum",page.getPageNum());
-		model.addAttribute("startPageNum",page.getStartPageNum());
-		model.addAttribute("endPageNum",page.getEndPageNum());
-		model.addAttribute("prev",page.getPrev());
-		model.addAttribute("next",page.getNext());
-		model.addAttribute("select",num);
-		urlPattern(request);	
-		productService.AlignmentOrderByLowPrice(model, category_id,page.getDisplayPost(),page.getPostNum());
-		return "order/productMain";
-	}
-	
-	//높은 가격 순 정렬
-	@RequestMapping(value = "/order/productMain/orderByHighPrice",method=RequestMethod.GET)
-	public String productOrderByHighPrice(Model model,@RequestParam("c") int category_id, @RequestParam("num") int num,HttpServletRequest request) throws Exception {
-		OrderPagenation page = new OrderPagenation();
-		page.setNum(num);
-		page.setCount(productService.count(model, category_id));
-		model.addAttribute("pageNum",page.getPageNum());
-		model.addAttribute("startPageNum",page.getStartPageNum());
-		model.addAttribute("endPageNum",page.getEndPageNum());
-		model.addAttribute("prev",page.getPrev());
-		model.addAttribute("next",page.getNext());
-		model.addAttribute("select",num);
-		urlPattern(request);	
-		productService.AlignmentOrderByHighPrice(model, category_id,page.getDisplayPost(),page.getPostNum());
-		return "order/productMain";
-	}
-	
-	//등록일 순 정렬
-	@RequestMapping(value = "/order/productMain/orderByDate",method=RequestMethod.GET)
-	public String productOrderByDate(Model model,@RequestParam("c") int category_id, @RequestParam("num") int num,HttpServletRequest request) throws Exception {
-		OrderPagenation page = new OrderPagenation();
-		page.setNum(num);
-		page.setCount(productService.count(model, category_id));
-		model.addAttribute("pageNum",page.getPageNum());
-		model.addAttribute("startPageNum",page.getStartPageNum());
-		model.addAttribute("endPageNum",page.getEndPageNum());
-		model.addAttribute("prev",page.getPrev());
-		model.addAttribute("next",page.getNext());
-		model.addAttribute("select",num);
-		urlPattern(request);	
-		productService.AlignmentOrderByDate(model, category_id,page.getDisplayPost(),page.getPostNum());
-		return "order/productMain";
-	}
-	
-
 
 }

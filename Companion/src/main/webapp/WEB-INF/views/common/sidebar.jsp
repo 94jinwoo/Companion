@@ -19,25 +19,25 @@
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="/companion/order/productMain?c=100&num=1"><i class="fas fa-angle-right"></i> 사료</a>
+                            <a href="/companion/order/productMain?category_id=100&sort=date"><i class="fas fa-angle-right"></i> 사료</a>
                         </li>
                         <li>
-                            <a href="/companion/order/productMain?c=200&num=1"><i class="fas fa-angle-right"></i> 간식</a>
+                            <a href="/companion/order/productMain?category_id=200&sort=date"><i class="fas fa-angle-right"></i> 간식</a>
                         </li>
                         <li>
-                            <a href="/companion/order/productMain?c=300&num=1"><i class="fas fa-angle-right"></i> 장난감</a>
+                            <a href="/companion/order/productMain?category_id=300&sort=date"><i class="fas fa-angle-right"></i> 장난감</a>
                         </li>
                         <li>
-                            <a href="/companion/order/productMain?c=400&num=1"><i class="fas fa-angle-right"></i> 미용용품</a>
+                            <a href="/companion/order/productMain?category_id=400&sort=date"><i class="fas fa-angle-right"></i> 미용용품</a>
                         </li>
                         <li>
-                            <a href="/companion/order/productMain?c=500&num=1"><i class="fas fa-angle-right"></i> 목욕용품</a>
+                            <a href="/companion/order/productMain?category_id=500&sort=date"><i class="fas fa-angle-right"></i> 목욕용품</a>
                         </li>
                         <li>
-                            <a href="/companion/order/productMain?c=600&num=1"><i class="fas fa-angle-right"></i> 위생용품</a>
+                            <a href="/companion/order/productMain?category_id=600&sort=date"><i class="fas fa-angle-right"></i> 위생용품</a>
                         </li>
                         <li>
-                            <a href="/companion/order/productMain?c=700&&num=1"><i class="fas fa-angle-right"></i> 산책용품</a>
+                            <a href="/companion/order/productMain?category_id=700&sort=date"><i class="fas fa-angle-right"></i> 산책용품</a>
                         </li>
                     </ul>
                 </li>
