@@ -97,118 +97,117 @@
 					<div class="main--title">
 							<h1>나의 문의내역</h1>
 	                </div>
-	            	<ul class="list-group list-unstyled components">
-						<c:forEach items="${questionList }" var="bean">
-							<ul>
-								<li class="list-group-item list-group-item">
-									<div class="row">
-										<!-- 나중에 해당 상품페이지로 이동하게 앵커달기 -->
-										<%-- <div class="col-2">
-											<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
-												<img id="proImg" src="${bean.product_thumb }"alt="Img"/>
-											</a>
-										</div> --%>
-										<div class="col-6">
-											<a href="${root }order/productDetail?idx=${bean.product_id }">
-												${bean.product_name }
-											</a>
-										</div>
-										<c:choose>
-											<c:when test="${bean.question_type_id=='0' }">
-												<div class="col-2">교환</div>
-											</c:when>
-											<c:when test="${bean.question_type_id=='1' }">
-												<div class="col-2">환불</div>
-											</c:when>
-											<c:when test="${bean.question_type_id=='2' }">
-												<div class="col-2">출하 전 취소</div>
-											</c:when>
-											<c:when test="${bean.question_type_id=='3' }">
-												<div class="col-2">배송</div>
-											</c:when>
-											<c:when test="${bean.question_type_id=='4' }">
-												<div class="col-2">불량 A/S</div>
-											</c:when>
-											<c:when test="${bean.question_type_id=='5' }">
-												<div class="col-2">주문/결제</div>
-											</c:when>
-											<c:when test="${bean.question_type_id=='6' }">
-												<div class="col-2">상품/재입고</div>
-											</c:when>
-											<c:when test="${bean.question_type_id=='7' }">
-												<div class="col-2">쿠폰/적립금</div>
-											</c:when>
-											<c:when test="${bean.question_type_id=='8' }">
-												<div class="col-2">회원 관련</div>
-											</c:when>
-											<c:when test="${bean.question_type_id=='9' }">
-												<div class="col-2">기타 문의</div>
-											</c:when>
-											<c:when test="${bean.question_type_id=='100' }">
-												<div class="col-2">상품/문의</div>
-											</c:when>
-										</c:choose>
-										<div class="col-2">${bean.question_date }</div>
-										<div class="col-2">
-											<button class="btn btn-outline-primary" style="width:120px;" onclick="toggleQuestion(${bean.question_id })" id="questionBtn_${bean.question_id }">
-												문의내용 보기
-											</button>
-										</div>
-									</div>
-								</li>
-								<ul class="list-group-item list-group-item-secondary list-unstyled" id="${bean.question_id }" style="display:none">
-										<li class="row">
-											<div class="col-1">Q.</div>
-											<div class="col-11">
-												${bean.question_title }
+	                <c:choose>
+	                	<c:when test="${questionList != null }">
+			            	<ul class="list-group list-unstyled components">
+								<c:forEach items="${questionList }" var="bean">
+									<ul>
+										<li class="list-group-item list-group-item">
+											<div class="row">
+												<!-- 나중에 해당 상품페이지로 이동하게 앵커달기 -->
+												<%-- <div class="col-2">
+													<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
+														<img id="proImg" src="${bean.product_thumb }"alt="Img"/>
+													</a>
+												</div> --%>
+												<div class="col-6">
+													<a href="${root }order/productDetail?idx=${bean.product_id }">
+														${bean.product_name }
+													</a>
+												</div>
+												<c:choose>
+													<c:when test="${bean.question_type_id=='0' }">
+														<div class="col-2">교환</div>
+													</c:when>
+													<c:when test="${bean.question_type_id=='1' }">
+														<div class="col-2">환불</div>
+													</c:when>
+													<c:when test="${bean.question_type_id=='2' }">
+														<div class="col-2">출하 전 취소</div>
+													</c:when>
+													<c:when test="${bean.question_type_id=='3' }">
+														<div class="col-2">배송</div>
+													</c:when>
+													<c:when test="${bean.question_type_id=='4' }">
+														<div class="col-2">불량 A/S</div>
+													</c:when>
+													<c:when test="${bean.question_type_id=='5' }">
+														<div class="col-2">주문/결제</div>
+													</c:when>
+													<c:when test="${bean.question_type_id=='6' }">
+														<div class="col-2">상품/재입고</div>
+													</c:when>
+													<c:when test="${bean.question_type_id=='7' }">
+														<div class="col-2">쿠폰/적립금</div>
+													</c:when>
+													<c:when test="${bean.question_type_id=='8' }">
+														<div class="col-2">회원 관련</div>
+													</c:when>
+													<c:when test="${bean.question_type_id=='9' }">
+														<div class="col-2">기타 문의</div>
+													</c:when>
+													<c:when test="${bean.question_type_id=='100' }">
+														<div class="col-2">상품/문의</div>
+													</c:when>
+												</c:choose>
+												<div class="col-2">${bean.question_date }</div>
+												<div class="col-2">
+													<button class="btn btn-outline-primary" style="width:120px;" onclick="toggleQuestion(${bean.question_id })" id="questionBtn_${bean.question_id }">
+														문의내용 보기
+													</button>
+												</div>
 											</div>
-											<div class="col-1"></div>
-											<div class="col-10">
-												${bean.question_content }
-											</div>
-				                           	<div class="col-1">
-				                           		<button class="btn btn-outline-secondary" onclick="deleteQuestion(${bean.question_id})" style="float:right; margin-right:6px;"><i class="fas fa-times"></i></button>
-				                           	</div>
 										</li>
+										<ul class="list-group-item list-group-item-secondary list-unstyled" id="${bean.question_id }" style="display:none">
+												<li class="row">
+													<div class="col-1">Q.</div>
+													<div class="col-11">
+														${bean.question_title }
+													</div>
+													<div class="col-1"></div>
+													<div class="col-10">
+														${bean.question_content }
+													</div>
+						                           	<div class="col-1">
+						                           		<button class="btn btn-outline-secondary" onclick="deleteQuestion(${bean.question_id})" style="float:right; margin-right:6px;"><i class="fas fa-times"></i></button>
+						                           	</div>
+												</li>
 <c:choose>
 <c:when test="${bean.question_answer != null }">
-									<li class="row">
-			                           	<div class="col-1">A.</div>
-			                           	<div class="col-10">
-			                           		${bean.question_answer }
-			                           	</div>
-									</li>
+											<li class="row">
+					                           	<div class="col-1">A.</div>
+					                           	<div class="col-10">
+					                           		${bean.question_answer }
+					                           	</div>
+											</li>
 </c:when>
 <c:otherwise>
-									<li class="row">
-			                           	<div class="col-1">A.</div>
-			                           	<div class="col-10">
-			                           		답변 대기중입니다. 신속히 답변드릴 수 있도록 하겠습니다.
-			                           	</div>
-									</li>
+											<li class="row">
+					                           	<div class="col-1">A.</div>
+					                           	<div class="col-10">
+					                           		답변 대기중입니다. 신속히 답변드릴 수 있도록 하겠습니다.
+					                           	</div>
+											</li>
 </c:otherwise>
 </c:choose>
-								</ul>
-							</ul>
-						</c:forEach>	            
-	            	</ul>
+										</ul>
+									</ul>
+								</c:forEach>	            
+			            	</ul>
+			            </c:when>
+			            <c:otherwise>
+			            	<div class="empty">
+			            		<span>문의 내역이 없습니다.</span>
+			            	</div>
+			            </c:otherwise>
+	                </c:choose>
+			            	
 	            </section>
 			</div>
 			
-        <div id="footer">
-            <!-- test main content end-->
-            <hr class="mb-2">
-            <footer class="companion-footer">
-                    <div class="paragraph-group">
-                        <p>상호:COMPANION | 대표 : 최길동 | 개인정보보호관리책임자 : 최길동 | 전화 : 02-000-000 ㅣ 이메일 : <a href="mailto:companion@companion.com" target="_top">companion@companion.com</a></p>
-                        <p>주소:서울특별시 서초구 강남대로 459 (서초동, 백암빌딩) 3층 | 사업자등록번호 : 000-00-00000 | 통신판매 : 2020-서울강남-0000</p>
-                        <p>호스팅제공자:(주)Companion</p>
-                        <br/>
-                        <a href="#">[홈페이지 이용약관]</a> <a href="#">[개인정보취급방침]</a><br/>
-                        <p>Copyright ⓒ 2020 COMPANION All rights reserved.</p>
-                    </div>
-            </footer>
-        </div>
+        <!-- Footer  -->
+			<jsp:include page="../common/footer.jsp" />
+		<!-- Footer end -->
 
 		</div>
 	</div>
