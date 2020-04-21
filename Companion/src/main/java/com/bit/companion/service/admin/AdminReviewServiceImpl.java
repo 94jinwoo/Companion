@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 
 import com.bit.companion.model.admin.AdminReviewDao;
 import com.bit.companion.model.entity.admin.AdminArticleVo;
+import com.bit.companion.model.entity.admin.AdminQuestionVo;
 
 @Repository
 public class AdminReviewServiceImpl implements AdminReviewService{
@@ -36,6 +37,16 @@ public class AdminReviewServiceImpl implements AdminReviewService{
 	public void detail(Model model, AdminArticleVo bean) {
 		try {
 			model.addAttribute("adminReviewOne", adminReviewDao.selectOne(bean));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	// Review delete
+	@Override
+	public void delete(AdminArticleVo bean) {
+		try {
+			adminReviewDao.deleteOne(bean);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
