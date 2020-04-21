@@ -154,7 +154,7 @@
 		            	</c:forEach>
 	       			</c:when>
 	       			<c:otherwise>
-	       				구매하신 사항이 없습니다.
+	       				<div class="empty"><span>구매하신 사항이 없습니다.</span></div>
 	       			</c:otherwise>
 	       		</c:choose>	
 	            </section>
