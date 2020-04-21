@@ -96,40 +96,47 @@
 					<div class="main--title">
 							<h1>나의 예약현황</h1>
 	                </div>
-	            	<ul class="list-group list-unstyled components">
-						<c:forEach items="${reserveList }" var="bean">
-							<ul>
-								<li class="list-group-item list-group-item">
-									<div class="row">
-										<div class="col-2">${bean.service_name }</div>
-										<div class="col-4">${bean.reserve_state_name }</div>
-										<div class="col-2">예약일자</div>
-										<div class="col-2">${bean.reserve_date }</div>
-										<div class="col-2">
-											<button class="mainBtn" onclick="toggleReserve(${bean.reserve_id })" id="reserveBtn_${bean.reserve_id }">
-												내역 상세보기
-											</button>
-										</div>
-									</div>
-								</li>
-								<ul class="list-group-item list-group-item-secondary list-unstyled" id="${bean.reserve_id }" style="display:none">
-									<li class="row">
-										<div class="col-2">반려견종</div>
-										<div class="col-4">${bean.reserve_dogtype }</div>
-										<div class="col-2">반려견나이</div>
-										<div class="col-4">${bean.reserve_dogage }</div></br>
-										
-										<div class="col-2">체크인</div>
-										<div class="col-4">${bean.reserve_checkin }</div>
-										<div class="col-2">체크아웃</div>
-										<div class="col-4">${bean.reserve_checkout }</div></br>
-										<div class="col-12">기타</div></br>
-										<div class="col-12">${bean.reserve_msg }</div>
-									</li>
-								</ul>
-							</ul>
-						</c:forEach>	            
-	            	</ul>
+	                <c:choose>
+	    				<c:when test="${reserveList != null }">
+			            	<ul class="list-group list-unstyled components">
+								<c:forEach items="${reserveList }" var="bean">
+									<ul>
+										<li class="list-group-item list-group-item">
+											<div class="row">
+												<div class="col-2">${bean.service_name }</div>
+												<div class="col-4">${bean.reserve_state_name }</div>
+												<div class="col-2">예약일자</div>
+												<div class="col-2">${bean.reserve_date }</div>
+												<div class="col-2">
+													<button class="mainBtn" onclick="toggleReserve(${bean.reserve_id })" id="reserveBtn_${bean.reserve_id }">
+														내역 상세보기
+													</button>
+												</div>
+											</div>
+										</li>
+										<ul class="list-group-item list-group-item-secondary list-unstyled" id="${bean.reserve_id }" style="display:none">
+											<li class="row">
+												<div class="col-2">반려견종</div>
+												<div class="col-4">${bean.reserve_dogtype }</div>
+												<div class="col-2">반려견나이</div>
+												<div class="col-4">${bean.reserve_dogage }</div></br>
+												
+												<div class="col-2">체크인</div>
+												<div class="col-4">${bean.reserve_checkin }</div>
+												<div class="col-2">체크아웃</div>
+												<div class="col-4">${bean.reserve_checkout }</div></br>
+												<div class="col-12">기타</div></br>
+												<div class="col-12">${bean.reserve_msg }</div>
+											</li>
+										</ul>
+									</ul>
+								</c:forEach>	            
+			            	</ul>
+	    				</c:when>            
+	    				<c:otherwise>
+	    					예약하신 사항이 없습니다.
+	    				</c:otherwise>
+	                </c:choose>
 	            </section>
 			</div>
 			
