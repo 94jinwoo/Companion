@@ -23,6 +23,7 @@ public class OrderReviewServiceImpl implements OrderReviewService {
 		try {
 			//total
 			pagination_p.setProduct_id(product_id);
+			pagination_p.setListSize(5);
 			int listCnt = orderReviewDao.total(pagination_p);
 			
 			// Pagination

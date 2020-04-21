@@ -19,27 +19,24 @@ public class QuestionDaoImpl implements QuestionDao {
 	@Autowired
 	SqlSession sqlSession;
 	
-	//문의글 등록.
+	// insert
 	@Override
 	public void registReply(OrderQuestionVo orderQuestionVo) throws SQLException {
-		System.out.println("registReply DAO 실행.");
 		sqlSession.insert("orderQuestion.registReply",orderQuestionVo);
 	}
 	
-	//문의글 목록.
+	// list
 	@Override
 	public List<OrderQuestionVo> replyList(Pagination_P pagination_p) throws SQLException {
-		System.out.println("replyList DAO 실행.");
 		return sqlSession.selectList("orderQuestion.OrderQuestionList",pagination_p);
 	}
 
 	@Override
 	public int replyListAllCount(Pagination_P pagination_p) throws SQLException {
-		System.out.println("모든 문의글 개수 파악합니다.");
 		return sqlSession.selectOne("orderQuestion.ReplyListAllCount",pagination_p);
 	}
 
-	//문의글 조회
+	// detail
 	@Override
 	public OrderQuestionVo replyDetail(int question_id) throws SQLException {
 		return sqlSession.selectOne("orderQuestion.ReplyDetail", question_id);

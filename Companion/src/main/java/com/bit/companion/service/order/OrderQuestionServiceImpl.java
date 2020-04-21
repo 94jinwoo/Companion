@@ -19,19 +19,18 @@ public class OrderQuestionServiceImpl implements OrderQuestionService {
 
 		@Autowired
 		QuestionDao questionDao;
-	//문의글 등록.
+	// insert
 	@Override
 	public void registReply(OrderQuestionVo orderQuestionVo) throws SQLException {
-		System.out.println("문의글 등록/  OrderQuestionService");
 		questionDao.registReply(orderQuestionVo);
 			
 	}
-	//문의글 목록.
+	// list 
 	@Override
 	public void replyList(Model model, int product_id, Pagination_P pagination_p, int page, int range) throws SQLException {
-		System.out.println("문의글 목록/  replyList");
 		
 		pagination_p.setProduct_id(product_id);
+		pagination_p.setListSize(5);
 		int listCnt = questionDao.replyListAllCount(pagination_p);
 		
 		// Pagination
@@ -42,7 +41,7 @@ public class OrderQuestionServiceImpl implements OrderQuestionService {
 		model.addAttribute("ReplyList",list);
 	}
 	
-	//문의글 조회
+	// detail
 	@Override
 	public void detail(Model model, int question_id) throws SQLException {
 		model.addAttribute("ReplyDetail",questionDao.replyDetail(question_id));
