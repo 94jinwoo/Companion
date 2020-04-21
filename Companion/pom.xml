@@ -194,6 +194,15 @@
 		    <artifactId>mail</artifactId>
 		    <version>1.4</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+		<dependency>
+		    <groupId>javax.activation</groupId>
+		    <artifactId>activation</artifactId>
+		    <version>1.1</version>
+		</dependency>
+
+
+		
 		
 		<!-- 카톡 로그인 연동 -->
 		<!-- httpcore(카카오) -->
@@ -239,6 +248,18 @@
 		    <version>2.4</version>
 		    <classifier>jdk15</classifier>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
+		<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+		    <version>9.0.31</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api -->
+		<dependency>
+		    <groupId>org.apache.tomcat</groupId>
+		    <artifactId>tomcat-servlet-api</artifactId>
+		    <version>9.0.31</version>
+		</dependency>
 	</dependencies>
     <build>
         <plugins>
@@ -276,6 +297,26 @@
                     <mainClass>org.test.int1.Main</mainClass>
                 </configuration>
             </plugin>
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-dependency-plugin</artifactId>
+	            <executions>
+	                <execution>
+	                    <phase>package</phase>
+	                    <goals><goal>copy</goal></goals>
+	                    <configuration>
+	                        <artifactItems>
+	                            <artifactItem>
+	                                <groupId>com.heroku</groupId>
+	                                <artifactId>webapp-runner</artifactId>
+	                                <version>9.0.30.0</version>
+	                                <destFileName>webapp-runner.jar</destFileName>
+	                            </artifactItem>
+	                        </artifactItems>
+	                    </configuration>
+	                </execution>
+	            </executions>
+	        </plugin>
         </plugins>
     </build>
 </project>
