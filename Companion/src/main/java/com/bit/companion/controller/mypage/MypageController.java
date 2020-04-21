@@ -97,7 +97,11 @@ public class MypageController {
 			List<MyPurchaseDetailVo> list=(List) mypageService.purchaseDetailList(order_id,order_date,order_state_member,order_state_id);
 			myPurchaseDetailList.addAll(list);
 		}
-		session.setAttribute("myPurchaseDetail", myPurchaseDetailList);
+		if(myPurchaseDetailList.size()!=0) {
+			session.setAttribute("myPurchaseDetail", myPurchaseDetailList);
+		}else {
+			session.setAttribute("myPurchaseDetail", null);
+		}
 		return "mypage/myPurchaseList";
 	}
 	
