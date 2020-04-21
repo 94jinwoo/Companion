@@ -66,7 +66,6 @@
 	                            </c:when>
 	                            <c:otherwise>
 	                                <ul class="nav navbar-nav ml-auto">
-	                                    <p>${sessionScope.memberVo.member_name }님이 로그인 중입니다.</p>
 	                                    <li class="nav-item">
 	                                        <a class="nav-link" href="#">주문내역</a>
 	                                    </li>
