@@ -129,7 +129,7 @@
 					<!-- 예약하기 오른쪽(입력폼) start -->
 					<div class="col-md-6 reserve--right" id="reserText">
 						<!-- 예약하기 form -->
-						<form class="form-horizontal" method="POST">
+						<form class="form-horizontal" method="POST" onsubmit="return validation_submit();">
 							<div class="form-group">
 								<label for="service_id" class="h4 col-sm-5 control-label">희망 서비스</label>
 								<div class="col-sm-11">
@@ -234,10 +234,20 @@ $("#noneLogin_btn").click(function(){
 	alert('로그인이 필요합니다.');
 })
 
-$("#btn_submit").click(function(){
-	alert('예약상담 신청이 완료되었습니다.');
-})
-
+//validation
+function validation_submit() {
+	if($("#animalBreed").val() == ""){
+		alert('반려견 품종을 입력해주세요.');
+		$('#animalBreed').focus();
+		return false;
+	}
+	if($("#animalAge").val() == ""){
+		alert('반려동물 나이를 입력해주세요.');
+		$('#animalAge').focus();
+		return false;
+	}
+	alert('예약이 완료되었습니다.');
+};
 
 </script>
 </body>
