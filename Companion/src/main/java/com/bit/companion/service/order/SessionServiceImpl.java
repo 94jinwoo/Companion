@@ -27,7 +27,6 @@ public class SessionServiceImpl implements SessionService {
 		 
 			try {  
 				result=sessionDao.sessionList(list);
-				System.out.println(result.toString());
 				model.addAttribute("sessionList",result);
 			} catch (SQLException e) {
 				e.printStackTrace();

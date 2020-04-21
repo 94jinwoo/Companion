@@ -66,16 +66,45 @@ public class ProductController {
 		productService.productRecommend(model, product_id);
 		
 //		세션
+		logger.info(list.toString()+"");
+		if(list.size() != 0) {
+			
 			if(list.size()>2) {
-				list.add(0, product_id);;
-				list.remove(3);
+				int i=0;
+				do {
+					if(list.get(i).equals(product_id)) {
+						i++;
+						break;
+					}else {
+						i++;
+						list.add(0, product_id);;
+						list.remove(3);
+						break;
+					}
+				} while (i<3);
+				i=0;
 			}else {
-				list.add(0,product_id);
+				int i=0;
+				do {
+					if(list.get(i).equals(product_id)) {
+						i++;
+						break;
+					}else {
+						i++;
+						list.add(0,product_id);
+						break;
+					}
+				} while (i<3);
+				i=0;
 			}
 			if(list!=null) {
 				sessionService.SessionList(model,list); 
 			}
-		
+		} else {
+			list.add(0,product_id);
+			sessionService.SessionList(model,list);
+		}
+		logger.info(list.get(0)+" @");
 		return "order/productDetail";
 	}
 	
