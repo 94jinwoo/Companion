@@ -139,7 +139,14 @@
 							<a href="${root }askProduct?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">문의하기</a>
 							<a href="${root }askExchange?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">교환신청</a>
 							<a href="${root }askReturn?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">반품신청</a>
-							<a href="${root }myReview?a=${bean.product_id }" style="text-decoration:none" class="cBtn innerBtn">후기작성</a>
+							<c:choose>
+								<c:when test="${bean.order_state_id=='7' }">
+									<a href="${root }myReview?a=${bean.product_id }" style="text-decoration:none" class="cBtn innerBtn">후기작성</a>
+								</c:when>
+								<c:otherwise>
+									<button onclick="confirmPurchase(${bean.order_id})" class="cBtn innerBtn">구매확정</button>
+								</c:otherwise>
+							</c:choose>
 						</div>
 					</div>
 	            	</c:forEach>
@@ -157,6 +164,26 @@
 	<!-- script start -->
 	<script src="${root }js/jquery-1.12.4.js"></script>
 	<script type="text/javascript">
+    function confirmPurchase(order_id){
+    	var confirm_val=confirm("구매 확정하시겠습니까??");
+    	
+    	if(confirm_val){
+    		$.ajax({
+    			type : "POST",
+    			url : "/companion/mypage/confirmPurchase",
+    			data : {"order_id" : order_id},
+    			success : function(result){
+    				if(result==0){
+    					alert("확정실패");
+    				}else{
+    					alert("확정완료");
+    					location.reload();
+    				}
+    			}
+    		});
+    	}
+    }
+	
     </script>
     
     <!-- Popper.JS -->

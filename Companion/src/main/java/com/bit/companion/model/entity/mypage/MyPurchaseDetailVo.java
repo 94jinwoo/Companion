@@ -10,6 +10,7 @@ public class MyPurchaseDetailVo {
 	private String order_detail_price;
 	private String order_detail_quantity;
 	private String order_detail_option;
+	private String order_state_id;
 	/* product table */
 	private String product_thumb;
 	private String product_name;
@@ -101,15 +102,24 @@ public class MyPurchaseDetailVo {
 		this.order_state_member = order_state_member;
 	}
 
+	public String getOrder_state_id() {
+		return order_state_id;
+	}
+
+	public void setOrder_state_id(String order_state_id) {
+		this.order_state_id = order_state_id;
+	}
+
 	@Override
 	public String toString() {
 		return "MyPurchaseDetailVo [order_detail_id=" + order_detail_id + ", order_id=" + order_id + ", product_id="
 				+ product_id + ", order_detail_price=" + order_detail_price + ", order_detail_quantity="
-				+ order_detail_quantity + ", order_detail_option=" + order_detail_option + ", product_thumb="
-				+ product_thumb + ", product_name=" + product_name + ", order_date=" + order_date
-				+ ", order_state_member=" + order_state_member + "]";
+				+ order_detail_quantity + ", order_detail_option=" + order_detail_option + ", order_state_id="
+				+ order_state_id + ", product_thumb=" + product_thumb + ", product_name=" + product_name
+				+ ", order_date=" + order_date + ", order_state_member=" + order_state_member + "]";
 	}
 
+	
 	
 	
 	

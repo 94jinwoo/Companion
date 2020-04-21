@@ -236,7 +236,7 @@ public class MypageDaoImpl implements MypageDao {
 	}
 
 	@Override
-	public List purchaseDetailList(String order_id,Date order_date,String order_state_member) {
+	public List purchaseDetailList(String order_id,Date order_date,String order_state_member,String order_state_id) {
 		List<MyPurchaseDetailVo> list=(List) sqlSession.selectList("mypage.purchaseDetailList", order_id);
 		for(int i=0; i<list.size();i++) {
 			MyPurchaseDetailVo bean=list.get(i);
@@ -245,6 +245,7 @@ public class MypageDaoImpl implements MypageDao {
 			bean.setOrder_date(order_date);
 			bean.setOrder_state_member(order_state_member);
 			bean.setProduct_name(sqlSession.selectOne("mypage.productName",product_id));
+			bean.setOrder_state_id(order_state_id);
 		}
 		return list;
 	}
@@ -269,6 +270,14 @@ public class MypageDaoImpl implements MypageDao {
 	@Override
 	public int myReviewInsert(MyReviewVo bean) {
 		return sqlSession.insert("mypage.reviewProductInsert",bean);
+	}
+
+	@Override
+	public int confirmPurchase(String member_id, String order_id) {
+		HashMap<String,String> myInfo=new HashMap<>();
+		myInfo.put("order_id", order_id);
+		myInfo.put("member_id", member_id);
+		return sqlSession.update("mypage.confirmPurchase", myInfo);
 	}
 
 	
