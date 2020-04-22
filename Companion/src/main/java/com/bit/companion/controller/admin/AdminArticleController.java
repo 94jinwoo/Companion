@@ -32,6 +32,9 @@ public class AdminArticleController {
 	@Resource(name="uploadPath")
 	private String uploadPath;
 	
+	
+	/* private String uploadPath; */
+	
 	@Autowired
 	AdminArticleService adminNoticeService;
 
@@ -100,7 +103,7 @@ public class AdminArticleController {
 		// board_id 
 		String board_name=checkBoardName(req.getServletPath());
 		int board_id=checkBoardId(board_name);
-		
+		/* uploadPath = req.getSession().getServletContext().getRealPath(""); */
 		if (board_id == 0 || board_id==1) {
 			// File Upload
 			String imgUploadPath = uploadPath + File.separator + "imgUpload";

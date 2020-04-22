@@ -48,19 +48,19 @@
                     </a>
                     <ul class="collapse list-unstyled" id="hotelSubmenu">
                         <li>
-                            <a href="/companion/hotel/infouse"><i class="fas fa-angle-right"></i> 이용안내</a>
+                            <a href="${root }hotel/infouse"><i class="fas fa-angle-right"></i> 이용안내</a>
                         </li>
                         <li>
-                            <a href="/companion/hotel/reservation"><i class="fas fa-angle-right"></i> 예약하기</a>
+                            <a href="${root }hotel/reservation"><i class="fas fa-angle-right"></i> 예약하기</a>
                         </li>
                         <li>
-                            <a href="/companion/hotel/preroom"><i class="fas fa-angle-right"></i> 룸미리보기</a>
+                            <a href="${root }hotel/preroom"><i class="fas fa-angle-right"></i> 룸미리보기</a>
                         </li>
                         <li>
-                            <a href="/companion/hotel/infocare"><i class="fas fa-angle-right"></i> 돌보미정보</a>
+                            <a href="${root }hotel/infocare"><i class="fas fa-angle-right"></i> 돌보미정보</a>
                         </li>
                         <li>
-                            <a href="/companion/hotel/infoloc"><i class="fas fa-angle-right"></i> 위치정보</a>
+                            <a href="${root }hotel/infoloc"><i class="fas fa-angle-right"></i> 위치정보</a>
                         </li>
                     </ul>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -69,13 +69,13 @@
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="/companion/notice/"><i class="fas fa-angle-right"></i> 공지사항</a>
+                            <a href="${root }notice/"><i class="fas fa-angle-right"></i> 공지사항</a>
                         </li>
                         <li>
-                            <a href="/companion/event/"><i class="fas fa-angle-right"></i> 이벤트</a>
+                            <a href="${root }event/"><i class="fas fa-angle-right"></i> 이벤트</a>
                         </li>
                         <li>
-                            <a href="/companion/faq/"><i class="fas fa-angle-right"></i> FAQ</a>
+                            <a href="${root }faq/"><i class="fas fa-angle-right"></i> FAQ</a>
                         </li>
                     </ul>
                 </li>

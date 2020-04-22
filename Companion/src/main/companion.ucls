@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="MANHATTAN">  
+  <class id="1" language="java" name="com.bit.companion.HomeController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/HomeController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="289" x="41" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.bit.companion.util.UploadFileUtils" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/util/UploadFileUtils.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="232" x="1905" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.bit.companion.common.Pagination_P" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/common/Pagination_P.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="128" x="1313" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.bit.companion.common.Pagination" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/common/Pagination.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="138" x="1135" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.bit.companion.common.PolicyPrivacyController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/common/PolicyPrivacyController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="156" x="1709" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.bit.companion.common.Pagination_C" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/common/Pagination_C.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="138" x="1135" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.bit.companion.common.Search" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/common/Search.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="142" x="953" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.bit.companion.common.ChartDate" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/common/ChartDate.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="387" width="513" x="582" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.bit.companion.common.TermsOfServiceController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/common/TermsOfServiceController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="172" x="370" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.bit.companion.interceptor.AdminInterceptor" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/interceptor/AdminInterceptor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="356" x="1313" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="11">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="12">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="13">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="true" accessors="false" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

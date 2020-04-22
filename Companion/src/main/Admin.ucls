@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="MANHATTAN">  
+  <class id="1" language="java" name="com.bit.companion.controller.admin.AdminHomeController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/admin/AdminHomeController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="353" x="6999" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.bit.companion.controller.admin.AdminProductController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/admin/AdminProductController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="373" x="5609" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.bit.companion.controller.admin.AdminOrderController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/admin/AdminOrderController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="354" x="4398" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.bit.companion.controller.admin.AdminArticleController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/admin/AdminArticleController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="279" width="482" x="3463" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.bit.companion.controller.admin.AdminReviewController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/admin/AdminReviewController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="373" x="2776" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.bit.companion.controller.admin.AdminMemberController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/admin/AdminMemberController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="364" x="2032" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.bit.companion.controller.admin.AdminQuestionController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/admin/AdminQuestionController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="373" x="3985" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.bit.companion.controller.admin.AdminReservationController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/admin/AdminReservationController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="384" x="317" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="9" language="java" name="com.bit.companion.service.admin.AdminMemberService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminMemberService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="220" x="1804" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="10" language="java" name="com.bit.companion.service.admin.AdminOrderServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminOrderServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="160" x="4792" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="11" language="java" name="com.bit.companion.service.admin.AdminReviewService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminReviewService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="187" x="2762" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="12" language="java" name="com.bit.companion.service.admin.AdminHomeServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminHomeServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="353" x="7020" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.bit.companion.service.admin.AdminReservationServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminReservationServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="288" x="741" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.bit.companion.service.admin.AdminReviewServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminReviewServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="288" x="2816" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="15" language="java" name="com.bit.companion.service.admin.AdminOrderService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminOrderService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="151" x="4533" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="16" language="java" name="com.bit.companion.service.admin.AdminProductService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminProductService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="170" x="5649" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="17" language="java" name="com.bit.companion.service.admin.AdminProductServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminProductServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="288" x="6022" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="18" language="java" name="com.bit.companion.service.admin.AdminArticleService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminArticleService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="306" x="3010" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="19" language="java" name="com.bit.companion.service.admin.AdminQuestionService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminQuestionService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="199" x="3985" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="20" language="java" name="com.bit.companion.service.admin.AdminQuestionServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminQuestionServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="199" x="3189" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.bit.companion.service.admin.AdminArticleServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminArticleServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="306" x="1109" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.bit.companion.service.admin.AdminMemberServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminMemberServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="288" x="1704" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="23" language="java" name="com.bit.companion.service.admin.AdminReservationService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminReservationService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="191" x="518" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="24" language="java" name="com.bit.companion.service.admin.AdminHomeService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/admin/AdminHomeService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="151" x="6999" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="25" language="java" name="com.bit.companion.model.admin.AdminArticleDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminArticleDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="234" x="1455" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="26" language="java" name="com.bit.companion.model.admin.AdminHomeDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminHomeDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="387" width="353" x="7413" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="com.bit.companion.model.admin.AdminReservationDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminReservationDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="288" x="1069" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="28" language="java" name="com.bit.companion.model.admin.AdminProductDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminProductDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="226" x="6083" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="29" language="java" name="com.bit.companion.model.admin.AdminOrderDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminOrderDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="279" width="249" x="4792" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="30" language="java" name="com.bit.companion.model.admin.AdminReviewDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminReviewDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="288" x="2467" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="com.bit.companion.model.admin.AdminProductDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminProductDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="288" x="6351" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="32" language="java" name="com.bit.companion.model.admin.AdminReservationDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminReservationDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="236" x="791" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="33" language="java" name="com.bit.companion.model.admin.AdminMemberDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminMemberDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="300" x="2436" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="com.bit.companion.model.admin.AdminOrderDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminOrderDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="333" width="272" x="5062" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="35" language="java" name="com.bit.companion.model.admin.AdminMemberDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminMemberDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="300" x="2064" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="36" language="java" name="com.bit.companion.model.admin.AdminReviewDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminReviewDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="234" x="2488" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="37" language="java" name="com.bit.companion.model.admin.AdminQuestionDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminQuestionDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="258" x="3687" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="38" language="java" name="com.bit.companion.model.admin.AdminHomeDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminHomeDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="333" width="239" x="7413" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="39" language="java" name="com.bit.companion.model.admin.AdminQuestionDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminQuestionDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="258" x="3165" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="40" language="java" name="com.bit.companion.model.admin.AdminArticleDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/admin/AdminArticleDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="288" x="1455" y="464"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="com.bit.companion.model.entity.admin.AdminReservationVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminReservationVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="351" width="449" x="580" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="com.bit.companion.model.entity.admin.AdminDataTableVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminDataTableVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="236" x="41" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="com.bit.companion.model.entity.admin.AdminProductViewVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminProductViewVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="441" width="587" x="6372" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="com.bit.companion.model.entity.admin.AdminOrderDetailVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminOrderDetailVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="274" x="4555" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="45" language="java" name="com.bit.companion.model.entity.admin.AdminProductVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminProductVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="369" width="471" x="5644" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="46" language="java" name="com.bit.companion.model.entity.admin.AdminOrderVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminOrderVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="531" width="735" x="4869" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="47" language="java" name="com.bit.companion.model.entity.admin.AdminQuestionVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminQuestionVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="423" width="530" x="3985" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="48" language="java" name="com.bit.companion.model.entity.admin.AdminArticleVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminArticleVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="315" width="372" x="2448" y="1408"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="49" language="java" name="com.bit.companion.model.entity.admin.AdminPaymentVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminPaymentVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="255" x="7413" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="50" language="java" name="com.bit.companion.model.entity.admin.AdminCategoryVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminCategoryVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="177" x="6155" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="51" language="java" name="com.bit.companion.model.entity.admin.AdminMemberViewVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminMemberViewVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="297" width="431" x="1975" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="52" language="java" name="com.bit.companion.model.entity.admin.AdminHotelServiceVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/admin/AdminHotelServiceVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="180" x="1069" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="53">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <dependency id="54">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="41"/>  
+  </dependency>  
+  <dependency id="55">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="45"/>  
+  </dependency>  
+  <dependency id="56">    
+    <bendpoint x="6381" y="464"/>    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="43"/>  
+  </dependency>  
+  <realization id="57">    
+    <bendpoint x="6968" y="464"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="24"/>  
+  </realization>  
+  <dependency id="58">    
+    <bendpoint x="6360" y="464"/>    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="50"/>  
+  </dependency>  
+  <dependency id="59">    
+    <bendpoint x="5092" y="464"/>    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="46"/>  
+  </dependency>  
+  <dependency id="60">    
+    <bendpoint x="1057" y="464"/>    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="41"/>  
+  </dependency>  
+  <dependency id="61">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="43"/>  
+  </dependency>  
+  <dependency id="62">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="63">    
+    <end type="SOURCE" refId="8" navigable="false" variant="ASSOCIATION">      
+      <attribute id="64" name="adminReservationService"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="66">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="45"/>  
+  </dependency>  
+  <dependency id="67">    
+    <bendpoint x="2415" y="464"/>    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="51"/>  
+  </dependency>  
+  <association id="68">    
+    <end type="SOURCE" refId="1" navigable="false" variant="ASSOCIATION">      
+      <attribute id="69" name="adminHomeService"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="71">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="35"/>  
+  </realization>  
+  <realization id="72">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <dependency id="73">    
+    <bendpoint x="1424" y="837"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="48"/>  
+  </dependency>  
+  <association id="74">    
+    <end type="SOURCE" refId="6" navigable="false" variant="ASSOCIATION">      
+      <attribute id="75" name="adminMemberService"/>      
+      <multiplicity id="76" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="77">    
+    <bendpoint x="4714" y="464"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="44"/>  
+  </dependency>  
+  <realization id="78">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="15"/>  
+  </realization>  
+  <dependency id="79">    
+    <bendpoint x="3346" y="837"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="48"/>  
+  </dependency>  
+  <dependency id="80">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="81">    
+    <bendpoint x="6339" y="464"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="43"/>  
+  </dependency>  
+  <realization id="82">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="23"/>  
+  </realization>  
+  <dependency id="83">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="41"/>  
+  </dependency>  
+  <dependency id="84">    
+    <bendpoint x="1773" y="464"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="51"/>  
+  </dependency>  
+  <dependency id="85">    
+    <bendpoint x="6031" y="464"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="50"/>  
+  </dependency>  
+  <association id="86">    
+    <end type="SOURCE" refId="10" navigable="false" variant="ASSOCIATION">      
+      <attribute id="87" name="adminOrderDao"/>      
+      <multiplicity id="88" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="89">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="48"/>  
+  </dependency>  
+  <dependency id="90">    
+    <bendpoint x="7382" y="464"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="49"/>  
+  </dependency>  
+  <dependency id="91">    
+    <bendpoint x="760" y="464"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="52"/>  
+  </dependency>  
+  <dependency id="92">    
+    <bendpoint x="4214" y="464"/>    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="47"/>  
+  </dependency>  
+  <dependency id="93">    
+    <bendpoint x="458" y="464"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="41"/>  
+  </dependency>  
+  <realization id="94">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="29"/>  
+  </realization>  
+  <dependency id="95">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="52"/>  
+  </dependency>  
+  <association id="96">    
+    <end type="SOURCE" refId="2" navigable="false" variant="ASSOCIATION">      
+      <attribute id="97" name="adminProductService"/>      
+      <multiplicity id="98" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="99">    
+    <bendpoint x="2979" y="837"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="48"/>  
+  </dependency>  
+  <dependency id="100">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="48"/>  
+  </dependency>  
+  <dependency id="101">    
+    <bendpoint x="4761" y="464"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="46"/>  
+  </dependency>  
+  <association id="102">    
+    <end type="SOURCE" refId="22" navigable="false" variant="ASSOCIATION">      
+      <attribute id="103" name="adminMemberDao"/>      
+      <multiplicity id="104" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="105">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <dependency id="106">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="47"/>  
+  </dependency>  
+  <association id="107">    
+    <end type="SOURCE" refId="7" navigable="false" variant="ASSOCIATION">      
+      <attribute id="108" name="adminQuestionService"/>      
+      <multiplicity id="109" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="110">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="111">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <association id="112">    
+    <end type="SOURCE" refId="20" navigable="false" variant="ASSOCIATION">      
+      <attribute id="113" name="adminQuestionDao"/>      
+      <multiplicity id="114" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="115">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <dependency id="116">    
+    <bendpoint x="3134" y="464"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="47"/>  
+  </dependency>  
+  <dependency id="117">    
+    <bendpoint x="5071" y="464"/>    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="44"/>  
+  </dependency>  
+  <dependency id="118">    
+    <bendpoint x="739" y="464"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="41"/>  
+  </dependency>  
+  <realization id="119">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="19"/>  
+  </realization>  
+  <realization id="120">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="25"/>  
+  </realization>  
+  <realization id="121">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="38"/>  
+  </realization>  
+  <dependency id="122">    
+    <bendpoint x="7682" y="464"/>    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="49"/>  
+  </dependency>  
+  <dependency id="123">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="48"/>  
+  </dependency>  
+  <dependency id="124">    
+    <bendpoint x="2457" y="837"/>    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="48"/>  
+  </dependency>  
+  <association id="125">    
+    <end type="SOURCE" refId="14" navigable="false" variant="ASSOCIATION">      
+      <attribute id="126" name="adminReviewDao"/>      
+      <multiplicity id="127" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="128">    
+    <bendpoint x="1944" y="837"/>    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="48"/>  
+  </dependency>  
+  <dependency id="129">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="50"/>  
+  </dependency>  
+  <realization id="130">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="39"/>  
+  </realization>  
+  <association id="131">    
+    <end type="SOURCE" refId="3" navigable="false" variant="ASSOCIATION">      
+      <attribute id="132" name="adminOrderService"/>      
+      <multiplicity id="133" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="134">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="51"/>  
+  </dependency>  
+  <association id="135">    
+    <end type="SOURCE" refId="17" navigable="false" variant="ASSOCIATION">      
+      <attribute id="136" name="adminProductDao"/>      
+      <multiplicity id="137" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="138">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="44"/>  
+  </dependency>  
+  <dependency id="139">    
+    <bendpoint x="6052" y="464"/>    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="45"/>  
+  </dependency>  
+  <association id="140">    
+    <end type="SOURCE" refId="4" navigable="false" variant="ASSOCIATION">      
+      <attribute id="141" name="adminNoticeService"/>      
+      <multiplicity id="142" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="143">    
+    <bendpoint x="4235" y="464"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="47"/>  
+  </dependency>  
+  <dependency id="144">    
+    <bendpoint x="1078" y="464"/>    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="52"/>  
+  </dependency>  
+  <realization id="145">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <association id="146">    
+    <end type="SOURCE" refId="12" navigable="false" variant="ASSOCIATION">      
+      <attribute id="147" name="adminHomeDao"/>      
+      <multiplicity id="148" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="149">    
+    <end type="SOURCE" refId="13" navigable="false" variant="ASSOCIATION">      
+      <attribute id="150" name="adminReservationDao"/>      
+      <multiplicity id="151" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="152">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="48"/>  
+  </dependency>  
+  <association id="153">    
+    <bendpoint x="2785" y="464"/>    
+    <end type="SOURCE" refId="5" navigable="false" variant="ASSOCIATION">      
+      <attribute id="154" name="adminReviewService"/>      
+      <multiplicity id="155" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="156">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="47"/>  
+  </dependency>  
+  <realization id="157">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="18"/>  
+  </realization>  
+  <association id="158">    
+    <end type="SOURCE" refId="21" navigable="false" variant="ASSOCIATION">      
+      <attribute id="159" name="adminArticleDao"/>      
+      <multiplicity id="160" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="161">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="162">    
+    <bendpoint x="4486" y="464"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="44"/>  
+  </dependency>  
+  <realization id="163">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="36"/>  
+  </realization>  
+  <dependency id="164">    
+    <bendpoint x="5849" y="464"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="45"/>  
+  </dependency>  
+  <dependency id="165">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="51"/>  
+  </dependency>  
+  <dependency id="166">    
+    <bendpoint x="2436" y="464"/>    
+    <bendpoint x="2436" y="837"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="48"/>  
+  </dependency>  
+  <dependency id="167">    
+    <bendpoint x="5618" y="464"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="45"/>  
+  </dependency>  
+  <dependency id="168">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="49"/>  
+  </dependency>  
+  <dependency id="169">    
+    <bendpoint x="2394" y="464"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="51"/>  
+  </dependency>  
+  <dependency id="170">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="46"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="true" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
