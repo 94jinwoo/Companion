@@ -186,7 +186,7 @@
                         </tr>
                     </tbody>
                 </table>
-                  <a href="#"><span> << 쇼핑계속하기</span></a>
+                  <a href="#"><span></span></a>
                   <div class="coast clearfix">
                     <ul class="coast-group float--right">
                         <li>총 <%=order_detail_quantity %>  개의 상품금액<br/>${orderProductPurchaseOne.product_price * order_detail_quantity }원</li>
