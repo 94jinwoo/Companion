@@ -216,12 +216,17 @@ $("#back_btn").click(function(){
 $("#ask_btn").click(function(){
 	var question_title=$("#ask_title").val();
 	var question_content=$("#ask_product").val();
+	var question_type_id=$("#question_type_id").val();
 	if(question_title=="") {
 		alert("입력된 제목이 없습니다.");
 		return;
 	}
 	if(question_content==""){
 		alert("입력된 내용이 없습니다.");
+		return;
+	}
+	if(question_type_id==""){
+		alert("선택한 문의유형이 없습니다.");
 		return;
 	}
 	document.myAskProduct.submit();
