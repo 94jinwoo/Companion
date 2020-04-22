@@ -11,6 +11,7 @@ public interface ProductDao {
 	ProductVo ProductDetailOne(int product_id) throws SQLException;
 	List<ProductVo> ProductCategorySelect(int category_id) throws SQLException;
 	List<ProductVo> productRecommendList(int product_id) throws SQLException;
+	List<ProductVo> productRecommendList2(int product_id) throws SQLException;
 	
 	// total
 	int count(Pagination_C pagination_c) throws Exception;

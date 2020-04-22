@@ -37,13 +37,10 @@ public class OrderCartController {
 	 		MemberVo member = (MemberVo)session.getAttribute("memberVo");
 	 		orderVo.setMember_id(member.getMember_id());
 		
-		
 		orderService.insertCart(model,orderVo);
 		
 		 return "redirect:productDetail?idx="+orderVo.getProduct_id(); 
 	};
-	
-	
 	
 	//장바구니 주문.
 	@RequestMapping(value="/order/orderCartPurchase",method=RequestMethod.POST)

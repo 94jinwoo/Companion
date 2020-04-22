@@ -32,9 +32,9 @@
 	  	select distinct product.*,(select count(*) from 
 	  	`like` where product.product_id=`like`.product_id) as like_id from product left join`like` 
 	  	on product.product_id=`like`.product_id where product.category_id=#{category_id};
-  	</select> <!-- listpage도 그대로 가져와야함. -->
+  	</select> 
   	
-<!-- 페이징 START -->
+
 	<!-- 상품 총 개수 -->
 	<select id="count" resultType="int">
 		select count(*) as listCnt from `product` p, `category` c 
@@ -81,22 +81,18 @@
 						ORDER BY p.product_price DESC limit #{startList},#{listSize}
 		</if>
 	</select>
-<!-- 페이징 END -->
-	
-<!-- 	이용후기 
-	<select id="ProductReview" resultType="productBean" parameterType="int">
-		select * from `article` where board_id=3 and product_id=#{value};	
-	</select> -->
-	
 	<!-- 선택 상품의 추천수가 0일 경우 랜덤 상품이 추천 됨.  -->
 	<!-- 추천상품목록 구현  -->
 	<select id="ProductRecommendList" resultType="productBean" parameterType="int">
-		(select distinct order_detail.product_id,product.product_name,product.product_image from `order_detail`,product
+		 (select distinct order_detail.product_id,product.product_name,product.product_image from `order_detail`,product
  			where product.product_id = order_detail.product_id
  			and
 			order_id=(select order_id from `order`
  			where member_id=(select member_id from `like` where product_id=#{product_id} is not null limit 1))
- 			 is not null order by rand() limit 5);
+ 			 is not null order by rand() limit 5); 
+	</select>
+	<select id="ProductRecommendList2" resultType="productBean" parameterType="int">
+		 select distinct product_id,product_name,product_image from product order by rand() limit 5;
 	</select>
 	
 	
