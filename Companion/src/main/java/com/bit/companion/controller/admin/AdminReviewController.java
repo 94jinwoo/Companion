@@ -47,7 +47,6 @@ public class AdminReviewController {
 	@RequestMapping(value = "review_delete", method = RequestMethod.POST)
 	public String reviewDelete(@ModelAttribute AdminArticleVo bean){
 		logger.info("post review delete");
-		System.out.println(bean.toString());
 		adminReviewService.delete(bean);
 		return "redirect:/admin/review_list";
 	}

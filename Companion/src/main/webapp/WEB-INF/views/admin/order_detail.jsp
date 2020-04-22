@@ -358,8 +358,6 @@
 			</table>
 			</div>
 			<!-- .layB [end] -->
-			
-			
 			</section>
 			<!-- .section [end] -->
 		<!-- Footer  -->
@@ -368,79 +366,84 @@
 	<!-- #content [end] -->
 </div>
 <!-- .wrapper [end] -->
-   	<!-- jQuery -->
-    <script src="${root }js/jquery-1.12.4.js"></script>
-    <!-- Popper.JS -->
-    <script src="${root }js/bootstrap/popper.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="${root }js/bootstrap/bootstrap.js"></script>
-    <!-- MAIN JS -->
-    <script src="${root }js/main.js"></script>
-    <script type="text/javascript">
-    	var formObj = $("form[role='form']");
-    	$('#btn-release').click(function(){
-    		var con = confirm('출고요청을 하시겠습니까?');
-    		if(con){
-    			formObj.attr('action','${root}admin/order_release');
-    			formObj.submit();
-    		} else {
-    			return false;
-    		}
-    	});
-    	$('#btn-releaseDone').click(function(){
-    		var con = confirm('출고완료를 하시겠습니까?');
-    		if(con){
-    			formObj.attr('action','${root}admin/release_done');
-    			formObj.submit();
-    		} else {
-    			return false;
-    		}
-    	});
-    	$('#btn-deliveryDone').click(function(){
-    		var con = confirm('배달완료를 하시겠습니까?');
-    		if(con){
-    			formObj.attr('action','${root}admin/delivery_done');
-    			formObj.submit();
-    		} else {
-    			return false;
-    		}
-    	});
-    	$('#btn-purchaseConfirm').click(function(){
-    		var con = confirm('구매확정을 하시겠습니까?');
-    		if(con){
-    			formObj.attr('action','${root}admin/purchase_confirm');
-    			formObj.submit();
-    		} else {
-    			return false;
-    		}
-    	});
-    	$('#btn-exchange').click(function(){
-    		var con = confirm('교환하시겠습니까?');
-    		if(con){
-    			formObj.attr('action','${root}admin/order_exchange');
-    			formObj.submit();
-    		} else {
-    			return false;
-    		}
-    	});
-    	$('#btn-return').click(function(){
-    		var con = confirm('반품하시겠습니까?');
-    		if(con){
-    			formObj.attr('action','${root}admin/order_return');
-    			formObj.submit();
-    		} else {
-    			return false;
-    		}
-    	});
-    	$('#btn-cancel').click(function(){
-    		var con = confirm('주문취소를 하시겠습니까?');
-    		if(con){
-    			formObj.attr('action','${root}admin/order_cancel');
-    			formObj.submit();
-    		} else {
-    			return false;
-    		}
-    	});
-    </script>
+
+
+
+<!-- jQuery -->
+<script src="${root }js/jquery-1.12.4.js"></script>
+<!-- Popper.JS -->
+<script src="${root }js/bootstrap/popper.js"></script>
+<!-- Bootstrap JS -->
+<script src="${root }js/bootstrap/bootstrap.js"></script>
+<!-- MAIN JS -->
+<script src="${root }js/main.js"></script>
+
+<script type="text/javascript">
+var formObj = $("form[role='form']");
+$('#btn-release').click(function(){
+	var con = confirm('출고요청을 하시겠습니까?');
+	if(con){
+		formObj.attr('action','${root}admin/order_release');
+		formObj.submit();
+	} else {
+		return false;
+	}
+});
+$('#btn-releaseDone').click(function(){
+	var con = confirm('출고완료를 하시겠습니까?');
+	if(con){
+		formObj.attr('action','${root}admin/release_done');
+		formObj.submit();
+	} else {
+		return false;
+	}
+});
+$('#btn-deliveryDone').click(function(){
+	var con = confirm('배달완료를 하시겠습니까?');
+	if(con){
+		formObj.attr('action','${root}admin/delivery_done');
+		formObj.submit();
+	} else {
+		return false;
+	}
+});
+$('#btn-purchaseConfirm').click(function(){
+	var con = confirm('구매확정을 하시겠습니까?');
+	if(con){
+		formObj.attr('action','${root}admin/purchase_confirm');
+		formObj.submit();
+	} else {
+		return false;
+	}
+});
+$('#btn-exchange').click(function(){
+	var con = confirm('교환하시겠습니까?');
+	if(con){
+		formObj.attr('action','${root}admin/order_exchange');
+		formObj.submit();
+	} else {
+		return false;
+	}
+});
+$('#btn-return').click(function(){
+	var con = confirm('반품하시겠습니까?');
+	if(con){
+		formObj.attr('action','${root}admin/order_return');
+		formObj.submit();
+	} else {
+		return false;
+	}
+});
+$('#btn-cancel').click(function(){
+	var con = confirm('주문취소를 하시겠습니까?');
+	if(con){
+		formObj.attr('action','${root}admin/order_cancel');
+		formObj.submit();
+	} else {
+		return false;
+	}
+});
+</script>
+
 </body>
 </html>

@@ -159,14 +159,13 @@
 <script src="${root }js/main.js"></script>
 
 <script type="text/javascript">
-
 // .input--text text 전체선택
 $(document).ready(function(){
 	$(".input--text").on("click", function(){
 		$(this).select();
 	});
 });	
-<!-- 이미지 등록시 출력 -->	
+// 이미지 업로드 시 썸네일 출력
 $('#article_image').change(function(){
 	if(this.files&&this.files[0]){
 		var reader = new FileReader;
@@ -188,7 +187,7 @@ $("#back_Btn").click(function(){
 		+"&keyword=${search.keyword}"; 
 });
 
-//validation
+// validation
 function validation_submit() {
 	if($("#article_title").val() == ""){
 		alert('제목을 입력해주세요.');
