@@ -143,7 +143,7 @@ $("#modify_Btn").click(function(){
 		+"&keyword=${search.keyword}"; 
 });  
 
-// 목록버튼
+// 목록 버튼
 $("#list_Btn").click(function(){
 	location.href = ${root}+"/admin/event_list?page=${search.page}"
 		+"&range=${search.range}"

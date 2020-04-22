@@ -28,7 +28,6 @@ public class AdminReservationController {
 	@RequestMapping(value="reservation_list", method=RequestMethod.GET)
 	public String reservationList(Model model) {
 		log.info("get reservation list");
-		
 		adminReservationService.list(model);
 		return "admin/reservation_list";
 	}
@@ -37,7 +36,6 @@ public class AdminReservationController {
 	@RequestMapping(value="reservation_detail", method = RequestMethod.GET)
 	public String reservationDetail(Model model, @RequestParam int reserve_id) {
 		log.info("get reservation detail");
-		
 		adminReservationService.detail(model, reserve_id);
 		return "admin/reservation_detail";
 	}
@@ -46,20 +44,16 @@ public class AdminReservationController {
 	@RequestMapping(value="reservation_edit", method = RequestMethod.GET)
 	public String reservationEdit(Model model, @RequestParam int reserve_id) {
 		log.info("get reservation edit");
-		
 		adminReservationService.detail(model, reserve_id);
 		return "admin/reservation_edit";
 	}
 	
 	// reservation edit - post
-		@RequestMapping(value="reservation_edit", method = RequestMethod.POST)
-		public String reservationDetail(@ModelAttribute AdminReservationVo bean) {
-			log.info("post reservation state edit");
-			System.out.println(bean.getReserve_id());
-			adminReservationService.update(bean);
-			System.out.println(bean.getReserve_id());
-			return "redirect:/admin/reservation_detail?reserve_id="+bean.getReserve_id();
-		}
-
+	@RequestMapping(value="reservation_edit", method = RequestMethod.POST)
+	public String reservationDetail(@ModelAttribute AdminReservationVo bean) {
+		log.info("post reservation state edit");
+		adminReservationService.update(bean);
+		return "redirect:/admin/reservation_detail?reserve_id="+bean.getReserve_id();
+	}
 	
 }

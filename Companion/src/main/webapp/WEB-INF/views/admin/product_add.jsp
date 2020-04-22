@@ -194,7 +194,7 @@ $(document).ready(function () {
 	});
 });
 
-//취소 버튼
+// 취소 버튼
 $("#back_Btn").click(function(){
 	history.back();
 });

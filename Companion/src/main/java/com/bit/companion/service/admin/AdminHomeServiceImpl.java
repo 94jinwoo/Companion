@@ -24,7 +24,7 @@ public class AdminHomeServiceImpl implements AdminHomeService {
 	
 	@Override
 	public void list(Model model) {
-		// 날짜 객체
+		// date object
 		ChartDate chartDate = new ChartDate();
 		chartDate.chartDate();
 		model.addAttribute("chartDate", chartDate);
@@ -34,7 +34,7 @@ public class AdminHomeServiceImpl implements AdminHomeService {
 			List<ProductVo> list = adminHomeDao.selectProduct(chartDate);
 			model.addAttribute("list", list);
 			
-			// 일별 매출
+			// sales(day)
 			AdminPaymentVo todaySum = adminHomeDao.selectToday(chartDate);
 			AdminPaymentVo today_1Sum = adminHomeDao.selectToday_1(chartDate);
 			AdminPaymentVo today_2Sum = adminHomeDao.selectToday_2(chartDate);
@@ -50,7 +50,7 @@ public class AdminHomeServiceImpl implements AdminHomeService {
 			model.addAttribute("today_5Sum",today_5Sum);
 			model.addAttribute("today_6Sum",today_6Sum);
 			
-			// 월별 매출
+			// sales(month)
 			AdminPaymentVo monthSum = adminHomeDao.selectMonth(chartDate);
 			AdminPaymentVo month_1Sum = adminHomeDao.selectMonth_1(chartDate);
 			AdminPaymentVo month_2Sum = adminHomeDao.selectMonth_2(chartDate);
