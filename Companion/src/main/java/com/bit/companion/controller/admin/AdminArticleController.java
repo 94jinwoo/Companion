@@ -1,20 +1,10 @@
 package com.bit.companion.controller.admin;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.util.Map;
-import java.util.UUID;
 
 import javax.annotation.Resource;
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,12 +38,12 @@ public class AdminArticleController {
 	@Autowired
 	AdminArticleService adminNoticeService;
 
-	// 페이지 name
+	// board name
 	public String checkBoardName(String url) {
 		int idx=url.indexOf("_");
 		return url.substring(7, idx);
 	}
-	// 게시판 id 
+	// board id 
 	public int checkBoardId(String boardName) {
 		if(boardName.contains("notice")) {
 			return 0;
@@ -125,7 +115,7 @@ public class AdminArticleController {
 				bean.setArticle_image(File.separator+"imgUpload"+ymdPath+File.separator+fileName);
 				bean.setArticle_thumb(File.separator+"imgUpload"+ymdPath+File.separator+"s"+File.separator+"s_"+fileName);
 			} else {
-				//fileName = File.separator + "images" + File.separator + "none.png";
+				// null img
 				fileName = "/images/null.png";
 				bean.setArticle_image(fileName);
 				bean.setArticle_thumb(fileName);
@@ -136,6 +126,7 @@ public class AdminArticleController {
 		logger.info("post "+board_name+" add");
 		return "redirect:"+board_name+"_list";
 	}
+	
 	// article edit - get
 	@RequestMapping(value = {"notice_edit", "event_edit", "faq_edit"}, method = RequestMethod.GET)
 	public String noticeEdit(Model model, @ModelAttribute AdminArticleVo bean, @ModelAttribute("search") Search search, HttpServletRequest req) {
@@ -159,13 +150,13 @@ public class AdminArticleController {
 		
 		if(board_id != 2) {
 			
-		// 새로운 파일이 등록되었는지 확인
+		// new file check
 		 if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
-		  // 기존 파일을 삭제
+		  // old file delete
 		  new File(uploadPath + req.getParameter("article_image")).delete();
 		  new File(uploadPath + req.getParameter("article_thumb")).delete();
 		  
-		  // 새로 첨부한 파일을 등록
+		  // new file upload
 		  String imgUploadPath = uploadPath + File.separator + "imgUpload";
 		  String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
 		  String fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
@@ -173,8 +164,8 @@ public class AdminArticleController {
 		  bean.setArticle_image(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
 		  bean.setArticle_thumb(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
 		  
-		 } else {  // 새로운 파일이 등록되지 않았다면
-		  // 기존 이미지를 그대로 사용
+		 } else {  
+		  // old file keep
 		  bean.setArticle_image(req.getParameter("article_image"));
 		  bean.setArticle_thumb(req.getParameter("article_thumb"));
 		 }

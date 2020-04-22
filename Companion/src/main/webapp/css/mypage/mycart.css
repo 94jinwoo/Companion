@@ -177,8 +177,8 @@ ul{
 }
 
 .imgBox #proImg{
-	width:100%;
-	heigth:100%;
+	width:80px;
+	height:80px;
 }
 .section .coast{
     border: 1.5px solid rgb(112, 112, 112);

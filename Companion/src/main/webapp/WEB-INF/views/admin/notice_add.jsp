@@ -139,7 +139,7 @@
 <script src="${root }js/main.js"></script>
 
 <script>
-<!-- 이미지 등록시 출력 -->	
+// 이미지 업로드 시 썸네일 출력
 $('#article_image').change(function(){
 	if(this.files&&this.files[0]){
 		var reader = new FileReader;
@@ -155,7 +155,7 @@ $("#back_Btn").click(function(){
 	history.back();
 });
 
-//validation
+// validation
 function validation_submit() {
 	if($("#article_title").val() == ""){
 		alert('제목을 입력해주세요.');

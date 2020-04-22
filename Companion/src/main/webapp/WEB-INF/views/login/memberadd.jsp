@@ -75,7 +75,6 @@
 				<section class="section">
 				<!--  test  sdflkjskdlfdklsjf -->
 				<form name="memberadd" method="post" autocomplete="off" class="form-join needs-validation" novalidate>
-                <img class="mb-4" src="..." alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">회원가입</h1>
                 <!-- ID -->
                 <div class="mb-3">
@@ -409,6 +408,7 @@
 					alert("비밀번호 양식이 올바르지 않습니다.\n8자이상 / 영문.숫자.특수문자 조합");
 					return;
 				}
+				
 				if(!regPhone.test(member_phone)){
 			   		  alert('잘못된 휴대폰 번호입니다.\n-를 뺴고 입력해 주세요.');
 			   		  return;    
@@ -432,8 +432,18 @@
 				if(member_id==""){
 					alert("아이디를 입력해 주시기 바랍니다.");
 					return;
-				}else{
-					$.ajax({
+				}
+				var checkID=member_id.match(".*[ㄱ-ㅎㅏ-ㅣ가-힣]+.*");
+				var checkID2=verifyPassword(member_id,{
+					length : [8,20],
+					alpha : 1,
+					numeric : 1
+				});
+				if(checkID || (!checkID2)){
+					alert('아이디 양식이 올바르지 않습니다.\n8자이상 / 영문,숫자 조합');
+					return;
+				}
+				$.ajax({
 						type : "POST",
 						url : "/companion/login/idchk",
 						data : userData,
@@ -449,7 +459,6 @@
 						
 					});
 					document.getElementById("id_chk_value").value="2";
-				}
 			});
 			
 			/* email 중복체크버튼 */

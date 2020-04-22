@@ -97,7 +97,11 @@ public class MypageController {
 			List<MyPurchaseDetailVo> list=(List) mypageService.purchaseDetailList(order_id,order_date,order_state_member,order_state_id);
 			myPurchaseDetailList.addAll(list);
 		}
-		session.setAttribute("myPurchaseDetail", myPurchaseDetailList);
+		if(myPurchaseDetailList.size()!=0) {
+			session.setAttribute("myPurchaseDetail", myPurchaseDetailList);
+		}else {
+			session.setAttribute("myPurchaseDetail", null);
+		}
 		return "mypage/myPurchaseList";
 	}
 	
@@ -309,6 +313,9 @@ public class MypageController {
 	@RequestMapping(value="/cartPurchase")
 	public String myCartOrderList(HttpSession session) {
 		List<MypageCartVo> orderList=(List) session.getAttribute("cartOrderList");
+		if(orderList==null) {
+			return "redirect:/mycart";
+		}
 		MypageCartVo bean=new MypageCartVo();
 		int sum=0;
 		for(int i=0; i<orderList.size();i++) {
@@ -358,6 +365,9 @@ public class MypageController {
 	@RequestMapping(value="/cartOrderSuccess")
 	public String myCartOrderSuccess(HttpSession session) {
 		List<MyCartOrderVo> orderSuccessList=(List)session.getAttribute("cartOrderSuccessList");
+		if(orderSuccessList==null) {
+			return "mypage/cartOrderSuccess";
+		}
 		/* 결제 및 주문시간 */
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date time=new Date();

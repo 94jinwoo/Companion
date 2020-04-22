@@ -75,6 +75,7 @@
 				</thead>
 				<tbody>
 				<c:forEach items="${list }" var="bean">
+				
 					<tr>
 						<td><a href="${root }admin/order_detail?order_id=${bean.order_id}">${bean.order_id }</a></td>
 						<td>
@@ -115,7 +116,7 @@
 							</c:choose>
 						</td>
 						<td><fmt:formatNumber value="${bean.order_amount }" pattern="###,###,###"/></td>
-						<td>${bean.member_name }(${bean.member_id })</td>
+						<td><a href="${root }admin/order_detail?order_id=${bean.order_id}">${bean.member_name }(${bean.member_id })</a></td>
 						<td>${bean.order_name }</td>
 						<td>${bean.order_phone }</td>
 						<td>${bean.order_date }</td>
@@ -133,67 +134,48 @@
 </div>
 <!-- .wrapper [end] -->
 
-   	<!-- jQuery -->
-    <script src="${root }js/jquery-1.12.4.js"></script>
-    <!-- Popper.JS -->
-    <script src="${root }js/bootstrap/popper.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="${root }js/bootstrap/bootstrap.js"></script>
-    <!-- MAIN JS -->
-    <script src="${root }js/main.js"></script>
-    <!-- Data Table JS -->
-	<script type="text/javascript" src="${root }DataTables/datatables.min.js"></script>
-	<script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.11/js/dataTables.checkboxes.min.js"></script>
-    <!-- Checkbox -->
-    <script type="text/javascript">
-    	$(document).ready(function(){
-			
-    		// DataTable
-    		var chkbox = $('#dataTable').DataTable({
-    			"language": {
-    				"emptyTable": "데이터가 없습니다.",
-    				"lengthMenu": "페이지당 _MENU_ 개씩 보기",
-    				"info": "현재 _START_ - _END_ / _TOTAL_건",
-    				"infoEmpty": "데이터 없음",
-    				"infoFiltered": "( _MAX_건의 데이터에서 필터링됨 )",
-    				"search": "검색: ",
-    				"zeroRecords": "일치하는 데이터가 없습니다.",
-    				"loadingRecords": "로딩중...",
-    				"processing":     "잠시만 기다려 주세요...",
-    				"paginate": {
-    					"next": "다음",
-    					"previous": "이전"
-    				}
-    			},
-    			"searching" : false,
-    			"order" : [[0,'desc']],
-    			"lengthMenu" : [
-    				10,20,30,40,50
-    			],
-    			"pageLength" : 10,
-    			"columnDefs" : [
-    				{ "orderable" : false, "targets" : 6}
-    			]
-    		});
-			/*
-     		// 체크박스 전체선택, 전체해제
-    		$('#check-all').click(function(){
-    			if($('#check-all').is(":checked")){
-	    			$('.chk').prop('checked',true);
-    			}else{
-    				$('.chk').prop('checked',false);
-    			}
-    		});
-    		// 한개의 체크박스 선택 해제 시 전체선택 체크박스도 해제
-    		$('.chk').click(function(){
-    			if($('input[name="chk"]:checked').length == 167){  '167' 자리에 현재 페이지 게시물 수 넣어야함
-    				$('#check-all').prop('checked',true);
-    			}else{
-    				$('#check-all').prop('checked',false);
-    			}
-    		});
-    		*/
-    	});
-    </script>
+<!-- jQuery -->
+<script src="${root }js/jquery-1.12.4.js"></script>
+<!-- Popper.JS -->
+<script src="${root }js/bootstrap/popper.js"></script>
+<!-- Bootstrap JS -->
+<script src="${root }js/bootstrap/bootstrap.js"></script>
+<!-- MAIN JS -->
+<script src="${root }js/main.js"></script>
+<!-- Data Table JS -->
+<script type="text/javascript" src="${root }DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.11/js/dataTables.checkboxes.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	// DataTable
+	var chkbox = $('#dataTable').DataTable({
+		"language": {
+			"emptyTable": "데이터가 없습니다.",
+			"lengthMenu": "페이지당 _MENU_ 개씩 보기",
+			"info": "현재 _START_ - _END_ / _TOTAL_건",
+			"infoEmpty": "데이터 없음",
+			"infoFiltered": "( _MAX_건의 데이터에서 필터링됨 )",
+			"search": "검색: ",
+			"zeroRecords": "일치하는 데이터가 없습니다.",
+			"loadingRecords": "로딩중...",
+			"processing":     "잠시만 기다려 주세요...",
+			"paginate": {
+				"next": "다음",
+				"previous": "이전"
+			}
+		},
+		"searching" : false,
+		"order" : [[0,'desc']],
+		"lengthMenu" : [
+			10,20,30,40,50
+		],
+		"pageLength" : 10,
+		"columnDefs" : [
+			{ "orderable" : false, "targets" : 6}
+		]
+	});
+});
+ </script>
 </body>
 </html>

@@ -144,8 +144,9 @@
 <script src="${root }js/bootstrap/bootstrap.js"></script>
 <!-- MAIN JS -->
 <script src="${root }js/main.js"></script>
+
 <script type="text/javascript">
-//검색 버튼
+// 검색 버튼
 $("#search_Btn").click(function(e){
 	e.preventDefault();
 	var url = "${getList}";

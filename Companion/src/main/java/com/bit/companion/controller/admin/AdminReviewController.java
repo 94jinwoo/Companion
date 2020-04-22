@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bit.companion.model.entity.admin.AdminArticleVo;
+import com.bit.companion.model.entity.admin.AdminQuestionVo;
 import com.bit.companion.service.admin.AdminReviewService;
 
 @Controller
@@ -40,5 +41,13 @@ public class AdminReviewController {
 		logger.info("get review detail");
 		adminReviewService.detail(model, bean);
 		return "admin/review_detail";
+	}
+	
+	//review delete - post
+	@RequestMapping(value = "review_delete", method = RequestMethod.POST)
+	public String reviewDelete(@ModelAttribute AdminArticleVo bean){
+		logger.info("post review delete");
+		adminReviewService.delete(bean);
+		return "redirect:/admin/review_list";
 	}
 }

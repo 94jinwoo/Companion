@@ -91,71 +91,78 @@
 	            <section class="section">
 				<div class="main--title">
 					<h1>나의 주문내역</h1>
-	       		</div>	
-	            	<c:forEach items="${myPurchaseDetail }" var="bean">
-					<div class="topB clearfix">
-						<div class="float--left">
-							<label for="date">&nbsp;[주문일자]&nbsp;</label>
-							<span>${bean.order_date }</span>
+	       		</div>
+	       		<c:choose>
+	       			<c:when test="${myPurchaseDetail != null }">
+		            	<c:forEach items="${myPurchaseDetail }" var="bean">
+						<div class="topB clearfix">
+							<div class="float--left">
+								<label for="date">&nbsp;[주문일자]&nbsp;</label>
+								<span>${bean.order_date }</span>
+							</div>
+							<div class="float--right">
+								<a href="${root }purchaseDetail?o=${bean.order_id }" style="text-decoration:none" class="cBtn">주문상세보기</a>
+							</div>
 						</div>
-						<div class="float--right">
-							<a href="${root }purchaseDetail?o=${bean.order_id }" style="text-decoration:none" class="cBtn">주문상세보기</a>
+						<div class="bigB clearfix">	
+							<div class="imgBox float--left">
+								<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
+									<img id="proImg" src="${bean.product_thumb }" alt="Img"/>
+								</a>
+							</div>
+							<div class="contentBox float--right">
+								<table class="table">
+									<thead></thead>
+									<tbody>
+										<tr>
+										<th>상품이름</th>
+										<td id="tx">
+											<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
+												${bean.product_name }
+											</a>
+										</td>
+										</tr>
+										<tr>
+										<th>옵션</th>
+										<td id="tx">${bean.order_detail_option }</td>
+										</tr>
+										<tr>
+										<th>가격</th>
+										<td id="tx">${bean.order_detail_price }원 / ${bean.order_detail_quantity }개</td>
+										</tr>
+										<tr>
+										<th>배송상태</th>
+										<td id="tx">${bean.order_state_member }</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="btnBox float--right">
+								<a href="${root }askProduct?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">문의하기</a>
+								<a href="${root }askExchange?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">교환신청</a>
+								<a href="${root }askReturn?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">반품신청</a>
+								<c:choose>
+									<c:when test="${bean.order_state_id=='7' }">
+										<a href="${root }myReview?a=${bean.product_id }" style="text-decoration:none" class="cBtn innerBtn">후기작성</a>
+									</c:when>
+									<c:otherwise>
+										<button onclick="confirmPurchase(${bean.order_id})" class="cBtn innerBtn">구매확정</button>
+									</c:otherwise>
+								</c:choose>
+							</div>
 						</div>
-					</div>
-					<div class="bigB clearfix">	
-						<div class="imgBox float--left">
-							<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
-								<img id="proImg" src="${bean.product_thumb }" alt="Img"/>
-							</a>
-						</div>
-						<div class="contentBox float--right">
-							<table class="table">
-								<thead></thead>
-								<tbody>
-									<tr>
-									<th>상품이름</th>
-									<td id="tx">
-										<a href="${root }order/productDetail?idx=${bean.product_id }" style="text-decoration:none">
-											${bean.product_name }
-										</a>
-									</td>
-									</tr>
-									<tr>
-									<th>옵션</th>
-									<td id="tx">${bean.order_detail_option }</td>
-									</tr>
-									<tr>
-									<th>가격</th>
-									<td id="tx">${bean.order_detail_price }원 / ${bean.order_detail_quantity }개</td>
-									</tr>
-									<tr>
-									<th>배송상태</th>
-									<td id="tx">${bean.order_state_member }</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="btnBox float--right">
-							<a href="${root }askProduct?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">문의하기</a>
-							<a href="${root }askExchange?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">교환신청</a>
-							<a href="${root }askReturn?a=${bean.product_id }&b=${bean.order_id }" style="text-decoration:none" class="cBtn innerBtn">반품신청</a>
-							<c:choose>
-								<c:when test="${bean.order_state_id=='7' }">
-									<a href="${root }myReview?a=${bean.product_id }" style="text-decoration:none" class="cBtn innerBtn">후기작성</a>
-								</c:when>
-								<c:otherwise>
-									<button onclick="confirmPurchase(${bean.order_id})" class="cBtn innerBtn">구매확정</button>
-								</c:otherwise>
-							</c:choose>
-						</div>
-					</div>
-	            	</c:forEach>
+		            	</c:forEach>
+	       			</c:when>
+	       			<c:otherwise>
+	       				<div class="empty"><span>주문 내역이 없습니다.</span></div>
+	       			</c:otherwise>
+	       		</c:choose>	
 	            </section>
 			</div>
 			
         <!-- Footer  -->
 			<jsp:include page="../common/footer.jsp" />
-			<!-- Footer end -->
+		<!-- Footer end -->
 
 		</div>
 	</div>

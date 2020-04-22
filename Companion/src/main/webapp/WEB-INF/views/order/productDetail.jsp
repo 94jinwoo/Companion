@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page import="java.util.*" %>
 <c:url value="/" var="root"></c:url>
 <!DOCTYPE html>
@@ -135,11 +136,11 @@
 									<select name="selectBox" id="selectBox"
 										class="form-control col-sm-8"
 										onchange="getSelectValue(this.form);">
-										<option value="옵션 1">옵션1</option>
-										<option value="옵션 2">옵션2</option>
-										<option value="옵션 3">옵션3</option>
-										<option value="옵션 4">옵션4</option>
-										<option value="옵션 5">옵션5</option>
+										<option value="${productDetailOne.product_option1 }">옵션1 : ${productDetailOne.product_option1 }</option>
+										<option value="${productDetailOne.product_option2 }">옵션2 : ${productDetailOne.product_option2 }</option>
+										<option value="${productDetailOne.product_option3 }">옵션3 : ${productDetailOne.product_option3 }</option>
+										<option value="${productDetailOne.product_option4 }">옵션4 : ${productDetailOne.product_option4 }</option>
+										<option value="${productDetailOne.product_option5 }">옵션5 : ${productDetailOne.product_option5 }</option>
 									</select> <input type="hidden" name="product_option"> <input
 										type="hidden" name="optionValue">
 
@@ -170,7 +171,7 @@
 
 								</div>
 								<div class="col-sm-4 title">가격</div>
-								<div class="col-sm-8">${productDetailOne.product_price }</div>
+								<div class="col-sm-8"><fmt:formatNumber value="${productDetailOne.product_price}" pattern="###,###,###"/>원</div>
 								<!-- btn group start-->
 								<div class="btn--group">
 									<!-- 구매 로그인 세션 검사 -->
@@ -246,8 +247,8 @@
 										</c:when>
 										<c:when test="${memberVo.member_id==null }">
 											<button id="noneLgnLike_btn" type="button"
-												class="btn btn-outline-danger" data-toggle="modal"
-												data-target=".bd-example-modal-sm">좋아요! (
+												class="btn btn-outline-danger btn-lg" data-toggle="modal"
+												data-target=".bd-example-modal-sm">♥ (
 												${productDetailOne.like_id } )</button>
 										</c:when>
 									</c:choose>
@@ -616,10 +617,10 @@
 							clickNum = clickNum + 1;
 
 							if (result == 0) {
-								alert('좋아요! 버튼 클릭');
+								alert('추천되었습니다.');
 								location.reload();
 							} else {
-								alert('좋아요!가 취소되었습니다!');
+								alert('추천이 취소되었습니다!');
 								location.reload();
 							}
 						}

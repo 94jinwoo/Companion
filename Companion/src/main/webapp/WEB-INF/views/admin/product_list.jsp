@@ -75,7 +75,7 @@
 			<div class="sub-group clearfix">
 			<a class="btn btn-dark insertbtn float--left" role="button" href="${root }admin/product_add">상품등록</a>
 			</div>
-				<table id="dataTable" class="table table-hover table-bordered">
+				<table id="dataTable" class="table table-hover table-bordered" style="table-layout:fixed">
 					<thead>
 						<tr>
 							<th>카테고리</th>
@@ -109,7 +109,7 @@
 						<td>
 							<img src="<spring:url value='${bean.product_thumb }'/>" alt="Img"/>
 						</td>
-						<td>
+						<td style="text-overflow:ellipsis; overflow:hidden; ">
 							<div>
 							<a href="${root }admin/product_detail?product_id=${bean.product_id}">${bean.product_name}</a>
 							</div>
@@ -191,6 +191,17 @@ $(document).ready(function() {
 		],
 		"lengthMenu" : [
 			10,20,30,40,50
+		],
+		"columns" : [ 
+			{ "width" : "35px" },
+			{ "width" : "25px" }, 
+			{ "width" : "200px" }, 
+			{ "width" : "20px" },
+			{ "width" : "20px" },
+			{ "width" : "35px" },
+			{ "width" : "20px" },
+			{ "width" : "20px" },
+			{ "width" : "35px" }
 		],
 		"pageLength" : 20,
 		"columnDefs" : [

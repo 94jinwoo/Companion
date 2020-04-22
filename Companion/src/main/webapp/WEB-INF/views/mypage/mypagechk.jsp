@@ -171,7 +171,7 @@
 				</div>
 				<!-- .mytop [end] -->
 				<div class="maincontent">
-					<div class="empty">
+					<div class="emptyT">
 						<h2>최근 주문 내역</h2>
 						<table class="table table-bordered table_layout table-hover" style="width:100%">
 						<colgroup>
