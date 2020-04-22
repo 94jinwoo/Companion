@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>주문 결정 페이지</title>
+	<title>주문 내역 상세</title>
 
 	<%-- <!-- Bootstrap CSS CDN -->
 	<link rel="stylesheet" href="${root}css/bootstrap/bootstrap.css">
