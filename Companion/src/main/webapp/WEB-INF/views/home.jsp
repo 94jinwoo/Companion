@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:url value="/" var="root"></c:url>
+<% System.out.println(request.getSession().getServletContext().getRealPath("imgUpload")); %>
 <!DOCTYPE html>
 <html>
 
@@ -197,7 +198,7 @@
                                 <p class="lead my-3">신성한 사료&간식 유통기한100%책임제<br>
                                 	매일매일 찾아오는 신상용품을 만나보세요 
                                 </p>
-                                <p class="lead mb-0"><a href="${root }order/productMain?c=100&num=1" class="text-gray font-weight-bold">쇼핑몰 바로가기 ></a></p>
+                                <p class="lead mb-0"><a href="/companion/order/productMain?category_id=100&sort=date" class="text-gray font-weight-bold">쇼핑몰 바로가기 ></a></p>
                             </div>
                         </div>
                     </div>

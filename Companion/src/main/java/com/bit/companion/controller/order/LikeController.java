@@ -23,14 +23,6 @@ public class LikeController {
 	@Autowired
 	LikeService likeService;
 
-	
-	/*
-	 * @PostMapping("/order/likeTest") public @ResponseBody void
-	 * likeTestController(@RequestParam Map<String, Object> param,HttpServletRequest
-	 * request,LikeVo likeVo) { logger.info("좋아요 연습페이지");
-	 * likeService.likeInsert(param); }//LIKETEST 페이지
-	 */	 
-	  
 	  @ResponseBody
 	  @RequestMapping(value="/order/likeInsert", method = RequestMethod.POST)
 	  public int likeInsert(LikeVo likeVo,HttpSession session) throws Exception {
@@ -38,14 +30,8 @@ public class LikeController {
 		  System.out.println("likeInsertController run");
 		  logger.debug(likeVo.getMember_id());
 		  logger.debug((Integer.toString(likeVo.getProduct_id())));
-//		  MemberVo member = (MemberVo)session.getAttribute("member");
-//		  likeVo.setLike_id(member.getMember_id());
 		  result = likeService.likeInsert(likeVo);
 		  return result;
 	  }
 	  
-
-//	@RequestMapping(value="/order/likeTest")
-
-
 }

@@ -78,8 +78,6 @@ public class OrderDaoImpl implements OrderDao {
 		sqlSession.insert("order.CartDetailInsert",orderVo);
 		sqlSession.insert("order.CartPaymentInsert",orderVo);
 		return sqlSession.insert("order.CartDeliveryInsert",orderVo);
-		
-		
 	}
 	
 	

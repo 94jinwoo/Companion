@@ -434,9 +434,8 @@
 								<td><a
 									href="${root }order/productDetail?idx=${bean.product_id}">
 										<img src="${bean.product_image }"
-										width="180" height="60" class="img-fluid"
 										alt="이미지출력X" style="display: block;">
-										<p style="text-align: center;">${bean.product_name }</p>
+										<div style="text-align: center;">${bean.product_name }</div>
 								</a></td>
 							</c:forEach>
 						</tr>

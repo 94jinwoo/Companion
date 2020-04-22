@@ -41,19 +41,7 @@ public class OrderQuestionController {
 		return "order/productDetail";
 	}
 	
-	//문의하기 목록 출력.
-	//ajax에서 getJson 방식으로 매핑 주소 에서 return 하는 값을 받아 옴.
-//	@ResponseBody
-//	@RequestMapping(value="order/productDetail/ReplyList",method = RequestMethod.GET)
-//	public List<OrderQuestionVo> getReplyList(Model model, @RequestParam("idx") int product_id) throws SQLException{
-//		logger.debug("GET replyList call...");
-//		logger.debug("왜 특정 데이터만 실행?");
-//		
-//		List<OrderQuestionVo> reply = orderQuestionService.replyList(model, product_id);
-//		
-//		return reply;
-//	}
-	
+	//문의하기
 	@RequestMapping(value="order/productDetail/ReplyList",method = RequestMethod.GET)
 	public String ReplyList(Model model,@RequestParam("product_id") int product_id 
 			, @RequestParam(required = false, defaultValue = "1") int page
@@ -66,6 +54,7 @@ public class OrderQuestionController {
 		return "order/question";
 	}
 	
+	//문의상세
 	@RequestMapping(value = "order/productDetail/ReplyDetail", method = RequestMethod.GET)
 	public String ReplyDetail(Model model, @RequestParam int question_id) throws SQLException{
 		orderQuestionService.detail(model, question_id);

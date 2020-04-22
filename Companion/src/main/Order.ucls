@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="MANHATTAN">  
+  <class id="1" language="java" name="com.bit.companion.controller.order.OrderController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/order/OrderController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="355" x="3629" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.bit.companion.controller.order.LikeController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/order/LikeController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="331" x="3589" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.bit.companion.controller.order.OrderQuestionController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/order/OrderQuestionController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="383" x="1171" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.bit.companion.controller.order.ProductController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/order/ProductController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="413" x="1865" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.bit.companion.controller.order.OrderPagenation" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/order/OrderPagenation.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="279" width="154" x="1733" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.bit.companion.controller.order.OrderCartController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/order/OrderCartController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="360" x="4005" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.bit.companion.controller.order.OrderReviewController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/order/OrderReviewController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="383" x="2591" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="8" language="java" name="com.bit.companion.service.order.OrderQuestionService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/OrderQuestionService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="231" x="1753" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="9" language="java" name="com.bit.companion.service.order.OrderQuestionServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/OrderQuestionServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="231" x="1594" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="10" language="java" name="com.bit.companion.service.order.SessionService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/SessionService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="232" x="1191" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="11" language="java" name="com.bit.companion.service.order.OrderReviewServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/OrderReviewServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="241" x="2917" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="12" language="java" name="com.bit.companion.service.order.ProductService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/ProductService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="229" x="1484" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="13" language="java" name="com.bit.companion.service.order.OrderService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/OrderService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="176" x="3829" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="14" language="java" name="com.bit.companion.service.order.OrderServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/OrderServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="176" x="4066" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="com.bit.companion.service.order.LikeServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/LikeServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="147" x="3219" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="16" language="java" name="com.bit.companion.service.order.OrderReviewService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/OrderReviewService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="241" x="2369" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="17" language="java" name="com.bit.companion.service.order.SessionServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/SessionServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="232" x="318" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="18" language="java" name="com.bit.companion.service.order.LikeService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/LikeService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="81" width="147" x="3400" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="19" language="java" name="com.bit.companion.service.order.ProductServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/order/ProductServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="229" x="902" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="com.bit.companion.model.order.LikeDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/LikeDaoImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="141" x="3408" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="21" language="java" name="com.bit.companion.model.order.ProductDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/ProductDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="240" x="641" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="22" language="java" name="com.bit.companion.model.order.ProductDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/ProductDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="225" width="272" x="590" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="23" language="java" name="com.bit.companion.model.order.QuestionDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/QuestionDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="252" x="2045" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="24" language="java" name="com.bit.companion.model.order.OrderDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/OrderDaoImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="284" x="4328" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="com.bit.companion.model.order.OrderReviewDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/OrderReviewDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="153" width="246" x="2631" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="com.bit.companion.model.order.QuestionDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/QuestionDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="252" x="2318" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="27" language="java" name="com.bit.companion.model.order.OrderReviewDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/OrderReviewDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="246" x="2671" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="28" language="java" name="com.bit.companion.model.order.SessionDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/SessionDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="233" x="85" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="29" language="java" name="com.bit.companion.model.order.LikeDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/LikeDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="141" x="3219" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="30" language="java" name="com.bit.companion.model.order.OrderDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/OrderDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="220" x="4087" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="31" language="java" name="com.bit.companion.model.order.SessionDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/order/SessionDaoImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="233" x="45" y="356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="com.bit.companion.model.entity.order.SessionVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/order/SessionVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="207" width="204" x="85" y="832"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="com.bit.companion.model.entity.order.ProductVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/order/ProductVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="639" width="736" x="641" y="832"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="com.bit.companion.model.entity.order.OrderReviewVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/order/OrderReviewVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="315" width="376" x="2671" y="832"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="com.bit.companion.model.entity.order.OrderBoardVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/order/OrderBoardVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="261" width="323" x="707" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="com.bit.companion.model.entity.order.OrderQuestionVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/order/OrderQuestionVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="423" width="528" x="1764" y="832"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="com.bit.companion.model.entity.order.LikeVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/order/LikeVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="167" x="3412" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="com.bit.companion.model.entity.order.OrderVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/order/OrderVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="747" width="975" x="4026" y="832"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="39">    
+    <end type="SOURCE" refId="4" navigable="false" variant="ASSOCIATION">      
+      <attribute id="40" name="orderReviewService"/>      
+      <multiplicity id="41" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="42">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="30"/>  
+  </realization>  
+  <dependency id="43">    
+    <bendpoint x="54" y="621"/>    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="44">    
+    <end type="SOURCE" refId="15" navigable="false" variant="ASSOCIATION">      
+      <attribute id="45" name="likedao"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="1" navigable="false" variant="ASSOCIATION">      
+      <attribute id="48" name="orderService"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="50">    
+    <bendpoint x="2947" y="621"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <association id="51">    
+    <end type="SOURCE" refId="19" navigable="false" variant="ASSOCIATION">      
+      <attribute id="52" name="productDao"/>      
+      <multiplicity id="53" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="54">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="18"/>  
+  </realization>  
+  <dependency id="55">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="56">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <dependency id="57">    
+    <bendpoint x="3598" y="356"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <realization id="58">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="12"/>  
+  </realization>  
+  <dependency id="59">    
+    <bendpoint x="3577" y="356"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <association id="60">    
+    <bendpoint x="348" y="621"/>    
+    <end type="SOURCE" refId="17" navigable="false" variant="ASSOCIATION">      
+      <attribute id="61" name="result"/>      
+      <multiplicity id="62" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="63">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <dependency id="64">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <association id="65">    
+    <end type="SOURCE" refId="4" navigable="false" variant="ASSOCIATION">      
+      <attribute id="66" name="orderQuestionService"/>      
+      <multiplicity id="67" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="68">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="69">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <realization id="70">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="29"/>  
+  </realization>  
+  <dependency id="71">    
+    <bendpoint x="2640" y="621"/>    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="72">    
+    <bendpoint x="1453" y="621"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <dependency id="73">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="74">    
+    <bendpoint x="3188" y="356"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <dependency id="75">    
+    <bendpoint x="4056" y="621"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <association id="76">    
+    <bendpoint x="2600" y="356"/>    
+    <end type="SOURCE" refId="7" navigable="false" variant="ASSOCIATION">      
+      <attribute id="77" name="orderReviewService"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <end type="SOURCE" refId="2" navigable="false" variant="ASSOCIATION">      
+      <attribute id="80" name="likeService"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="82">    
+    <bendpoint x="4035" y="356"/>    
+    <bendpoint x="4035" y="621"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <association id="83">    
+    <end type="SOURCE" refId="17" navigable="false" variant="ASSOCIATION">      
+      <attribute id="84" name="sessionDao"/>      
+      <multiplicity id="85" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="86">    
+    <end type="SOURCE" refId="4" navigable="false" variant="ASSOCIATION">      
+      <attribute id="87" name="productService"/>      
+      <multiplicity id="88" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="89">    
+    <end type="SOURCE" refId="3" navigable="false" variant="ASSOCIATION">      
+      <attribute id="90" name="orderQuestionService"/>      
+      <multiplicity id="91" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="92">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="21"/>  
+  </realization>  
+  <dependency id="93">    
+    <bendpoint x="2327" y="621"/>    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <dependency id="94">    
+    <bendpoint x="911" y="621"/>    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="95">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <realization id="96">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <dependency id="97">    
+    <bendpoint x="610" y="621"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <realization id="98">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="23"/>  
+  </realization>  
+  <realization id="99">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <association id="100">    
+    <end type="SOURCE" refId="14" navigable="false" variant="ASSOCIATION">      
+      <attribute id="101" name="orderDao"/>      
+      <multiplicity id="102" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="103">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <realization id="104">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <association id="105">    
+    <end type="SOURCE" refId="11" navigable="false" variant="ASSOCIATION">      
+      <attribute id="106" name="orderReviewDao"/>      
+      <multiplicity id="107" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="108">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <dependency id="109">    
+    <bendpoint x="3798" y="621"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <realization id="110">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <association id="111">    
+    <bendpoint x="4014" y="356"/>    
+    <end type="SOURCE" refId="6" navigable="false" variant="ASSOCIATION">      
+      <attribute id="112" name="orderService"/>      
+      <multiplicity id="113" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="114">    
+    <bendpoint x="1160" y="621"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="36"/>  
+  </dependency>  
+  <association id="115">    
+    <bendpoint x="2014" y="621"/>    
+    <end type="SOURCE" refId="4" navigable="false" variant="ASSOCIATION">      
+      <attribute id="116" name="orderQuestionVo"/>      
+      <multiplicity id="117" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="118">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <association id="119">    
+    <end type="SOURCE" refId="4" navigable="false" variant="ASSOCIATION">      
+      <attribute id="120" name="sessionService"/>      
+      <multiplicity id="121" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="122">    
+    <end type="SOURCE" refId="9" navigable="false" variant="ASSOCIATION">      
+      <attribute id="123" name="questionDao"/>      
+      <multiplicity id="124" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="125">    
+    <bendpoint x="4337" y="621"/>    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <dependency id="126">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <dependency id="127">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="true" accessors="false" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
