@@ -42,6 +42,11 @@ public class ProductDaoImpl implements ProductDao{
 	public List<ProductVo> productRecommendList(int product_id) throws SQLException {
 		return sqlSession.selectList("ProductRecommendList",product_id);
 	}
+	//상품 추천 목록 출력.
+	@Override
+	public List<ProductVo> productRecommendList2(int product_id) throws SQLException {
+		return sqlSession.selectList("ProductRecommendList2",product_id);
+	}
 	
 	// total
 	@Override

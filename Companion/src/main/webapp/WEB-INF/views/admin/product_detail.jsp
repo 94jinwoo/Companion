@@ -130,7 +130,7 @@
 			  </tr>
 			   <tr>
 			  	<th><label for="product_price">상품가격</label></th>
-			    <td><span><fmt:formatNumber value="${adminProductOne.product_price}" pattern="###,###,###"/></span></td>
+			    <td><span><fmt:formatNumber value="${adminProductOne.product_price}" pattern="###,###,###"/>원</span></td>
 			  	<th><label for="product_stock">상품수량</label></th>
 			    <td><span>${adminProductOne.product_stock }</span></td>
 			  </tr>
