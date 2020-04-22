@@ -162,22 +162,22 @@
 <script src="${root }js/bootstrap/bootstrap.js"></script>
 
 <script type="text/javascript">
-	// 메뉴 토글 버튼
-	$(document).ready(function () {
-	    $('#sidebarCollapse').on('click', function () {
-	        $('#sidebar').toggleClass('active');
-	    });
-	});
-	
-	// 수정 버튼
-	$("#modify_Btn").click(function(){
-		location.href = ${root}+"admin/member_edit?member_id=${adminMemberOne.member_id}";
-	});
+// 메뉴 토글 버튼
+$(document).ready(function () {
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+});
 
-	// 목록버튼
-	$("#list_Btn").click(function(){
-		location.href = ${root}+"admin/member_list";
-	});
+// 수정 버튼
+$("#modify_Btn").click(function(){
+	location.href = ${root}+"admin/member_edit?member_id=${adminMemberOne.member_id}";
+});
+
+// 목록버튼
+$("#list_Btn").click(function(){
+	location.href = ${root}+"admin/member_list";
+});
 </script>
 </body>
 </html>

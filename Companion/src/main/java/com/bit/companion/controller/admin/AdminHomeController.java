@@ -18,12 +18,11 @@ public class AdminHomeController {
 
 	private static final Logger log=LoggerFactory.getLogger(AdminHomeController.class);
 	
+	// admin home
 	@RequestMapping(value = {"admin_home","/",""})
 	public String adminHome(Model model) {
-		log.info("run:controller:adminHome");
-		
 		adminHomeService.list(model);
-		
+		log.info("get adminHome");
 		return "admin/admin_home";
 	}
 }

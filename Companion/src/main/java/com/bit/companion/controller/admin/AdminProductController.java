@@ -37,7 +37,6 @@ public class AdminProductController {
 	@RequestMapping(value = "product_add", method = RequestMethod.GET)
 	public String productAdd(Model model) {
 		logger.info("get product add");
-	
 		adminProductService.category(model);
 		return "admin/product_add";
 	}
@@ -46,7 +45,6 @@ public class AdminProductController {
 	@RequestMapping(value = "product_list", method = RequestMethod.GET)
 	public String productList(Model model) {
 		logger.info("get product list");
-		
 		adminProductService.category(model);
 		adminProductService.list(model);
 		return "admin/product_list";
@@ -56,7 +54,6 @@ public class AdminProductController {
 	@RequestMapping(value = "product_detail", method = RequestMethod.GET)
 	public String productDetail(Model model, @RequestParam int product_id) {
 		logger.info("get product detail");
-		
 		adminProductService.category(model);
 		adminProductService.detail(model, product_id);
 		return "admin/product_detail";
@@ -91,7 +88,6 @@ public class AdminProductController {
 	@RequestMapping(value = "product_edit", method = RequestMethod.GET)
 	public String productEdit(Model model, @RequestParam int product_id) {
 		logger.info("get product edit");
-	
 		adminProductService.category(model);
 		adminProductService.detail(model, product_id);
 		 return "admin/product_edit";
@@ -130,7 +126,6 @@ public class AdminProductController {
 	@RequestMapping(value = "product_delete", method = RequestMethod.POST)
 	public String productDelete(@RequestParam int product_id) {
 		logger.info("post product delete");
-		
 		adminProductService.delete(product_id);
 		return "redirect:/admin/product_list";
 	}

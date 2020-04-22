@@ -83,7 +83,7 @@ public class AdminArticleServiceImpl implements AdminArticleService {
 			// board_id
 			bean.setBoard_id(board_id);
 			
-			//검색 유지
+			// search keep
 			rttr.addAttribute("page", search.getPage());
 			rttr.addAttribute("range", search.getRange());
 			rttr.addAttribute("searchType", search.getSearchType());
@@ -103,7 +103,7 @@ public class AdminArticleServiceImpl implements AdminArticleService {
 			// board_id
 			bean.setBoard_id(board_id);
 			
-			// 검색 유지
+			// search keep
 			rttr.addAttribute("page", search.getPage());
 			rttr.addAttribute("range", search.getRange());
 			rttr.addAttribute("searchType", search.getSearchType());

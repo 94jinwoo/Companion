@@ -25,7 +25,6 @@ public class AdminQuestionController {
 	@RequestMapping(value = "question_list", method = RequestMethod.GET)
 	public String questionList(Model model) {
 		logger.info("get question List");
-		
 		adminQuestionService.list(model);
 		return "admin/question_list";
 	}
@@ -51,7 +50,6 @@ public class AdminQuestionController {
 	@RequestMapping(value = "question_edit", method = RequestMethod.POST)
 	public String questionEdit(@ModelAttribute AdminQuestionVo bean){
 		logger.info("post question edit");
-		
 		adminQuestionService.update(bean);
 		return "redirect:/admin/question_detail?question_id="+bean.getQuestion_id();
 	}
@@ -60,7 +58,6 @@ public class AdminQuestionController {
 	@RequestMapping(value = "question_delete", method = RequestMethod.POST)
 	public String questionDelete(@ModelAttribute AdminQuestionVo bean){
 		logger.info("post question delete");
-		System.out.println(bean.toString());
 		adminQuestionService.delete(bean);
 		return "redirect:/admin/question_list";
 	}

@@ -111,41 +111,41 @@
 
 <script type="text/javascript">
 // 데이터 테이블 초기화
-	$(document).ready(function() {
-		$('#dataTable').DataTable({
-			"language": {
-				"emptyTable": "데이터가 없습니다.",
-				"lengthMenu": "페이지당 _MENU_ 개씩 보기",
-				"info": "현재 _START_ - _END_ / _TOTAL_건",
-				"infoEmpty": "데이터 없음",
-				"infoFiltered": "( _MAX_건의 데이터에서 필터링됨 )",
-				"search": "검색: ",
-				"zeroRecords": "일치하는 데이터가 없습니다.",
-				"loadingRecords": "로딩중...",
-				"processing":     "잠시만 기다려 주세요...",
-				"paginate": {
-					"next": "다음",
-					"previous": "이전"
-				}
-			},
-			"columns" : [ 
-				{ "width" : "25px" }, 
-				{ "width" : "25px" },
-				{ "width" : "30px" }, 
-				{ "width" : "200px" }, 
-				{ "width" : "25px" },
-				{ "width" : "25px" },
-				{ "width" : "25px" }
-			],
-			"order" : [
-				[2,"asc"],[0,"desc"]
-			],
-			"lengthMenu" : [
-				10,20,30,40,50
-			],
-			"pageLength" :20
-		});
+$(document).ready(function() {
+	$('#dataTable').DataTable({
+		"language": {
+			"emptyTable": "데이터가 없습니다.",
+			"lengthMenu": "페이지당 _MENU_ 개씩 보기",
+			"info": "현재 _START_ - _END_ / _TOTAL_건",
+			"infoEmpty": "데이터 없음",
+			"infoFiltered": "( _MAX_건의 데이터에서 필터링됨 )",
+			"search": "검색: ",
+			"zeroRecords": "일치하는 데이터가 없습니다.",
+			"loadingRecords": "로딩중...",
+			"processing":     "잠시만 기다려 주세요...",
+			"paginate": {
+				"next": "다음",
+				"previous": "이전"
+			}
+		},
+		"columns" : [ 
+			{ "width" : "25px" }, 
+			{ "width" : "25px" },
+			{ "width" : "30px" }, 
+			{ "width" : "200px" }, 
+			{ "width" : "25px" },
+			{ "width" : "25px" },
+			{ "width" : "25px" }
+		],
+		"order" : [
+			[2,"asc"],[0,"desc"]
+		],
+		"lengthMenu" : [
+			10,20,30,40,50
+		],
+		"pageLength" :20
 	});
+});
 
 </script>
 </body>
