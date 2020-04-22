@@ -8,10 +8,17 @@
 	<bean id="dataSource"
 	class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
-	  	<property name="url" value="jdbc:mysql://192.168.3.8:3306/companion?useUnicode=true&amp;characterEncoding=utf8&amp;allowMultiQueries=true"/>
+	  	<property name="url" value="jdbc:mysql://192.168.3.8/companion?useUnicode=true&amp;characterEncoding=utf8&amp;allowMultiQueries=true"/>
 		<property name="username" value="admin"/>
 		<property name="password" value="admin"/>
 	</bean>
+<!-- 	<bean id="dataSource"
+	class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
+	  	<property name="url" value="jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_17d12219f56a547?useUnicode=true&amp;characterEncoding=utf8&amp;allowMultiQueries=true"/>
+		<property name="username" value="be35b922b77e14"/>
+		<property name="password" value="5ccbc751"/>
+	</bean> -->
 
 	<bean id="sqlSessionFactory"
 	class="org.mybatis.spring.SqlSessionFactoryBean">

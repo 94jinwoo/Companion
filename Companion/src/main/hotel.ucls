@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="MANHATTAN">  
+  <class id="1" language="java" name="com.bit.companion.controller.hotel.InformationCareController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/hotel/InformationCareController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="172" x="482" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.bit.companion.controller.hotel.InformationUseController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/hotel/InformationUseController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="167" x="41" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.bit.companion.controller.hotel.InfromationLocationController" 
+    project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/hotel/InfromationLocationController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="248" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.bit.companion.controller.hotel.HotelController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/hotel/HotelController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="336" x="893" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.bit.companion.controller.hotel.PreviewRoomController" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/controller/hotel/PreviewRoomController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="159" x="694" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.bit.companion.service.hotel.HotelServiceImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/hotel/HotelServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="135" width="272" x="1269" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="7" language="java" name="com.bit.companion.service.hotel.HotelService" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/service/hotel/HotelService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="146" x="1102" y="248"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="8" language="java" name="com.bit.companion.model.hotel.HotelDaoImpl" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/hotel/HotelDaoImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="272" x="1581" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="9" language="java" name="com.bit.companion.model.hotel.HotelDao" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/hotel/HotelDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="144" x="1309" y="248"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="10" language="java" name="com.bit.companion.model.entity.hotel.HotelVo" project="Companion" 
+    file="/Companion/src/main/java/com/bit/companion/model/entity/hotel/HotelVo.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="297" width="292" x="1269" y="387"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" sort-features="true" 
+      accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="11">    
+    <bendpoint x="1278" y="248"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <association id="12">    
+    <end type="SOURCE" refId="4" navigable="false" variant="ASSOCIATION">      
+      <attribute id="13" name="hotelService"/>      
+      <multiplicity id="14" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="15">    
+    <bendpoint x="1071" y="248"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <realization id="16">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <association id="17">    
+    <end type="SOURCE" refId="6" navigable="false" variant="ASSOCIATION">      
+      <attribute id="18" name="hotelDao"/>      
+      <multiplicity id="19" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="20">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <dependency id="21">    
+    <bendpoint x="1483" y="248"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="22">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="23">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="true" accessors="false" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
