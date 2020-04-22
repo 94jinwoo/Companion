@@ -72,7 +72,7 @@
 
 	<insert id="OrderPaymentInsert" parameterType="orderBean">
 		insert into `payment` values
-		(default,(select order_id from `order` where order_date = (select max(order_date) from `order` where member_id=#{member_id})),#{member_id},now(),#{order_detail_price},default);
+		(default,(select order_id from `order` where order_date = (select max(order_date) from `order` where member_id=#{member_id})),#{member_id},now(),#{order_detail_price}+2500,default);
 	</insert> 
 	 
 	<!-- 재고 수량 UPDATE  -->

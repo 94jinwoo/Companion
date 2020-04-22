@@ -86,7 +86,7 @@
 							<th>등록날짜</th>
 							<th>옵션1</th>
 							<th>옵션2</th>
-							<th>옵션etc</th>
+							<th>etc</th>
 						</tr>
 					</thead>
 				<tbody>
@@ -117,7 +117,7 @@
 						<td>
 							<div>
 							<a href="${root }admin/product_detail?product_id=${bean.product_id}">
-							<fmt:formatNumber value="${bean.product_price}" pattern="###,###,###"/>
+							<fmt:formatNumber value="${bean.product_price}" pattern="###,###,###"/>원
 							</a>
 							</div>
 						</td>
@@ -193,14 +193,14 @@ $(document).ready(function() {
 			10,20,30,40,50
 		],
 		"columns" : [ 
-			{ "width" : "35px" },
-			{ "width" : "25px" }, 
+			{ "width" : "55px" },
+			{ "width" : "55px" }, 
 			{ "width" : "200px" }, 
 			{ "width" : "20px" },
 			{ "width" : "20px" },
-			{ "width" : "35px" },
-			{ "width" : "20px" },
-			{ "width" : "20px" },
+			{ "width" : "60px" },
+			{ "width" : "60px" },
+			{ "width" : "60px" },
 			{ "width" : "35px" }
 		],
 		"pageLength" : 20,
