@@ -92,7 +92,7 @@
  			 is not null order by rand() limit 5); 
 	</select>
 	<select id="ProductRecommendList2" resultType="productBean" parameterType="int">
-		 select distinct product_id,product_name,product_image from product where product_id =#{product_id} order by rand() limit 5;
+		 select distinct product_id,product_name,product_image from product order by rand() limit 5;
 	</select>
 	
 	

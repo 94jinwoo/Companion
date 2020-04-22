@@ -49,10 +49,12 @@ public class ProductServiceImpl implements ProductService {
 	public void productRecommend(Model model, int product_id) {
 		List<ProductVo> list;
 		try {
+			System.out.println("proproductRecommendList1 run....");
 			list=productDao.productRecommendList2(product_id);
 			model.addAttribute("productRecommendList",list);
 		} catch (SQLException e) {
 			try {
+				System.out.println("proproductRecommendList2 run....");
 				list= productDao.productRecommendList(product_id);
 				model.addAttribute("productRecommendList",list);
 			} catch (SQLException e1) {
