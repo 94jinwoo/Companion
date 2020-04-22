@@ -100,6 +100,11 @@ ul{
     padding:8px;
     line-height:5;
 }
+.table tbody td:first-child{
+    text-align: center;
+    padding:8px;
+    line-height:2.5;
+}
 .imgTbox{
 	display:flex;
 	margin-left:10px;
