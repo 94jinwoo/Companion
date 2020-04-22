@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:url value="/" var="root"></c:url>
 <!DOCTYPE html>
 <html>
@@ -128,7 +129,7 @@
 										</tr>
 										<tr>
 										<th>가격</th>
-										<td id="tx">${bean.order_detail_price }원 / ${bean.order_detail_quantity }개</td>
+										<td id="tx"><fmt:formatNumber value="${bean.order_detail_price}" pattern="###,###,###"/>원 / ${bean.order_detail_quantity }개</td>
 										</tr>
 										<tr>
 										<th>배송상태</th>
