@@ -24,9 +24,9 @@
 		.product-grid .product-discount-label{background-color:#333;left:auto;right:0}
 		.product-grid .rating{color:#FFD200;font-size:12px;padding:6px 0 0;margin:0;list-style:none;position:relative;z-index:-1}
 		.product-grid .rating li.disable{color:rgba(0,0,0,.2)}
-		.product-grid .product-content{background-color:rgb(214,227,239); font-size:14px; text-align:center;padding:5px 0;margin:0 auto;position:absolute;left:0;right:0;bottom:-40px;z-index:-1;transition:all .3s}
+		.product-grid .product-content{background-color:rgb(214,227,239); height:104px; text-align:center;padding:5px 0;margin:0 auto;position:absolute;left:0;right:0;bottom:-40px;z-index:-1;transition:all .3s}
 		.product-grid:hover .product-content{bottom:0}
-		.product-grid .title{font-size:16px;font-weight:400;letter-spacing:.5px;text-transform:capitalize;margin:0 0 10px;transition:all .3s ease 0s}
+		.product-grid .title{font-size:16px;font-weight:400; height:50px; line-height:1.5; overflow:hidden; padding-top:4px; letter-spacing:.5px;text-transform:capitalize;margin:0 0 10px;transition:all .3s ease 0s}
 		.product-grid .title a{color:#828282}
 		.product-grid .title a:hover,.product-grid:hover .title a{color:#ef5777}
 		.product-grid .price{color:#333;font-size:17px;font-family:Montserrat,sans-serif;font-weight:700;letter-spacing:.6px;margin-bottom:8px;text-align:center;transition:all .3s}
