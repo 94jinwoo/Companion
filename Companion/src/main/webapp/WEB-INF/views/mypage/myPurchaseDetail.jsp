@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:url value="/" var ="root"></c:url>
 <!DOCTYPE html>
 <html>
@@ -154,11 +155,11 @@
                            </td>
                            <td>
                            		<!-- 금액 -->
-                           		${bean.order_detail_price }
+                           		<fmt:formatNumber value="${bean.order_detail_price}" pattern="###,###,###"/>원
                            </td>
                            <td>
                            		<!-- 합계 -->
-                           		${bean.order_detail_price*bean.order_detail_quantity }
+                           		<fmt:formatNumber value="${bean.order_detail_price*bean.order_detail_quantity}" pattern="###,###,###"/>원
                            </td>
                            <td>
                            		${bean.order_detail_id }
@@ -200,15 +201,15 @@
                <tbody>
                		<tr>
                			<th><label>총 상품가격</label></th>
-               			<td>${myPurchaseDetail.order_amount-2500 }</td>
+               			<td><fmt:formatNumber value="${myPurchaseDetail.order_amount-2500 }" pattern="###,###,###"/>원</td>
                		</tr>
                		<tr>
                			<th><label>배송비</label></th>
-               			<td>2500</td>
+               			<td><fmt:formatNumber value="2500" pattern="###,###,###"/>원</td>
                		</tr>
                		<tr>
                			<th><label>총 결제금액</label></th>
-               			<td>${myPurchaseDetail.order_amount }</td>
+               			<td><fmt:formatNumber value="${myPurchaseDetail.order_amount }" pattern="###,###,###"/>원</td>
                		</tr>
                		<tr>
                			<th><label>결제수단</label></th>

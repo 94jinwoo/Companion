@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:url value="/" var="root"></c:url>
 <!DOCTYPE html>
 <html>
@@ -180,8 +181,8 @@
                         	<input type="hidden" id="originalQuantity${bean.cart_id }" value="${bean.cart_quantity }">
                         	<input type="hidden" id="updateQuantity${bean.cart_id }" value="" >
                         	</div>
-                        <td>${bean.product_price }원</td>
-                        <td>${bean.product_price*bean.cart_quantity }원</td>
+                        <td><fmt:formatNumber value="${bean.product_price}" pattern="###,###,###"/>원</td>
+                        <td><fmt:formatNumber value="${bean.product_price*bean.cart_quantity }" pattern="###,###,###"/>원</td>
 </c:forEach>
                    </form>
                     </tr>
@@ -195,7 +196,7 @@
                         	<strong><span id="selectCheckPrice"></span></strong>원
                         </li>
                         <li><i class="fas fa-plus"></i></li>
-                        <li>배송비<br/><strong>2,500원</strong></li>
+                        <li>배송비<br/><strong>2500원</strong></li>
                         <li><i class="fas fa-equals"></i></li>
                         <li>합계<br/><strong><span id="totalPrice"></span></strong>원</li>
                     </ul>
@@ -269,6 +270,8 @@
 			for(var i=0; i<count; i++){
 				sum+=parseInt(checkArr[i]);
 			}
+			
+			
 			$("#selectCheckNum").html(count);
 			$("#selectCheckPrice").html(sum);
 			$("#totalPrice").html(sum+2500);
