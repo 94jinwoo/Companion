@@ -67,7 +67,7 @@
                             <c:when test="${(sessionScope.memberVo.member_id!=null) && (sessionScope.memberVo.member_grade!=2)  }">
                             	<ul class="nav navbar-nav ml-auto">
 	                            	<li class="nav-item">
-	                                     <a class="nav-link" href="${root }admin/testadminhome">관리자</a>
+	                                     <a class="nav-link" href="${root }admin/admin_home">관리자</a>
 	                                </li>
 	                                <li class="nav-item">
 	                                    <a class="nav-link" href="${root }logout">로그아웃</a>
