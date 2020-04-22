@@ -153,9 +153,7 @@
 			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }"> ${bean.product_name }</a></h3> 
 			             
 			
-			                    <div class="price">${bean.product_price }
-			                        <span>${bean.product_price +5600}</span>
-			                    </div>
+			                    <div class="price"><fmt:formatNumber value="${bean.product_price}" pattern="###,###,###"/>원</div>
 			                 
 			                </div>
 			            </div>

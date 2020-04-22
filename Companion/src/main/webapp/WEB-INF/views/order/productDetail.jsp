@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page import="java.util.*" %>
 <c:url value="/" var="root"></c:url>
 <!DOCTYPE html>
@@ -170,7 +171,7 @@
 
 								</div>
 								<div class="col-sm-4 title">가격</div>
-								<div class="col-sm-8">${productDetailOne.product_price }</div>
+								<div class="col-sm-8"><fmt:formatNumber value="${productDetailOne.product_price}" pattern="###,###,###"/>원</div>
 								<!-- btn group start-->
 								<div class="btn--group">
 									<!-- 구매 로그인 세션 검사 -->
