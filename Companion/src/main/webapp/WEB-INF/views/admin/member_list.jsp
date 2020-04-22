@@ -111,44 +111,44 @@
 <script type="text/javascript" src="${root }DataTables/datatables.min.js"></script>
 
 <script type="text/javascript">
-	// 메뉴 토글 버튼
-	$(document).ready(function () {
-	    $('#sidebarCollapse').on('click', function () {
-	        $('#sidebar').toggleClass('active');
-	    });
+// 메뉴 토글 버튼
+$(document).ready(function () {
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+});
+
+// 데이터 테이블 초기화
+	$(document).ready(function() {
+	$('#dataTable').DataTable({
+		"language": {
+			"emptyTable": "데이터가 없습니다.",
+			"lengthMenu": "페이지당 _MENU_ 개씩 보기",
+			"info": "현재 _START_ - _END_ / _TOTAL_건",
+			"infoEmpty": "데이터 없음",
+			"infoFiltered": "( _MAX_건의 데이터에서 필터링됨 )",
+			"search": "검색: ",
+			"zeroRecords": "일치하는 데이터가 없습니다.",
+			"loadingRecords": "로딩중...",
+			"processing":     "잠시만 기다려 주세요...",
+			"paginate": {
+				"next": "다음",
+				"previous": "이전"
+			}
+		},
+		"order" : [
+			[0,"asc"]
+		],
+		"lengthMenu" : [
+			10,20,30,40,50
+		],
+		"pageLength" : 20,
+		"columnDefs" : [
+			{ "orderable" : false, "targets" : 3},
+			{ "orderable" : false, "targets" : 4}
+		]
 	});
-	
-	// 데이터 테이블 초기화
- 	$(document).ready(function() {
-		$('#dataTable').DataTable({
-			"language": {
-				"emptyTable": "데이터가 없습니다.",
-				"lengthMenu": "페이지당 _MENU_ 개씩 보기",
-				"info": "현재 _START_ - _END_ / _TOTAL_건",
-				"infoEmpty": "데이터 없음",
-				"infoFiltered": "( _MAX_건의 데이터에서 필터링됨 )",
-				"search": "검색: ",
-				"zeroRecords": "일치하는 데이터가 없습니다.",
-				"loadingRecords": "로딩중...",
-				"processing":     "잠시만 기다려 주세요...",
-				"paginate": {
-					"next": "다음",
-					"previous": "이전"
-				}
-			},
-			"order" : [
-				[0,"asc"]
-			],
-			"lengthMenu" : [
-				10,20,30,40,50
-			],
-			"pageLength" : 20,
-			"columnDefs" : [
-				{ "orderable" : false, "targets" : 3},
-				{ "orderable" : false, "targets" : 4}
-			]
-		});
-	});
+});
 </script>
 </body>
 </html>

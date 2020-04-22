@@ -26,7 +26,6 @@ public class AdminMemberController {
 	@RequestMapping(value = "member_list", method = RequestMethod.GET)
 	public String memberList(Model model) {
 		log.info("get member list");
-		
 		adminMemberService.list(model);
 		return "admin/member_list";
 	}
@@ -35,7 +34,6 @@ public class AdminMemberController {
 	@RequestMapping(value = "member_detail", method = RequestMethod.GET)
 	public String memberDetail(Model model, @ModelAttribute AdminMemberViewVo bean) {
 		log.info("get member datail");
-		
 		adminMemberService.detail(model, bean);
 		return "admin/member_detail";
 	}
@@ -44,7 +42,6 @@ public class AdminMemberController {
 	@RequestMapping(value = "member_edit", method = RequestMethod.GET)
 	public String memberEdit(Model model, @ModelAttribute AdminMemberViewVo bean) {
 		log.info("get member edit");
-		
 		adminMemberService.detail(model, bean);
 		return "admin/member_edit";
 	}
@@ -54,7 +51,6 @@ public class AdminMemberController {
 	public String memberEdit(@ModelAttribute AdminMemberViewVo bean) {
 		log.info("post member edit");
 		adminMemberService.update(bean);
-		
 		return "redirect:/admin/member_detail?member_id="+bean.getMember_id();
 	}
 	

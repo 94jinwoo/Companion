@@ -136,7 +136,7 @@
 <script src="${root }js/main.js"></script>
   
 <script type="text/javascript">
-//수정 버튼
+// 수정 버튼
 $("#modify_Btn").click(function(){
 	location.href = ${root}+"admin/notice_edit?article_id=${adminArticleOne.article_id}"
 		+"&page=${search.page}"
@@ -145,7 +145,7 @@ $("#modify_Btn").click(function(){
 		+"&keyword=${search.keyword}"; 
 });  
 
-// 목록버튼
+// 목록 버튼
 $("#list_Btn").click(function(){
 	location.href = ${root}+"/admin/notice_list?page=${search.page}"
 		+"&range=${search.range}"
