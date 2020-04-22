@@ -117,7 +117,7 @@
 						<td>
 							<div>
 							<a href="${root }admin/product_detail?product_id=${bean.product_id}">
-							<fmt:formatNumber value="${bean.product_price}" pattern="###,###,###"/>
+							<fmt:formatNumber value="${bean.product_price}" pattern="###,###,###"/>원
 							</a>
 							</div>
 						</td>
