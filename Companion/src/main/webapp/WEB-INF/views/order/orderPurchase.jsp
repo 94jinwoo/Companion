@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:url value="/" var ="root"></c:url>
 
 <%-- <%
@@ -157,7 +158,7 @@
                             <td class="imgTbox">
                             	<!-- 이미지 -->
                             	<div class="imgBox">
-	                            	<img id="proImg" src="${orderProductPurchaseOne.product_image }" class="img-fluid" alt="더미에 이미지가 없어 ㅠ">
+	                            	<img id="proImg" src="${orderProductPurchaseOne.product_image }" class="img-fluid" alt="">
                             	</div>
                             	<!-- 상품이름 -->
                             	<input type="hidden" class="form-control" name="product_id" value="${orderProductPurchaseOne.product_id }">
@@ -179,9 +180,9 @@
                             	%>   
                               <input type="hidden" class="form-control" name="order_detail_quantity" id="order_detail_quantity" value="<%=request.getParameter("order_detail_quantity") %>"/>  
                          	  <input type="hidden" class="form-control" name="product_stock" id="product_stock" value="${orderProductPurchaseOne.product_stock }"/>
-                            <td>${orderProductPurchaseOne.product_price * order_detail_quantity}
+                            <td><fmt:formatNumber value="${orderProductPurchaseOne.product_price * order_detail_quantity}" pattern="###,###,###"/>원
                             </td>
-                            <td>${orderProductPurchaseOne.product_price * order_detail_quantity +2500}</td>
+                            <td><fmt:formatNumber value="${orderProductPurchaseOne.product_price * order_detail_quantity +2500}" pattern="###,###,###"/>원</td>
                             
                         </tr>
                     </tbody>
@@ -189,11 +190,11 @@
                   <a href="#"><span></span></a>
                   <div class="coast clearfix">
                     <ul class="coast-group float--right">
-                        <li>총 <%=order_detail_quantity %>  개의 상품금액<br/>${orderProductPurchaseOne.product_price * order_detail_quantity }원</li>
+                        <li>총 <%=order_detail_quantity %>  개의 상품금액<br/><fmt:formatNumber value="${orderProductPurchaseOne.product_price * order_detail_quantity}" pattern="###,###,###"/>원
                         <li><i class="fas fa-plus"></i></li>
                         <li>배송비<br/>2,500원</li>
                         <li><i class="fas fa-equals"></i></li>
-                        <li>합계<br/>${orderProductPurchaseOne.product_price * order_detail_quantity +2500}
+                        <li>합계<br/><fmt:formatNumber value="${orderProductPurchaseOne.product_price * order_detail_quantity +2500}" pattern="###,###,###"/>원
                         <input type="hidden" class="form-control" name="order_detail_price" value="${orderProductPurchaseOne.product_price * order_detail_quantity}">
                         <input type="hidden" class="form-control" name="order_amount" value="${orderProductPurchaseOne.product_price * order_detail_quantity +2500}"/>
                         </li> 
@@ -266,7 +267,7 @@
                 <div class="coast clearfix">
                     <ul class="coast-group float--right">
                         <li class="total__title">최종 결제 금액</li>
-                        <li class="total">${orderProductPurchaseOne.product_price * order_detail_quantity +2500}</li>
+                        <li class="total"><fmt:formatNumber value="${orderProductPurchaseOne.product_price * order_detail_quantity +2500}" pattern="###,###,###"/>원</li>
                     </ul>
                 </div>
                 <div class="purchase">
