@@ -39,8 +39,6 @@ public class ProductServiceImpl implements ProductService {
 		try {
 			list = productDao.ProductDetailOne(product_id);
 			model.addAttribute("productDetailOne",productDao.ProductDetailOne(product_id));
-			
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -77,10 +75,8 @@ public class ProductServiceImpl implements ProductService {
 			pagination_c.setCategory_id(category_id);
 			pagination_c.setListSize(12);
 			int listCnt= productDao.count(pagination_c);
-			
 			pagination_c.pageInfo(page, range, listCnt);
 			List<ProductVo> list=productDao.listPage(pagination_c);
-			
 			model.addAttribute("listPage",list);
 		} catch (Exception e) {
 			e.printStackTrace();

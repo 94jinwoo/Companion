@@ -135,11 +135,11 @@
 									<select name="selectBox" id="selectBox"
 										class="form-control col-sm-8"
 										onchange="getSelectValue(this.form);">
-										<option value="옵션 1">옵션1</option>
-										<option value="옵션 2">옵션2</option>
-										<option value="옵션 3">옵션3</option>
-										<option value="옵션 4">옵션4</option>
-										<option value="옵션 5">옵션5</option>
+										<option value="${productDetailOne.product_option1 }">옵션1 : ${productDetailOne.product_option1 }</option>
+										<option value="${productDetailOne.product_option2 }">옵션2 : ${productDetailOne.product_option2 }</option>
+										<option value="${productDetailOne.product_option3 }">옵션3 : ${productDetailOne.product_option3 }</option>
+										<option value="${productDetailOne.product_option4 }">옵션4 : ${productDetailOne.product_option4 }</option>
+										<option value="${productDetailOne.product_option5 }">옵션5 : ${productDetailOne.product_option5 }</option>
 									</select> <input type="hidden" name="product_option"> <input
 										type="hidden" name="optionValue">
 
@@ -616,10 +616,10 @@
 							clickNum = clickNum + 1;
 
 							if (result == 0) {
-								alert('좋아요! 버튼 클릭');
+								alert('추천되었습니다.');
 								location.reload();
 							} else {
-								alert('좋아요!가 취소되었습니다!');
+								alert('추천이 취소되었습니다!');
 								location.reload();
 							}
 						}

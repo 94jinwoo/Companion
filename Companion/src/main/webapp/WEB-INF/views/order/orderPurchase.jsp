@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:url value="/" var ="root"></c:url>
 
-<%
+<%-- <%
     String name = (String)request.getAttribute("name");
     String email = (String)request.getAttribute("email");
     String phone = (String)request.getAttribute("phone");
@@ -12,8 +12,7 @@
     System.out.println(email);
     System.out.println(phone);
     System.out.println(address);
-  /*   int totalPrice = (int)request.getAttribute("totalPrice");  */   
-%>
+%> --%>
 <c:url value="/" var ="root"></c:url>
 	<!DOCTYPE html>
 	<html>
@@ -272,7 +271,6 @@
                 </div>
                 <div class="purchase">
                         <button type="button" class="btn-order" id="payApi" role="button"> 결제하기 </button> 
-                        <button type="button" class="btn-order" id="Periodicpayment" role="button"> 정기결제 </button> 
                 </div>
        		</form>
        	</section>  

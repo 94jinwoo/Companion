@@ -45,6 +45,7 @@ public class ProductController {
 	
 	OrderQuestionVo orderQuestionVo;
 	
+
 	// DETAIL PAGE
 	@RequestMapping(value = "/order/productDetail",method=RequestMethod.GET)
 	public String productDetail(Model model,@RequestParam("idx") int product_id,HttpSession session,ServletRequest request,HttpServletResponse response) throws SQLException {
