@@ -52,6 +52,12 @@ public class ProductServiceImpl implements ProductService {
 			list= productDao.productRecommendList(product_id);
 			model.addAttribute("productRecommendList",list);
 		} catch (SQLException e) {
+			try {
+				list=productDao.productRecommendList2(product_id);
+				model.addAttribute("productRecommendList",list);
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 	}
