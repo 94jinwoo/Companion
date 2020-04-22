@@ -2,7 +2,7 @@
 .table_layout { margin:0px; table-layout:fixed; }
 .table_layout .col1 { width: auto; } /* 상품이름 */
 .table_layout .col2 { width: 200px; } /* 옵션 */
-.table_layout .col3 { width: 150px; } /* 수량 */
+.table_layout .col3 { width: 120px; } /* 수량 */
 .table_layout .col4 { width: 150px; } /* 상품금액 */
 .table_layout .col5 { width: 150px; } /* 합계금액 */
 
@@ -162,6 +162,11 @@ ul{
     text-align: center;
     padding:8px;
     line-height:5;
+}
+.table tbody td:first-child{
+    text-align: center;
+    padding:8px;
+    line-height:2.5;
 }
 
 .table td span{
