@@ -19,13 +19,13 @@ public class OrderQuestionServiceImpl implements OrderQuestionService {
 
 		@Autowired
 		QuestionDao questionDao;
-	// insert
+	// insert reply
 	@Override
 	public void registReply(OrderQuestionVo orderQuestionVo) throws SQLException {
 		questionDao.registReply(orderQuestionVo);
 			
 	}
-	// list 
+	// reply list view 
 	@Override
 	public void replyList(Model model, int product_id, Pagination_P pagination_p, int page, int range) throws SQLException {
 		
@@ -41,7 +41,7 @@ public class OrderQuestionServiceImpl implements OrderQuestionService {
 		model.addAttribute("ReplyList",list);
 	}
 	
-	// detail
+	// reply detail one
 	@Override
 	public void detail(Model model, int question_id) throws SQLException {
 		model.addAttribute("ReplyDetail",questionDao.replyDetail(question_id));

@@ -30,7 +30,7 @@ public class QuestionDaoImpl implements QuestionDao {
 	public List<OrderQuestionVo> replyList(Pagination_P pagination_p) throws SQLException {
 		return sqlSession.selectList("orderQuestion.OrderQuestionList",pagination_p);
 	}
-
+	//review count (paging)
 	@Override
 	public int replyListAllCount(Pagination_P pagination_p) throws SQLException {
 		return sqlSession.selectOne("orderQuestion.ReplyListAllCount",pagination_p);

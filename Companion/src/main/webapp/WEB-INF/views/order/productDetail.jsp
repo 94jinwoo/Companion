@@ -102,24 +102,13 @@
 				<div class="row">
 					<div class="col-md-5" id="imgbox">
 						<div class="goodsImg">
-							<!-- lay 380x440, imgsize 355x415 -->
-							<!-- 이미지 반 글 반 먹고 나머지는 밑에 푸터처럼. -->
-							<%-- 	<img src="${root }imgs/shopping/dogTestImage.jpg"
-								class="img-fluid" alt="Responsive image"> --%>
-							<%-- 		<p><img src="${productDetailOne.product_thumb }" class="img-fluid" alt=""/></p> --%>
-							<img src="${productDetailOne.product_image }" alt="왜안돼?" />
-							<!-- 이미지는 DB에 이미지 경로를 넣어야 함.  -->
+							<img src="${productDetailOne.product_image }" alt="Err" />
 						</div>
 					</div>
 					<div class="col-md-7" id="descrip">
 						<!--  상품 정보 -->
 						<h2 class="goods-title">${productDetailOne.product_name }</h2>
-							<!-- 상품 번호 ${productDetailOne.product_id } -->
-						<%-- <h4>[ 카테고리NUM=${productDetailOne.category_id } ]</h4> --%>
 						<p class="goos-text">상품 설명은 하단에 있습니다.</p><br/>
-
-						<!-- 셀렉트박스 옵션 값 가져오기.  -->
-
 						<form name="formName" id="formId" method="POST"
 							action="${root }order/orderPurchase?idx=${productDetailOne.product_id }"
 							role="form">
@@ -141,11 +130,8 @@
 										<option value="${productDetailOne.product_option3 }">옵션3 : ${productDetailOne.product_option3 }</option>
 										<option value="${productDetailOne.product_option4 }">옵션4 : ${productDetailOne.product_option4 }</option>
 										<option value="${productDetailOne.product_option5 }">옵션5 : ${productDetailOne.product_option5 }</option>
-									</select> <input type="hidden" name="product_option"> <input
-										type="hidden" name="optionValue">
-
-
-
+									</select> <input type="hidden" name="product_option"> 
+									<input type="hidden" name="optionValue">
 								</div>
 								<div class="col-sm-4 title">수량</div>
 								<div class="col-sm-8">
@@ -167,8 +153,6 @@
 											</td>
 										</tr>
 									</table>
-									<!-- 수량 -->
-
 								</div>
 								<div class="col-sm-4 title">가격</div>
 								<div class="col-sm-8"><fmt:formatNumber value="${productDetailOne.product_price}" pattern="###,###,###"/>원</div>
@@ -181,16 +165,10 @@
 												href="${root }login" role="button" aria-pressed="true">구매하기</a>
 										</c:when>
 										<c:when test="${memberVo.member_id!=null}">
-											<!-- product_id 정보 GET 방식으로 넘길것.  -->
 											<button class="btn btn-primary btn-lg" id="purchaseBtn"
 												type="submit">구매하기</button>
-											<%-- 										<button type="submit"> href="${root }order/orderPurchase?idx=${productDetailOne.product_id }" role="button" type="submit" aria-pressed="true">구매하기</a> </button> --%>
 										</c:when>
 									</c:choose>
-									<!-- 구매 로그인 세션 검사 -->
-
-									<!-- 장바구니  -->
-
 									<c:choose>
 										<c:when test="${memberVo.member_id==null }">
 											<button type="button" class="btn btn-primary btn-lg"
@@ -205,7 +183,7 @@
 												value="${productDetailOne.product_id }" />
 										</c:when>
 									</c:choose>
-									<!-- Modal(장바구니_) -->
+									<!-- Modal(cart) -->
 									<div class="modal" id="exampleModalCenter" tabindex="-1"
 										role="dialog" aria-labelledby="exampleModalLabel"
 										aria-hidden="true">
@@ -232,13 +210,12 @@
 											</div>
 										</div>
 									</div>
-									<!-- modal-(장바구니) end -->
-
+									<!-- modal-(cart) end -->
 									<input type="hidden" name="cart_quantity" id="cart_quantity"
 										value="1" /> <input type="hidden" name="cart_option"
 										id="cart_option" value="1" /> <input type="hidden"
 										name="order_detail_option" id="order_detail_option" value="1" />
-									<!--로그인 검사  -->
+									<!-- login session validate  -->
 									<c:choose>
 										<c:when test="${memberVo.member_id!=null }">
 											<button id="like_btn" type="button"
@@ -253,9 +230,6 @@
 										</c:when>
 									</c:choose>
 								</div>
-								<!-- btn group end-->
-								<!-- 상품 추천 목록.  -->
-								<!--상품 추천 목록.  -->
 						</form>
 					</div>
 
@@ -292,18 +266,13 @@
 
 					</div>
 					<!-- 상품설명   end -->
-
 					<!-- product-info end -->
-
 					<div id="post-use" role="tabpanel" aria-labelledby="post-use-tab"
 						class="tab-pane fade px-4 py-5">
 						 <iframe name="review.jsp" id="review.jsp" src="${root }order/productDetail/ReviewList?product_id=${productDetailOne.product_id}" width="1000px" height="570px"  frameborder="0" scrolling="no"></iframe>
 					</div>
 					<!-- #post-use end  -->
 					<!-- 후기글 End -->
-
-
-
 					<!-- 문의글 start-->
 					<div id="contact2" role="tabpanel" aria-labelledby="contact-tab"
 						class="tab-pane fade px-4 py-3">
@@ -342,7 +311,6 @@
 												</div>
 											</div>
 										</div>
-
 										<section class="replyList">
 											<table class="table--replyList">
 												<thead>
@@ -354,7 +322,6 @@
 										</section>
 									</c:if>
 									<c:if test="${memberVo.member_id!=null}">
-										<!-- 문의하기 창 생셩 modal test -->
 										<button id="questionModal" type="button" class="btn btn-primary">문의하기</button>
 										<div class="modal" id="questionModalForm" tabindex="-1"
 											role="dialog" aria-labelledby="questionModalLabel"
@@ -400,12 +367,10 @@
 												</div>
 											</div>
 										</div>
-
-										<!-- 문의하기 창 생셩 modal test -->
 									</c:if>
 									<section class="replyList">
 									<br/><br/>
-    <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?product_id=${productDetailOne.product_id}" width="1000px" height="400px"  frameborder="0" scrolling="no"></iframe>
+  										  <iframe name="question.jsp" id="question.jsp" src="${root }order/productDetail/ReplyList?product_id=${productDetailOne.product_id}" width="1000px" height="400px"  frameborder="0" scrolling="no"></iframe>
 									</section>
 								</div>
 								<!-- reply end -->
@@ -429,7 +394,7 @@
 					</thead>
 					<tbody>
 						<tr>
-							<!-- 상품 추천 목록 LIST UPDATE  -->
+							<!-- product recommend LIST UPDATE  -->
 							<c:forEach items="${productRecommendList }" var="bean">
 								<td><a
 									href="${root }order/productDetail?idx=${bean.product_id}">
@@ -521,10 +486,9 @@
 		};
 	</script>
 
-<!-- ajax 문의글 리스트 출력. -->
+<!-- ajax question list. -->
 		<script type="text/javascript">
 	var overlap = false;
-
 	/* 중복 입력 방지 */	
  	$("#questionModal").off().on('click', function(){ 
 	 		$('#questionModalForm').modal('show');
@@ -573,34 +537,27 @@
 	 						});
  		});
 	</script>
-
-
 	<script type="text/javascript">
-		/* 구매시에 옵션 값 validation */
+		/* product stock < product buy num validation */
 		$("#purchaseBtn").click(function(){
 			var puchaseNumber = $('#order_detail_quantity').val();
-			
 			if(puchaseNumber<=0){
 				alert('구매 수량은 0 이하가 될 수 없습니다.');
 				return false;				
 			}
 		});
 	
-		/*   로그인 여부 체크  */
+		/*   lgn check  */
 		$("#noneLgnLike_btn").click(function() {
 			alert('로그인이 필요합니다.');
 		})
-		/* 매퍼에서 못 거를 경우 여기에서 다시 거름.  */
 		$(document).ready(function() {
 			var clickNum = 1;
 			$("#like_btn").click(function() {
-
 				if (clickNum == 2 || clickNum > 2) {
 					alert('이미 추천을 하신 상품입니다!');
 					return false;
-
 				} else {
-
 					console.log(clickNum);
 					var member_id = '${memberVo.member_id}';
 					var product_id = $("#product_id").val();
@@ -625,14 +582,10 @@
 						}
 					});
 					console.log(data);
-				}
-				;
-
+				};
 			});
-
 		});
 	</script>
-
 </body>
 </html>
 
