@@ -66,8 +66,8 @@
 			</tr>
 		</tbody>
 	</table>
-	<hr class="mb-3" style="width:920px">
-	<table class="quesDetailT">
+	<hr class="mb-3" style="width:920px"><br/>
+	<table class="DetailT aColor">
 		<thead>
 			<tr>
 				<th class="clearfix">
@@ -84,9 +84,7 @@
 		</thead>
 		<tbody>
 			<tr>
-				<th>답변</th>
-				<td>${ReplyDetail.question_answer }</td>
-				
+				<td colspan="4" style="padding: 10px;">${ReplyDetail.question_answer }</td>
 			</tr>
 		</tbody>
 	</table>
