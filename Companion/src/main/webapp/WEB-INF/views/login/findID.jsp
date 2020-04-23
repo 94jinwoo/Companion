@@ -81,7 +81,7 @@
 		                </br>
 		                <div class="float-right">
 			                <button class="Cbtn" onclick="history.back();">뒤로</button>
-			                <button class="Cbtn btn-primary" type="submit" id="check_btn">찾기</button>
+			                <button class="Cbtn btn-primary" type="button" id="check_btn">찾기</button>
 		                </div>
 		            </form>
 		
@@ -105,6 +105,7 @@
 			$("#check_btn").click(function(){
 				var name_check=$("#name_check").val();
 				var phone_check=$("#phone_check").val();
+				var regPhone = /(01[0|1|6|9|7])(\d{3}|\d{4})(\d{4}$)/g; 
 				if(name_check==""){
 					alert("이름를 입력해 주세요.");
 					return;
@@ -113,6 +114,10 @@
 					alert("핸드폰 번호를 입력해 주세요.");
 					return;
 				}
+				if(!regPhone.test(phone_check)){
+			   		  alert('잘못된 휴대폰 번호입니다.\n-를 뺴고 입력해 주세요.');
+			   		  return;    
+			   	}
 				document.idCheck.submit();
 			});
 		});

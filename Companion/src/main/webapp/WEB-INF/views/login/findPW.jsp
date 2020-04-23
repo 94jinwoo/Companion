@@ -82,7 +82,7 @@
 		                <input type="text" name="email_check"  id="email_check" class="form-control" placeholder="이메일 주소를 입력해 주세요." required/><br/>
 		                <div class="float-right">
 			                <button class="Cbtn" onclick="history.back();">뒤로</button>
-			                <button class="Cbtn btn-primary" type="submit" id="check_btn">확인</button>
+			                <button class="Cbtn btn-primary" type="button" id="check_btn">확인</button>
 		                </div>
 		            </form>
 		
@@ -125,13 +125,15 @@
 					return;
 				}
 				if(id_check==""){
-					alert("핸드폰 번호를 입력해 주세요.");
+					alert("아이디를 입력해 주세요.");
 					return;
 				}
 				if(email_check==""){
 					alert("이베일 주소를 입력해 주세요.");
 					return;
-				}else if(verifyEmail(email_check)=="no"){
+				}
+				console.log(verifyEmail(email_check));
+				if(verifyEmail(email_check)=="no"){
 					alert("이메일 양식이 올바르지 않습니다.");
 					return;
 				}
