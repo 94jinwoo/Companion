@@ -103,8 +103,6 @@
                 </div>
             </nav>
         
-        <!-- Right-Scrollbar  -->
-		<jsp:include page="common/scrollbar.jsp"/>
         
             <div class="maincontent">
                 <!--carousel-->
