@@ -4,17 +4,17 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="like">
-  <!-- insert like 버튼 눌렀을 때. -->
+  <!-- insert like when button click -->
  	<insert id="likeInsert">
 		insert into `like` values (default,#{member_id},#{product_id});
 	</insert> 
 
-	<!-- like 중복검사 체크   -->
+	<!-- like validation   -->
 	<select id="likeCheck" parameterType="likeBean" resultType="int">
 		select ifnull(count(*),0) from `like` where product_id=#{product_id} and member_id=#{member_id};
 	</select> 
 	
-	<!-- like 취소 할 때.  delete도 return 값은 1 돌려받음.-->
+	<!-- like button clickX2(delete).-->
 	<delete id="likeDelete" parameterType="likeBean">
 		delete from `like` where product_id=#{product_id} and member_id=#{member_id};
 	</delete>

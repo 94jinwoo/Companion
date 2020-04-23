@@ -28,7 +28,7 @@ import com.bit.companion.service.order.SessionService;
 public class ProductController {
 	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 	
-	//조회목록용 리스트
+	//Today view list 
 	static ArrayList<Object> list = new ArrayList<Object>();
 	
 	@Autowired
@@ -60,13 +60,13 @@ public class ProductController {
 			memberVo.setMember_id((memberVo.getMember_id()));
 		}
 
-		//상품 상세 페이지 정보 출력.
+		//product detail page info
 		productService.detail(model, product_id);	
 		
-		//상품 추천
+		//product recommend
 		productService.productRecommend(model, product_id);
 		
-//		세션
+//	today view validation
 		logger.info(list.toString()+"");
 		if(list.size() != 0) {
 			

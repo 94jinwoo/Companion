@@ -30,18 +30,17 @@ public class OrderQuestionController {
 	@Autowired
 	OrderQuestionService orderQuestionService;
 	
-	//문의하기 댓글 작성.
+	//question write
 	@RequestMapping(value="order/productDetail/question", method=RequestMethod.POST)
 	public String registReply(OrderQuestionVo orderQuestionVo,HttpSession session) throws SQLException {
 		MemberVo member = (MemberVo)session.getAttribute("memberVo");
 		orderQuestionVo.setMember_id(member.getMember_id());
-		System.out.println(member.getMember_id());
-		//question table insert = 문의글 작성.
+		//question table insert 
 		orderQuestionService.registReply(orderQuestionVo);
 		return "order/productDetail";
 	}
 	
-	//문의하기
+	//question list
 	@RequestMapping(value="order/productDetail/ReplyList",method = RequestMethod.GET)
 	public String ReplyList(Model model,@RequestParam("product_id") int product_id 
 			, @RequestParam(required = false, defaultValue = "1") int page
@@ -54,7 +53,7 @@ public class OrderQuestionController {
 		return "order/question";
 	}
 	
-	//문의상세
+	//question detail view
 	@RequestMapping(value = "order/productDetail/ReplyDetail", method = RequestMethod.GET)
 	public String ReplyDetail(Model model, @RequestParam int question_id) throws SQLException{
 		orderQuestionService.detail(model, question_id);

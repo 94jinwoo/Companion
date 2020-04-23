@@ -17,7 +17,7 @@ public class OrderReviewServiceImpl implements OrderReviewService {
 	@Autowired
 	OrderReviewDao orderReviewDao;
 	
-	//list
+	//review list
 	@Override
 	public void reviewList(Model model, int product_id, Pagination_P pagination_p, int page, int range){
 		try {
@@ -37,7 +37,7 @@ public class OrderReviewServiceImpl implements OrderReviewService {
 		}
 	}
 
-	//detail
+	//review detail one view
 	@Override
 	public void detail(Model model, int article_id) {
 		try {

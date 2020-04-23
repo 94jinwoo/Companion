@@ -29,7 +29,7 @@ public class OrderController {
 	@Autowired
 	OrderService orderService;
 
-	//상품 구매 페이지
+	//product purchase
 	@RequestMapping(value = "/order/orderPurchase",method= {RequestMethod.GET,RequestMethod.POST})
 	public String orderPurchase(Model model,HttpSession session,OrderVo orderVo,@RequestParam("idx") int product_id) throws SQLException {
 		logger.debug("product purchase controller start");
@@ -48,13 +48,13 @@ public class OrderController {
 		return "order/orderPurchase";
 	}
 	
-	//카카오 API컨트롤러
+	//kakao api
 	@RequestMapping(value = "/order/payApi")
 	public String apiTest(Model model) {
 		return "order/payApi";
 	}
 
-	// 주문성공페이지
+	//order success
 	@RequestMapping(value = "/order/successOrder",method= RequestMethod.POST)
 	public void orderSuccess(Model model,OrderVo orderVo,HttpSession session,HttpServletRequest request) {
 		

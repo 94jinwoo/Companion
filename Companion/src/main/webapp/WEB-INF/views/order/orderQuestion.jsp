@@ -45,31 +45,19 @@
 
 	</head>
 <body>
-<h1>상품문의 작성하기</h1>
-
-
-<form>
-		<p><textarea placeholder="문의 내용을 입력해주세요."></textarea></p>		
-		
-		
-		<input type="submit" value="문의등록">
-		<input type="submit" value="취소">
-		<div class="custom-control custom-switch">
-		  <input type="checkbox" class="custom-control-input" id="customSwitch1">
-		  <label class="custom-control-label" for="customSwitch1">비밀글</label>
-		</div>
-		
-		
-		
-</form>
-
-<h4>◎ 상품 문의 작성 유의사항
-전화번호, 이메일 등 개인 정보가 포함된 글 작성이 필요한 경우 관리자만 볼 수 있도록 비밀글로 문의해 주시기 바랍니다.
-</h4>
-
-
-
-
+<h1>상품문의 내역을 작성해주세요.</h1>
+	<form>
+			<p><textarea placeholder="문의 내용을 입력해주세요."></textarea></p>		
+			<input type="submit" value="문의등록">
+			<input type="submit" value="취소">
+			<div class="custom-control custom-switch">
+			  <input type="checkbox" class="custom-control-input" id="customSwitch1">
+			  <label class="custom-control-label" for="customSwitch1">비밀글</label>
+			</div>
+	</form>
+	<h4>◎ 상품 문의 작성 유의사항
+	전화번호, 이메일 등 개인 정보가 포함된 글 작성이 필요한 경우 관리자만 볼 수 있도록 비밀글로 문의해 주시기 바랍니다.
+	</h4>
     <!-- jQuery -->
     <script src="${root }js/jquery-1.12.4.js"></script>
     <!-- Popper.JS -->
@@ -78,7 +66,6 @@
     <script src="${root }js/bootstrap/bootstrap.js"></script>
     <!-- MAIN JS -->
     <script src="${root }js/main.js"></script>
-
 </body>
 </html>
 
