@@ -19,3 +19,23 @@
   font-size: 20px;
   text-align: center;
 }
+.lineBox{
+	width:90%;
+	margin:10px;
+	margin-top:50px;
+}
+.lineBox:last-child{
+	margin-bottom:50px;
+}
+.textBox{
+	text-align:center;
+	height:100%;
+	margin: 60px auto;
+	width:450px;
+	padding-right:50px;
+}
+.imgRoom{
+	width: 450px;
+	height: 300px;
+	border-radius:10px;
+}

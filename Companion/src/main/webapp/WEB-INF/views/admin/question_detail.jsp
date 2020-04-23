@@ -121,15 +121,17 @@
 					<tbody>
 					<tr>
 						<td class="clearfix">
+						<div class="float--right">
+							<label for="date">[답변일]&nbsp;</label><span>${adminQuestionOne.question_answerdate }&nbsp;</span>
+						</div>
 						<div class="float--left">
-							<label for="date">[답변일]&nbsp;</label><span>${adminQuestionOne.question_answerdate }</span>
+							<label for="content" >[답변]</label>
 						</div>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<div>
-								<label for="content">[답변]</label>
 								<span>${adminQuestionOne.question_answer }</span>
 							</div>
 						</td>
