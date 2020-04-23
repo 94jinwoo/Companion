@@ -156,6 +156,9 @@ public class MypageController {
 			fileName=UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
 			bean.setQuestion_image(File.separator+"imgUpload"+ymdPath+File.separator+fileName);
 		} else {
+			// null img
+			String fileName = "/images/null.png";
+			bean.setQuestion_image(fileName);
 		}
 		
 		
@@ -186,6 +189,10 @@ public class MypageController {
 			bean.setArticle_image(File.separator+"imgUpload"+ymdPath+File.separator+fileName);
 			bean.setArticle_thumb(File.separator+"imgUpload"+ymdPath+File.separator+"s"+File.separator+"s_"+fileName);
 		} else {
+			// null img
+			String fileName = "/images/null.png";
+			bean.setArticle_image(fileName);
+			bean.setArticle_thumb(fileName);
 		}
 		
 		
