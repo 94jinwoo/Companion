@@ -279,7 +279,9 @@ color: rgba(0,0,0,0.2);
 	margin-top:20px;
 	margin-right:120px;
 }
-
+.aColor{
+	color:#0F4C81;
+}
 /*************** reviewDetail Contents css  ********************/
 .reviewCon{
 	height:200px;
