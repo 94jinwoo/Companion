@@ -85,9 +85,9 @@
 						<td><span>${bean.member_id }</span><span>|</span><span>${bean.article_date }</span><span>조회수 ${bean.article_count }</span></td>
 					</tr>
 					<tr>
-						<td>
+						<td >
 						${bean.article_content }
-						<img alt="원본이미지" src="<spring:url value='${noticeSelectOne.article_image }'/>"/>
+						<img alt="원본이미지" src="<spring:url value='${bean.article_image }'/>"/>
 						</td>
 					</tr>
 				</tbody>
