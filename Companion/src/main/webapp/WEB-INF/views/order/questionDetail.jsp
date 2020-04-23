@@ -22,7 +22,7 @@
 <!-- Our Custom CSS -->
 <link rel="stylesheet" href="${root}css/main.css">
 <link rel="stylesheet" href="${root}css/order/goodsdetail.css">
-<title>Insert title here</title>
+<title>question delete</title>
 </head>
 <body>
 	<table class="DetailT">
@@ -94,7 +94,6 @@
 </body>
 
 <script type="text/javascript">
-//목록 버튼
 $("#back_Btn").click(function(){
 	location.href = ${root}+"order/productDetail/ReplyList?product_id="+${ReplyDetail.product_id};
 });

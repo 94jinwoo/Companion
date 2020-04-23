@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
-		<title>Collapsible sidebar using Bootstrap 4</title>
+		<title>COMPANION에 오신 것을 환영합니다.</title>
 	
 		<!-- Bootstrap CSS CDN -->
 		<link rel="stylesheet" href="${root}css/bootstrap/bootstrap.css">
@@ -71,7 +71,6 @@
 		<table class="table">
 				<thead>
 					<tr>
-<%-- 						<th><%Integer.parseInt(" %>${orderlist.order_id }<%") %></th> --%>
 						<th>주문ID</th>
 						<th>회원ID</th>
 						<th>주문총가격</th>

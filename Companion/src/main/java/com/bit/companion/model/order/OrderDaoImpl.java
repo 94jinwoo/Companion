@@ -22,16 +22,14 @@ public class OrderDaoImpl implements OrderDao {
 	@Autowired
 	private DataSourceTransactionManager transactionManager;
 	
-//	상품 목록 출력.
+//	product list select
 	@Override
 	public List<OrderVo> OrderSelectAll() throws SQLException{
 		return sqlSession.selectList("order.OrderSelectAll");
 		
 	}
-
-	
-//	상품 주문 성공했을 경우에 orderSuccess 페이지에서 insert 수행 
-	//transaction 처리.
+	// when	order success
+	//transaction 
 	@Override
 	public void OrderInfo_Details(OrderVo orderVo) throws SQLException {
 		DefaultTransactionDefinition def = new DefaultTransactionDefinition();
@@ -56,13 +54,12 @@ public class OrderDaoImpl implements OrderDao {
 		transactionManager.commit(status);
 	}
 
-
-// 상품 하나 주문 하기 orderPurchase 페이지에 필요한 정보 부르는 것.
+// orderPurchase 
 	@Override
 	public OrderVo OrderProductPurchaseOne(int product_id) throws SQLException {
 		return sqlSession.selectOne("order.OrderProductPurchaseOne",product_id);
 	}
-// 장바구니에 담기
+// cart add
 	@Override
 	public void OrderCartAdd(OrderVo orderVo) throws SQLException {
 		
@@ -70,15 +67,4 @@ public class OrderDaoImpl implements OrderDao {
 		sqlSession.insert("order.OrderCartAdd",orderVo);
 		
 	}
-	
-// 장바구니용.
-	@Override 
-	public int CartOrderPurchase(List<OrderVo> orderVo) throws SQLException {
-		sqlSession.insert("order.CartOrderPurchase",orderVo);
-		sqlSession.insert("order.CartDetailInsert",orderVo);
-		sqlSession.insert("order.CartPaymentInsert",orderVo);
-		return sqlSession.insert("order.CartDeliveryInsert",orderVo);
-	}
-	
-	
 }

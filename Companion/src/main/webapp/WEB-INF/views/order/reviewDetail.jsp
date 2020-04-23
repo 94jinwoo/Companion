@@ -73,7 +73,6 @@
 </body>
 
 <script type="text/javascript">
-//목록 버튼
 $("#back_Btn").click(function(){
 	location.href = ${root}+"order/productDetail/ReviewList?product_id="+${ReviewDetail.product_id};
 });

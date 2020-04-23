@@ -5,80 +5,44 @@
   
   <mapper namespace="order">
  
-  <!-- order Table용 매퍼였지만 지금 안쓰는 중.  -->
+  <!-- order Table  -->
 	<select id="OrderSelectAll" resultType="orderBean">
 	select * from `order`
 	</select>
 	
-	<!-- 상품 정보를 받아서 구매 할 때 입력해야 하므로 porduct table의 정보를 받아와야 함.  -->
+	<!-- product puchase one // detail ONE  -->
 	<select id="OrderProductPurchaseOne" resultType="orderBean" parameterType="int">
 		select * from product where product_id=#{value}
 	</select>
 	
-		<!-- 장바구니에 상품 등록  -->
+		<!-- cart add product  -->
 	<insert id="OrderCartAdd" parameterType="orderBean">
 		insert into `cart` values ((select truncate(rand()*10000000,0)),#{member_id},#{product_id},#{cart_quantity},#{cart_option});
 	</insert>
 
-	<!-- 장바구니 결제 용 . -->
-	<insert id="CartOrderPurchase" parameterType="java.util.Map">
-		insert into `order` values 
-		<foreach separator="," item="orderVo" collection="list">
-		(null,#{member_id},now(),${order_amount},#{order_name},#{order_tell},#{order_phone},
-			 #{order_addr1},#{order_addr2},#{order_addr3},#{order_msg},1);
-		</foreach>
-	</insert>
-	<insert id="CartDetailInsert" parameterType="java.util.Map">
-		insert into `order_detail`
-		 values 
-		 <foreach separator="," item="orderVo" collection="list">
-			 (default,(select order_id from `order` where order_date = (select max(order_date) from `order` where member_id=#{member_id})), 
-			 #{product_id},#{order_detail_price},#{order_detail_quantity});
-		 </foreach>
-	</insert>
-	
-	<insert id="CartPaymentInsert" parameterType="java.util.Map">
-		insert into `payment`
-			 values
-		 <foreach separator="," item="orderVo" collection="list">
-			(default,(select order_id from `order` where order_date = (select max(order_date) from `order` where member_id=#{member_id})),#{member_id},now(),#{order_detail_price},default);
-		 </foreach>
-	</insert> 
-	
-	<insert id="CartDeliveryInsert" parameterType="java.util.Map">
-	 	insert into delivery
-	 		values 
-		<foreach separator="," item="orderVo" collection="list">
-	 		(default,(select order_id from `order` where order_date = (select max(order_date) from `order` where member_id=#{member_id})),#{member_id},'비트택배',(select truncate(rand()*100000000000000,0)),0);
- 		 </foreach>
-	</insert>
-	<!-- update 재고 관리 필요 -->
-	<!-- 장바구니 결제 용  -->
-	
-	
-	<!-- 단일 상품 구매. -->
+	<!-- order product purchase -->
 	<insert id="OrderProductPurchase" parameterType="orderBean">
 	 	insert into 
 		`order` values
 		 (null,#{member_id},now(),#{order_amount},#{order_name},#{order_phone},#{order_phone},
 			 #{order_addr1},#{order_addr2},#{order_addr3},#{order_msg},1);
 	</insert> 
+	<!-- product purchase order_detail insert -->
 	<insert id="OrderDetailInsert" parameterType="orderBean">
 		insert into `order_detail`
 		 values 
 		 (default,(select order_id from `order` where order_date = (select max(order_date) from `order` where member_id=#{member_id})), 
 		 #{product_id},#{order_detail_price},#{order_detail_quantity},#{order_detail_option});
 	</insert>
-
+	<!-- product purchase payment insert  -->
 	<insert id="OrderPaymentInsert" parameterType="orderBean">
 		insert into `payment` values
 		(default,(select order_id from `order` where order_date = (select max(order_date) from `order` where member_id=#{member_id})),#{member_id},now(),#{order_detail_price}+2500,default);
 	</insert> 
 	 
-	<!-- 재고 수량 UPDATE  -->
+	<!-- product stock calc  -->
 	<update id="OrderUpdateProductStock">
 		update product set product_stock=(product_stock-#{order_detail_quantity}) where product_id=#{product_id};
 	</update>
 	
-	<!-- 상품 주문 시  -->
   </mapper>
