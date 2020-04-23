@@ -81,11 +81,8 @@
 			<c:forEach items="${adminReservationList }" var="bean">
 				<tr>
 					<td>
-						<a href="#reservationDetail" data-toggle="modal">${bean.service_name }</a>
-					</td>
-<%-- 				<td>
 						<a href="${root }admin/reservation_detail?reserve_id=${bean.reserve_id}">${bean.service_name }</a>
-					</td> --%>
+					</td>
 					<td>
 						<a href="${root }admin/reservation_detail?reserve_id=${bean.reserve_id}">${bean.member_id }</a>
 					</td>
@@ -108,34 +105,6 @@
 			</table>
 		</section>
 		<!-- section [end] -->
-		<!-- 테스트해보자 모달창 -->
-		
-		<!-- Modal -->
-		<div class="modal fade" id="reservationDetail" tabindex="-1" role="dialog" aria-labelledby="reservationDetailTitle" aria-hidden="true">
-		  <div class="modal-dialog modal-dialog-scrollable" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title" id="reservationDetailTitle">예약 상세정보</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <div class="modal-body">
-				<div class="inputArea">
-		       		<label for="member_name">이름</label>
-					<span>${adminReservationOne.member_name }</span>
-				</div>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-		        <button type="button" class="btn btn-primary">예약취소</button>
-		        <button type="button" class="btn btn-primary">예약확정</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-
-		<!-- 테스트해보자 모달창 -->
 	</div>
 	<!-- #content [end] -->
 </div>

@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="${root}css/bootstrap/bootstrap.css">
 	<!-- Our Custom CSS -->
 	<link rel="stylesheet" href="${root}css/main.css">
+	<link rel="stylesheet" href="${root}css/hotel/hotelRoom.css">
 	<!-- Font Awesome JS -->
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -83,79 +84,44 @@
             </div>
 		    <!-- section start -->
 			<section class="section">
-                             
-                  <div class="album py-5 bg-light">
-                    <div class="container">
-                        <span class="h2">VIP Room</span>
+			
+                  <div class="lineBox clearfix">
+                  	<div class="textBox float--left">
+                        <h2>VIP Room</h2>
                         <p>개별 마당이 있으며, 다양한 서비스를 추가로 받을 수 있습니다.<br/>
                             평소 넓은 공간에서 지내고 있는 반려견을 위한 객실입니다.<br/>
                             객실크기 : 100cm × 102cm × 90cm<br/>
                             개별마당 : 60cm × 80cm × 90cm</p>
-                      <div class="row"> <!-- viproom .row start -->
-                        <div class="col-md-4">
-                            <div class="card mb-4">
-                                <img class="card-img-vip"src="../imgs/viproom1.png" alt="viproom1">
-                              <div class="card-body">
-                                <p class="card-text">VipRoom 1</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card mb-4">
-                                <img class="card-img-vip"src="../imgs/viproom1.png" alt="viproom1">
-                              <div class="card-body">
-                                <p class="card-text">VipRoom 3</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card mb-4">
-                                <img class="card-img-vip" src="../imgs/viproom1.png" alt="viproom1">
-                              <div class="card-body">
-                                <p class="card-text">VipRoom 3</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div><!-- viproom .row end-->  
-                        
-                          <span class="h2">Standard Room</span>
-                          <p>넓은 공간에서 논 후 스트레스 없이 안심하고 쉴 수 있는 객실입니다.<br/>
+                  	</div>
+                  	<div class="float--right">
+                  		<img class="imgRoom" src="../imgs/hotel/vip.png" alt="viproom">
+                  	</div>
+                  </div>          
+                  
+                  <div class="lineBox clearfix">
+                  	<div class="textBox float--left">
+                        <h2>Deluxe Room</h2>
+                        <p>넓은 공간에서 느긋하게 휴식을 취하면서<br/>
+                        	여유를 즐길 수 있는 객실입니다.<br/>
+                            객실크기 : 73cm × 119cm × 86cm<br/>
+                  	</div>
+                  	<div class="float--right">
+                  		<img class="imgRoom" src="../imgs/hotel/deluxe.png" alt="deluxeroom">
+                  	</div>
+                  </div>          
+                  
+                  <div class="lineBox clearfix">
+                  	<div class="textBox float--left">
+                  		<h2>Standard Room</h2>
+                         <p>넓은 공간에서 논 후<br/>
+                         스트레스 없이 안심하고 쉴 수 있는 객실입니다.<br/>
                             객실크기 : 73cm × 59cm × 57cm</p>
-                          <div class="row"><!-- standard .row start--> 
-                          <div class="col-md-3">
-                            <div class="card mb-3">
-                                <img class="card-img-std" src="../imgs/stdroom1.png" alt="stdroom1">
-                              <div class="card-body">
-                                <p class="card-text">WoodRoom1</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                            <div class="card mb-3">
-                                <img class="card-img-std" src="../imgs/stdroom1.png" alt="stdroom1">
-                              <div class="card-body">
-                                <p class="card-text">WoodRoom2</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                            <div class="card mb-3">
-                                <img class="card-img-std" src="../imgs/stdroom1.png" alt="stdroom1">
-                              <div class="card-body">
-                                <p class="card-text">WoodRoom3</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                            <div class="card mb-3">
-                                <img class="card-img-std" src="../imgs/stdroom1.png" alt="stdroom1">
-                              <div class="card-body">
-                                <p class="card-text">WoodRoom4</p>
-                              </div>
-                            </div>
-                          </div>
-                          <hr class="mb-2">
-                        </div><!-- standard .row end--> 
+                  	</div>
+                  	<div class="float--right">
+                  		<img class="imgRoom" src="../imgs/hotel/stdroom.png" alt="stdroom">
+                  	</div>
+                  </div>    
+                  
             </section>
 			<!-- section end -->
 		</div>

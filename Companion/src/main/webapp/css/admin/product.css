@@ -48,11 +48,9 @@
 	height:80px;
 	width:80px;
 }
-.table thead{}
 .table thead tr th{
 	text-align:center;
 }
-.table tbody{}
 .table tbody tr{
 	height:80px;
 }
