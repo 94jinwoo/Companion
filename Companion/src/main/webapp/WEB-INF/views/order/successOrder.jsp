@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:url value="/" var ="root"></c:url>
-
-<%
+<%-- <%
     String name = (String)request.getAttribute("name");
     String email = (String)request.getAttribute("email");
     String phone = (String)request.getAttribute("phone");
@@ -12,7 +11,7 @@
     System.out.println(email);
     System.out.println(phone);
     System.out.println(address);
-%>
+%> --%>
 <c:url value="/" var ="root"></c:url>
 	<!DOCTYPE html>
 	<html>
@@ -32,11 +31,8 @@
 		<!-- Font Awesome JS -->
 		<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
 		<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-	
 	</head>
-	
 	<body>
-	
 		<div class="wrapper">
 			 <!-- Sidebar  -->
 		<jsp:include page="../common/sidebar.jsp"/>
@@ -126,18 +122,14 @@
 					<h2>주문이 완료되었습니다!</h2>
 					<a href="${root }" class="mainBtn" id="payApi"
 						role="button">메인페이지로 돌아가기</a>
-					<!-- 	<button onclick="window.open='../order/payApi'">결제하기</button> -->
-					<!-- 	<a class="btn btn-primary" id="payApi" href="../order/payApi" role="button"> 결제하기 </a> -->
 					<a href="${root }mypurchaselist" class="mainBtn" role="button">주문내역 확인하기</a>
 				</div>
-
 			</section><!-- container end -->
 	<!-- Footer  -->
 			<jsp:include page="../common/footer.jsp"/>
 	<!-- Footer end -->
 </div><!-- content 끝나는 곳. -->
 		</div><!-- Wrapper ENd -->
-	
 		<!-- jQuery CDN - Slim version (=without AJAX) -->
 	 	<script src="${root}js/jquery-1.12.4.js"></script> 
 		<!-- Popper.JS -->

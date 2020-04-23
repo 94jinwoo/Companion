@@ -3,10 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="session">
-
-	
-	
-	<!-- 세션매퍼라고. -->
+	<!-- ToDay View -->
 	<select id="sessionList" resultType="sessionBean" parameterType="int">
 		select 
 			product_id,product_name,product_image,product_thumb,category_id
@@ -14,6 +11,4 @@
 			product 
 		where product_id = #{product_id}
 	</select>
-	
-	
   </mapper>

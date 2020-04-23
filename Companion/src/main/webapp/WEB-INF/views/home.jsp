@@ -107,7 +107,7 @@
             <div class="maincontent">
                 <!--carousel-->
                 <div class="row">
-                    <!-- 쇼핑몰 이동하는 캐러셀 485 x 560-->
+                    <!-- carosel -->
                     <div class="col-md-6">
                         <div class="carosel">
                             <div id="carouselExampleCaptions1" class="carousel slide" data-ride="carousel">
@@ -212,69 +212,12 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 여여여 -->
-                <!-- <div class="row mb-2">
-                    <div class="col-md-6">
-                        <div
-                            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                            <div class="col p-4 d-flex flex-column position-static">
-                                <strong class="d-inline-block mb-2 text-primary">쇼핑몰 이용후기</strong>
-                                <h3 class="mb-0">최고의 간식!</h3>
-                                <div class="mb-1 text-muted">★★★★★</div>
-                                <p class="card-text mb-auto">This is a wider card with supporting text below as a
-                                    natural
-                                    lead-in to
-                                    additional content.</p>
-                                <a href="#" class="stretched-link font-weight-bold">더 많은 후기보기 ></a>
-                            </div>
-                            <div class="col-auto d-none d-lg-block">
-                                <svg class="bd-placeholder-img" width="180" height="250"
-                                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
-                                    focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-                                    <title>Placeholder</title>
-                                    <rect width="100%" height="100%" fill="#55595c" /><text x="35%" y="50%"
-                                        fill="#eceeef" dy=".3em">후기 사진</text>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div
-                            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                            <div class="col p-4 d-flex flex-column position-static">
-                                <strong class="d-inline-block mb-2 text-success">호텔 이용후기</strong>
-                                <h3 class="mb-0">재이용 의사 100%</h3>
-                                <div class="mb-1 text-muted">★★★★★</div>
-                                <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in
-                                    to
-                                    additional content.</p>
-                                <a href="#" class="stretched-link font-weight-bold">더 많은 후기보기 ></a>
-                            </div>
-                            <div class="col-auto d-none d-lg-block">
-                                <svg class="bd-placeholder-img" width="180" height="250"
-                                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
-                                    focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-                                    <title>Placeholder</title>
-                                    <rect width="100%" height="100%" fill="#55595c" /><text x="35%" y="50%"
-                                        fill="#eceeef" dy=".3em">후기 사진</text>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- 여여여 -->
             </div>
         </div>
 		<!-- Footer  -->
 		<jsp:include page="common/footer.jsp"/>
-        
-        
         </div>
-    
-
     </div>
-
     <!-- jQuery -->
     <script src="${root }js/jquery-1.12.4.js"></script>
     <!-- Popper.JS -->
@@ -283,7 +226,6 @@
     <script src="${root }js/bootstrap/bootstrap.js"></script>
     <!-- MAIN JS -->
     <script src="${root }js/main.js"></script>
-
 </body>
 
 </html>

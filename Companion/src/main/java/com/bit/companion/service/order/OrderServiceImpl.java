@@ -58,9 +58,4 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 
-	@Override
-	public int insert_test(List<OrderVo> orderVo) throws SQLException {
-		
-		return orderDao.CartOrderPurchase(orderVo);
-	}
 }

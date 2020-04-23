@@ -74,9 +74,7 @@
                 </a>
                 <span>></span>
                 <a href="#">
-                
                     <%
-                    
                     String categoryFind = (String)request.getQueryString().substring(0,15);
                     if("category_id=100".equals(categoryFind)){
                     	out.println("사료");
@@ -94,7 +92,6 @@
                     	out.println("산책용품");
                     }
                     %>
-
                 </a>
                 <hr class="mb-4">
             </div>
@@ -106,7 +103,6 @@
 		<div class="maincontent">
 				<nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                    <!-- sideBar에서 클릭하면 category_id를 넘겨야 함.  -->
                         <li class="breadcrumb-item" aria-current="page"><a href="${root }order/productMain?category_id=${param.category_id}&sort=like">추천순</a></li>
                         <li class="breadcrumb-item"><a href="${root }order/productMain?category_id=${param.category_id}&sort=order">판매인기순</a></li>
                         <li class="breadcrumb-item"><a href="${root }order/productMain?category_id=${param.category_id}&sort=low">낮은가격순</a></li>
@@ -121,16 +117,13 @@
 			        <div class="col-md-3 col-sm-6"> 
 			            <div class="product-grid productbox">
 			                <div class="product-image">
-			                <!-- a에 링크 2개 걸 때 onclick 이벤트 쓰면 됨 예시
-			                 onclick="parent.question.jsp.location.href='${root }order/productDetail/ReplyList?idx=${productDetailOne.product_id}&num=1'  -->
  			                    <a href="${root }order/productDetail?idx=${bean.product_id }"> 
 						                <img class="pic-1" src="${bean.product_image }"/>
 			                    </a>
 
 			                </div>
-			                <!-- 슬라이드 가려지기 전 화면.  -->
+			                <!-- recommend lgn check  -->
 			                <ul class="rating">
-					                             <!-- 따봉 로그인 세션 검사  -->
 					             <c:set var = "memberID" value="${memberVo.member_id }"/>         
 					               <c:choose>
 											<c:when test="${memberVo.member_id==null}">
@@ -144,19 +137,15 @@
 							                </li>   
 							               </c:when>  
 		 			                </c:choose>       
-			            						  <!-- 따봉 로그인 세션 검사  -->   
 			                </ul>
 			                <div class="product-content">
 			                    <h3 class="title"><a href="${root }order/productDetail?idx=${bean.product_id }"> ${bean.product_name }</a></h3> 
-			             
-			
 			                    <div class="price"><fmt:formatNumber value="${bean.product_price}" pattern="###,###,###"/>원</div>
 			                 
 			                </div>
 			            </div>
 			        </div>
        		 </c:forEach>
-		<%-- 	        <% } %> --%>
     </div>
     <br/>
 		<!-- pagination [start] -->
@@ -192,7 +181,6 @@
 		<script type="text/javascript">
 
 		</script>
-		<!-- 추천수 script end -->
 		<script type="text/javascript">
 		
 			

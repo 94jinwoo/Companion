@@ -20,29 +20,30 @@ public class ProductDaoImpl implements ProductDao{
 	@Autowired
 	SqlSession sqlSession;
 	
+	// product select info
 	@Override
 	public List<ProductVo> ProductSelectAll() throws SQLException {
 		return sqlSession.selectList("product.ProductSelectAll");
 	}
  
-	//프로덕트 상세페이지
+	//product detail page info
 	@Override
 	public ProductVo ProductDetailOne(int product_id) throws SQLException {
 		return sqlSession.selectOne("product.ProductDetailOne",product_id);
 	}
 
-	//상품 카테고리 목록별 출력.
+	//product category sort
 	@Override
 	public List<ProductVo> ProductCategorySelect(int category_id) throws SQLException {
 		return sqlSession.selectList("product.ProductCategorySelect",category_id);
 	}
 	
-	//상품 추천 목록 출력.
+	//product recommend list view
 	@Override
 	public List<ProductVo> productRecommendList(int product_id) throws SQLException {
 		return sqlSession.selectList("ProductRecommendList",product_id);
 	}
-	//상품 추천 목록 출력.
+	//product recommend list view 2
 	@Override
 	public List<ProductVo> productRecommendList2(int product_id) throws SQLException {
 		return sqlSession.selectList("ProductRecommendList2",product_id);

@@ -2,39 +2,39 @@ package com.bit.companion.controller.order;
 
 public class OrderPagenation {
 
-	// 현재 페이지 번호
+	// present page num
 	private int num;
-	// 게시물 총 갯수
+	// all board count
 	//page.setCount(productService.count(model, category_id));
 	private int count;
 	
-	// 한 페이지에 출력할 게시물 갯수
+	// page * board num
 	private int postNum = 12;
-	// 하단 페이징 번호 ([ 게시물 총 갯수 ÷ 한 페이지에 출력할 갯수 ]의 올림)
+	// paging num ([ all board num ÷ page*board ]의 올림)
 	private int pageNum;
-	// 출력할 게시물
+	// disply paging
 	private int displayPost;
-	// 한번에 표시할 페이징 번호의 갯수
+	// paging num
 	private int pageNumCnt = 3;
-	// 표시되는 페이지 번호 중 마지막 번호
+	// last num of paging
 	private int endPageNum;
-	// 표시되는 페이지 번호 중 첫번째 번호
+	// first num of paging
 	private int startPageNum;
-	// 다음/이전 표시 여부
+	// next or prev status
 	private boolean prev;
 	private boolean next;
 	
 	
 	private void dataCalc() {
 		
-		//마지막 번호
+		//lastnum
 		endPageNum = (int)(Math.ceil((double)num/(double)pageNumCnt) * pageNumCnt);
 		
 		System.out.println(endPageNum);
-		//시작 번호
+		//start page num
 		startPageNum = endPageNum - (pageNumCnt-1);
 		
-		//마지막 번호 재계산
+		//last num re calc
 		int endPageNum_tmp = (int)(Math.ceil((double)count/(double)pageNumCnt));
 		
 		if(endPageNum > endPageNum_tmp) {

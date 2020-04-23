@@ -10,38 +10,52 @@
 		select * from product where category_id=#{category_id} order by #{value};
 	</select>
 	
-	 <!-- 모든 상품 목록 데이터 가져오는 곳.   -->
+	 <!-- product select *   -->
   	<select id="ProductSelectAll" resultType="productBean">
-	  	select (a.category_id, a.product_id, a.product_name, a.product_content, a.product_price, a.product_stock, a.product_date, 
+	  	select 
+	  	(a.category_id, a.product_id, a.product_name, a.product_content, a.product_price, a.product_stock, a.product_date, 
 	  	a.product_image, a.product_thumb, a.product_option1, a.product_option2, a.product_option3, a.product_option4, 
-	  	a.product_option5,b.product_id, b.like_id, b.member_id from `product` as a left join `like` as b on a.product_id=b.product_id) 
-	  	union select (a.like_id, a.member_id, a.product_id,b.category_id, b.product_id, b.product_name, b.product_content, b.product_price, 
-	  	b.product_stock, b.product_date, b.product_image, b.product_thumb, b.product_option1, b.product_option2, b.product_option3, 
-	  	b.product_option4, b.product_option5 from `like` as a left join `product` as b on a.product_id=b.product_id);
+	  	a.product_option5,b.product_id, b.like_id, b.member_id 
+		  	from `product` as a 
+			  	left join `like` as b 
+				  	 on a.product_id=b.product_id) 
+	  	union
+	  	 select
+		  	  (a.like_id, a.member_id, a.product_id,b.category_id, b.product_id, b.product_name, b.product_content, b.product_price, 
+		  	b.product_stock, b.product_date, b.product_image, b.product_thumb, b.product_option1, b.product_option2, b.product_option3, 
+		  	b.product_option4, b.product_option5 
+			  	from `like` as a 
+			  		left join `product` as b 
+			  			on a.product_id=b.product_id);
   	</select> 
   	
   	<!-- 상세 페이지  -->
   	<select id="ProductDetailOne" resultType="productBean" parameterType="int">
-		select distinct product.*,(select count(*) from `like` 
-		where product.product_id=`like`.product_id) as like_id from product left join`like` 
-		on product.product_id=`like`.product_id where product.product_id=#{value};
+		select 
+		distinct product.*,(select count(*) from `like` 
+			where product.product_id=`like`.product_id) as like_id 
+				from product left join`like` 
+					on product.product_id=`like`.product_id where product.product_id=#{value};
 	</select>
 	
 	<!--  카테고리별 기본 페이지 -->
 	<select id="ProductCategorySelect" resultType="productBean" parameterType="int">
 	  	select distinct product.*,(select count(*) from 
-	  	`like` where product.product_id=`like`.product_id) as like_id from product left join`like` 
-	  	on product.product_id=`like`.product_id where product.category_id=#{category_id};
+	  	`like` where product.product_id=`like`.product_id) as like_id 
+		  	from product
+		  		 left join`like` 
+		  			on product.product_id=`like`.product_id where product.category_id=#{category_id};
   	</select> 
   	
 
-	<!-- 상품 총 개수 -->
+	<!-- product count(*) -->
 	<select id="count" resultType="int">
-		select count(*) as listCnt from `product` p, `category` c 
+		select count(*) as listCnt
+		 from `product` p, `category` c 
 			where p.category_id=c.category_id and 
-			(p.category_id=#{category_id} OR category_refid=#{category_id});
+				(p.category_id=#{category_id} OR category_refid=#{category_id});
 	</select>
-	
+	<!-- product list sorted by   -->	
 	<select id="ListPage" resultType="productBean">
 		<if test="sort =='date'">
 			select p.*, (select count(*) from `like` l where p.product_id=l.product_id) as like_id 
@@ -81,8 +95,7 @@
 						ORDER BY p.product_price DESC limit #{startList},#{listSize}
 		</if>
 	</select>
-	<!-- 선택 상품의 추천수가 0일 경우 랜덤 상품이 추천 됨.  -->
-	<!-- 추천상품목록 구현  -->
+	<!-- product recommend List  -->
 	<select id="ProductRecommendList" resultType="productBean" parameterType="int">
 		 (select distinct order_detail.product_id,product.product_name,product.product_image from `order_detail`,product
  			where product.product_id = order_detail.product_id

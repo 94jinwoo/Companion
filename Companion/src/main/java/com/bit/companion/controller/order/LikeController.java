@@ -22,12 +22,11 @@ public class LikeController {
 
 	@Autowired
 	LikeService likeService;
-
+	//like insert 	
 	  @ResponseBody
 	  @RequestMapping(value="/order/likeInsert", method = RequestMethod.POST)
 	  public int likeInsert(LikeVo likeVo,HttpSession session) throws Exception {
 		  int result;
-		  System.out.println("likeInsertController run");
 		  logger.debug(likeVo.getMember_id());
 		  logger.debug((Integer.toString(likeVo.getProduct_id())));
 		  result = likeService.likeInsert(likeVo);

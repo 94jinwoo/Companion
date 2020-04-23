@@ -16,7 +16,8 @@ public class SessionDaoImpl implements SessionDao {
 
 	@Autowired
 	SqlSession sqlSession;
-
+	
+	//session list (TODAY VIEW)
 	@Override
 	public List<SessionVo> sessionList(List<Object> list) throws SQLException {
 		List<SessionVo> mylist2=new ArrayList<>();;
