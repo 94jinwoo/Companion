@@ -118,7 +118,7 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <a href="${root }order/productMain?c=100&num=1">
+                                        <a href="${root }order/productMain?category_id=100">
                                             <img src="${root }imgs/shopping/shop01.jpg" class="d-block w-100" alt="...">
                                         </a>
                                     </div>

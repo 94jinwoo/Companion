@@ -77,10 +77,14 @@ table tbody tr:first-child{
 }
 .textB{
 	margin-left:20px;
-	margin-top:10px;
 }
 .textB div{
-	height:30px;
-	width:400px;
+	line-height:1.5;
 	border-bottom:1px solid gray;
+	padding:0 10px;
+	padding-right:20px;
+	margin-bottom:5px;
+}
+.textB div label{
+	margin-bottom:5;
 }
