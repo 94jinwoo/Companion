@@ -86,7 +86,7 @@
 					</tr>
 					<tr>
 						<td id="bbs-content">
-						<span>${noticeSelectOne.article_content}</span>
+						<div>${noticeSelectOne.article_content}</div>
 						<img class="bbs-image" alt="원본이미지" src="<spring:url value='${noticeSelectOne.article_image }'/>"/>
 						</td>
 					</tr>
