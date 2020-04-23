@@ -1,6 +1,0 @@
- // reset css
-https://www.jsdelivr.com/package/npm/reset-css
- // emmet
-https://emmet.io/
- // font
-https://fonts.google.com/
