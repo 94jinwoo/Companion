@@ -312,7 +312,7 @@
 							<th scope="row">상품 이름</th>
 							<th scope="row">상품 옵션</th>
 							<th scope="row">상품 단가</th>
-							<th scope="row">상품 수량</th>
+							<th scope="row">수량</th>
 							<th scope="row">소 계</th>
 						</tr>
 					</thead>
@@ -323,18 +323,18 @@
 							<td>${product.order_detail_option }</td>
 							<td>${product.product_price }</td>
 							<td>${product.order_detail_quantity }</td>
-							<td style="text-align:right; padding-right:60px;">${product.order_detail_price }</td>
+							<td style="text-align:right; padding-right:40px;">${product.order_detail_price }</td>
 						</tr>
 					</c:forEach>
 					<tr>
 						<td colspan="3"></td>
 						<td>택배비</td>
-						<td style="text-align:right; padding-right:60px;">2,500</td>
+						<td style="text-align:right; padding-right:40px;">2,500</td>
 					</tr>
 					<tr>
 						<td colspan="3"></td>
 						<td class="amount">총 계</td>
-						<td class="amount" style="text-align:right; padding-right:60px;">${bean.order_amount }</td>
+						<td class="amount" style="text-align:right; padding-right:40px;">${bean.order_amount }</td>
 					</tr>
 					</tbody>
 				</table>

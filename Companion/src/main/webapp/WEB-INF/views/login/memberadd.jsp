@@ -100,19 +100,19 @@
                 
                 <!-- Name -->
                 <div class="mb-3">
-                    <label for="member_name">이름</label>
+                    <label for="member_name">*이름</label>
                     <input type="text" class="form-control" name="member_name" id="member_name" placeholder="공백없이 실명 입력" required>
                 </div>
                 
                 <!-- tel -->
                 <div class="mb-3">
                     <label for="member_tel">집전화번호</label>
-                    <input type="text" class="form-control" name="member_tel" id="member_tel" placeholder="'-' 없이 숫자만 입력" required>
+                    <input type="text" class="form-control" name="member_tel" id="member_tel" placeholder="'-' 없이 숫자만 입력">
                 </div>
                 
                 <!-- phone -->
                 <div class="mb-3">
-                    <label for="member_phone">휴대폰번호</label>
+                    <label for="member_phone">*휴대폰번호</label>
                         <input type="text" class="form-control" name="member_phone" id="member_phone" placeholder="'-' 없이 숫자만 입력" required>
                 </div>
                 
