@@ -62,7 +62,7 @@
 				<h1>[Admin] Q&A 목록</h1>
 			</div>
 			
-			<table id="dataTable" class="table table-bordered table-hover" style="width:100%">
+			<table id="dataTable" class="table table-bordered table-hover" style="table-layout:fixed;">
 				<thead>
 					<tr>
 						<th>글번호</th>
