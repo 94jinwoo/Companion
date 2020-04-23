@@ -98,10 +98,10 @@ button {
 /* TABLE_LAYOUT STYLE */
 .table_layout1 { margin:0px; table-layout:fixed; }
 .table_layout1 .col1 { width: auto; } /* 상품이름 */ 
-.table_layout1 .col2 { width: 200px; } /* 옵션 */
+.table_layout1 .col2 { width: 250px; } /* 옵션 */
 .table_layout1 .col3 { width: 150px; } /* 단가 */
 .table_layout1 .col4 { width: 100px; } /* 수량 */
-.table_layout1 .col5 { width: 200px; } /* 소계 */
+.table_layout1 .col5 { width: 150px; } /* 소계 */
 
 .amount{
 	font-size:18px;
