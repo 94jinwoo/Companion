@@ -90,12 +90,12 @@
 				<!-- .boxing start -->
 				<div class="boxing clearfix">
 					<div class="pic float--left">
-						<img src="../imgs/doctor.png" alt="doctorimg">
+						<img src="../imgs/doctor1.png" alt="doctorimg">
 					</div>
 					<div class="descrip-group float--right">
 						<ul class="descrip">
-							<li><h2 id="name">김땡땡</h2></li>
-							<li><span>독일 뮌헨대학교 수의대 졸업</span></li>
+							<li><h2 id="name">김박사</h2></li>
+							<li><span>한국 서울대학교 수의대 졸업</span></li>
 							<li><span>동대학수의대 동물복지 및 동물행동학 박사 취득</span></li>
 							<li><span>유럽동물자연보호협회 동물보호소 임상 수의사</span></li>
 							<li><span>서울대 수의대 겸임교수</span></li>
@@ -109,18 +109,18 @@
 				<!-- .boxing start -->
 				<div class="boxing clearfix">
 					<div class="pic float--left">
-						<img src="../imgs/doctor.png" alt="doctorimg">
+						<img src="../imgs/doctor3.png" alt="doctorimg">
 					</div>
 					<div class="descrip-group float--right">
 						<ul class="descrip">
-							<li><h2 id="name">김땡땡</h2></li>
-							<li><span>독일 뮌헨대학교 수의대 졸업</span></li>
+							<li><h2 id="name">이슬이</h2></li>
+							<li><span>한국 서울대학교 수의학과 졸업</span></li>
 							<li><span>동대학수의대 동물복지 및 동물행동학 박사 취득</span></li>
 							<li><span>유럽동물자연보호협회 동물보호소 임상 수의사</span></li>
 							<li><span>서울대 수의대 겸임교수</span></li>
-							<li><span>대한수의사회 동물복지위원회 위원</span></li>
+							<li><span>대한수의사회 동물복지위원회 이사</span></li>
 							<li><span>애견 종합 관리사 - 한국애견협회</span></li>
-							<li><span>독 아로마테라피스트 마스터 - 한국펫산업학회장</span></li>
+							<li><span>애견 훈련사 마스터 - 한국펫산업학회임원</span></li>
 						</ul>
 					</div>
 				</div>
@@ -128,18 +128,18 @@
 				<!-- .boxing start -->
 				<div class="boxing clearfix">
 					<div class="pic float--left">
-						<img src="../imgs/doctor.png" alt="doctorimg">
+						<img src="../imgs/doctor2.png" alt="doctorimg">
 					</div>
 					<div class="descrip-group float--right">
 						<ul class="descrip">
-							<li><h2 id="name">김땡땡</h2></li>
-							<li><span>독일 뮌헨대학교 수의대 졸업</span></li>
+							<li><h2 id="name">최지우</h2></li>
+							<li><span>한국 건국대학교 수의학과 졸업</span></li>
 							<li><span>동대학수의대 동물복지 및 동물행동학 박사 취득</span></li>
 							<li><span>유럽동물자연보호협회 동물보호소 임상 수의사</span></li>
 							<li><span>서울대 수의대 겸임교수</span></li>
 							<li><span>대한수의사회 동물복지위원회 위원</span></li>
 							<li><span>애견 종합 관리사 - 한국애견협회</span></li>
-							<li><span>독 아로마테라피스트 마스터 - 한국펫산업학회장</span></li>
+							<li><span>독 힐링테라피스트 마스터 - 한국펫산업학회장</span></li>
 						</ul>
 					</div>
 				</div>
