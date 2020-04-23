@@ -184,7 +184,7 @@
 						<label for="content">내용</label>
 						</div>
 					</th>
-				    <td>
+				    <td colspan="5">
 				    	<div>
 				    	<label>${adminQuestionOne.question_content }</label>
 				    	<input type="hidden" name="question_content" id="question_content" value="${adminQuestionOne.question_content }"/>
@@ -207,7 +207,7 @@
 				</table>
 				<!-- table에 잡아넣기끝 -->
 				<div class="btn__group">
-					<button type="submit" class="btn">수정</button>
+					<button type="submit" class="btn">등록</button>
 					<button type="button" id="back_Btn" class="btn">취소</button>
 				</div>
 			</form>

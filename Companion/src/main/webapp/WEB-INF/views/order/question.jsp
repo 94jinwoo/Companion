@@ -50,11 +50,11 @@
 			<c:forEach items="${ReplyList}" var="bean" varStatus="status">
 				<tr>
 					<td>${(ReplyTotal-status.index)-(pagination_p.page-1)*pagination_p.listSize}</td>
-					<!-- 공개 -->
+					<!-- open -->
 					<c:if test="${bean.question_secret_id == 0 }">
 						<td><a href="${root }order/productDetail/ReplyDetail?question_id=${bean.question_id}">${bean.question_title }</a></td>
 					</c:if>
-					<!-- 비공개 -->
+					<!-- secret -->
 					<c:if test="${bean.question_secret_id == 1 }">
 						<c:if test="${memberVo.member_id == bean.member_id}">
 							<td><a href="${root }order/productDetail/ReplyDetail?question_id=${bean.question_id}" class="mySecret">${bean.question_title }</a></td>

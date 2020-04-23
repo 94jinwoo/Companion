@@ -31,7 +31,7 @@ public class OrderCartController {
 	@Autowired
 	OrderService orderService;
 	
-	// 장바구니 담기.
+	// cart add
 	 @RequestMapping(value ="/order/orderCart",method=RequestMethod.POST)
 	 public String orderCartAdd(Model model,HttpSession session,OrderVo orderVo,HttpServletRequest request) throws SQLException{
 	 		MemberVo member = (MemberVo)session.getAttribute("memberVo");
@@ -41,14 +41,4 @@ public class OrderCartController {
 		
 		 return "redirect:productDetail?idx="+orderVo.getProduct_id(); 
 	};
-	
-	//장바구니 주문.
-	@RequestMapping(value="/order/orderCartPurchase",method=RequestMethod.POST)
-	public String orderCartPurchase(HttpServletRequest req,Model model,List<OrderVo> orderVo) throws SQLException {
-		orderService.insert_test(orderVo);
-		 
-		return "/order/successOrder";
-	}
-	
-	
 }

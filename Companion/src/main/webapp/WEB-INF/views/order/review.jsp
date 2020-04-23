@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:url value="/" var="root"></c:url>
-<c:url var="getList" value="/order/review"></c:url> <!-- 페이지네이션을위한 현재 페이지경로 설정 -->
+<c:url var="getList" value="/order/review"></c:url> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,19 +46,19 @@
 		<tbody>
 		<c:forEach items="${ReviewList }" var="bean" varStatus="status">
 			<tr>
-				<!-- 이미지 -->
+				<!-- image -->
 				<td>
 					<img src="<spring:url value='${bean.article_image }'/>" alt="Img80" width="80px">
 				</td>
 				
-				<!-- 제목 -->
+				<!-- title -->
 				<td><a href="${root }order/productDetail/ReviewDetail?article_id=${bean.article_id}"
 						 class="text-dark d-inline-block align-middle">${bean.article_title }</a></td>
 				
-				<!-- 작성자 -->
+				<!-- member name(login) -->
 				<td>${bean.member_id }</td>
 
-				<!-- 작성일 -->
+				<!-- writing date -->
 				<td><fmt:formatDate value="${bean.article_date}" pattern="yyy-MM-dd"/></td>
 
 			</tr>

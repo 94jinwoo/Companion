@@ -4,22 +4,22 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="orderQuestion">
-  	<!-- 입력 -->
+  	<!-- reply insert -->
 	<insert id="registReply">
 		insert into `question` values (default,100,null,#{product_id},#{member_id},now(),null,#{question_title},#{question_content},"/images/null.png",null,#{question_secret_id},default)
 	</insert>
 	
-	<!-- 리스트 -->
+	<!-- review list view -->
 	<select id="OrderQuestionList" resultType="orderQuestionBean">
 	select * from `question` where product_id=#{product_id} ORDER BY question_id DESC limit #{startList},#{listSize}
 	</select> 
 	
-	<!-- 총 게시글  -->
+	<!-- reply list count (paging)  -->
 	<select id="ReplyListAllCount" resultType= "int">
 	select count(*) as listCnt from `question` where product_id=#{product_id}
 	</select>
 	
-	<!-- 디테일 -->
+	<!-- reply detail view -->
 	<select id="ReplyDetail" parameterType="int" resultType="orderQuestionBean">
 	SELECT
 			q.*,

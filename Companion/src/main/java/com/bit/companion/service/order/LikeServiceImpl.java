@@ -17,7 +17,7 @@ public class LikeServiceImpl implements LikeService {
 
 	@Autowired
 	LikeDao likedao;
-
+	//like insert
 	@Override
 	public int likeInsert(LikeVo likeVo) throws Exception{
 		int result;
