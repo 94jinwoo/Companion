@@ -204,7 +204,7 @@
 												<div class="modal-footer">
 													<button type="button" class="btn btn-secondary"
 														data-dismiss="modal">취소</button>
-													<button onclick="goForm()" type="submit"
+													<button id="cartSubmit" onclick="goForm()" type="submit"
 														class="btn btn-primary">확인</button>
 												</div>
 											</div>
@@ -479,10 +479,8 @@
 		function goForm() {
 			document.formName.action = "${root}order/orderCart";
 			modal.style.display = "block";
-
 			document.getElementById("cart_quantity").value = cart_quantity;
 			document.getElementById("cart_option").value = selectbox;
-
 		};
 	</script>
 

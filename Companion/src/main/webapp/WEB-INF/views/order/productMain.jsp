@@ -112,7 +112,6 @@
                     
                 </nav>
 			   <div class="row">
-			        <%--    <% for(int i=0;i<20;i++){ %>  --%>
 			<c:forEach items="${listPage }" var="bean"> 
 			        <div class="col-md-3 col-sm-6"> 
 			            <div class="product-grid productbox">
