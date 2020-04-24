@@ -1,4 +1,4 @@
-/**
+ㄴ/**
  * boardSlide 0.1
  * http://www.yamah.co.kr
  *
