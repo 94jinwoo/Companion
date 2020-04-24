@@ -375,7 +375,7 @@
 				var member_name=$("#member_name").val();
 				var member_phone=$("#member_phone").val();
 				var regPhone = /(01[0|1|6|9|7])(\d{3}|\d{4})(\d{4}$)/g; 
-		   		 
+		   		var email_chk_value=$("#email_chk_value").val();
 				var member_email=$("#member_email").val();
 				var member_addr1=$("#sample2_postcode").val();
 				var member_addr2=$("#sample2_address").val();
@@ -396,6 +396,10 @@
 				}
 				if(email_overlap_chk_value=="1"){
 					alert("이메일 중복확인을 해주세요.");
+					return;
+				}
+				if(email_chk_value=="1"){
+					alert("이메일 인증확인을 해주세요.");
 					return;
 				}
 				var checkPassword=verifyPassword(member_pw,{
