@@ -375,7 +375,7 @@
 				var member_name=$("#member_name").val();
 				var member_phone=$("#member_phone").val();
 				var regPhone = /(01[0|1|6|9|7])(\d{3}|\d{4})(\d{4}$)/g; 
-		   		 
+		   		var email_chk_value=$("#email_chk_value").val();
 				var member_email=$("#member_email").val();
 				var member_addr1=$("#sample2_postcode").val();
 				var member_addr2=$("#sample2_address").val();
@@ -396,6 +396,10 @@
 				}
 				if(email_overlap_chk_value=="1"){
 					alert("이메일 중복확인을 해주세요.");
+					return;
+				}
+				if(email_chk_value=="1"){
+					alert("이메일 인증확인을 해주세요.");
 					return;
 				}
 				var checkPassword=verifyPassword(member_pw,{
@@ -451,6 +455,7 @@
 						success : function(result){
 							if(result==0){
 								alert("사용이 가능한 아이디입니다.");
+								document.getElementById("id_chk_value").value="2";
 							}else if(result==1){
 								alert("이미 사용중인 아이디입니다.\n다른 아이디를 사용해 주세요.");
 								return;
@@ -458,7 +463,6 @@
 						}
 						
 					});
-					document.getElementById("id_chk_value").value="2";
 			});
 			
 			/* email 중복체크버튼 */
@@ -478,6 +482,7 @@
 						success : function(result){
 							if(result==0){
 								alert("사용이 가능한 이메일입니다.");
+								document.getElementById("email_overlap_chk_value").value="2";
 							}else if(result==1){
 								alert("이미 사용중인 이메일입니다.\n다른 이메일을 사용해 주세요.")
 								return;
@@ -485,14 +490,12 @@
 						}
 					
 					});
-					document.getElementById("email_overlap_chk_value").value="2";
 				}
 			});
 			
 			/* email 인증버튼 */
 			$("#email_chk_btn").click(function(){
 				document.getElementById("email_chk_value").value="1";
-				$('#email_chk_panel').show();
 				var member_email=$("#member_email").val();
 				var userData={"member_email" : member_email};
 				var checkEmail=verifyEmail(member_email);
@@ -504,6 +507,7 @@
 					alert("이메일 양식이 올바르지 않습니다.");
 					return;
 				}else{
+					$('#email_chk_panel').show();
 					$.ajax({
 						type : "POST",
 						url : "/companion/login/emailchk",
